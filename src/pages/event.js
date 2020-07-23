@@ -29,4 +29,7 @@ const event = () => {
     </form>  
   </section>
   `;
-}
+  return view;
+};
+
+export default event;
