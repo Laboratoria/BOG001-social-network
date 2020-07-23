@@ -1,4 +1,4 @@
-const Login = () => {
+const login = () => {
   const view = `
     <div class = "login">
       <img src = "LOGO" alt = "Logo phySport" class = "login__logo">
@@ -21,4 +21,4 @@ const Login = () => {
   return view;
 };
 
-export default Login;
+export default login;

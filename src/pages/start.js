@@ -1,11 +1,11 @@
-const Start = () => {
+const start = () => {
   const view = `
-    <div class = "start">
+    <section class = "start">
       <img src = "LOGO" alt = "Logo phySport" class = "start__logo">
       <h3 class = "start__slogan">Find a game, win friends</h3>
-    </div>
+    </section>
   `;
   return view;
 };
 
-export default Start;
+export default start;
