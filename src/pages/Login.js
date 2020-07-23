@@ -9,12 +9,16 @@ const login = () => {
             Ingresar
           </button>
         </form>
-      <h3 class = "login__text"> o inicia sesion con 
-        <a href="#/..." id="" class = "button__google">G</a>
-      </h3>
-      <h3 class = "login__text"> ¿Nuevo usuario?
-        <a href = "#/.." id="" class="">Registrate</a>
-      </h3>
+      <div class="">
+        <h3 class = "login__text"> o inicia sesion con 
+          <a href="#/..." id="" class = "button__google">G</a>
+        </h3>
+      </div>
+      <div class="">
+        <h3 class = "login__text"> ¿Nuevo usuario?
+          <a href = "#/.." id="" class="">Registrate</a>
+        </h3>
+      </div>
     </section>
   `;
   return view;
