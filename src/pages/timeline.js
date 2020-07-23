@@ -32,19 +32,7 @@ const timeline = () => {
         </div>
       </div>
     </article>
-  </section>
-
-  <section>
-    <nav>
-      <ul>
-        <li>
-          <a href="">
-            <img src="imagen del deporte">
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </section>
+  </section> 
   `;
   return view;
 };
