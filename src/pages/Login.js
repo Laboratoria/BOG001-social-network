@@ -6,7 +6,7 @@ const Login = () => {
         <form id = "loginForm" class = "form">
           <input type = "email" id = "loginEmail" class = "form__email" placeholder = "Email" autofocus>   
           <input type = "password" id = "loginPassword" class = "form__password" placeholder = "Password"> 
-          <button id = "loginButton" class = "form__button">
+          <button href = "#/.." id = "loginButton" class = "form__button">
             Ingresar
           </button>
         </form>
@@ -14,7 +14,7 @@ const Login = () => {
         <button class = "button__google></button>
       </p>
       <p class = "login__text"> Nuevo usuario?
-        <a href = "#/">Registrate</a>
+        <a href = "#/..">Registrate</a>
       </p>
     </div>
   `;
