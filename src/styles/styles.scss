@@ -1,5 +1,12 @@
-$bg_color: red;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap');
+$blue_color: #021945;
+$orange_color: #FA4D00;
+$white_color: #E5E8EC;
+$gray_color: #9DA3AE;
 
 *{
-    background-color: $bg_color;
+    background-color: $blue_color;
+    font-family: 'Roboto', sans-serif;
 }
+
+@import './_singUp.scss';
