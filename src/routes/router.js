@@ -3,6 +3,7 @@ import login from '../pages/login';
 import singUp from '../pages/singUp';
 import timeline from '../pages/timeline';
 import event from '../pages/event';
+import error404 from '../pages/error404';
 
 const root = document.getElementById('root');
 
@@ -29,7 +30,9 @@ const router = (rout) => {
       return root.innerHTML = event();
     }
     default:
-      return console.log('Error404');
+    {
+      return root.innerHTML = error404();
+    }
   }
 };
 
