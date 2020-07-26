@@ -1,3 +1,11 @@
+// Firebase App (the core Firebase SDK) is always required and
+// must be listed before other Firebase SDKs
+import * as firebase from 'firebase/app';
+
+// Add the Firebase services that you want to use
+import 'firebase/auth';
+import 'firebase/firestore';
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: 'AIzaSyB8mjbw1ZN7VfV-Ejeb8-Wqz4aXt2HXgdY',
@@ -9,7 +17,11 @@ const firebaseConfig = {
   appId: '1:580315971427:web:05abf4935feae5648ddd56',
 };
 
-export default firebaseConfig;
-
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
+const auth = firebase.auth();
+const database = firebase.firestore();
+
+export { auth };
+export { database };

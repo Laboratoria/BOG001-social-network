@@ -7,11 +7,11 @@ import error404 from '../pages/error404';
 
 const router = (route) => {
   switch (route) {
-    case '#/':
+    case '/':
       return start();
     case '#/login':
       return login();
-    case '#/singUp':
+    case '#/sign-up':
       return singUp();
     case '#/timeline':
       return timeline();
