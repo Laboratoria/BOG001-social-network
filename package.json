@@ -15,7 +15,7 @@
     "stylelint": "stylelint --aei src/**/*.css",
     "pretest": "npm run htmlhint && npm run eslint && npm run stylelint",
     "test": "jest --coverage",
-    "start": "serve src/"
+    "start": "npx webpack-dev-server"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -26,6 +26,7 @@
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^22.1.2",
+    "copy-webpack-plugin": "^6.0.3",
     "htmlhint": "^0.11.0",
     "jest": "^24.8.0",
     "regenerator-runtime": "^0.13.1",
