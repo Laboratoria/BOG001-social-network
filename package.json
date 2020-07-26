@@ -26,7 +26,6 @@
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^22.1.2",
-    "html-webpack-plugin": "^4.3.0",
     "htmlhint": "^0.11.0",
     "jest": "^24.8.0",
     "regenerator-runtime": "^0.13.1",
