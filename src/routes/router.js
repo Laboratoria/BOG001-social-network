@@ -5,34 +5,20 @@ import timeline from '../pages/timeline';
 import event from '../pages/event';
 import error404 from '../pages/error404';
 
-const root = document.getElementById('root');
-
-const router = (rout) => {
-  switch (rout) {
+const router = (route) => {
+  switch (route) {
     case '#/':
-    {
-      return root.innerHTML = start();
-    }
+      return start();
     case '#/login':
-    {
-      return root.innerHTML = login();
-    }
+      return login();
     case '#/singUp':
-    {
-      return root.innerHTML = singUp();
-    }
+      return singUp();
     case '#/timeline':
-    {
-      return root.innerHTML = timeline();
-    }
+      return timeline();
     case '#/event':
-    {
-      return root.innerHTML = event();
-    }
+      return event();
     default:
-    {
-      return root.innerHTML = error404();
-    }
+      return error404();
   }
 };
 

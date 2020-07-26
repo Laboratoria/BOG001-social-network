@@ -1,5 +1,6 @@
 import router from './routes/router';
 import start from './pages/start';
+
 import './styles/styles.scss';
 
 const root = document.getElementById('root');
@@ -9,5 +10,5 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('hashchange', () => {
-  router(window.location.hash);
+  root.innerHTML = router(window.location.hash);
 });
