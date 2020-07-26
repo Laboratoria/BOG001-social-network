@@ -13,7 +13,7 @@ const singUp = () => {
   </form>
   <div class='singUp__google'>
       <h3>o registrate con</h3>
-      <a href='#/...'><img class="google-icon" src="./assets/seo-and-web.png" alt=""></a>
+      <a href='#/...'><img class="google-icon" src="../assets/seo-and-web.png" alt=""></a>
   </div>
 </section>`;
   return view;

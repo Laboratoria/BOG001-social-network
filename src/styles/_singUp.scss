@@ -1,11 +1,22 @@
-.singUp{
+.center{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.singUp__title{
+
+.borderStyles{
+    border: none;
+    outline: none;
+    border-radius: 50px;
+}
+
+
+.singUp{
+    @extend .center;
+    &__title{
     color: $orange_color;
     margin-bottom: 35px;
+    }
 }
 
 .singUp__form{
@@ -13,32 +24,28 @@
     flex-direction: column;
     align-items: center;
     input{
+        @extend .borderStyles;
         background-color: $white_color;
-        border: none;
-        outline: none;
-        border-radius: 50px;
         width: 262px;
         height: 42px;
         margin-bottom: 15px;
         padding-left: 20px;
 
         &::-webkit-input-placeholder {
-            color:    $gray_color;
+            color: $gray_color;
             font-size: 20px;
             font-weight: bold;
         }
 
         &::-moz-placeholder {
-            color:    $gray_color;
+            color: $gray_color;
             font-size: 20px;
             font-weight: bold;
         }
     }
     button{
+        @extend .borderStyles;
         background-color: $orange_color;
-        border: none;
-        outline: none;
-        border-radius: 50px;
         width: 140px;
         height: 42px;
         margin-top: 20px;
