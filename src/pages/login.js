@@ -1,6 +1,6 @@
 const login = () => {
   const view = `
-    <section class = "login">      
+    <section class = "login">
       <h3 class = "login__title"> Inicia sesion</h3>
       <form id = "loginForm" class = "form">
           <input type = "email" id = "loginEmail" class = "form__email" placeholder = "Email" autofocus>   

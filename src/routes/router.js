@@ -3,33 +3,22 @@ import login from '../pages/login';
 import singUp from '../pages/singUp';
 import timeline from '../pages/timeline';
 import event from '../pages/event';
+import error404 from '../pages/error404';
 
-const root = document.getElementById('root');
-
-const router = (rout) => {
-  switch (rout) {
-    case '#/':
-    {
-      return root.innerHTML = start();
-    }
+const router = (route) => {
+  switch (route) {
+    case '/':
+      return start();
     case '#/login':
-    {
-      return root.innerHTML = login();
-    }
-    case '#/singUp':
-    {
-      return root.innerHTML = singUp();
-    }
+      return login();
+    case '#/sign-up':
+      return singUp();
     case '#/timeline':
-    {
-      return root.innerHTML = timeline();
-    }
+      return timeline();
     case '#/event':
-    {
-      return root.innerHTML = event();
-    }
+      return event();
     default:
-      return console.log('Error404');
+      return error404();
   }
 };
 
