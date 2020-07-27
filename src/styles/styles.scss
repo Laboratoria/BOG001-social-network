@@ -1,7 +1,9 @@
 @import './base/_variables.scss';
+@import './start.scss';
+@import './login.scss';
 @import './_singUp.scss';
 
 *{
-    background-color: $blue_color;
+    background-color: $primary_color;
     font-family: $font-family;
 }

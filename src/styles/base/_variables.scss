@@ -18,6 +18,35 @@ $font-family: 'Roboto', sans-serif;
     border-radius: 50px;
 }
 
+.display {
+  display: flex;
+	align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.input {  
+  border-radius: 25px;
+	font-size: 1em;
+	margin-bottom: 20px;
+	padding: 0px 20px;
+	outline: none;
+	height: 30px;
+}
+
+.button {
+	background-color: $secondary_color;
+	border: none;
+	border-radius: 25px;
+	color: $white_color;
+	font-size: 1em;
+	font-weight: bold;
+  height: 30px;
+  width: 30%;	
+	margin: 10px 0px;
+	outline: none;
+}
+
 @mixin input {
   color: $gray_color;
   font-size: 20px;
