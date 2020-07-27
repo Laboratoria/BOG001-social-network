@@ -1,7 +1,6 @@
 @import './base/_variables.scss';
-@import './start.scss';
-@import './login.scss';
-@import './_singUp.scss';
+@import './_start.scss';
+@import './_formStyles.scss';
 
 *{
     background-color: $primary_color;

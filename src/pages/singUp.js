@@ -8,16 +8,16 @@ const singUp = () => {
   };
 
   const view = `
-    <section class='singUp'>
-      <h1 class='singUp__title'>
+    <section class='singUp container__form'>
+      <h1 class='container__form--title'>
           Registrate
       </h1>
-      <form class='singUp__form'>
+      <form class='singUp__form form'>
           <input id='' type='text' placeholder='username'>
           <input id='email' type='email' placeholder='correo'>
           <input id='' type='text' placeholder='ciudad'>
           <input id='pass' type='password' placeholder='contraseña'>
-          <button id="button" type='button'>Registrar</button>
+          <a id="button" href="#/..." type='button'>Registrar</a>
       </form>
       <div class='singUp__google'>
           <h3>o registrate con</h3>
