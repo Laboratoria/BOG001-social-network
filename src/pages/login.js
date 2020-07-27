@@ -1,11 +1,18 @@
+import { loginUser } from '../firebase/auth';
+
 const login = () => {
+  const loginUsers = () => {
+    const email = document.getElementById('loginEmail').value;
+    const pass = document.getElementById('loginPassword').value;
+    loginUser(email, pass);
+  };
   const view = `
     <section class = "login container__form">
       <h1 class = "login__title container__form--title"> Inicia sesión</h1>
       <form id = "loginForm" class = "form">
         <input type = "email" id = "loginEmail" class = "form__email" placeholder = "Email" autofocus>   
         <input type = "password" id = "loginPassword" class = "form__password" placeholder = "Password"> 
-        <a href = "#/.." id = "button" class = "form__button">
+        <a href = "#/timeline" id = "button" class = "form__button">
           Ingresar
         </a>
       </form>    
@@ -24,7 +31,7 @@ const login = () => {
   const container = document.createElement('div');
   container.innerHTML = view;
   const botonRegistro = container.querySelector('#button');
-  botonRegistro.addEventListener('click', () => { console.log('funcionaaaa'); });
+  botonRegistro.addEventListener('click', () => { loginUsers(); });
   return container;
 };
 

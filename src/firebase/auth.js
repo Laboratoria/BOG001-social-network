@@ -7,3 +7,11 @@ export const createUserByEmailAndPass = (email, password) => {
       console.log(userCredential);
     });
 };
+
+export const loginUser = (email, password) => {
+  auth
+    .signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      console.log(userCredential);
+    });
+};
