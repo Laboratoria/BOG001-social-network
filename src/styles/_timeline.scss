@@ -1,0 +1,25 @@
+.timeline-container {
+  @extend .center;
+}
+
+.event {
+  background-color: $gray_color;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.event__info {
+  @include flex;
+}
+
+.user {
+  @include flex;
+}
+
+.sport {
+  @include flex;
+}
+
+.event__interaction {
+  @include flex;
+}

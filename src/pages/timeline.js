@@ -3,7 +3,7 @@ const timeline = () => {
   <section class="timeline-container">
     <article class="event">
       <div>
-        <div>
+        <div class="event__info">
           <div class="user">
             <img src="perfil usuario">
             <h2>Nombre de Usuario</h2>
@@ -21,7 +21,7 @@ const timeline = () => {
           Descripcion
         </p>
       </div>
-      <div>
+      <div class="event__interaction">
         <div>
           <img src="asistire">
           <span>Asistire</span>
@@ -34,7 +34,9 @@ const timeline = () => {
     </article>
   </section> 
   `;
-  return view;
+  const container = document.createElement('div');
+  container.innerHTML = view;
+  return container;
 };
 
 export default timeline;
