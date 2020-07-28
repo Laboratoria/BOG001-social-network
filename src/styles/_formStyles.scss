@@ -30,12 +30,12 @@
         @extend .borderStyles;
         background-color: $secondary_color;
         width: 140px;
-        height: 42px;
         margin-top: 20px;
         color: $white_color;
         font-size: 20px;
         font-weight: bold;
         text-decoration: none;
+        padding: 10px;
         @extend .center;
     }
 }

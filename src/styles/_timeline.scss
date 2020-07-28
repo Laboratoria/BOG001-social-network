@@ -3,8 +3,10 @@
 }
 
 .event {
-  background-color: $gray_color;
+  background-color: $white_color;
+  color: $white_color;
   margin: 0 auto;
+  min-height: 300px;
   width: 80%;
 }
 
