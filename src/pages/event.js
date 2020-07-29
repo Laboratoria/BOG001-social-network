@@ -1,9 +1,10 @@
 const event = () => {
   const view = `
   <section class = "event">
-    <h1 class="event__title">Crea tu evento</h1>
-    <form class="" id="" action = "" method = "">    
+    <h1 class="title">Crea tu evento</h1>
+    <form class="event__form form" id="" action = "" method = "">    
       <div class="">
+        <a href='#/...'><img class="google-icon" src="../assets/seo-and-web.png" alt=""></a>
         <label for = "Hora" class="">Hora</label>    
         <input class="" type = "time" id = "Hora"  name  = "hora" autocomplete = "off" >
       </div>      
@@ -24,7 +25,7 @@ const event = () => {
         <input class="" type = "text" id = "description" name = "descripcion" placeholder = "Descripcion" required autocomplete = "off" maxlength="100" >
       </div>      
       <div class="">
-        <button class="" type = "submit" id = "publicar">Publicar</button>
+        <button class="button" type = "submit" id = "publicar">Publicar</button>
       </div>
     </form>  
   </section>

@@ -1,5 +1,8 @@
-$bg_color: red;
+@import './base/_variables.scss';
+@import './_start.scss';
+@import './_formStyles.scss';
 
 *{
-    background-color: $bg_color;
+    background-color: $primary_color;
+    font-family: $font-family;
 }
