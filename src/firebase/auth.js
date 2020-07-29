@@ -1,4 +1,4 @@
-import { auth, provider } from './init';
+import { auth } from './init';
 
 // Registro con correo y contraseña
 export const createUserByEmailAndPass = (email, password) => {
@@ -19,10 +19,4 @@ export const loginUser = (email, password) => {
 };
 
 // Inicio de Sesion Google
-export const loginUserGoogle = () => {
-  auth.signInWithPopup(provider).then((res) => {
-    console.log(res);
-  }).catch((err) => {
-    console.log(err);
-  });
-};
+
