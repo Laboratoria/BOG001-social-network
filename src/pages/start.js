@@ -7,7 +7,9 @@ const start = () => {
       </div>
     </section>
   `;
-  return view;
+  const container = document.createElement('div');
+  container.innerHTML = view;
+  return container;
 };
 
 export default start;

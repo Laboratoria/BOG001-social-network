@@ -7,7 +7,7 @@ import error404 from '../pages/error404';
 
 const router = (route) => {
   switch (route) {
-    case '/':
+    case '#/':
       return start();
     case '#/login':
       return login();

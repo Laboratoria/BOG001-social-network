@@ -1,0 +1,40 @@
+.timeline-container {
+  @extend .center;
+}
+
+.event {
+  margin: 20px 0;
+}
+
+.event__info {
+background-color: $gray_color;
+color: $white_color;
+margin: 0 auto;
+padding: 10px;
+width: 90%;
+}
+
+.event__upper--container {
+  @include flex;
+  h2 {
+    font-size: 16px;
+  }
+  img {
+    margin: 0 10px;
+    width: 40px;
+  }
+  span {
+    margin: 0 5px;
+  }
+}
+
+.event__subtitle {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.user,
+.sport,
+.event__interaction {
+  @include flex;
+}

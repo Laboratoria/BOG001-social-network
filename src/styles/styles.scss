@@ -1,8 +1,9 @@
 @import './base/_variables.scss';
 @import './_start.scss';
 @import './_formStyles.scss';
+@import './_timeline.scss';
 
-*{
+body {
     background-color: $primary_color;
     font-family: $font-family;
     margin: 0;
