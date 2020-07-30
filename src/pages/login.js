@@ -1,5 +1,4 @@
 import { loginUser, loginUserGoogle } from '../firebase/auth';
-import singUp from './singUp';
 
 const login = () => {
   const loginUsers = () => {
