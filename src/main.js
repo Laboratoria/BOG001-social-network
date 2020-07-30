@@ -6,6 +6,7 @@ import './styles/styles.scss';
 
 const root = document.getElementById('root');
 
+
 window.addEventListener('load', () => {
   root.innerHTML = start();
 });

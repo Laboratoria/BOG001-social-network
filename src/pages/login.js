@@ -53,5 +53,3 @@ const login = () => {
 
   return container;
 };
-
-export default login;

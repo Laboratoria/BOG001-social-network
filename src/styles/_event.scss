@@ -1,0 +1,37 @@
+.event{
+  @extend .center;
+  &title{
+  text-align: center;
+  color: $secondary_color;
+  margin-bottom: 42px;
+  }
+}
+.event_form{
+  display: flex;
+  align-items: center;
+  input{
+     @extend .borderStyles;
+     background-color: $white_color;
+     width: 200px;
+     height: 55px;
+     margin-bottom: 20px;
+     padding-left: 20px;
+
+      &::-moz-placeholder {
+         @include input
+        }
+    }
+
+ button{
+ @extend .borderStyles;
+ background-color: $secondary_color;
+ width: 140px;
+ height: 42px;
+ margin-top: 20px;
+ color: $white_color;
+ font-size: 20px;
+ font-weight: bold;
+ text-decoration: none;
+ @extend .center;
+  }
+}
