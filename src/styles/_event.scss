@@ -1,21 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap');
-$primary_color: #021945;
-$secondary_color: #FA4D00;
-$white_color: #E5E8EC;
-$gray_color: #9DA3AE;
-
-$font-family: 'Roboto', sans-serif;
-
 .event{
   @extend .center;
   &title{
   text-align: center;
   color: $secondary_color;
   margin-bottom: 42px;
-  text-align: center;
   }
 }
-.event__form{
+.event_form{
   display: flex;
   align-items: center;
   input{

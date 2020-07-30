@@ -1,21 +1,24 @@
 .start {
-  // background-image: linear-gradient(
-  //   rgba(250, 77, 0, 0.7), 
-  //   rgba(229, 232, 236, 0.3)
-  // ), url(../assets/inicio.png);
+  background-image: linear-gradient(
+    rgba(250, 77, 0, 0.7), 
+    rgba(229, 232, 236, 0.3)
+  ), url(../assets/inicio.png);
   background-size: cover;  
-  text-align: center;  
   height: 100vh;  
-  &__container {
-    padding: 61% 0px;
+  z-index: 3;
+  &__container{
+    height: 100%;
+    background-color: transparent;
+    @extend .display;
   }
   &__logo {
-    width: 80%;
+    width: 60%;
+    background-color: transparent;
   }
   &__slogan {
     font-size: 1em;
     letter-spacing: 1px;
     color: $white_color;
-    margin: 0px;
+    background-color: transparent;
   } 
 }

@@ -1,10 +1,9 @@
 const event = () => {
   const view = `
   <section class = "event">
-    <h1 class="title">Crea tu evento</h1>
-    <form class="event__form form" id="" action = "" method = "">    
+    <h1 class="container__form--title">Crea tu evento</h1>
+    <form class="event_form form" id="" action = "" method = "">    
       <div class="">
-        <a href='#/...'><img class="google-icon" src="../assets/seo-and-web.png" alt=""></a>
         <label for = "Hora" class="">Hora</label>    
         <input class="" type = "time" id = "Hora"  name  = "hora" autocomplete = "off" >
       </div>      
@@ -25,12 +24,14 @@ const event = () => {
         <input class="" type = "text" id = "description" name = "descripcion" placeholder = "Descripcion" required autocomplete = "off" maxlength="100" >
       </div>      
       <div class="">
-        <button class="button" type = "submit" id = "publicar">Publicar</button>
+        <a class="button" type = "submit" id = "publicar">Publicar</a>
       </div>
     </form>  
   </section>
   `;
-  return view;
+  const container = document.createElement('div');
+  container.innerHTML = view;
+  return container;
 };
 
 export default event;

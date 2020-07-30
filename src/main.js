@@ -9,7 +9,7 @@ const root = document.getElementById('root');
 
 
 window.addEventListener('load', () => {
- root.innerHTML = start();
+  root.insertAdjacentElement('beforeend', router(window.location.hash));
 });
 
 window.addEventListener('hashchange', () => {

@@ -2,39 +2,37 @@ const timeline = () => {
   const view = `
   <section class="timeline-container">
     <article class="event">
-      <div>
-        <div>
+      <div class="event__info">
+        <div class="event__upper--container">
           <div class="user">
-            <img src="perfil usuario">
+            <img src="../assets/perfil.png">
             <h2>Nombre de Usuario</h2>
           </div>
           <div class="sport">
-            <img src="deporte">
+            <img src="../assets/balon.png">
             <span>HORA</span>
             <span>FECHA</span>
           </div>
         </div>
-        <p>
-          Lugar:
-        </p>
-        <p>
-          Descripcion
-        </p>
+        <p><span class="event__subtitle">Lugar:</span> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat eaque ipsum non</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat eaque ipsum non fugit aspernatur praesentium ab qui dolorem.</p>
       </div>
-      <div>
+      <div class="event__interaction">
         <div>
-          <img src="asistire">
+          <i class="fas fa-walking"></i>
           <span>Asistire</span>
         </div>
         <div>
-          <img src="comentario">
+          <i class="far fa-comments"></i>
           <span>Comentar</span>
         </div>
       </div>
     </article>
-  </section> 
+  </section>
   `;
-  return view;
+  const container = document.createElement('div');
+  container.innerHTML = view;
+  return container;
 };
 
 export default timeline;
