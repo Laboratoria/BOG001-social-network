@@ -6,14 +6,13 @@ import './styles/styles.scss';
 
 const root = document.getElementById('root');
 
-root.innerHTML = start();
+window.addEventListener('load', () => {
+  root.innerHTML = start();
+});
 
 window.addEventListener('load', () => {
   root.insertAdjacentElement('beforeend', router(window.location.hash));
 });
-
-// setTimeout(() => {
-// }, 4000);
 
 window.addEventListener('hashchange', () => {
   root.innerHTML = '';
