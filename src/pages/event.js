@@ -18,10 +18,10 @@ const event = () => {
         </select>
       </div>      
       <div class="">
-        <input class="" type = "text" id = "place" name = "lugar" placeholder = "Lugar" required autocomplete = "off" maxlength="50" >
+        <textarea name="place" id="" cols="40" rows="3" placeholder="Lugar"></textarea>        
       </div>
       <div class="">
-        <input class="" type = "text" id = "description" name = "descripcion" placeholder = "Descripcion" required autocomplete = "off" maxlength="100" >
+        <textarea name="description" id="" cols="40" rows="8" placeholder="Descripcion"></textarea>        
       </div>      
       <div class="">
         <a class="button" type = "submit" id = "publicar">Publicar</a>
