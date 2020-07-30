@@ -43,6 +43,22 @@ const signUp = () => {
   container.innerHTML = view;
   const botonRegistro = container.querySelector('#button');
   botonRegistro.addEventListener('click', () => { createUser(); });
+  const eyeIcon = container.querySelector('#eyeIcon');
+  const loginPassword = container.querySelector('#loginPassword');
+
+  function mostrarContrasena() {
+    if (loginPassword.type === 'password') {
+      loginPassword.type = 'text';
+      eyeIcon.classList.add('eyeblock__icon');
+      eyeIcon.classList.remove('eye__icon');
+    } else {
+      eyeIcon.classList.remove('eyeblock__icon');
+      eyeIcon.classList.add('eye__icon');
+      loginPassword.type = 'password';
+    }
+  }
+
+  eyeIcon.addEventListener('click', mostrarContrasena);
   return container;
 };
 
