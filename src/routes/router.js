@@ -1,6 +1,6 @@
 import start from '../pages/start';
 import login from '../pages/login';
-import singUp from '../pages/singUp';
+import signUp from '../pages/signUp';
 import timeline from '../pages/timeline';
 import event from '../pages/event';
 import error404 from '../pages/error404';
@@ -12,7 +12,7 @@ const router = (route) => {
     case '#/login':
       return login();
     case '#/sign-up':
-      return singUp();
+      return signUp();
     case '#/timeline':
       return timeline();
     case '#/event':

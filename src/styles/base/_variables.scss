@@ -6,6 +6,11 @@ $gray_color: #9DA3AE;
 
 $font-family: 'Roboto', sans-serif;
 
+$media-mobile: 320px;
+$media-tablet: 768px;
+$media-notebook: 1024px;
+$media-desktop: 1600px;
+
 .center{
     display: flex;
     flex-direction: column;
@@ -25,15 +30,6 @@ $font-family: 'Roboto', sans-serif;
   flex-direction: column;
 }
 
-.input {  
-  border-radius: 25px;
-	font-size: 1em;
-	margin-bottom: 20px;
-	padding: 0px 20px;
-	outline: none;
-	height: 30px;
-}
-
 .button {
 	background-color: $secondary_color;
 	border: none;
@@ -49,7 +45,7 @@ $font-family: 'Roboto', sans-serif;
 
 @mixin input {
   color: $gray_color;
-  font-size: 20px;
+  font-size: 1em;
   font-weight: bold;
 }
 
