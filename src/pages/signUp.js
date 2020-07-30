@@ -1,6 +1,6 @@
 import { createUserByEmailAndPass } from '../firebase/auth';
 
-const singUp = () => {
+const signUp = () => {
   const createUser = () => {
     const email = document.getElementById('email').value;
     const pass = document.getElementById('pass').value;
@@ -8,18 +8,30 @@ const singUp = () => {
   };
 
   const view = `
-    <section class='singUp container__form'>
+    <section class='signUp container__form'>
       <h1 class='container__form--title'>
           Registrate
       </h1>
-      <form class='singUp__form form'>
+      <form class='signUp__form form'>
+        <div class="form-group">
           <input id='' type='text' placeholder='username'>
-          <input id='email' type='email' placeholder='correo'>
+          <label for="name">Username</label>
+        </div>
+        <div class="form-group">
+          <input id='email' type='email' placeholder='email'>
+          <label for="name">Email</label>
+        </div>
+        <div class="form-group">
           <input id='' type='text' placeholder='ciudad'>
+          <label for="name">Email</label>
+        </div>
+        <div class="form-group">
           <input id='pass' type='password' placeholder='contraseña'>
-          <a id="button" href="#/..." type='button'>Registrar</a>
+          <label for="name">Email</label>
+        </div>
+        <a id="button" href="#/..." type='button'>Registrar</a>
       </form>
-      <div class='singUp__google'>
+      <div class='signUp__google'>
           <h3>o registrate con</h3>
           <h3>
           <a href='#/...'><img class="google-icon" src="../assets/seo-and-web.png" alt=""></a>
@@ -34,4 +46,4 @@ const singUp = () => {
   return container;
 };
 
-export default singUp;
+export default signUp;
