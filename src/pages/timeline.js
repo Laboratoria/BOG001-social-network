@@ -14,8 +14,8 @@ const timeline = () => {
             <span>FECHA</span>
           </div>
         </div>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat eaque ipsum non fugit aspernatur praesentium ab qui dolorem.</p>
         <p><span class="event__subtitle">Lugar:</span> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat eaque ipsum non</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat eaque ipsum non fugit aspernatur praesentium ab qui dolorem.</p>
       </div>
       <div class="event__interaction">
         <div>
