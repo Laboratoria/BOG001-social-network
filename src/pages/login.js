@@ -11,22 +11,26 @@ const login = () => {
     <section class = "login container__form">
       <h1 class = "login__title container__form--title"> Inicia sesión</h1>
       <form id = "loginForm" class = "form">
-        <input type = "email" id = "loginEmail" class = "form__email" placeholder = "Email" autofocus>
-        <div class="loginPassword--container">
-          <input type = "password" id = "loginPassword" class = "form__password" placeholder = "Password">
-          <span class="eye__icon" id="eyeIcon"></span>
+      <div class="form-group">
+        <input type = "email" id = "loginEmail" class = "form__email" placeholder = "Correo" autofocus>
+        <label for="name">Correo</label>
+      </div>
+      <div class="form-group loginPassword--container">
+        <input type = "password" id = "loginPassword" class = "form__password" placeholder = "Contraseña">
+        <label for="name">Contraseña</label>
+        <span class="eye__icon" id="eyeIcon"></span>
         </div>
         <a href = "#/timeline" id = "button" class = "form__button">
           Ingresar
         </a>
       </form>
-      <div class='singUp__google'>
+      <div class='signUp__google'>
           <h3>o registrate con</h3>
           <h3>
           <a id="buttonGmail" href='#/...'><img class="google-icon" src="../assets/seo-and-web.png" alt=""></a>
           </h3>
       </div>
-      <div class = "singUp__google">
+      <div class = "signUp__google">
       <h3> ¿Nuevo usuario?</h3>
       <a href = "#/sign-up" id="" class="login__register">Registrate</a>
       </div>
@@ -45,7 +49,11 @@ const login = () => {
   function mostrarContrasena() {
     if (loginPassword.type === 'password') {
       loginPassword.type = 'text';
+      eyeIcon.classList.toggle('eyeblock__icon');
+      eyeIcon.classList.toggle('eye__icon');
     } else {
+      eyeIcon.classList.toggle('eyeblock__icon');
+      eyeIcon.classList.toggle('eye__icon');
       loginPassword.type = 'password';
     }
   }
