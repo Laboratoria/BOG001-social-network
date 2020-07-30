@@ -16,7 +16,10 @@ const singUp = () => {
           <input id='' type='text' placeholder='username'>
           <input id='email' type='email' placeholder='correo'>
           <input id='' type='text' placeholder='ciudad'>
-          <input id='pass' type='password' placeholder='contraseña'>
+          <div class="loginPassword--container">
+            <input type = "password" id = "loginPassword" class = "form__password" placeholder = "Password">
+            <span class="eye__icon" id="eyeIcon"></span>
+          </div>
           <a id="button" href="#/..." type='button'>Registrar</a>
       </form>
       <div class='singUp__google'>
@@ -31,6 +34,22 @@ const singUp = () => {
   container.innerHTML = view;
   const botonRegistro = container.querySelector('#button');
   botonRegistro.addEventListener('click', () => { createUser(); });
+  const eyeIcon = container.querySelector('#eyeIcon');
+  const loginPassword = container.querySelector('#loginPassword');
+
+  function mostrarContrasena() {
+    if (loginPassword.type === 'password') {
+      loginPassword.type = 'text';
+      eyeIcon.classList.add('eyeblock__icon');
+      eyeIcon.classList.remove('eye__icon');
+    } else {
+      eyeIcon.classList.remove('eyeblock__icon');
+      eyeIcon.classList.add('eye__icon');
+      loginPassword.type = 'password';
+    }
+  }
+
+  eyeIcon.addEventListener('click', mostrarContrasena);
   return container;
 };
 

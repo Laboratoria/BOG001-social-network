@@ -30,6 +30,7 @@
         @extend .borderStyles;
         background-color: $secondary_color;
         width: 140px;
+        padding: 10px;
         margin-top: 20px;
         color: $white_color;
         font-size: 20px;
@@ -61,4 +62,29 @@
 
 .google-icon{
     width: 40px;
+}
+
+.loginPassword--container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    .eye__icon{
+        background-image: url('../assets/eye-close-up.png');
+        background-size: contain;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 7px;
+        right: 12px;
+    }
+    .eyeblock__icon{
+        background-image: url('../assets/invisible.png');
+        background-size: contain;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        right: 12px;
+        top: 7px;
+    }
 }

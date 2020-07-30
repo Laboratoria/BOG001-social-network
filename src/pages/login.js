@@ -11,8 +11,10 @@ const login = () => {
       <h1 class = "login__title container__form--title"> Inicia sesión</h1>
       <form id = "loginForm" class = "form">
         <input type = "email" id = "loginEmail" class = "form__email" placeholder = "Email" autofocus>
-        <input type = "password" id = "loginPassword" class = "form__password" placeholder = "Password">
-          <button class="btn btn-pri" type="button" onclick="mostrarContrasena()">Mostrar Contraseña</button>
+        <div class="loginPassword--container">
+          <input type = "password" id = "loginPassword" class = "form__password" placeholder = "Password">
+          <span class="eye__icon" id="eyeIcon"></span>
+        </div>
         <a href = "#/timeline" id = "button" class = "form__button">
           Ingresar
         </a>
@@ -29,12 +31,25 @@ const login = () => {
       </div>
     </section>
   `;
+
   const container = document.createElement('div');
   container.innerHTML = view;
   const botonRegistro = container.querySelector('#button');
   const buttonGmail = container.querySelector('#buttonGmail');
   botonRegistro.addEventListener('click', () => { loginUsers(); });
   buttonGmail.addEventListener('click', (e) => { e.preventDefault(); loginUserGoogle(); });
+  const eyeIcon = container.querySelector('#eyeIcon');
+  const loginPassword = container.querySelector('#loginPassword');
+
+  function mostrarContrasena() {
+    if (loginPassword.type === 'password') {
+      loginPassword.type = 'text';
+    } else {
+      loginPassword.type = 'password';
+    }
+  }
+
+  eyeIcon.addEventListener('click', mostrarContrasena);
 
   return container;
 };
