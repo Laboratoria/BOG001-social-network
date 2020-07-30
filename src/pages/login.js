@@ -1,4 +1,5 @@
 import { loginUser, loginUserGoogle } from '../firebase/auth';
+import singUp from './singUp';
 
 const login = () => {
   const loginUsers = () => {
@@ -53,3 +54,4 @@ const login = () => {
 
   return container;
 };
+export default login;
