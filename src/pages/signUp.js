@@ -18,16 +18,17 @@ const signUp = () => {
           <label for="name">Username</label>
         </div>
         <div class="form-group">
-          <input id='email' type='email' placeholder='email'>
-          <label for="name">Email</label>
+          <input id='email' type='email' placeholder='Correo'>
+          <label for="name">Correo</label>
         </div>
         <div class="form-group">
-          <input id='' type='text' placeholder='ciudad'>
-          <label for="name">Email</label>
+          <input id='' type='text' placeholder='Ciudad'>
+          <label for="name">Ciudad</label>
         </div>
-        <div class="form-group">
-          <input id='pass' type='password' placeholder='contraseña'>
-          <label for="name">Email</label>
+        <div class="form-group loginPassword--container">
+          <input id = "loginPassword" type='password' placeholder='Contraseña'>
+          <label for="name">Contraseña</label>
+          <span class="eye__icon" id="eyeIcon"></span>
         </div>
         <a id="button" href="#/..." type='button'>Registrar</a>
       </form>
@@ -49,16 +50,17 @@ const signUp = () => {
   function mostrarContrasena() {
     if (loginPassword.type === 'password') {
       loginPassword.type = 'text';
-      eyeIcon.classList.add('eyeblock__icon');
-      eyeIcon.classList.remove('eye__icon');
+      eyeIcon.classList.toggle('eyeblock__icon');
+      eyeIcon.classList.toggle('eye__icon');
     } else {
-      eyeIcon.classList.remove('eyeblock__icon');
-      eyeIcon.classList.add('eye__icon');
+      eyeIcon.classList.toggle('eyeblock__icon');
+      eyeIcon.classList.toggle('eye__icon');
       loginPassword.type = 'password';
     }
   }
 
   eyeIcon.addEventListener('click', mostrarContrasena);
+
   return container;
 };
 
