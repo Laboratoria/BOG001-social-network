@@ -1,9 +1,9 @@
-import { createUserByEmailAndPass } from '../firebase/auth';
+import { createUserByEmailAndPass, loginUserGoogle } from '../firebase/auth';
 
 const signUp = () => {
   const createUser = () => {
     const email = document.getElementById('email').value;
-    const pass = document.getElementById('pass').value;
+    const pass = document.getElementById('loginPassword').value;
     createUserByEmailAndPass(email, pass);
   };
 
@@ -12,7 +12,7 @@ const signUp = () => {
       <h1 class='container__form--title'>
           Registrate
       </h1>
-      <form class='signUp__form form'>
+      <form class='form'>
         <div class="form-group">
           <input id='' type='text' placeholder='username'>
           <label for="name">Username</label>
@@ -35,7 +35,7 @@ const signUp = () => {
       <div class='signUp__google'>
           <h3>o registrate con</h3>
           <h3>
-          <a href='#/...'><img class="google-icon" src="../assets/seo-and-web.png" alt=""></a>
+          <a id="signupGoogle" href='#/...'><img class="google-icon" src="../assets/seo-and-web.png" alt=""></a>
           </h3>
       </div>
     </section>`;
@@ -43,6 +43,8 @@ const signUp = () => {
   const container = document.createElement('div');
   container.innerHTML = view;
   const botonRegistro = container.querySelector('#button');
+  const signupGoogle = container.querySelector('#signupGoogle');
+  signupGoogle.addEventListener('click', (e) => { e.preventDefault(); loginUserGoogle(); });
   botonRegistro.addEventListener('click', () => { createUser(); });
   const eyeIcon = container.querySelector('#eyeIcon');
   const loginPassword = container.querySelector('#loginPassword');

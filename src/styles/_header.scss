@@ -1,0 +1,16 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100px;
+    &__logo{
+        width: 50%;
+    }
+    .icons{
+        color: $secondary_color;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+    }
+}
+

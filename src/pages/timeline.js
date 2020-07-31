@@ -19,11 +19,11 @@ const timeline = () => {
       </div>
       <div class="event__interaction">
         <div>
-          <i class="fas fa-walking"></i>
+          <span class="flaticon-strong icons"></span> 
           <span>Asistire</span>
         </div>
         <div>
-          <i class="far fa-comments"></i>
+          <span class="flaticon-speech-bubble icons"></span>
           <span>Comentar</span>
         </div>
       </div>
