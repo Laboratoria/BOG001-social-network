@@ -48,19 +48,11 @@ const login = () => {
   function mostrarContrasena() {
     if (loginPassword.type === 'password') {
       loginPassword.type = 'text';
-<<<<<<< HEAD
-      eyeIcon.classList.add('eyeblock__icon');
-      eyeIcon.classList.remove('eye__icon');
-    } else {
-      eyeIcon.classList.remove('eyeblock__icon');
-      eyeIcon.classList.add('eye__icon');
-=======
       eyeIcon.classList.toggle('eyeblock__icon');
       eyeIcon.classList.toggle('eye__icon');
     } else {
       eyeIcon.classList.toggle('eyeblock__icon');
       eyeIcon.classList.toggle('eye__icon');
->>>>>>> bddde8f0fd86eadb16134a317ff764b102de3a1d
       loginPassword.type = 'password';
     }
   }
@@ -69,8 +61,4 @@ const login = () => {
 
   return container;
 };
-<<<<<<< HEAD
-
-=======
->>>>>>> bddde8f0fd86eadb16134a317ff764b102de3a1d
 export default login;
