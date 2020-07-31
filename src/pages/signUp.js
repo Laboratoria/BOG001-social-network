@@ -3,7 +3,7 @@ import { createUserByEmailAndPass } from '../firebase/auth';
 const signUp = () => {
   const createUser = () => {
     const email = document.getElementById('email').value;
-    const pass = document.getElementById('pass').value;
+    const pass = document.getElementById('loginPassword').value;
     createUserByEmailAndPass(email, pass);
   };
 
@@ -12,7 +12,7 @@ const signUp = () => {
       <h1 class='container__form--title'>
           Registrate
       </h1>
-      <form class='signUp__form form'>
+      <form class='form'>
         <div class="form-group">
           <input id='' type='text' placeholder='username'>
           <label for="name">Username</label>

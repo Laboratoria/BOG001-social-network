@@ -51,9 +51,9 @@ const login = () => {
       eyeIcon.classList.toggle('eyeblock__icon');
       eyeIcon.classList.toggle('eye__icon');
     } else {
+      loginPassword.type = 'password';
       eyeIcon.classList.toggle('eyeblock__icon');
       eyeIcon.classList.toggle('eye__icon');
-      loginPassword.type = 'password';
     }
   }
 
