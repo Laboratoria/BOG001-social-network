@@ -1,4 +1,4 @@
-import { createUserByEmailAndPass } from '../firebase/auth';
+import { createUserByEmailAndPass, loginUserGoogle } from '../firebase/auth';
 
 const signUp = () => {
   const createUser = () => {
@@ -35,7 +35,7 @@ const signUp = () => {
       <div class='signUp__google'>
           <h3>o registrate con</h3>
           <h3>
-          <a href='#/...'><img class="google-icon" src="../assets/seo-and-web.png" alt=""></a>
+          <a id="signupGoogle" href='#/...'><img class="google-icon" src="../assets/seo-and-web.png" alt=""></a>
           </h3>
       </div>
     </section>`;
@@ -43,6 +43,8 @@ const signUp = () => {
   const container = document.createElement('div');
   container.innerHTML = view;
   const botonRegistro = container.querySelector('#button');
+  const signupGoogle = container.querySelector('#signupGoogle');
+  signupGoogle.addEventListener('click', (e) => { e.preventDefault(); loginUserGoogle(); });
   botonRegistro.addEventListener('click', () => { createUser(); });
   const eyeIcon = container.querySelector('#eyeIcon');
   const loginPassword = container.querySelector('#loginPassword');
