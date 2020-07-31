@@ -44,9 +44,10 @@
         left:  12px;
         opacity: 0;
     }
-    a{
+    button{
         @extend .borderStyles;
         background-color: $secondary_color;
+        border: none;
         width: 140px;
         padding: 0.4em;
         color: $white_color;
@@ -77,10 +78,11 @@
 }
 
 .google-icon{
+    background-color: transparent;
     width: 40px;
 }
 
-.loginPassword--container{
+.password--container{
     display: flex;
     justify-content: center;
     align-items: center;

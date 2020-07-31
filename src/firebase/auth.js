@@ -13,33 +13,13 @@ export const validateSession = () => {
 };
 
 // Registro con correo y contraseña
-export const createUserByEmailAndPass = (email, password) => {
-  auth
-    .createUserWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      console.log(userCredential);
-    });
-};
+export const createUserByEmailAndPass = (email, password) => auth
+  .createUserWithEmailAndPassword(email, password);
 
 // Inicio de sesion
-export const loginUser = (email, password) => {
-  auth
-    .signInWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      localStorage.setItem('session', JSON.stringify(userCredential));
-      window.location.href = 'http://localhost:8080/#/timeline';
-      setTimeout(validateSession, 3000);
-    });
-};
+export const loginUser = (email, password) => auth
+  .signInWithEmailAndPassword(email, password);
 
 
 // Inicio de Sesion Google
-export const loginUserGoogle = () => {
-  auth.signInWithPopup(provider).then((res) => {
-    localStorage.setItem('session', JSON.stringify(res));
-    window.location.href = 'http://localhost:8080/#/timeline';
-    setTimeout(validateSession, 3000);
-  }).catch((err) => {
-    console.log(err);
-  });
-};
+export const loginUserGoogle = () => auth.signInWithPopup(provider);

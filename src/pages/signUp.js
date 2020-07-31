@@ -1,67 +1,84 @@
-import { createUserByEmailAndPass, loginUserGoogle } from '../firebase/auth';
+import { createUserByEmailAndPass } from '../firebase/auth';
+import { saveUser } from '../firebase/database';
 
 const signUp = () => {
-  const createUser = () => {
-    const email = document.getElementById('email').value;
-    const pass = document.getElementById('loginPassword').value;
-    createUserByEmailAndPass(email, pass);
-  };
-
   const view = `
     <section class='signUp container__form'>
       <h1 class='container__form--title'>
           Registrate
       </h1>
-      <form class='form'>
+      <form class="form">
         <div class="form-group">
-          <input id='' type='text' placeholder='username'>
-          <label for="name">Username</label>
+          <input id="username" type="text" placeholder="Nombre de Usuario" required>
+          <label for="username">Nombre de Usuario</label>
         </div>
         <div class="form-group">
-          <input id='email' type='email' placeholder='Correo'>
-          <label for="name">Correo</label>
+          <input id="email" type="email" placeholder="Correo" required>
+          <label for="email">Correo</label>
         </div>
         <div class="form-group">
-          <input id='' type='text' placeholder='Ciudad'>
-          <label for="name">Ciudad</label>
+          <input id="city" type="text" placeholder="Ciudad" required>
+          <label for="city">Ciudad</label>
         </div>
-        <div class="form-group loginPassword--container">
-          <input id = "loginPassword" type='password' placeholder='Contraseña'>
-          <label for="name">Contraseña</label>
+        <div class="form-group password--container">
+          <input id = "password" type="password" placeholder="Contraseña" required>
+          <label for="password">Contraseña</label>
           <span class="eye__icon" id="eyeIcon"></span>
         </div>
-        <a id="button" href="#/..." type='button'>Registrar</a>
+        <button id="button" type="submit">Registrar</button>
       </form>
       <div class='signUp__google'>
-          <h3>o registrate con</h3>
-          <h3>
-          <a id="signupGoogle" href='#/...'><img class="google-icon" src="../assets/seo-and-web.png" alt=""></a>
-          </h3>
+      <p id="errors"></p>
+      <div class = "signUp__google">
+      <h3> ¿Ya tienes cuenta?</h3>
+      <a href = "#/login" id=" class="login__register">Inicia Sesion</a>
       </div>
     </section>`;
 
   const container = document.createElement('div');
   container.innerHTML = view;
   const botonRegistro = container.querySelector('#button');
-  const signupGoogle = container.querySelector('#signupGoogle');
-  signupGoogle.addEventListener('click', (e) => { e.preventDefault(); loginUserGoogle(); });
-  botonRegistro.addEventListener('click', () => { createUser(); });
   const eyeIcon = container.querySelector('#eyeIcon');
-  const loginPassword = container.querySelector('#loginPassword');
+  const password = container.querySelector('#password');
 
-  function mostrarContrasena() {
-    if (loginPassword.type === 'password') {
-      loginPassword.type = 'text';
+  const mostrarContrasena = () => {
+    if (password.type === 'password') {
+      password.type = 'text';
       eyeIcon.classList.toggle('eyeblock__icon');
       eyeIcon.classList.toggle('eye__icon');
     } else {
+      password.type = 'password';
       eyeIcon.classList.toggle('eyeblock__icon');
       eyeIcon.classList.toggle('eye__icon');
-      loginPassword.type = 'password';
     }
-  }
+  };
+
+  const printError = (value) => {
+    container.querySelector('#errors').innerHTML = value;
+  };
+
+  const createUser = () => {
+    const email = document.getElementById('email').value;
+    const pass = document.getElementById('password').value;
+    const city = document.getElementById('city').value;
+    const username = document.getElementById('username').value;
+    createUserByEmailAndPass(email, pass).then((userCredential) => {
+      const user = {
+        id: userCredential.user.uid,
+        usuario: username,
+        correo: userCredential.user.email,
+        ciudad: city,
+      };
+      saveUser(user);
+      window.location.href = '#/timeline';
+      console.log(userCredential);
+    }).catch((error) => {
+      printError(error);
+    });
+  };
 
   eyeIcon.addEventListener('click', mostrarContrasena);
+  botonRegistro.addEventListener('click', (e) => { e.preventDefault(); createUser(); });
 
   return container;
 };
