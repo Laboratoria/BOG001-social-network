@@ -44,7 +44,11 @@ const login = () => {
   function mostrarContrasena() {
     if (loginPassword.type === 'password') {
       loginPassword.type = 'text';
+      eyeIcon.classList.add('eyeblock__icon');
+      eyeIcon.classList.remove('eye__icon');
     } else {
+      eyeIcon.classList.remove('eyeblock__icon');
+      eyeIcon.classList.add('eye__icon');
       loginPassword.type = 'password';
     }
   }
@@ -53,3 +57,5 @@ const login = () => {
 
   return container;
 };
+
+export default login;
