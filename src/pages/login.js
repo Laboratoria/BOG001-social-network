@@ -61,8 +61,4 @@ const login = () => {
 
   return container;
 };
-<<<<<<< HEAD
-
-=======
->>>>>>> bddde8f0fd86eadb16134a317ff764b102de3a1d
 export default login;
