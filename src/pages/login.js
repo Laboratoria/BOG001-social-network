@@ -51,11 +51,9 @@ const login = () => {
       eyeIcon.classList.toggle('eyeblock__icon');
       eyeIcon.classList.toggle('eye__icon');
     } else {
-      eyeIcon.classList.remove('eyeblock__icon');
-      eyeIcon.classList.add('eye__icon');
-      loginPassword.type = 'password';
       eyeIcon.classList.toggle('eyeblock__icon');
       eyeIcon.classList.toggle('eye__icon');
+      loginPassword.type = 'password';
     }
   }
 
@@ -63,5 +61,4 @@ const login = () => {
 
   return container;
 };
-
 export default login;

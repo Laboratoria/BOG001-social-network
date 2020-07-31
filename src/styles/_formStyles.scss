@@ -2,7 +2,7 @@
     @extend .center;
     &--title{
     color: $secondary_color;
-    margin-bottom: 35px;
+    margin-bottom: 2em;
     }
 }
 
@@ -19,7 +19,7 @@
         height: 2.6em;
         width: 16em;
         padding-left: 10px;
-        margin-bottom: 40px;
+        margin-bottom: 2em;
 
         &::-webkit-input-placeholder {
             @include input
@@ -31,12 +31,13 @@
     }
     label {
         color: #eee;
-        font-size: 1.2em;
+        font-size: 0.9em;
         position: absolute;
-        top: -2em;
+        top: -1.5em;
         left: 0;
         transition: all 0.3s;
         opacity: 1;
+        letter-spacing: 1px;
     }
     input:placeholder-shown + label {
         top: 12px;
@@ -47,13 +48,11 @@
         @extend .borderStyles;
         background-color: $secondary_color;
         width: 140px;
-        padding: 10px;
-        margin-top: 20px;
+        padding: 0.4em;
         color: $white_color;
         font-size: 20px;
         font-weight: bold;
         text-decoration: none;
-        padding: 10px;
         @extend .center;
     }
 }
@@ -89,8 +88,8 @@
     .eye__icon{
         background-image: url('../assets/eye-close-up.png');
         background-size: contain;
-        width: 30px;
-        height: 30px;
+        width: 1.5em;
+        height: 1.5em;
         position: absolute;
         top: 7px;
         right: 12px;
@@ -98,8 +97,8 @@
     .eyeblock__icon{
         background-image: url('../assets/invisible.png');
         background-size: contain;
-        width: 30px;
-        height: 30px;
+        width: 1.5em;
+        height: 1.5em;
         position: absolute;
         right: 12px;
         top: 7px;
