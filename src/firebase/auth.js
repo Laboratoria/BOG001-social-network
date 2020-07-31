@@ -17,7 +17,9 @@ export const createUserByEmailAndPass = (email, password) => {
   auth
     .createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
-      console.log(userCredential);
+      localStorage.setItem('session', JSON.stringify(userCredential));
+      window.location.href = 'http://localhost:8080/#/timeline';
+      setTimeout(validateSession, 3000);
     });
 };
 
