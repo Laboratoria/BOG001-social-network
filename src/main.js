@@ -2,7 +2,7 @@ import router from './routes/router';
 // import start from './pages/start';
 import { validateSession } from './firebase/auth';
 import headerRouter from './routes/headers';
-import { setFeedbackHidingHandler } from './utils/error-message-handler';
+import { setFeedbackHidingHandler } from './utils/feedback-handler';
 
 import './firebase/init';
 import './styles/styles.scss';

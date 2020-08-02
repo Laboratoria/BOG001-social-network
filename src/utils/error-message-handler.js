@@ -1,6 +1,8 @@
 const errorCodes = {
   'auth/wrong-password': 'Contraseña inválida',
   'auth/user-not-found': 'Usuario no encontrado',
+  'auth/email-not-verified': 'Valida tu correo para poder ingresar',
+  'auth/email-already-in-use': 'El usuario ya existe',
 };
 
 const errorMessageHandler = (code) => {
@@ -15,21 +17,6 @@ export const showErrorMessage = (code) => {
   const feedbackContainer = document.querySelector('.feedback-container');
   if (feedbackContainer) {
     feedbackContainer.querySelector('p').innerText = errorMessage;
-    feedbackContainer.classList.add('feedback-container-shown');
-  }
-};
-
-export const hideErrorMessage = () => {
-  const feedbackContainer = document.querySelector('.feedback-container');
-  if (feedbackContainer) {
-    feedbackContainer.querySelector('p').innerText = '';
-    feedbackContainer.classList.remove('feedback-container-shown');
-  }
-};
-
-export const setFeedbackHidingHandler = () => {
-  const feedbackContainer = document.querySelector('.feedback-container');
-  if (feedbackContainer) {
-    feedbackContainer.querySelector('button').addEventListener('click', hideErrorMessage);
+    feedbackContainer.classList.add('feedback-container-shown', 'feedback-container-error');
   }
 };

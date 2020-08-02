@@ -1,5 +1,6 @@
 import { auth, provider } from './init';
 import { showErrorMessage } from '../utils/error-message-handler';
+import { showSuccessMessage } from '../utils/success-message-handler';
 
 
 // valida si hay una sesion
@@ -18,8 +19,14 @@ export const createUserByEmailAndPass = (email, password) => {
   auth
     .createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
-      localStorage.setItem('session', JSON.stringify(userCredential));
-      window.location.href = 'http://localhost:8080/#/timeline';
+      userCredential.user.sendEmailVerification()
+        .then(() => {
+          showSuccessMessage('auth/user-registered');
+        })
+        .catch((error) => {
+          showErrorMessage(error.code);
+          throw error;
+        });
     })
     .catch((error) => {
       showErrorMessage(error.code);
@@ -31,8 +38,12 @@ export const createUserByEmailAndPass = (email, password) => {
 export const loginUser = (email, password) => auth
   .signInWithEmailAndPassword(email, password)
   .then((userCredential) => {
-    localStorage.setItem('session', JSON.stringify(userCredential));
-    window.location.href = 'http://localhost:8080/#/timeline';
+    if (userCredential.user.emailVerified) {
+      localStorage.setItem('session', JSON.stringify(userCredential));
+      window.location.href = 'http://localhost:8080/#/timeline';
+    } else {
+      showErrorMessage('auth/email-not-verified');
+    }
   })
   .catch((error) => {
     showErrorMessage(error.code);
