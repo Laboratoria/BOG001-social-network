@@ -11,7 +11,7 @@ const login = () => {
       <h1 class = "login__title container__form--title"> Inicia sesión</h1>
       <form id = "loginForm" class = "form">
       <div class="form-group">
-        <input type = "email" id = "loginEmail" class = "form__email" placeholder = "Correo" autofocus>
+        <input type="email" id="loginEmail" class="form__email" placeholder="Correo" autofocus>
         <label for="name">Correo</label>
       </div>
       <div class="form-group loginPassword--container">

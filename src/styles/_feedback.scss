@@ -1,0 +1,23 @@
+.feedback-container{
+    height: 60px;
+    background-color: red;
+    position: fixed;
+    bottom: 8px;
+    left: -100vw;
+    width: 95vw;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+    p{
+        flex: 0.8;
+    }
+    button {
+        flex: 0.2;
+    }
+}
+
+.feedback-container-shown {
+    left: 2.5vw;
+    transition: 0.5s;
+}

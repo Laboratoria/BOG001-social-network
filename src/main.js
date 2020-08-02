@@ -2,6 +2,7 @@ import router from './routes/router';
 // import start from './pages/start';
 import { validateSession } from './firebase/auth';
 import headerRouter from './routes/headers';
+import { setFeedbackHidingHandler } from './utils/error-message-handler';
 
 import './firebase/init';
 import './styles/styles.scss';
@@ -22,3 +23,5 @@ window.addEventListener('hashchange', () => {
   root.insertAdjacentElement('beforeend', router(window.location.hash));
   validateSession();
 });
+
+setFeedbackHidingHandler();
