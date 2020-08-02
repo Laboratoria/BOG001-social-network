@@ -20,7 +20,7 @@ const timeline = () => {
       <div class="event__interaction">
         <div>
           <span class="flaticon-strong icons"></span> 
-          <span>Asistire</span>
+          <span>Asistiré</span>
         </div>
         <div>
           <span class="flaticon-speech-bubble icons"></span>
