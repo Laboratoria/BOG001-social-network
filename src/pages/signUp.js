@@ -32,11 +32,10 @@ const signUp = () => {
         </div>
         <button id="button" type='submit'>Registrar</button>
       </form>
-      <div class='signUp__google'>
-          <h3>o registrate con</h3>
-          <h3>
-          <a id="signupGoogle" href='#/...'><img class="google-icon" src="../assets/seo-and-web.png" alt=""></a>
-          </h3>
+      <div class = "signUp__google">
+      <h3> ¿Ya tienes cuenta?</h3>
+      <a href = "#/login" id="" class="login__register">Inicia Sesion</a>
+      </div>
       </div>
     </section>`;
 
