@@ -10,17 +10,16 @@ export const validateSession = () => {
     return;
   }
   const session = localStorage.getItem('session');
-  // if (!session || !JSON.parse(session).user) {
-  if (!session) {
-    window.location.href = '#/login';
+  if (!session || !JSON.parse(session).user) {
+    window.location.href = 'http://localhost:8080/#/login';
   }
 };
 
 // Registro con correo y contraseña
-export const createUserByEmailAndPass = (email, password) => {
+export const createUserByEmailAndPass = (email, password, city, username) => {
   auth
     .createUserWithEmailAndPassword(email, password)
-    .then((userCredential, city, username) => {
+    .then((userCredential) => {
       userCredential.user.sendEmailVerification()
         .then(() => {
           const user = {
@@ -31,13 +30,13 @@ export const createUserByEmailAndPass = (email, password) => {
           };
           saveUser(user);
           showSuccessMessage('auth/user-registered');
+          localStorage.setItem('session', JSON.stringify(user));
+          window.location.href = '#/timeline';
         })
         .catch((error) => {
           showErrorMessage(error.code);
           throw error;
         });
-      localStorage.setItem('session', JSON.stringify(userCredential));
-      window.location.href = '#/timeline';
     })
     .catch((error) => {
       showErrorMessage(error.code);
@@ -51,7 +50,7 @@ export const loginUser = (email, password) => auth
   .then((userCredential) => {
     if (userCredential.user.emailVerified) {
       localStorage.setItem('session', JSON.stringify(userCredential));
-      window.location.href = '#/timeline';
+      window.location.href = 'http://localhost:8080/#/timeline';
     } else {
       showErrorMessage('auth/email-not-verified');
     }
@@ -84,8 +83,8 @@ export const loginUserGoogle = () => {
     }).catch((err) => {
       console.error(err);
     });
-    localStorage.setItem('session', JSON.stringify(user));
-    window.location.href = '#/timeline';
+    localStorage.setItem('session', JSON.stringify(userCredential));
+    window.location.href = 'http://localhost:8080/#/timeline';
   }).catch((error) => {
     showErrorMessage(error.code);
     throw error;

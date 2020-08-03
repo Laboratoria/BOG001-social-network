@@ -1,6 +1,11 @@
 import { loginUser, loginUserGoogle } from '../firebase/auth';
 
 const login = () => {
+  const loginUsers = () => {
+    const email = document.getElementById('email').value;
+    const pass = document.getElementById('password').value;
+    loginUser(email, pass);
+  };
   const view = `
     <section class="login container__form">
       <h1 class="login__title container__form--title"> Inicia sesión</h1>
@@ -16,7 +21,7 @@ const login = () => {
       </div>
         <button id="button" class="form__button" type="submit">Ingresar</button>
       </form>
-      <div class="signUp__google">
+      <div class='signUp__google'>
           <h3>o registrate con</h3>
           <button id="buttonGmail" type="button"><img class="google-icon" src="../assets/seo-and-web.png" alt=""></button>
       </div>
@@ -29,7 +34,6 @@ const login = () => {
 
   const container = document.createElement('div');
   container.innerHTML = view;
-
   const botonRegistro = container.querySelector('#loginForm');
   const buttonGmail = container.querySelector('#buttonGmail');
   const eyeIcon = container.querySelector('#eyeIcon');
@@ -45,12 +49,6 @@ const login = () => {
       eyeIcon.classList.toggle('eyeblock__icon');
       eyeIcon.classList.toggle('eye__icon');
     }
-  };
-
-  const loginUsers = () => {
-    const email = document.getElementById('email').value;
-    const pass = document.getElementById('password').value;
-    loginUser(email, pass);
   };
 
   botonRegistro.addEventListener('submit', (e) => { e.preventDefault(); loginUsers(); });
