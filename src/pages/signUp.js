@@ -14,7 +14,7 @@ const signUp = () => {
       </h1>
       <form class='form'>
         <div class="form-group">
-          <input id='' type='text' placeholder='username'>
+          <input id='username' type='text' placeholder='username'>
           <label for="name">Username</label>
         </div>
         <div class="form-group">
@@ -22,7 +22,7 @@ const signUp = () => {
           <label for="name">Correo</label>
         </div>
         <div class="form-group">
-          <input id='' type='text' placeholder='Ciudad'>
+          <input id='city' type='text' placeholder='Ciudad'>
           <label for="name">Ciudad</label>
         </div>
         <div class="form-group loginPassword--container">

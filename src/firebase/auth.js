@@ -43,3 +43,5 @@ export const loginUserGoogle = () => {
     console.log(err);
   });
 };
+
+// export const prueba = () => userCurrent;

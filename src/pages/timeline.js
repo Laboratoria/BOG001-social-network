@@ -1,3 +1,5 @@
+// import { allEvents } from '../firebase/post';
+
 const timeline = () => {
   const view = `
   <section class="timeline-container">
