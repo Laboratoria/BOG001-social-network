@@ -1,6 +1,6 @@
 import { saveEvent } from '../firebase/post';
 // import { prueba } from '../firebase/auth';
-
+// console.log(saveEvent);
 const event = () => {
   const view = `
   <section class = "event">
@@ -38,31 +38,16 @@ const event = () => {
   container.innerHTML = view;
   const eventForm = container.querySelector('#event-form');
 
-  const createEvent = async () => {
+  const createEvent = () => {
     const hour = document.getElementById('hora').value;
     const date = document.getElementById('fecha').value;
     const sport = document.getElementById('deporte').value;
     const place = document.getElementById('place').value;
     const description = document.getElementById('description').value;
 
-    // prueba().then((userCredential) => {
-    const post = {
-      // id: userCredential.post.uid,
-      hora: hour,
-      fecha: date,
-      deporte: sport,
-      lugar: place,
-      descripcion: description,
-      // fechaFirestore: timeStamp,
-    };
-    await saveEvent(post);
-    console.log(hour, date, sport, place, description);
-  // }).catch((error) => {
-  //   console.error(error);
+    saveEvent(hour, date, sport, place, description);
   };
-
   eventForm.addEventListener('submit', (e) => { e.preventDefault(); createEvent(); });
-
   return container;
 };
 

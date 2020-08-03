@@ -55,6 +55,15 @@
         text-decoration: none;
         @extend .center;
     }
+    button{
+        @extend .borderStyles;
+        background-color: $secondary_color;
+        width: 140px;
+        height: 2em;
+        color: $white_color;
+        font-size: 20px;
+        font-weight: bold;
+    }
 }
 
 .signUp__google{

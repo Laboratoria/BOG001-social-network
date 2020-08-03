@@ -12,7 +12,7 @@ const signUp = () => {
       <h1 class='container__form--title'>
           Registrate
       </h1>
-      <form class='form'>
+      <form id="formSignUp" class='form'>
         <div class="form-group">
           <input id='username' type='text' placeholder='username'>
           <label for="name">Username</label>
@@ -30,22 +30,27 @@ const signUp = () => {
           <label for="name">Contraseña</label>
           <span class="eye__icon" id="eyeIcon"></span>
         </div>
-        <a id="button" href="#/..." type='button'>Registrar</a>
+        <button id="button" type='submit'>Registrar</button>
       </form>
-      <div class='signUp__google'>
-          <h3>o registrate con</h3>
-          <h3>
-          <a id="signupGoogle" href='#/...'><img class="google-icon" src="../assets/seo-and-web.png" alt=""></a>
-          </h3>
+      <div class = "signUp__google">
+      <h3> ¿Ya tienes cuenta?</h3>
+      <a href = "#/login" id="" class="login__register">Inicia Sesion</a>
+      </div>
       </div>
     </section>`;
 
   const container = document.createElement('div');
   container.innerHTML = view;
-  const botonRegistro = container.querySelector('#button');
+  const botonRegistro = container.querySelector('#formSignUp');
   const signupGoogle = container.querySelector('#signupGoogle');
-  signupGoogle.addEventListener('click', (e) => { e.preventDefault(); loginUserGoogle(); });
-  botonRegistro.addEventListener('click', () => { createUser(); });
+  signupGoogle.addEventListener('click', (e) => {
+    e.preventDefault();
+    loginUserGoogle();
+  });
+  botonRegistro.addEventListener('submit', (e) => {
+    e.preventDefault();
+    createUser();
+  });
   const eyeIcon = container.querySelector('#eyeIcon');
   const loginPassword = container.querySelector('#loginPassword');
 
