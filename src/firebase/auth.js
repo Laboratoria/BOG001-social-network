@@ -10,7 +10,7 @@ export const validateSession = () => {
   }
   const session = localStorage.getItem('session');
   if (!session || !JSON.parse(session).user) {
-    window.location.href = '#/login';
+    window.location.href = 'http://localhost:8080/#/login';
   }
 };
 
@@ -40,7 +40,7 @@ export const loginUser = (email, password) => auth
   .then((userCredential) => {
     if (userCredential.user.emailVerified) {
       localStorage.setItem('session', JSON.stringify(userCredential));
-      window.location.href = '#/timeline';
+      window.location.href = 'http://localhost:8080/#/timeline';
     } else {
       showErrorMessage('auth/email-not-verified');
     }
@@ -55,7 +55,7 @@ export const loginUser = (email, password) => auth
 export const loginUserGoogle = () => {
   auth.signInWithPopup(provider).then((res) => {
     localStorage.setItem('session', JSON.stringify(res));
-    window.location.href = '#/timeline';
+    window.location.href = 'http://localhost:8080/#/timeline';
   }).catch((error) => {
     showErrorMessage(error.code);
     throw error;

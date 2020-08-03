@@ -1,6 +1,11 @@
 import { loginUser, loginUserGoogle } from '../firebase/auth';
 
 const login = () => {
+  const loginUsers = () => {
+    const email = document.getElementById('loginEmail').value;
+    const pass = document.getElementById('loginPassword').value;
+    loginUser(email, pass);
+  };
   const view = `
     <section class = "login container__form">
       <h1 class = "login__title container__form--title"> Inicia sesión</h1>
@@ -16,7 +21,7 @@ const login = () => {
         </div>
         <button type="submit" id="button" class="form__button">Ingresar</button>
       </form>
-      <div class="signUp__google">
+      <div class='signUp__google'>
           <h3>o registrate con</h3>
           <img id="buttonGmail" class="google-icon" src="../assets/seo-and-web.png" alt="Goglee">
       </div>
@@ -29,19 +34,20 @@ const login = () => {
 
   const container = document.createElement('div');
   container.innerHTML = view;
-
   const botonRegistro = container.querySelector('#loginForm');
   const buttonGmail = container.querySelector('#buttonGmail');
+  botonRegistro.addEventListener('submit', (e) => {
+    e.preventDefault();
+    loginUsers();
+  });
+  buttonGmail.addEventListener('click', (e) => {
+    e.preventDefault();
+    loginUserGoogle();
+  });
   const eyeIcon = container.querySelector('#eyeIcon');
   const loginPassword = container.querySelector('#loginPassword');
 
-  const loginUsers = () => {
-    const email = document.getElementById('loginEmail').value;
-    const pass = document.getElementById('loginPassword').value;
-    loginUser(email, pass);
-  };
-
-  const mostrarContrasena = () => {
+  function mostrarContrasena() {
     if (loginPassword.type === 'password') {
       loginPassword.type = 'text';
       eyeIcon.classList.toggle('eyeblock__icon');
@@ -51,16 +57,7 @@ const login = () => {
       eyeIcon.classList.toggle('eye__icon');
       loginPassword.type = 'password';
     }
-  };
-
-  botonRegistro.addEventListener('submit', (e) => {
-    e.preventDefault();
-    loginUsers();
-  });
-  buttonGmail.addEventListener('click', (e) => {
-    e.preventDefault();
-    loginUserGoogle();
-  });
+  }
 
   eyeIcon.addEventListener('click', mostrarContrasena);
 

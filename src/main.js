@@ -21,6 +21,7 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('hashchange', () => {
+  console.log(window.location.hash);
   if (window.location.hash !== '#/') {
     header.innerHTML = '';
     header.insertAdjacentElement('beforeend', headerRouter(window.location.hash));
