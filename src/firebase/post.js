@@ -11,7 +11,7 @@ export const allEvents = () => {
     .get()
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
-        console.log(`todos los post ${doc.data().descripcion}`);
+        console.log(`Descripcion post => ${doc.data().descripcion}`);
       });
     });
 };
