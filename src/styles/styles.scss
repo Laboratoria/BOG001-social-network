@@ -6,6 +6,10 @@
 @import './_header';
 @import './_feedback.scss';
 
+li {
+    list-style: none;
+}
+
 body {
     background-color: $primary_color;
     font-family: $font-family;
