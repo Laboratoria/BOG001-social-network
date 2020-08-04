@@ -4,6 +4,11 @@
 @import './_timeline.scss';
 @import './_event.scss';
 @import './_header';
+@import './_feedback.scss';
+
+li {
+    list-style: none;
+}
 
 body {
     background-color: $primary_color;

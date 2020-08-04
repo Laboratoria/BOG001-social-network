@@ -1,4 +1,7 @@
-import { auth, provider } from './init';
+import { auth, provider, database } from './init';
+import { saveUser } from './database';
+import { showErrorMessage } from '../utils/error-message-handler';
+import { showSuccessMessage } from '../utils/success-message-handler';
 
 
 // valida si hay una sesion
@@ -13,33 +16,85 @@ export const validateSession = () => {
 };
 
 // Registro con correo y contraseña
-export const createUserByEmailAndPass = (email, password) => {
+export const createUserByEmailAndPass = (email, password, city, username) => {
   auth
     .createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
-      console.log(userCredential);
+      userCredential.user.sendEmailVerification()
+        .then(() => {
+          const user = {
+            id: userCredential.user.uid,
+            usuario: username,
+            correo: userCredential.user.email,
+            ciudad: city,
+          };
+          saveUser(user);
+          showSuccessMessage('auth/user-registered');
+          localStorage.setItem('session', JSON.stringify(user));
+          window.location.href = '#/timeline';
+        })
+        .catch((error) => {
+          showErrorMessage(error.code);
+          throw error;
+        });
+    })
+    .catch((error) => {
+      showErrorMessage(error.code);
+      throw error;
     });
 };
 
 // Inicio de sesion
-export const loginUser = (email, password) => {
-  auth
-    .signInWithEmailAndPassword(email, password)
-    .then((userCredential) => {
+export const loginUser = (email, password) => auth
+  .signInWithEmailAndPassword(email, password)
+  .then((userCredential) => {
+    if (userCredential.user.emailVerified) {
       localStorage.setItem('session', JSON.stringify(userCredential));
       window.location.href = 'http://localhost:8080/#/timeline';
-      setTimeout(validateSession, 3000);
-    });
-};
+    } else {
+      showErrorMessage('auth/email-not-verified');
+    }
+  })
+  .catch((error) => {
+    showErrorMessage(error.code);
+    throw error;
+  });
 
 
 // Inicio de Sesion Google
 export const loginUserGoogle = () => {
-  auth.signInWithPopup(provider).then((res) => {
-    localStorage.setItem('session', JSON.stringify(res));
+  auth.signInWithPopup(provider).then((userCredential) => {
+    const user = {
+      id: userCredential.user.uid,
+      usuario: userCredential.user.displayName,
+      correo: userCredential.user.email,
+      photo: userCredential.user.photoURL,
+    };
+    const users = database.collection('users');
+    const consulta = users.where('id', '==', user.id).get();
+    consulta.then((res) => {
+      if (res.empty) {
+        saveUser(user);
+      } else {
+        res.forEach((doc) => {
+          console.log(doc.id, '=>', doc.data());
+        });
+      }
+    }).catch((err) => {
+      console.error(err);
+    });
+    localStorage.setItem('session', JSON.stringify(userCredential));
     window.location.href = 'http://localhost:8080/#/timeline';
-    setTimeout(validateSession, 3000);
-  }).catch((err) => {
-    console.log(err);
+  }).catch((error) => {
+    showErrorMessage(error.code);
+    throw error;
+  });
+};
+
+// Cerrar sesion
+export const logout = () => {
+  auth.signOut().then(() => {
+    localStorage.clear();
+    window.location.href = '#/login';
   });
 };
