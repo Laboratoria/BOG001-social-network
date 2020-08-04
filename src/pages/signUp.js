@@ -1,4 +1,4 @@
-import { createUserByEmailAndPass } from '../firebase/auth';
+import { createUserByEmailAndPass, loginUserGoogle } from '../firebase/auth';
 
 const signUp = () => {
   const createUser = () => {
@@ -27,16 +27,20 @@ const signUp = () => {
           <input id='city' type='text' placeholder='Ciudad' required>
           <label for="city">Ciudad</label>
         </div>
-        <div class="form-group loginPassword--container">
-          <input id = "password" type='password' placeholder='Contraseña' required>
+        <div class="form-group password--container">
+          <input type="password" id="password" placeholder="Contraseña" required>
           <label for="password">Contraseña</label>
           <span class="eye__icon" id="eyeIcon"></span>
         </div>
         <button id="button" type='submit'>Registrar</button>
       </form>
+      <div class='signUp__google'>
+        <h3>o registrate con</h3>
+        <button id="buttonGmail" type="button"><img class="google-icon" src="../assets/seo-and-web.png" alt=""></button>
+      </div>
       <div class = "signUp__google">
-      <h3> ¿Ya tienes cuenta?</h3>
-      <a href = "#/login" id="" class="login__register">Inicia Sesion</a>
+        <h3> ¿Ya tienes cuenta?</h3>
+        <a href = "#/login" id="" class="login__register">Inicia Sesion</a>
       </div>
       </div>
     </section>`;
@@ -44,6 +48,7 @@ const signUp = () => {
   const container = document.createElement('div');
   container.innerHTML = view;
 
+  const buttonGmail = container.querySelector('#buttonGmail');
   const botonRegistro = container.querySelector('#formSignUp');
   botonRegistro.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -63,6 +68,8 @@ const signUp = () => {
       eyeIcon.classList.toggle('eye__icon');
     }
   };
+
+  buttonGmail.addEventListener('click', (e) => { e.preventDefault(); loginUserGoogle(); });
   eyeIcon.addEventListener('click', mostrarContrasena);
 
   return container;
