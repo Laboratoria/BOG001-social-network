@@ -44,9 +44,10 @@
         left:  12px;
         opacity: 0;
     }
-    a{
+    button{
         @extend .borderStyles;
         background-color: $secondary_color;
+        border: none;
         width: 140px;
         padding: 0.4em;
         color: $white_color;
@@ -54,15 +55,6 @@
         font-weight: bold;
         text-decoration: none;
         @extend .center;
-    }
-    button{
-        @extend .borderStyles;
-        background-color: $secondary_color;
-        width: 140px;
-        height: 2em;
-        color: $white_color;
-        font-size: 20px;
-        font-weight: bold;
     }
 }
 
@@ -83,13 +75,18 @@
         font-size: 1.1em;
         font-weight: bold;
     }
+    button {
+        background-color: $primary_color;
+        border: none;
+    }
 }
 
 .google-icon{
+    background-color: transparent;
     width: 40px;
 }
 
-.loginPassword--container{
+.password--container{
     display: flex;
     justify-content: center;
     align-items: center;

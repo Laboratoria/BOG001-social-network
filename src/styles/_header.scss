@@ -19,6 +19,9 @@
         bottom: 60px;
         right: 12px;
     }
+    .list {
+        display: none;
+    }
 }
 
 @media (min-width: $media-notebook){
