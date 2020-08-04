@@ -4,7 +4,6 @@ const error404 = () => {
     Error 404
   </h1>
   `;
-
   const container = document.createElement('div');
   container.innerHTML = view;
   return container;
