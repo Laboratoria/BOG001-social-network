@@ -25,6 +25,12 @@
 }
 
 @media (min-width: $media-notebook){
-    
+    .header{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+    }
 }
 
