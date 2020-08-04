@@ -1,4 +1,4 @@
-import { database } from './init';
+import { database, timeStamp } from './init';
 
 export const saveEvent = (hour, date, sport, place, description) => {
   const infLocalStorage = localStorage.getItem('session');
@@ -10,10 +10,11 @@ export const saveEvent = (hour, date, sport, place, description) => {
     id: IdUser,
     nombre: nameUser,
     hora: hour,
-    fecha: date,
+    fechaEvento: date,
     deporte: sport,
     lugar: place,
     descripcion: description,
+    fechaPublicacion: timeStamp,
   }).then((respuesta) => {
     console.log(respuesta);
   });
