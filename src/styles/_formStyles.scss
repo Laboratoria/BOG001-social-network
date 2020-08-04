@@ -113,3 +113,17 @@
         top: 7px;
     }
 }
+
+@media (min-width: $media-notebook){
+    .body{
+        background-color: red;
+    }
+    .container__form{
+        background-image: linear-gradient(
+            rgba(250, 77, 0, 0.7), 
+            rgba(229, 232, 236, 0.3)
+          ), url(../assets/man-dunking-the-ball-163452.jpg);
+        background-size: cover;  
+        height: 100vh;  
+    }
+}

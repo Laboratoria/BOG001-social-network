@@ -5,6 +5,8 @@
     height: 100px;
     &__logo{
         width: 50%;
+        min-width: 200px;
+        max-width: 300px;
     }
     .icons{
         color: $secondary_color;
@@ -17,5 +19,9 @@
         bottom: 60px;
         right: 12px;
     }
+}
+
+@media (min-width: $media-notebook){
+    
 }
 

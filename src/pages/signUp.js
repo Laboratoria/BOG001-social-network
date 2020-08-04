@@ -34,7 +34,7 @@ const signUp = () => {
       </form>
       <div class = "signUp__google">
       <h3> ¿Ya tienes cuenta?</h3>
-      <a href = "#/login" id="" class="login__register">Inicia Sesion</a>
+      <a href = "#/login" id="signupGoogle" class="login__register">Inicia Sesion</a>
       </div>
       </div>
     </section>`;
