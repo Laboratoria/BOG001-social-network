@@ -20,13 +20,13 @@ window.addEventListener('load', () => {
   }, 1500);
 });
 
-window.addEventListener('hashchange', () => {
+window.addEventListener('hashchange', async () => {
   if (window.location.hash !== '#/') {
     header.innerHTML = '';
     header.insertAdjacentElement('beforeend', headerRouter(window.location.hash));
   }
   root.innerHTML = '';
-  root.insertAdjacentElement('beforeend', router(window.location.hash));
+  root.insertAdjacentElement('beforeend', await router(window.location.hash));
   validateSession();
 });
 

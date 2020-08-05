@@ -5,7 +5,7 @@ import timeline from '../pages/timeline';
 import event from '../pages/event';
 import error404 from '../pages/error404';
 
-const router = (route) => {
+const router = async (route) => {
   switch (route) {
     case '#/':
       return start();
