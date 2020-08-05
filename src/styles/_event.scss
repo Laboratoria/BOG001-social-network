@@ -1,4 +1,5 @@
 .event{
+  margin: 0 0 1em 0;
   @extend .center;
   &title{
   text-align: center;
@@ -10,28 +11,39 @@
   display: flex;
   align-items: center;
   input{
-     @extend .borderStyles;
-     background-color: $white_color;
-     width: 200px;
-     height: 55px;
-     margin-bottom: 20px;
-     padding-left: 20px;
-
-      &::-moz-placeholder {
-         @include input
-        }
+    @extend .borderStyles;
+    font-family: $font-family;
+    background-color: $white_color;
+    width: 16em;
+    height: 2.6em;
+    margin-bottom: 1em;
+    padding: 0 1.5em;
+    
+    &::-moz-placeholder {
+      @include input
     }
+  }
+  
+  select{
+    @extend .borderStyles;
+    width: 19em;
+    height: 2.6em;
+    margin-bottom: 1em;
+    padding: 0 1.5em;
+  }
 
- button{
- @extend .borderStyles;
- background-color: $secondary_color;
- width: 140px;
- height: 42px;
- margin-top: 20px;
- color: $white_color;
- font-size: 20px;
- font-weight: bold;
- text-decoration: none;
- @extend .center;
+  textarea{
+    font-family: $font-family;
+    background-color: $white_color;
+    border-radius: 0.5em;
+    margin-bottom: 1em;
+    padding: 0.5em;
+  }
+
+  button{
+    @extend .borderStyles;
+    @extend .button;
+    @extend .center;
+    font-size: 1em;
   }
 }

@@ -5,12 +5,16 @@
     height: 100px;
     &__logo{
         width: 50%;
+        margin-right: 3em;
     }
     .icons{
         color: $secondary_color;
         width: 40px;
         height: 40px;
+        text-align: left;
+        padding: 0 0.5em;
         text-align: center;
+        font-size: 2em;
     }
     .postIcon{
         position: fixed;
