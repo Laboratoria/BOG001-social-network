@@ -20,16 +20,26 @@ export const saveEvent = (hour, date, sport, place, description) => {
   });
 };
 
-export const allEvents = () => {
-  database
-    .collection('events')
-    .orderBy('fecha', 'asc')
-    .get()
-    .then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        console.log(`Descripcion post => ${doc.data().descripcion}`);
-      });
-    });
-};
+export const getEvents = () => database.collection('events').get();
 
-allEvents();
+// window.addEventListener('DOMContentLoaded', async (e) => {
+//   const querySnapshot = await getEvents();
+//   querySnapshot.forEach(doc => {
+//     console.log(doc.data());
+
+//   })
+// })
+
+// export const allEvents = () => {
+//   database
+//     .collection('events')
+//     .orderBy('fecha', 'asc')
+//     .get()
+//     .then((querySnapshot) => {
+//       querySnapshot.forEach((doc) => {
+//         console.log(`Descripcion post => ${doc.data().lugar}`);
+//       });
+//     });
+// };
+
+// allEvents()

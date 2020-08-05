@@ -1,40 +1,27 @@
-// import { allEvents } from '../firebase/post';
+import { getEvents } from '../firebase/post';
 
-const timeline = () => {
-  const view = `
-  <section class="timeline-container">
-    <article class="event">
-      <div class="event__info">
-        <div class="event__upper--container">
-          <div class="user">
-            <img src="../assets/perfil.png">
-            <h2>Nombre de Usuario</h2>
-          </div>
-          <div class="sport">
-            <img src="../assets/balon.png">
-            <span>HORA</span>
-            <span>FECHA</span>
-          </div>
-        </div>
-        <p><span class="event__subtitle">Lugar:</span> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat eaque ipsum non</p>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat eaque ipsum non fugit aspernatur praesentium ab qui dolorem.</p>
-      </div>
-      <div class="event__interaction">
-        <div>
-          <span class="flaticon-strong icons"></span> 
-          <span>Asistiré</span>
-        </div>
-        <div>
-          <span class="flaticon-speech-bubble icons"></span>
-          <span>Comentar</span>
-        </div>
-      </div>
-    </article>
-  </section>
-  `;
-  const container = document.createElement('div');
-  container.innerHTML = view;
-  return container;
+function timeline(valor) {
+  const listElement = document.createElement('li');
+  listElement.innerHTML = `
+  <h1>HOLAAAAAAAAA</H1>
+  <p>${valor}</p>
+  <p>${valor}</p>`;
+  console.log(valor);
+  return listElement;
+}
+
+const exportData = async () => {
+  const querySnapshot = await getEvents();
+  querySnapshot.forEach((doc) => {
+    const data = doc.data().lugar;
+    timeline(data);
+  });
 };
+
+
+// console.log(timeline());
+exportData();
+
+// console.log(exportData());
 
 export default timeline;
