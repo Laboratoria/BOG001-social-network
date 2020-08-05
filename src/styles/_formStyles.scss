@@ -2,7 +2,7 @@
     @extend .display;
     .login__title{
     color: $secondary_color;
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
     }
 }
 
@@ -51,9 +51,10 @@
         width: 140px;
         padding: 0.4em;
         color: $white_color;
-        font-size: 20px;
+        font-size: 1em;
         font-weight: bold;
         text-decoration: none;
+        letter-spacing: 1px;
         @extend .center;
     }
     a{
