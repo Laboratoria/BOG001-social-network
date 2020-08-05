@@ -1,13 +1,19 @@
 import { logout } from '../firebase/auth';
 
+const getNameUser = () => {
+  const session = JSON.parse(localStorage.getItem('session'));
+  const sessionName = session.user.email;
+  return sessionName;
+};
+
 const headerTimeline = () => {
   const view = `
       <section class="header">
       <img class="header__logo" src="../assets/logoWhite.png" alt="phySport logo">
       <div class="flaticon-user-1 icons" id="menu">
         <ul class="list hide" id="menuList">
-        <li class="" >Nombre</li>
-        <li class="" id="exit">Cerrar Sesion</li>
+        <li class="header__menu__item" >${getNameUser()}</li>
+        <li class="header__menu__item" id="exit">Cerrar Sesion</li>
         </ul>
       </div>
       </section>
