@@ -1,6 +1,5 @@
 import { saveEvent } from '../firebase/post';
-// import { prueba } from '../firebase/auth';
-// console.log(saveEvent);
+
 const event = () => {
   const view = `
   <section class = "event">
