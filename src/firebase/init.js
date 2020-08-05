@@ -23,3 +23,6 @@ firebase.initializeApp(firebaseConfig);
 export const auth = firebase.auth();
 export const database = firebase.firestore();
 export const provider = new firebase.auth.GoogleAuthProvider();
+export const timeStamp = firebase.firestore.FieldValue.serverTimestamp();
+// export const getData = database.collection('events').doc();
+// export const userCurrent = firebase.auth().currentUser;
