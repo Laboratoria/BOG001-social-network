@@ -12,15 +12,29 @@
         color: $secondary_color;
         width: 40px;
         height: 40px;
+        text-align: left;
+        padding: 0 0.5em;
         text-align: center;
+        font-size: 2em;
+        position: relative;
     }
-    .postIcon{
-        position: fixed;
-        bottom: 60px;
-        right: 12px;
-    }
+    // .postIcon{
+    //     position: fixed;
+    //     bottom: 60px;
+    //     right: 12px;
+    // }
+
     .list {
-        display: none;
+        display: block;
+        background-color: $white_color;
+        transition: .3s all ease;
+        padding: 20px;
+        margin: 10px 0;
+        position: fixed;
+        right: 0;
+    }
+    .hide {
+        right: -200%;
     }
 }
 
@@ -31,9 +45,23 @@
         justify-content: space-evenly;
         align-items: center;
         width: 100vw;
-        .postIcon{
-            position: initial;
+        // .postIcon{
+        //     position: initial;
+        // }
+        .header__logo{
+            width: 30%;
         }
     }
 }
 
+  @media (min-width: $media-notebook) {
+    .header__logo{
+        width: 20%;
+    }
+    // .icons{
+    //     display: none;
+    // }
+    .list {
+        @include flex;
+    }
+}
