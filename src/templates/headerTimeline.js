@@ -1,13 +1,21 @@
 import { logout } from '../firebase/auth';
 
+const getNameUser = () => {
+  const session = JSON.parse(localStorage.getItem('session'));
+  const sessionName = session.user.email;
+  return sessionName;
+};
+
 const headerTimeline = () => {
   const view = `
       <section class="header">
-        <ul class="flaticon-list icons" id="menu">
-          <li class="list" id="exit">Cerrar Sesion</li>
+      <img class="header__logo" src="../assets/logoWhite.png" alt="phySport logo">
+      <div class="flaticon-user-1 icons" id="menu">
+        <ul class="list hide" id="menuList">
+        <li class="header__menu__item" >${getNameUser()}</li>
+        <li class="header__menu__item" id="exit">Cerrar Sesion</li>
         </ul>
-        <img class="header__logo" src="../assets/logoWhite.png" alt="phySport logo">
-        <a href="#/event"><span id="newEvent" class="flaticon-edit icons postIcon"></span></a>
+      </div>
       </section>
     `;
   const container = document.createElement('div');
@@ -15,7 +23,7 @@ const headerTimeline = () => {
 
   container.querySelector('#exit').addEventListener('click', logout);
   container.querySelector('#menu').addEventListener('click', () => {
-    container.querySelector('#exit').classList.toggle('list');
+    container.querySelector('#menuList').classList.toggle('hide');
   });
   return container;
 };

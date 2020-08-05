@@ -1,4 +1,5 @@
 .event{
+  padding-top: 100px;
   margin: 0 0 1em 0;
   @extend .center;
   &title{
@@ -45,5 +46,19 @@
     @extend .button;
     @extend .center;
     font-size: 1em;
+  }
+}
+
+.icon--close{
+  color: $secondary_color;
+  margin: 10px;
+}
+.event--link {
+  text-align: end;
+  width: 100%;
+}
+@media (min-width: $media-tablet){
+  .event{
+    
   }
 }

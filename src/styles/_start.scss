@@ -1,10 +1,11 @@
 .start {
   background-image: linear-gradient(
-    rgba(250, 77, 0, 0.7), 
-    rgba(229, 232, 236, 0.3)
+      rgba(250, 77, 0, 0.7), 
+      rgba(31, 31, 34, 0.6)
   ), url(../assets/inicio.png);
   background-size: cover;  
   height: 100vh;
+  background-position: center;
   &__container{
     height: 100%;
     background-color: transparent;
@@ -12,6 +13,7 @@
   }
   &__logo {
     width: 60%;
+    max-width: 600px;
     background-color: transparent;
   }
   &__slogan {
@@ -20,4 +22,16 @@
     color: $white_color;
     background-color: transparent;
   } 
+}
+
+@media (min-width: $media-tablet){
+  .start {
+    background-image: linear-gradient(
+      rgba(250, 77, 0, 0.7), 
+      rgba(31, 31, 34, 0.6)
+    ), url(../assets/fotopexel.jpg);
+    &__slogan {
+      font-size: 1.5em;
+    } 
+  }
 }

@@ -1,9 +1,9 @@
 import { saveEvent } from '../firebase/post';
-// import { prueba } from '../firebase/auth';
-// console.log(saveEvent);
+
 const event = () => {
   const view = `
   <section class = "event">
+  <a class="event--link" href="#/timeline"><span class="flaticon-close icon--close"></span></a>
     <h1 class="container__form--title">Crea tu evento</h1>
     <form class="event_form form" id="event-form" action = "" method = "">    
       <div class="">

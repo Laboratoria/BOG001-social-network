@@ -1,6 +1,6 @@
 import header from '../templates/header';
 import headerTimeline from '../templates/headerTimeline';
-import headerEvent from '../templates/headerEvent';
+// import headerEvent from '../templates/headerEvent';
 
 const headerRouter = (route) => {
   switch (route) {
@@ -11,7 +11,7 @@ const headerRouter = (route) => {
     case '#/timeline':
       return headerTimeline();
     case '#/event':
-      return headerEvent();
+      return headerTimeline();
     default:
       return header();
   }
