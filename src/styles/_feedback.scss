@@ -1,17 +1,22 @@
 .feedback-container{
-    height: 60px;
+    height: 40px;
+    padding: 5px;
     position: fixed;
     bottom: 8px;
     left: -100vw;
-    width: 95vw;
+    width: 92vw;
     border-radius: 4px;
     display: flex;
     align-items: center;
     transition: 0.5s;
     p{
+        color: $white_color;
+        font-size: 18px;
+        font-weight: bold;
         flex: 0.8;
     }
     button {
+        color: $primary_color;
         background-color: transparent;
         border: none;
         outline: none;
@@ -25,9 +30,15 @@
 }
 
 .feedback-container-error{
-    background-color: red;
+    background-color: #db3300;
 }
 
 .feedback-container-success{
-    background-color: green;
+    background-color: #28895e;
+}
+
+@media (min-width: $media-tablet){
+    .feedback-container{
+        width: 20vw;
+    }
 }

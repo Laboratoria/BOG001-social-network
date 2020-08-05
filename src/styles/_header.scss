@@ -24,13 +24,16 @@
     }
 }
 
-@media (min-width: $media-notebook){
+@media (min-width: $media-tablet){
     .header{
         position: absolute;
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
         width: 100vw;
+        .postIcon{
+            position: initial;
+        }
     }
 }
 

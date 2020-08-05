@@ -1,6 +1,6 @@
-.container__form{
-    @extend .center;
-    &--title{
+.form__box{
+    @extend .display;
+    .login__title{
     color: $secondary_color;
     margin-bottom: 2em;
     }
@@ -56,6 +56,10 @@
         text-decoration: none;
         @extend .center;
     }
+    a{
+        border-radius: 50px;
+        padding: 20px 30px;
+    }
 }
 
 .signUp__google{
@@ -76,7 +80,7 @@
         font-weight: bold;
     }
     button {
-        background-color: $primary_color;
+        background-color: transparent;
         border: none;
     }
 }
@@ -111,13 +115,23 @@
     }
 }
 
-@media (min-width: $media-notebook){
+@media (min-width: $media-tablet){
     .container__form{
         background-image: linear-gradient(
             rgba(250, 77, 0, 0.7), 
-            rgba(229, 232, 236, 0.3)
-          ), url(../assets/man-dunking-the-ball-163452.jpg);
+            rgba(31, 31, 34, 0.6)
+        ), url(../assets/man-dunking-the-ball-163452.jpg);
         background-size: cover;  
-        height: 100vh;  
+        height: 80vh;
+        width: 100vw;
+        padding-top: 20vh;
+    }
+    .form__box{
+        width: 50%;
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: rgba(2, 25, 69,.8);
+        padding: 20px 0;
+        border-radius: 10px;
     }
 }
