@@ -18,6 +18,10 @@
         font-size: 2em;
         position: relative;
     }
+
+    .header__menu__item {
+        font-size: 20px;
+    }
     // .postIcon{
     //     position: fixed;
     //     bottom: 60px;
@@ -58,9 +62,6 @@
     .header__logo{
         width: 20%;
     }
-    // .icons{
-    //     display: none;
-    // }
     .list {
         @include flex;
     }

@@ -2,7 +2,7 @@ import { getEvents } from '../firebase/post';
 
 const event = (evento) => {
   const eventContainer = document.createElement('article');
-  eventContainer.setAttribute('class', 'event');
+  eventContainer.setAttribute('class', 'eventTimeline');
   eventContainer.innerHTML = `
   <a href="#/event"><span id="newEvent" class="flaticon-edit icons postIcon"></span></a>
     <div class="event__info">
@@ -25,21 +25,21 @@ const event = (evento) => {
         <span class="flaticon-strong icons"></span>
         <span>Asistiré</span>
       </div>
-      <div>
+      <div class="event__interaction--position">
         <span class="flaticon-speech-bubble icons"></span>
         <span>Comentar</span>
       </div>
-      <div>
-      <div class="flaticon-menu icons">
-        <ul class="hide eventList">
-          <li>
-            Editar Evento
-          </li>
-          <li>
-            Eliminar Evento
-          </li>
-        </ul>
-      </div>
+      <div class="event__interaction--position">
+      <span class="flaticon-menu icons">
+      </span>
+      <ul class="hide eventList">
+        <li>
+          Editar Evento
+        </li>
+        <li>
+          Eliminar Evento
+        </li>
+      </ul>
     </div>
     </div>
   `;

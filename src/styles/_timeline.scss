@@ -2,8 +2,8 @@
   @extend .center;
 }
 
-.event {
-  margin: 40px 0;
+.eventTimeline {
+  margin: 20px 0;
   width: 80%;
 }
 
@@ -42,16 +42,18 @@ border-radius: 10px;
   @include flex;
 }
 
-.event__menu {
-  position: absolute;
-}
-
 .event__interaction {
+  align-items: flex-start;
+  height: 50px;
   width: 90vw;
   max-width: 700px;
   color: $white_color;
   justify-content: space-between;
   margin-top: 10px;
+}
+
+.event__interaction--position {
+  text-align: end;
 }
 
 .hide {
