@@ -12,12 +12,12 @@ const event = (evento) => {
         </div>
         <div class="sport">
           <img src="../assets/balon.png">
-          <span>HORA</span>
-          <span>FECHA</span>
+          <span>${evento.hora}</span>
+          <span>${evento.fechaEvento}</span>
         </div>
       </div>
       <p><span class="event__subtitle">Lugar:</span>${evento.lugar}</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat eaque ipsum non fugit aspernatur praesentium ab qui dolorem.</p>
+      <p>${evento.descripcion}</p>
     </div>
     <div class="event__interaction">
       <div>
