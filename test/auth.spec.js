@@ -1,8 +1,8 @@
 import {
-  credentials, successUid, passwordError, userError,
+  credentials, successUid, passwordError, userError, registrationError,
 } from './__mocks__/auth.mock';
 
-import { loginUser } from '../src/firebase/auth';
+import { loginUser, createUserByEmailAndPass } from '../src/firebase/auth';
 
 /* funcion que se va a llamar antes de cada prueba.
 * necesitamos que no exista navegacion en el test, jest no lo soporta
@@ -32,3 +32,12 @@ test('Debería fallar con el correo erróneo',
       expect(error.code).toStrictEqual(userError.code);
       expect(error.message).toStrictEqual(userError.message);
     }));
+
+describe('Funcion createUserByEmailAndPass', () => {
+  test('Debería fallar si el correo no es valido', () => {
+    createUserByEmailAndPass('holanda@holanda.com', credentials.password, 'Bogota', '').catch((error) => {
+      expect(error.code).toStrictEqual(registrationError.code);
+      expect(error.message).toStrictEqual(registrationError.message);
+    });
+  });
+});

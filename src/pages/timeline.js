@@ -71,9 +71,17 @@ const event = (evento) => {
   return eventContainer;
 };
 
+const createEventLink = `
+  <a href="#/event">
+    <span id="newEvent" class="flaticon-edit icons postIcon">
+    </span>
+  </a>
+`;
+
 const timeline = async () => {
   const container = document.createElement('section');
   container.setAttribute('class', 'timeline-container');
+  container.innerHTML = createEventLink;
 
   const exportData = async () => {
     const querySnapshot = await getEvents();
