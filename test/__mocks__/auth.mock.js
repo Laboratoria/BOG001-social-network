@@ -13,4 +13,9 @@ export const userError = {
   message: 'There is no user record corresponding to this identifier. The user may have been deleted.',
 };
 
+export const registrationError = {
+  code: 'auth/invalid-email',
+  message: 'The email address is badly formatted.',
+};
+
 export const successUid = 'kaQft18nVwgZiMhsT4aIlIr6I7M2';
