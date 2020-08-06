@@ -22,6 +22,8 @@ export const saveEvent = (hour, date, sport, place, description) => {
 
 export const getEvents = () => database.collection('events').get();
 
+export const editEvent = (id, data) => database.collection('events').doc(id).update(data);
+
 // window.addEventListener('DOMContentLoaded', async (e) => {
 //   const querySnapshot = await getEvents();
 //   querySnapshot.forEach(doc => {

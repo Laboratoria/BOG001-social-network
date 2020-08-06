@@ -1,8 +1,9 @@
-import { getEvents } from '../firebase/post';
+import { getEvents, editEvent } from '../firebase/post';
 
 const event = (evento) => {
   const eventContainer = document.createElement('article');
   eventContainer.setAttribute('class', 'eventTimeline');
+  const likesQuantity = evento.likes ? evento.likes.length : 0;
   eventContainer.innerHTML = `
     <div class="event__info">
       <div class="event__upper--container">
@@ -22,7 +23,7 @@ const event = (evento) => {
     <div class="event__interaction">
       <div>
         <span class="flaticon-strong icons__timeline"></span>
-        <span class="interaction__text">${console.log('200')} Asistiré</span>
+        <span class="interaction__text">${likesQuantity} Asistiré</span>
       </div>
       <div class="event__interaction--position">
         <span class="flaticon-speech-bubble icons__timeline"></span>
@@ -44,6 +45,18 @@ const event = (evento) => {
     <a href="#/event"><span id="newEvent" class="flaticon-edit icons postIcon"></span></a>
   `;
   eventContainer.querySelector('.flaticon-menu').addEventListener('click', () => eventContainer.querySelector('ul').classList.toggle('hide'));
+  eventContainer.querySelector('.flaticon-strong').addEventListener('click', () => {
+    let likes = evento.likes || [];
+    const user = JSON.parse(localStorage.getItem('session')).user.uid;
+    if (likes.includes(user)) {
+      likes = likes.filter(like => like !== user);
+    } else {
+      likes.push(user);
+    }
+    editEvent(evento.eventId, { likes });
+    evento.likes = likes;
+    eventContainer.querySelector('.interaction__text').innerHTML = `${likes.length} Asistiré`;
+  });
 
   return eventContainer;
 };
@@ -56,7 +69,7 @@ const timeline = async () => {
   const exportData = async () => {
     const querySnapshot = await getEvents();
     querySnapshot.forEach((doc) => {
-      container.insertAdjacentElement('beforeend', event(doc.data()));
+      container.insertAdjacentElement('afterbegin', event({ ...doc.data(), eventId: doc.id }));
     });
   };
 
