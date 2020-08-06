@@ -17,6 +17,7 @@ export const saveEvent = (hour, date, sport, place, description) => {
     fechaPublicacion: timeStamp,
   }).then((respuesta) => {
     console.log(respuesta);
+    window.location.href = '#/timeline';
   });
 };
 

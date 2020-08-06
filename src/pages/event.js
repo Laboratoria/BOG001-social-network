@@ -8,11 +8,11 @@ const event = () => {
     <form class="event_form form" id="event-form" action = "" method = "">    
       <div class="">
         <label for = "fname" class="">Fecha</label>
-        <input class="" type = "date" id = "fecha" name = "Fecha" required autocomplete = "off" >
+        <input  type="date" id="fecha" name="Fecha" required autocomplete = "off" >
       </div>
       <div class="">
         <label for = "Hora" class="">Hora</label>    
-        <input class="" type = "time" id = "hora" name  = "hora" autocomplete = "off" >
+        <input class="" type = "time" id = "hora" name  = "hora" required autocomplete = "off" >
       </div>      
       <div>
         <label class="" for = "fname">Deporte</label>
@@ -23,13 +23,13 @@ const event = () => {
         </select>
       </div>      
       <div class="">
-        <textarea name="place" id="place" cols="35" rows="3" placeholder="Lugar"></textarea>        
+        <textarea name="place" id="place" cols="35" rows="3" placeholder="Lugar" required></textarea>        
       </div>
       <div class="">
-        <textarea name="description" id="description" cols="35" rows="8" placeholder="Descripcion"></textarea>        
+        <textarea name="description" id="description" cols="35" rows="8" required placeholder="Descripcion"></textarea>        
       </div>      
       <div class="">
-        <button class="button" id = "publicar">Publicar</button>
+        <button type="submit" class="button" id = "publicar">Publicar</button>
       </div>
     </form>  
   </section>

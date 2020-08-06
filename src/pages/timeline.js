@@ -69,7 +69,7 @@ const timeline = async () => {
   const exportData = async () => {
     const querySnapshot = await getEvents();
     querySnapshot.forEach((doc) => {
-      container.insertAdjacentElement('afterbegin', event({ ...doc.data(), eventId: doc.id }));
+      container.insertAdjacentElement('beforeend', event({ ...doc.data(), eventId: doc.id }));
     });
   };
 
