@@ -25,13 +25,13 @@ const event = (evento) => {
           <span class="interaction__text">${likesQuantity} Asistiré</span>
         </div>
         <div class="event__interaction--position">
-          <span class="flaticon-speech-bubble icons__timeline"></span>
+          <span class="flaticon-chat icons__timeline"></span>
           <span class="interaction__text">Comentar</span>
         </div>
         <div class="event__interaction--position">
           <span class="flaticon-menu icons__timeline">
           </span>
-          <ul class="hide eventOptions">
+          <ul class="eventOptions">
             <li>
               <button class="eventOptions__btn">Editar Evento</button>
             </li>
@@ -42,7 +42,6 @@ const event = (evento) => {
         </div>
       </div>
     </div>
-    <a href="#/event"><span id="newEvent" class="flaticon-edit icons postIcon"></span></a>
   `;
   eventContainer.querySelector('.flaticon-menu').addEventListener('click', () => eventContainer.querySelector('ul').classList.toggle('hide'));
   eventContainer.querySelector('.flaticon-strong').addEventListener('click', () => {
@@ -73,7 +72,7 @@ const event = (evento) => {
 
 const createEventLink = `
   <a href="#/event">
-    <span id="newEvent" class="flaticon-edit icons postIcon">
+    <span id="newEvent" class="flaticon-plus icons postIcon">
     </span>
   </a>
 `;

@@ -73,18 +73,18 @@
 
 .eventOptions{
   @extend .display;
-  padding: 0;
-  width: 110px;
+  padding: 0 10px;
   background: $white_color;
-  margin: 0;
-  margin-top: 0.5em;
+  margin: 0 auto;
   height: 20vh;
   position: fixed;
-  bottom: 0;
+  bottom: -20vh;
   right: 0;
   left: 0;
   width: 100%;
+  max-width: 800px;
   z-index: 1;  
+  transition: 0.5s;
   &__btn {
     background-color: transparent;
     border: none;
@@ -95,18 +95,20 @@
   }
 }
 
+.hide {
+  bottom: 0;
+  transition: 0.5s;
+}
+
 .event__interaction--position {
   text-align: end;
 }
 
-.hide {
-  opacity: 0;
-}
 
 .postIcon{
   color: $secondary_color;
   position: fixed;
-  bottom: 60px;
+  bottom: 90px;
   right: 20px;
 }
 

@@ -29,16 +29,17 @@
     // }
 
     .list {
-        display: block;
+        height: 50px;
         background-color: $white_color;
-        transition: .3s all ease;
         padding: 20px;
         margin: 10px 0;
         position: fixed;
-        right: 0;
+        right: -110vw;
+        top: 80px;
+        transition: 0.5s;
     }
     .hide {
-        right: -200%;
+        right: 1vw;
     }
 }
 
@@ -62,7 +63,7 @@
     .header__logo{
         width: 20%;
     }
-    .list {
-        @include flex;
-    }
+    // .list {
+    //     @include flex;
+    // }
 }
