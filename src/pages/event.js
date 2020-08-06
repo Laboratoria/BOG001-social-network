@@ -3,8 +3,8 @@ import { saveEvent } from '../firebase/post';
 const event = () => {
   const view = `
   <section class = "event">
-  <a class="event--link" href="#/timeline"><span class="flaticon-close icon--close"></span></a>
-    <h1 class="container__form--title">Crea tu evento</h1>
+  <a href="#/timeline"><span class="flaticon-close postIcon"></span></a>
+    <h1 class="login__title container__form--title">Crea tu evento</h1>
     <form class="event_form form" id="event-form" action = "" method = "">    
       <div class="">
         <label for = "fname" class="">Fecha</label>

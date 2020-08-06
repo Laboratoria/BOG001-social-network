@@ -4,7 +4,6 @@ const event = (evento) => {
   const eventContainer = document.createElement('article');
   eventContainer.setAttribute('class', 'eventTimeline');
   eventContainer.innerHTML = `
-  <a href="#/event"><span id="newEvent" class="flaticon-edit icons postIcon"></span></a>
     <div class="event__info">
       <div class="event__upper--container">
         <div class="user">
@@ -12,25 +11,25 @@ const event = (evento) => {
           <h2>${evento.nombre}</h2>
         </div>
         <div class="sport">
-          <img src="../assets/balon.png">
+          <img class="sport__icon" src="../assets/balon.png">
           <span>${evento.hora}</span>
           <span>${evento.fechaEvento}</span>
         </div>
       </div>
-      <p><span class="event__subtitle">Lugar:</span>${evento.lugar}</p>
+      <p><span class="event__subtitle">Lugar: </span>${evento.lugar}</p>
       <p>${evento.descripcion}</p>
     </div>
     <div class="event__interaction">
       <div>
-        <span class="flaticon-strong icons"></span>
-        <span>Asistiré</span>
+        <span class="flaticon-strong icons__timeline"></span>
+        <span class="interaction__text">${console.log('200')} Asistiré</span>
       </div>
       <div class="event__interaction--position">
-        <span class="flaticon-speech-bubble icons"></span>
-        <span>Comentar</span>
+        <span class="flaticon-speech-bubble icons__timeline"></span>
+        <span class="interaction__text">Comentar</span>
       </div>
       <div class="event__interaction--position">
-      <span class="flaticon-menu icons">
+      <span class="flaticon-menu icons__timeline">
       </span>
       <ul class="hide eventList">
         <li>
@@ -42,6 +41,7 @@ const event = (evento) => {
       </ul>
     </div>
     </div>
+    <a href="#/event"><span id="newEvent" class="flaticon-edit icons postIcon"></span></a>
   `;
   eventContainer.querySelector('.flaticon-menu').addEventListener('click', () => eventContainer.querySelector('ul').classList.toggle('hide'));
 

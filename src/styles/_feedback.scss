@@ -2,7 +2,7 @@
     height: 40px;
     padding: 5px;
     position: fixed;
-    bottom: 8px;
+    bottom: 28px;
     left: -100vw;
     width: 92vw;
     border-radius: 4px;
@@ -25,7 +25,7 @@
 }
 
 .feedback-container-shown {
-    left: 2.5vw;
+    left: 4.5vw;
     transition: 0.5s;
 }
 
@@ -39,6 +39,6 @@
 
 @media (min-width: $media-tablet){
     .feedback-container{
-        width: 20vw;
+        width: 30vw;
     }
 }

@@ -1,39 +1,58 @@
+.icons__timeline::before{
+  font-size: 25px;
+  margin: 0;
+}
+
+
 .timeline-container {
   @extend .center;
 }
 
 .eventTimeline {
   margin: 20px 0;
-  width: 80%;
+  width: 90%;
 }
 
 .event__info {
-background-color: rgba(229, 232, 236, 0.2);
-color: $white_color;
-margin: 0 auto;
-padding: 20px;
-width: 90%;
-max-width: 800px;
-border-radius: 10px;
+  background-color: rgba(229, 232, 236, 0.2);
+  color: $white_color;
+  margin: 0 auto;
+  padding: 10px;
+  width: auto;
+  max-width: 800px;
+  border-radius: 4px;
+  height: 180px;
+  p{
+    margin: 10px 0;
+  }
+}
+
+.interaction__text{
+  font-size: 10px;
 }
 
 .event__upper--container {
   @include flex;
+  height: auto;
   h2 {
     font-size: 16px;
   }
+  .sport__icon{
+    width: 20px;
+  }
   img {
-    margin: 0 10px;
-    width: 40px;
+    margin: 0 5px;
+    width: 30px;
   }
   span {
     margin: 0 5px;
+    font-size: 14px;
   }
 }
 
 .event__subtitle {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .user,
@@ -45,11 +64,19 @@ border-radius: 10px;
 .event__interaction {
   align-items: flex-start;
   height: 50px;
-  width: 90vw;
-  max-width: 700px;
+  width: auto;
+  max-width: 800px;
   color: $white_color;
   justify-content: space-between;
-  margin-top: 10px;
+  margin: 0 auto;
+  padding-top: 15px;
+}
+
+.eventList{
+  padding: 0;
+  width: 110px;
+  margin: 0;
+  margin-top: 25px;
 }
 
 .event__interaction--position {
@@ -64,7 +91,7 @@ border-radius: 10px;
   color: $secondary_color;
   position: fixed;
   bottom: 60px;
-  right: 12px;
+  right: 20px;
 }
 
 @media (min-width: $media-tablet) {
@@ -73,10 +100,16 @@ border-radius: 10px;
     margin: 0 auto;
     width: 80%;
   }
+  .postIcon{
+    right: 60px;
+  }
 }
 
 @media (min-width: $media-desktop) {
   .timeline-container {
     width: 60%;
+  }
+  .postIcon{
+    right: 100px;
   }
 }
