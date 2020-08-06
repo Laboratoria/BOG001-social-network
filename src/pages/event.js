@@ -23,10 +23,10 @@ const event = () => {
         </select>
       </div>      
       <div class="">
-        <textarea name="place" id="place" cols="35" rows="3" placeholder="Lugar" required></textarea>        
+        <textarea name="place" id="place" cols="35" rows="3" maxlength="80" placeholder="Lugar, maximo 80 caracteres" required></textarea>        
       </div>
       <div class="">
-        <textarea name="description" id="description" cols="35" rows="8" required placeholder="Descripcion"></textarea>        
+        <textarea name="description" id="description" cols="35" rows="8" maxlength="150" placeholder="Descripcion maximo 150 caracteres" required></textarea>        
       </div>      
       <div class="">
         <button type="submit" class="button" id = "publicar">Publicar</button>

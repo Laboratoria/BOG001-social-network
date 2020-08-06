@@ -19,28 +19,28 @@ const event = (evento) => {
       </div>
       <p><span class="event__subtitle">Lugar: </span>${evento.lugar}</p>
       <p>${evento.descripcion}</p>
-    </div>
-    <div class="event__interaction">
-      <div>
-        <span class="flaticon-strong icons__timeline"></span>
-        <span class="interaction__text">${likesQuantity} Asistiré</span>
+      <div class="event__interaction">
+        <div>
+          <span class="flaticon-strong icons__timeline"></span>
+          <span class="interaction__text">${likesQuantity} Asistiré</span>
+        </div>
+        <div class="event__interaction--position">
+          <span class="flaticon-speech-bubble icons__timeline"></span>
+          <span class="interaction__text">Comentar</span>
+        </div>
+        <div class="event__interaction--position">
+          <span class="flaticon-menu icons__timeline">
+          </span>
+          <ul class="hide eventOptions">
+            <li>
+              <button class="eventOptions__btn">Editar Evento</button>
+            </li>
+            <li>
+              <button class="eventOptions__btn eliminar" data-id="${evento.id}">Eliminar Evento</button>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="event__interaction--position">
-        <span class="flaticon-speech-bubble icons__timeline"></span>
-        <span class="interaction__text">Comentar</span>
-      </div>
-      <div class="event__interaction--position">
-      <span class="flaticon-menu icons__timeline">
-      </span>
-      <ul class="hide eventList">
-        <li>
-          Editar Evento
-        </li>
-        <li>
-          <button class="eliminar" data-id="${evento.id}">Eliminar Evento</button>
-        </li>
-      </ul>
-    </div>
     </div>
     <a href="#/event"><span id="newEvent" class="flaticon-edit icons postIcon"></span></a>
   `;
