@@ -1,4 +1,4 @@
-import { getEvents } from '../firebase/post';
+import { getEvents, deletePost } from '../firebase/post';
 
 const event = (evento) => {
   const eventContainer = document.createElement('article');
@@ -37,7 +37,7 @@ const event = (evento) => {
           Editar Evento
         </li>
         <li>
-          Eliminar Evento
+          <button class="eliminar" data-id="${evento.id}">Eliminar Evento</button>
         </li>
       </ul>
     </div>
@@ -45,6 +45,16 @@ const event = (evento) => {
   `;
   eventContainer.querySelector('.flaticon-menu').addEventListener('click', () => eventContainer.querySelector('ul').classList.toggle('hide'));
 
+  eventContainer.querySelector('.eliminar').addEventListener('click', async () => {
+    const user = JSON.parse(localStorage.getItem('session')).user.uid;
+    if (user === evento.id) {
+      await deletePost(evento.eventId);
+      console.log(evento.eventId);
+      eventContainer.innerHTML = '';
+    } else {
+      console.log('No puedes eliminar este evento');
+    }
+  });
   return eventContainer;
 };
 
@@ -52,11 +62,10 @@ const timeline = async () => {
   const container = document.createElement('section');
   container.setAttribute('class', 'timeline-container');
 
-
   const exportData = async () => {
     const querySnapshot = await getEvents();
     querySnapshot.forEach((doc) => {
-      container.insertAdjacentElement('beforeend', event(doc.data()));
+      container.insertAdjacentElement('beforeend', event({ ...doc.data(), eventId: doc.id }));
     });
   };
 
