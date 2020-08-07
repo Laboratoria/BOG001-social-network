@@ -68,15 +68,6 @@ const event = (evento) => {
     }
   });
 
-  eventContainer.querySelector('.edit').addEventListener('click', async () => {
-    if (user === evento.id) {
-      window.location.href = '#/event';
-      const doc = await getEvents(evento.eventId);
-      const event = doc.data();
-    } else {
-      console.log('No puedes editar este evento');
-    }
-  });
   return eventContainer;
 };
 
