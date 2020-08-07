@@ -71,6 +71,34 @@
   padding-top: 15px;  
 }
 
+h3{
+  color: $secondary_color;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.input__comment{
+  width: 60%;
+  font-family: "Roboto", sans-serif;
+  background-color: #E5E8EC;
+  border-radius: 0.5em;
+  margin-bottom: 1em;
+  padding: 0.5em;
+  outline: none;
+  color: $primary_color;
+}
+
+.comment--btn{
+  background-color: $secondary_color;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  padding: 10px;
+  color: $white_color;
+  font-weight: bold;
+  margin: 0 20px;
+}
+
 .eventOptions{
   @extend .display;
   padding: 0 10px;
@@ -88,6 +116,7 @@
   &__btn {
     background-color: transparent;
     border: none;
+    outline: none;
     color: $primary_color;
     font-size: 1em;    
     padding: 1em;

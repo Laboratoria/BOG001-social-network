@@ -25,6 +25,8 @@ export const getEvents = () => database.collection('events').orderBy('fechaPubli
 
 export const editEvent = (id, data) => database.collection('events').doc(id).update(data);
 
+export const getEventById = id => database.collection('events').doc(id).get();
+
 export const deletePost = (id) => {
   database.collection('events').doc(id).delete();
 };

@@ -1,9 +1,12 @@
-import { getEvents, editEvent, deletePost } from '../firebase/post';
+import {
+  getEvents, editEvent, deletePost, getEventById,
+} from '../firebase/post';
 
 const event = (evento) => {
   const eventContainer = document.createElement('article');
   eventContainer.setAttribute('class', 'eventTimeline');
   const likesQuantity = evento.likes ? evento.likes.length : 0;
+  const commentQuantity = evento.comment ? evento.comment.length : 0;
   eventContainer.innerHTML = `
     <div class="event__info">
       <div class="event__upper--container">
@@ -26,7 +29,15 @@ const event = (evento) => {
         </div>
         <div class="event__interaction--position">
           <span class="flaticon-chat icons__timeline"></span>
-          <span class="interaction__text">Comentar</span>
+          <span class="interaction__text commentQuantity">${commentQuantity} Comentarios</span>
+          <form class="eventOptions" id="form__comment">
+            <h3 class="">Comentar a ${evento.nombre}</h3>
+            <textarea class="input__comment" maxlength="100" id="comment" cols="35" rows="3" required></textarea>
+            <div>
+              <button class="comment--btn" type="submit">Comentar</button>
+              <button class="comment--btn" type="button">Cancelar</button>
+            </div>
+          </form>
         </div>
         <div class="event__interaction--position">
           <span class="flaticon-menu icons__timeline">
@@ -41,9 +52,59 @@ const event = (evento) => {
           </ul>
         </div>
       </div>
+      <div class="comment__container">
+      </div>
     </div>
   `;
+  const createComment = () => {
+    const comment = evento.comment || [];
+    const commentValue = eventContainer.querySelector('.input__comment').value;
+    const { displayName, uid } = JSON.parse(localStorage.getItem('session')).user;
+    comment.push({
+      comment: commentValue,
+      username: displayName,
+      useId: uid,
+    });
+    editEvent(evento.eventId, { comment });
+    eventContainer.querySelector('.commentQuantity').innerHTML = `${comment.length} comentarios`;
+  };
+
+  const printComment = async () => {
+    const commentContainer = eventContainer.querySelector('.comment__container');
+    const querySnapshot = await getEventById(evento.eventId);
+    const comment = querySnapshot.data().comment;
+
+    if (comment && !evento.open) {
+      comment.forEach((com) => {
+        const commentTemplate = document.createElement('p');
+        commentTemplate.innerText = `${com.username}: 
+        ${com.comment}`;
+        commentContainer.insertAdjacentElement('beforeend', commentTemplate);
+      });
+    }
+
+    if (evento.open) {
+      commentContainer.innerHTML = '';
+    }
+
+    evento.open = !evento.open;
+  };
+
+  eventContainer.querySelector('.flaticon-chat').addEventListener('click', () => {
+    eventContainer.querySelector('#form__comment').classList.toggle('hide');
+    printComment();
+  });
+
+  eventContainer.querySelector('#form__comment').addEventListener('submit', (e) => {
+    e.preventDefault();
+    createComment();
+    eventContainer.querySelector('#form__comment').classList.toggle('hide');
+    printComment();
+  });
+
+
   eventContainer.querySelector('.flaticon-menu').addEventListener('click', () => eventContainer.querySelector('ul').classList.toggle('hide'));
+
   eventContainer.querySelector('.flaticon-strong').addEventListener('click', () => {
     let likes = evento.likes || [];
     const user = JSON.parse(localStorage.getItem('session')).user.uid;
