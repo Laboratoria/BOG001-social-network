@@ -1,6 +1,7 @@
 import { getEvents, editEvent, deletePost } from '../firebase/post';
 
 const event = (evento) => {
+  const user = JSON.parse(localStorage.getItem('session')).user.uid;
   const eventContainer = document.createElement('article');
   eventContainer.setAttribute('class', 'eventTimeline');
   const likesQuantity = evento.likes ? evento.likes.length : 0;
@@ -33,10 +34,10 @@ const event = (evento) => {
           </span>
           <ul class="eventOptions">
             <li>
-              <button class="eventOptions__btn">Editar Evento</button>
+              <button class="eventOptions__btn edit">Editar Evento</button>
             </li>
             <li>
-              <button class="eventOptions__btn eliminar" data-id="${evento.id}">Eliminar Evento</button>
+              <button class="eventOptions__btn delete" data-id="${evento.id}">Eliminar Evento</button>
             </li>
           </ul>
         </div>
@@ -44,9 +45,9 @@ const event = (evento) => {
     </div>
   `;
   eventContainer.querySelector('.flaticon-menu').addEventListener('click', () => eventContainer.querySelector('ul').classList.toggle('hide'));
+  // funcion asistire
   eventContainer.querySelector('.flaticon-strong').addEventListener('click', () => {
     let likes = evento.likes || [];
-    const user = JSON.parse(localStorage.getItem('session')).user.uid;
     if (likes.includes(user)) {
       likes = likes.filter(like => like !== user);
     } else {
@@ -56,15 +57,24 @@ const event = (evento) => {
     evento.likes = likes;
     eventContainer.querySelector('.interaction__text').innerHTML = `${likes.length} Asistiré`;
   });
-
-  eventContainer.querySelector('.eliminar').addEventListener('click', async () => {
-    const user = JSON.parse(localStorage.getItem('session')).user.uid;
+  // funcion eliminar evento
+  eventContainer.querySelector('.delete').addEventListener('click', async () => {
     if (user === evento.id) {
       await deletePost(evento.eventId);
       console.log(evento.eventId);
       eventContainer.innerHTML = '';
     } else {
       console.log('No puedes eliminar este evento');
+    }
+  });
+
+  eventContainer.querySelector('.edit').addEventListener('click', async () => {
+    if (user === evento.id) {
+      window.location.href = '#/event';
+      const doc = await getEvents(evento.eventId);
+      const event = doc.data();
+    } else {
+      console.log('No puedes editar este evento');
     }
   });
   return eventContainer;
