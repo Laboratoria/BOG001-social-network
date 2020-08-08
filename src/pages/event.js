@@ -17,9 +17,11 @@ const event = () => {
       <div>
         <label class="" for = "fname">Deporte</label>
         <select class="" type = "text" id = "deporte" name = "Deporte" required autocomplete = "off" >
-          <option class="" value="Futbol">Futbol</option>
+          <option class="" value="Futbol">Fútbol</option>
           <option class="" value="Baloncesto">Baloncesto</option>
           <option class="" value="Senderismo">Senderismo</option>
+          <option class="" value="Béisbol">Béisbol</option>
+          <option class="" value="Ciclismo">Ciclismo</option>
         </select>
       </div>      
       <div class="">

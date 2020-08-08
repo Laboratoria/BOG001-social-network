@@ -79,6 +79,7 @@ const event = (evento) => {
     if (comment && !evento.open) {
       comment.forEach((com) => {
         const commentTemplate = document.createElement('p');
+        commentTemplate.setAttribute('class', 'flaticon-remove delete__comment');
         commentTemplate.innerText = `${com.username}: 
         ${com.comment}`;
         commentContainer.insertAdjacentElement('beforeend', commentTemplate);
@@ -90,6 +91,10 @@ const event = (evento) => {
     }
 
     evento.open = !evento.open;
+
+    document.querySelector('.delete__comment').addEventListener('click', () => {
+      console.log('aqui deberia eliminar pero nos e me ocurre como');
+    });
   };
 
   eventContainer.querySelector('.flaticon-chat').addEventListener('click', () => {
