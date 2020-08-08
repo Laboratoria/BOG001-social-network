@@ -62,13 +62,13 @@ const event = (evento) => {
   eventContainer.querySelector('.delete').addEventListener('click', async () => {
     if (user === evento.id) {
       await deletePost(evento.eventId);
-      console.log(evento.eventId);
+      // console.log(evento.eventId);
       eventContainer.innerHTML = '';
     } else {
       console.log('No puedes eliminar este evento');
     }
   });
-
+  // funcion editar evento
   eventContainer.querySelector('.edit').addEventListener('click', async () => {
     if (user === evento.id) {
       window.location.href = `#/editarEvento?editEvent=${evento.eventId}`;
