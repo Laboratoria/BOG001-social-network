@@ -4,7 +4,7 @@ const editarEvento = async (eventId) => {
   const container = document.createElement('div');
   const doc = await getEvent(eventId);
   const event = doc.data();
-  console.log(doc);  
+  console.log(doc);
   const view = `
   <section class = "event">
   <a href="#/timeline"><span class="flaticon-remove postIcon"></span></a>
@@ -47,7 +47,7 @@ const editarEvento = async (eventId) => {
     const date = document.getElementById('fecha').value;
     const sport = document.getElementById('deporte').value;
     const place = document.getElementById('place').value;
-    const description = document.getElementById('description').value;    
+    const description = document.getElementById('description').value;
 
     editEvent(eventId, {
       hora: hour,
@@ -57,21 +57,9 @@ const editarEvento = async (eventId) => {
       descripcion: description,
     });
     window.location.href = '#/timeline';
-  }
+  };
 
   eventForm.addEventListener('submit', (e) => { e.preventDefault(); updateEvents(); });
-    
-    
-  //   updateEvent(eventId, {
-  //     fechaEvento: date,
-  //     hora: hour,
-  //     deporte: sport,
-  //     lugar: place,
-  //     descripcion: description,
-  //   })
-  // })  
-  
-  
   return container;
 };
 
