@@ -21,10 +21,10 @@ export const saveEvent = (hour, date, sport, place, description) => {
   });
 };
 
+export const getEvent = id => database.collection('events').doc(id).get();
+
 export const getEvents = () => database.collection('events').orderBy('fechaPublicacion', 'desc').get();
 
 export const editEvent = (id, data) => database.collection('events').doc(id).update(data);
 
-export const deletePost = (id) => {
-  database.collection('events').doc(id).delete();
-};
+export const deletePost = id => database.collection('events').doc(id).delete();

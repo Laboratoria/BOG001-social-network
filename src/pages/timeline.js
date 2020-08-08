@@ -44,6 +44,7 @@ const event = (evento) => {
       </div>
     </div>
   `;
+
   eventContainer.querySelector('.flaticon-menu').addEventListener('click', () => eventContainer.querySelector('ul').classList.toggle('hide'));
   // funcion asistire
   eventContainer.querySelector('.flaticon-strong').addEventListener('click', () => {
@@ -65,6 +66,14 @@ const event = (evento) => {
       eventContainer.innerHTML = '';
     } else {
       console.log('No puedes eliminar este evento');
+    }
+  });
+
+  eventContainer.querySelector('.edit').addEventListener('click', async () => {
+    if (user === evento.id) {
+      window.location.href = `#/editarEvento?editEvent=${evento.eventId}`;
+    } else {
+      console.log('No puedes editar este evento');
     }
   });
 
