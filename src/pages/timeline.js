@@ -36,7 +36,7 @@ const event = (evento) => {
             <textarea class="input__comment" maxlength="100" id="comment" cols="35" rows="3" required></textarea>
             <div>
               <button class="comment--btn" type="submit">Comentar</button>
-              <button class="comment--btn" type="button">Cancelar</button>
+              <button id="notComment" class="comment--btn" type="button">Cancelar</button>
             </div>
           </form>
         </div>
@@ -57,7 +57,7 @@ const event = (evento) => {
       </div>
     </div>
   `;
-<<<<<<< HEAD
+  // mil funciones para comentar
   const createComment = () => {
     const comment = evento.comment || [];
     const commentValue = eventContainer.querySelector('.input__comment').value;
@@ -97,22 +97,23 @@ const event = (evento) => {
     printComment();
   });
 
+  eventContainer.querySelector('#notComment').addEventListener('click', () => {
+    eventContainer.querySelector('.input__comment').value = '';
+    eventContainer.querySelector('#form__comment').classList.toggle('hide');
+    printComment();
+  });
+
   eventContainer.querySelector('#form__comment').addEventListener('submit', (e) => {
     e.preventDefault();
     createComment();
     eventContainer.querySelector('#form__comment').classList.toggle('hide');
     printComment();
+    eventContainer.querySelector('.input__comment').value = '';
   });
 
-=======
->>>>>>> c4fc07188c2ac05dea029d33380dc4795d107bb5
 
   eventContainer.querySelector('.flaticon-menu').addEventListener('click', () => eventContainer.querySelector('ul').classList.toggle('hide'));
-<<<<<<< HEAD
-
-=======
   // funcion asistire
->>>>>>> c70e5d0bfea0785fa51355700621272120ea8a37
   eventContainer.querySelector('.flaticon-strong').addEventListener('click', () => {
     let likes = evento.likes || [];
     if (likes.includes(user)) {
