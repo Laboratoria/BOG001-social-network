@@ -1,6 +1,7 @@
 .icons__timeline::before{
   font-size: 25px;
   margin: 0;
+  cursor: pointer;
 }
 
 
@@ -97,6 +98,7 @@ h3{
   color: $white_color;
   font-weight: bold;
   margin: 0 20px;
+  cursor: pointer;
 }
 
 .eventOptions{
@@ -121,6 +123,7 @@ h3{
     font-size: 1em;    
     padding: 1em;
     width: 100vw;
+    cursor: pointer;
   }
 }
 
