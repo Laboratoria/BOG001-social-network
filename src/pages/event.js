@@ -47,6 +47,7 @@ const event = () => {
 
     saveEvent(hour, date, sport, place, description);
   };
+
   eventForm.addEventListener('submit', (e) => { e.preventDefault(); createEvent(); });
   return container;
 };
