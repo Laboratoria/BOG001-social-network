@@ -8,15 +8,15 @@ const event = () => {
     <form class="event_form form" id="event-form" action = "" method = "">    
       <div class="">
         <label for = "fname" class="">Fecha</label>
-        <input  type="date" id="fecha" name="Fecha" required autocomplete = "off" >
+        <input class="event__input"  type="date" id="fecha" name="Fecha" required autocomplete="off" >
       </div>
       <div class="">
         <label for = "Hora" class="">Hora</label>    
-        <input class="" type = "time" id = "hora" name  = "hora" required autocomplete = "off" >
+        <input class="event__input" type="time" id="hora" name ="hora" required autocomplete = "off" >
       </div>      
       <div>
         <label class="" for = "fname">Deporte</label>
-        <select class="" type = "text" id = "deporte" name = "Deporte" required autocomplete = "off" >
+        <select class="event__input" type="text" id="deporte" name="Deporte" required autocomplete="off" >
           <option class="" value="Futbol">Fútbol</option>
           <option class="" value="Baloncesto">Baloncesto</option>
           <option class="" value="Senderismo">Senderismo</option>

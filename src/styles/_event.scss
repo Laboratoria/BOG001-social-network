@@ -1,5 +1,4 @@
 .event{
-  margin: 0 0 1em 0;
   @extend .center;
   .container__form--title{
   text-align: center;
@@ -11,22 +10,21 @@
   display: flex;
   align-items: center;
   input{
-    @extend .borderStyles;
+    border-radius: 0.5em;
     font-family: $font-family;
     background-color: $white_color;
-    width: 16em;
+    width: 272px;
     height: 2.6em;
     margin-bottom: 1em;
     padding: 0 1.5em;
-    
     &::-moz-placeholder {
       @include input
     }
   }
   
   select{
-    @extend .borderStyles;
-    width: 19em;
+    border-radius: 0.5em;;
+    width: 312px;
     height: 2.6em;
     margin-bottom: 1em;
     padding: 0 1.5em;
@@ -56,6 +54,7 @@
   text-align: end;
   width: 100%;
 }
+
 @media (min-width: $media-tablet){
   .event{
     padding-top: 100px;
