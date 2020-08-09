@@ -17,10 +17,13 @@ export const validateSession = () => {
 
 // Registro con correo y contraseña
 export const createUserByEmailAndPass = (email, password, city, username) => {
+  const config = {
+    url: 'http://localhost:8080/#/login',
+  };
   auth
     .createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
-      userCredential.user.sendEmailVerification()
+      userCredential.user.sendEmailVerification(config)
         .then(() => {
           const user = {
             id: userCredential.user.uid,
@@ -30,8 +33,6 @@ export const createUserByEmailAndPass = (email, password, city, username) => {
           };
           saveUser(user);
           showSuccessMessage('auth/user-registered');
-          localStorage.setItem('session', JSON.stringify(user));
-          window.location.href = '#/timeline';
         })
         .catch((error) => {
           showErrorMessage(error.code);
