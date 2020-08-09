@@ -2,7 +2,7 @@ const feedback = () => {
   const view = `
     <div class="feedback-container">
     <p></p>
-    <button class="flaticon-close icon__close"></button>
+    <button class="flaticon-remove icon__close"></button>
     </div>
     `;
 

@@ -23,7 +23,7 @@ const headerTimeline = () => {
 
   container.querySelector('#exit').addEventListener('click', logout);
   container.querySelector('#menu').addEventListener('click', () => {
-    container.querySelector('#menuList').classList.toggle('hide');
+    container.querySelector('.list').classList.toggle('hide');
   });
   return container;
 };
