@@ -9,35 +9,36 @@
 }
 .event_form{
   @extend .horizontalCentering;
-  input{
-    @extend .borderStyles;
-    font-family: $font-family;
-    background-color: $white_color;
-    width: 16em;
-    height: 2.6em;
-    margin-bottom: 1em;
-    padding: 0 1.5em;
-    
-    &::-moz-placeholder {
+  // .form-group {
+  //   position: relative;
+  // }
+input, select, textarea {
+  border-radius: 0.5em;
+  font-family: $font-family;
+  background-color: $white_color;
+  height: 2.6em;
+  width: 16em;
+  padding: 0.5em;
+  margin-bottom: 2em;
+
+  &::-webkit-input-placeholder {
       @include input
-    }
-  }
-  
-  select{
-    @extend .borderStyles;
-    width: 19em;
-    height: 2.6em;
-    margin-bottom: 1em;
-    padding: 0 1.5em;
   }
 
-  textarea{
-    font-family: $font-family;
-    background-color: $white_color;
-    border-radius: 0.5em;
-    margin-bottom: 1em;
-    padding: 0.5em;
+  &::-moz-placeholder {
+      @include input
   }
+}
+
+textarea {
+  height: 10em;
+}
+
+label {
+  color: #eee;
+  font-size: 0.9em;
+  letter-spacing: 1px;
+}
 
   button{
     @extend .borderStyles;
