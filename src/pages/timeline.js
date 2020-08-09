@@ -1,9 +1,13 @@
-import { getEvents, editEvent, deletePost } from '../firebase/post';
+import {
+  getEvents, editEvent, deletePost, getEventById,
+} from '../firebase/post';
 
 const event = (evento) => {
+  const user = JSON.parse(localStorage.getItem('session')).user.uid;
   const eventContainer = document.createElement('article');
   eventContainer.setAttribute('class', 'eventTimeline');
   const likesQuantity = evento.likes ? evento.likes.length : 0;
+  const commentQuantity = evento.comment ? evento.comment.length : 0;
   eventContainer.innerHTML = `
     <div class="event__info">
       <div class="event__upper--container">
@@ -25,29 +29,98 @@ const event = (evento) => {
           <span class="interaction__text">${likesQuantity} Asistiré</span>
         </div>
         <div class="event__interaction--position">
-          <span class="flaticon-speech-bubble icons__timeline"></span>
-          <span class="interaction__text">Comentar</span>
+          <span class="flaticon-chat icons__timeline"></span>
+          <span class="interaction__text commentQuantity">${commentQuantity} Comentarios</span>
+          <form class="eventOptions" id="form__comment">
+            <h3 class="">Comentar a ${evento.nombre}</h3>
+            <textarea class="input__comment" maxlength="100" id="comment" cols="35" rows="3" required></textarea>
+            <div>
+              <button class="comment--btn" type="submit">Comentar</button>
+              <button id="notComment" class="comment--btn" type="button">Cancelar</button>
+            </div>
+          </form>
         </div>
         <div class="event__interaction--position">
           <span class="flaticon-menu icons__timeline">
           </span>
-          <ul class="hide eventOptions">
+          <ul class="eventOptions">
             <li>
-              <button class="eventOptions__btn">Editar Evento</button>
+              <button class="eventOptions__btn edit">Editar Evento</button>
             </li>
             <li>
-              <button class="eventOptions__btn eliminar" data-id="${evento.id}">Eliminar Evento</button>
+              <button class="eventOptions__btn delete" data-id="${evento.id}">Eliminar Evento</button>
             </li>
           </ul>
         </div>
       </div>
+      <div class="comment__container">
+      </div>
     </div>
-    <a href="#/event"><span id="newEvent" class="flaticon-edit icons postIcon"></span></a>
   `;
+  // mil funciones para comentar
+  const createComment = () => {
+    const comment = evento.comment || [];
+    const commentValue = eventContainer.querySelector('.input__comment').value;
+    const { displayName, uid } = JSON.parse(localStorage.getItem('session')).user;
+    comment.push({
+      comment: commentValue,
+      username: displayName,
+      useId: uid,
+    });
+    editEvent(evento.eventId, { comment });
+    eventContainer.querySelector('.commentQuantity').innerHTML = `${comment.length} comentarios`;
+  };
+
+  const printComment = async () => {
+    const commentContainer = eventContainer.querySelector('.comment__container');
+    const querySnapshot = await getEventById(evento.eventId);
+    const comment = querySnapshot.data().comment;
+
+    if (comment && !evento.open) {
+      comment.forEach((com) => {
+        const commentTemplate = document.createElement('p');
+        commentTemplate.setAttribute('class', 'flaticon-remove delete__comment');
+        commentTemplate.innerText = `${com.username}: 
+        ${com.comment}`;
+        commentContainer.insertAdjacentElement('beforeend', commentTemplate);
+      });
+    }
+
+    if (evento.open) {
+      commentContainer.innerHTML = '';
+    }
+
+    evento.open = !evento.open;
+
+    document.querySelector('.delete__comment').addEventListener('click', () => {
+      console.log('aqui deberia eliminar pero nos e me ocurre como');
+    });
+  };
+
+  eventContainer.querySelector('.flaticon-chat').addEventListener('click', () => {
+    eventContainer.querySelector('#form__comment').classList.toggle('hide');
+    printComment();
+  });
+
+  eventContainer.querySelector('#notComment').addEventListener('click', () => {
+    eventContainer.querySelector('.input__comment').value = '';
+    eventContainer.querySelector('#form__comment').classList.toggle('hide');
+    printComment();
+  });
+
+  eventContainer.querySelector('#form__comment').addEventListener('submit', (e) => {
+    e.preventDefault();
+    createComment();
+    eventContainer.querySelector('#form__comment').classList.toggle('hide');
+    printComment();
+    eventContainer.querySelector('.input__comment').value = '';
+  });
+
+
   eventContainer.querySelector('.flaticon-menu').addEventListener('click', () => eventContainer.querySelector('ul').classList.toggle('hide'));
+  // funcion asistire
   eventContainer.querySelector('.flaticon-strong').addEventListener('click', () => {
     let likes = evento.likes || [];
-    const user = JSON.parse(localStorage.getItem('session')).user.uid;
     if (likes.includes(user)) {
       likes = likes.filter(like => like !== user);
     } else {
@@ -57,23 +130,31 @@ const event = (evento) => {
     evento.likes = likes;
     eventContainer.querySelector('.interaction__text').innerHTML = `${likes.length} Asistiré`;
   });
-
-  eventContainer.querySelector('.eliminar').addEventListener('click', async () => {
-    const user = JSON.parse(localStorage.getItem('session')).user.uid;
+  // funcion eliminar evento
+  eventContainer.querySelector('.delete').addEventListener('click', async () => {
     if (user === evento.id) {
       await deletePost(evento.eventId);
-      console.log(evento.eventId);
+      // console.log(evento.eventId);
       eventContainer.innerHTML = '';
     } else {
       console.log('No puedes eliminar este evento');
     }
   });
+  // funcion editar evento
+  eventContainer.querySelector('.edit').addEventListener('click', async () => {
+    if (user === evento.id) {
+      window.location.href = `#/editarEvento?editEvent=${evento.eventId}`;
+    } else {
+      console.log('No puedes editar este evento');
+    }
+  });
+
   return eventContainer;
 };
 
 const createEventLink = `
   <a href="#/event">
-    <span id="newEvent" class="flaticon-edit icons postIcon">
+    <span id="newEvent" class="flaticon-plus icons postIcon">
     </span>
   </a>
 `;

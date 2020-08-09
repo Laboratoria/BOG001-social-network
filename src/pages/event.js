@@ -3,7 +3,7 @@ import { saveEvent } from '../firebase/post';
 const event = () => {
   const view = `
   <section class = "event">
-  <a href="#/timeline"><span class="flaticon-close postIcon"></span></a>
+  <a href="#/timeline"><span class="flaticon-remove postIcon"></span></a>
     <h1 class="login__title container__form--title">Crea tu evento</h1>
     <form class="event_form form" id="event-form" action = "" method = "">    
       <div class="">
@@ -17,9 +17,11 @@ const event = () => {
       <div>
         <label class="" for = "fname">Deporte</label>
         <select class="" type = "text" id = "deporte" name = "Deporte" required autocomplete = "off" >
-          <option class="" value="Futbol">Futbol</option>
+          <option class="" value="Futbol">Fútbol</option>
           <option class="" value="Baloncesto">Baloncesto</option>
           <option class="" value="Senderismo">Senderismo</option>
+          <option class="" value="Béisbol">Béisbol</option>
+          <option class="" value="Ciclismo">Ciclismo</option>
         </select>
       </div>      
       <div class="">
@@ -47,6 +49,7 @@ const event = () => {
 
     saveEvent(hour, date, sport, place, description);
   };
+
   eventForm.addEventListener('submit', (e) => { e.preventDefault(); createEvent(); });
   return container;
 };
