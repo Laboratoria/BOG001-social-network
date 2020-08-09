@@ -17,10 +17,13 @@ export const validateSession = () => {
 
 // Registro con correo y contraseña
 export const createUserByEmailAndPass = (email, password, city, username) => {
+  const config = {
+    url: 'http://localhost:8080/#/login',
+  };
   auth
     .createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
-      userCredential.user.sendEmailVerification()
+      userCredential.user.sendEmailVerification(config)
         .then(() => {
           const user = {
             id: userCredential.user.uid,
