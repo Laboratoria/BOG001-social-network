@@ -30,9 +30,10 @@ const eventComponent = (event) => {
           <span class="flaticon-chat icons__timeline"></span>
           <span class="interaction__text commentQuantity">${commentQuantity} Comentarios</span>
           <div class="form__comment">
+          hol
           </div>
         </div>
-        <div class="event__interaction--position hide">
+        <div class="event__interaction--position">
           <span class="flaticon-menu icons__timeline">
           </span>
           <ul class="eventOptions">
@@ -53,15 +54,21 @@ const eventComponent = (event) => {
   eventContainer.setAttribute('class', 'eventTimeline');
   eventContainer.innerHTML = view;
 
-  eventContainer.querySelector('.flaticon-menu').addEventListener('click', (evento) => {
-    if (userID === evento.id) {
-      eventContainer.querySelector('ul').classList.remove('hide');
-    }
+  eventContainer.querySelector('.flaticon-menu').addEventListener('click', () => {
+    eventContainer.querySelector('ul').classList.toggle('hide');
   });
 
   eventContainer.querySelector('.flaticon-chat').addEventListener('click', () => {
     eventContainer.querySelector('.form__comment').insertAdjacentElement('beforeend', comment(event));
     eventContainer.querySelector('.comment__container').insertAdjacentElement('beforeend', printComment(event));
+  });
+
+  eventContainer.querySelector('.edit').addEventListener('click', async () => {
+    if (userID === event.id) {
+      window.location.href = `#/editEvent?eventId=${event.eventId}`;
+    } else {
+      console.log('No puedes editar este evento');
+    }
   });
 
   return eventContainer;
