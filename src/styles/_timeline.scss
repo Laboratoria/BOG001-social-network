@@ -10,7 +10,6 @@
 }
 
 .timeline-container {
-  padding-top: 100px;
   @extend .center;
 }
 
@@ -34,6 +33,7 @@
 
 .interaction__text{
   font-size: 0.8em;
+  margin: 0 10px;
 }
 
 .event__upper--container {
