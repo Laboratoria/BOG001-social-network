@@ -8,17 +8,17 @@ const getNameUser = () => {
 
 const headerTimeline = () => {
   const view = `
-      <section class="header">
       <img class="header__logo" src="../assets/logoWhite.png" alt="phySport logo">
-      <div class="flaticon-user-1 icons" id="menu">
+      <div class="flaticon-user icons" id="menu">
         <ul class="list hide" id="menuList">
         <li class="header__menu__item" >${getNameUser()}</li>
+        <li class="header__menu__item" ><a href="#/profile"> Perfil</li>
         <li class="header__menu__item" id="exit">Cerrar Sesion</li>
         </ul>
       </div>
-      </section>
     `;
-  const container = document.createElement('div');
+  const container = document.createElement('header');
+  container.setAttribute('class', 'header');
   container.innerHTML = view;
 
   container.querySelector('#exit').addEventListener('click', logout);
