@@ -25,11 +25,11 @@ const event = () => {
       </div>
       <div class="form-group">
         <label for="place">Lugar</label>
-        <textarea name="place" id="place" cols="35" rows="3" maxlength="80" placeholder="Kr 28c, Calle 20, Cancha de Futbol Es un Ejemplo, Localidad elEjemplo. <br> Maximo 80 caracteres" required></textarea>        
+        <textarea name="place" id="place" cols="35" rows="3" maxlength="80" placeholder="Maximo 80 caracteres. Kr 28c, Calle 20, Cancha de Futbol Es un Ejemplo, Localidad elEjemplo." required></textarea>        
       </div>
       <div class="form-group">
       <label for="description">Descripcion</label>
-        <textarea name="description" id="description" cols="35" rows="8" maxlength="150" placeholder="Jugaremos futbol en la cancha a las 6:00pm, nos faltan 3 jugadores. Traer agua y mucho animo. <br> Descripcion maximo 150 caracteres" required></textarea>        
+        <textarea name="description" id="description" cols="35" rows="8" maxlength="150" placeholder="Descripcion maximo 150 caracteres. Jugaremos futbol en la cancha a las 6:00pm, nos faltan 3 jugadores. Traer agua y mucho animo." required></textarea>        
       </div>      
         <button type="submit" class="button" id="publicar">Publicar</button>
     </form>  
