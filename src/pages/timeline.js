@@ -2,6 +2,22 @@ import {
   getEvents, editEvent, deletePost, getEventById,
 } from '../firebase/post';
 
+const sportIcons = {
+  Futbol: '../assets/balon.png',
+  Baloncesto: '../assets/001-basketball.png',
+  Senderismo: '../assets/trekking.png',
+  Béisbol: '../assets/002-baseball.png',
+  Ciclismo: '../assets/bycicle.png',
+};
+
+const getSportIcon = (sport) => {
+  const icon = sportIcons[sport];
+  if (icon) {
+    return icon;
+  }
+  return '../assets/thinking.png';
+};
+
 const event = (evento) => {
   const user = JSON.parse(localStorage.getItem('session')).user.uid;
   const eventContainer = document.createElement('article');
@@ -16,7 +32,7 @@ const event = (evento) => {
           <h2>${evento.nombre}</h2>
         </div>
         <div class="sport">
-          <img class="sport__icon" src="../assets/balon.png">
+          <img class="sport__icon" src="${getSportIcon(evento.deporte)}">
           <span>${evento.hora}</span>
           <span>${evento.fechaEvento}</span>
         </div>
