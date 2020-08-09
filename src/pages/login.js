@@ -7,41 +7,40 @@ const login = () => {
     loginUser(email, pass);
   };
   const view = `
-    <section class="login container__form">
-      <div class="form__box">
-        <h1 class="login__title container__form--title"> Inicia sesión</h1>
-        <form id="loginForm" class="form">
-        <div class="form-group">
-          <input type="email" id="email" placeholder="Correo" required>
-          <label for="email">Correo</label>
-        </div>
-        <div class="form-group password--container">
-          <input type="password" id="password" placeholder="Contraseña" required>
-          <label for="password">Contraseña</label>
-          <span class="eye__icon" id="eyeIcon"></span>
-        </div>
-          <button id="button" class="form__button" type="submit">Ingresar</button>
-        </form>
-        <div class='signUp__google'>
-            <h3>o registrate con</h3>
-            <button id="buttonGmail" type="button"><img class="google-icon" src="../assets/seo-and-web.png" alt=""></button>
-        </div>
-        <div class="signUp__google">
-        <h3> ¿Nuevo usuario?</h3>
-        <a href = "#/sign-up" id="" class="login__register">Registrate</a>
-        </div>
+    <div class="form__box">
+      <h1 class="login__title container__form--title"> Inicia sesión</h1>
+      <form id="loginForm" class="form">
+      <div class="form-group">
+        <input type="email" id="email" placeholder="Correo" required>
+        <label for="email">Correo</label>
       </div>
-    </section>
+      <div class="form-group password--container">
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <label for="password">Contraseña</label>
+        <span class="eye__icon" id="eyeIcon"></span>
+      </div>
+        <button id="button" class="form__button" type="submit">Ingresar</button>
+      </form>
+      <div class='signUp__google'>
+          <h3>o registrate con</h3>
+          <button id="buttonGmail" type="button"><img class="google-icon" src="../assets/seo-and-web.png" alt=""></button>
+      </div>
+      <div class="signUp__google">
+      <h3> ¿Nuevo usuario?</h3>
+      <a href = "#/sign-up" class="login__register">Registrate</a>
+      </div>
+    </div>
   `;
 
-  const container = document.createElement('div');
+  const container = document.createElement('section');
+  container.setAttribute('class', 'container__form');
   container.innerHTML = view;
-  const botonRegistro = container.querySelector('#loginForm');
+  const buttonRegister = container.querySelector('#loginForm');
   const buttonGmail = container.querySelector('#buttonGmail');
   const eyeIcon = container.querySelector('#eyeIcon');
   const password = container.querySelector('#password');
 
-  const mostrarContrasena = () => {
+  const showPassword = () => {
     if (password.type === 'password') {
       password.type = 'text';
       eyeIcon.classList.toggle('eyeblock__icon');
@@ -53,9 +52,9 @@ const login = () => {
     }
   };
 
-  botonRegistro.addEventListener('submit', (e) => { e.preventDefault(); loginUsers(); });
+  buttonRegister.addEventListener('submit', (e) => { e.preventDefault(); loginUsers(); });
   buttonGmail.addEventListener('click', (e) => { e.preventDefault(); loginUserGoogle(); });
-  eyeIcon.addEventListener('click', mostrarContrasena);
+  eyeIcon.addEventListener('click', showPassword);
 
   return container;
 };

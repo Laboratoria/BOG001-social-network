@@ -1,6 +1,5 @@
 import header from '../templates/header';
 import headerTimeline from '../templates/headerTimeline';
-// import headerEvent from '../templates/headerEvent';
 
 const headerRouter = (route) => {
   switch (route) {

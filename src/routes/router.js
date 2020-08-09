@@ -4,12 +4,12 @@ import signUp from '../pages/signUp';
 import timeline from '../pages/timeline';
 import event from '../pages/event';
 import error404 from '../pages/error404';
-import editarEvento from '../pages/editarEvento';
+import eventEdit from '../pages/eventEdit';
 import profile from '../pages/profile';
 
 const router = async (route) => {
   let editEvent = '';
-  if (route.includes('#/editarEvento?editEvent=', 0)) {
+  if (route.includes('#/eventEdit?editEvent=', 0)) {
     editEvent = route.substr(25);
   }
   switch (route) {
@@ -25,8 +25,8 @@ const router = async (route) => {
       return profile();
     case '#/event':
       return event();
-    case `#/editarEvento?editEvent=${editEvent}`:
-      return editarEvento(editEvent);
+    case `#/eventEdit?editEvent=${editEvent}`:
+      return eventEdit(editEvent);
     default:
       return error404();
   }
