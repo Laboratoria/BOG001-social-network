@@ -16,11 +16,14 @@
         flex: 0.8;
     }
     button {
-        color: $primary_color;
+        color: $white_color;
         background-color: transparent;
         border: none;
         outline: none;
         flex: 0.2;
+    }
+    .flaticon-close:before {
+        font-size: 20px;
     }
 }
 

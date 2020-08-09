@@ -5,6 +5,11 @@
 @import './_event.scss';
 @import './_header';
 @import './_feedback.scss';
+@import './_profile';
+
+a {
+    text-decoration: none;
+}
 
 li {
     list-style: none;

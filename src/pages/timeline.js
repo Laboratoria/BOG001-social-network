@@ -123,8 +123,10 @@ const event = (evento) => {
     let likes = evento.likes || [];
     if (likes.includes(user)) {
       likes = likes.filter(like => like !== user);
+      eventContainer.querySelector('.flaticon-strong').classList.remove('like');
     } else {
       likes.push(user);
+      eventContainer.querySelector('.flaticon-strong').classList.add('like');
     }
     editEvent(evento.eventId, { likes });
     evento.likes = likes;

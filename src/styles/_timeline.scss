@@ -10,6 +10,7 @@
 }
 
 .timeline-container {
+  padding-top: 100px;
   @extend .center;
 }
 
@@ -146,6 +147,10 @@ h3{
   position: fixed;
   bottom: 90px;
   right: 20px;
+}
+
+.like {
+  color: $secondary_color;
 }
 
 @media (min-width: $media-tablet) {

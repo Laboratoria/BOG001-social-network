@@ -5,6 +5,7 @@ import timeline from '../pages/timeline';
 import event from '../pages/event';
 import error404 from '../pages/error404';
 import editarEvento from '../pages/editarEvento';
+import profile from '../pages/profile';
 
 const router = async (route) => {
   let editEvent = '';
@@ -20,6 +21,8 @@ const router = async (route) => {
       return signUp();
     case '#/timeline':
       return timeline();
+    case '#/profile':
+      return profile();
     case '#/event':
       return event();
     case `#/editarEvento?editEvent=${editEvent}`:
