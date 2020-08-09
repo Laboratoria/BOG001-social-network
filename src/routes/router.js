@@ -2,7 +2,7 @@ import start from '../pages/start';
 import login from '../pages/login';
 import signUp from '../pages/signUp';
 import timeline from '../pages/timeline';
-import event from '../pages/event';
+import event from '../pages/createEvent';
 import error404 from '../pages/error404';
 import eventEdit from '../pages/eventEdit';
 import profile from '../pages/profile';
@@ -23,7 +23,7 @@ const router = async (route) => {
       return timeline();
     case '#/profile':
       return profile();
-    case '#/event':
+    case '#/createEvent':
       return event();
     case `#/eventEdit?editEvent=${editEvent}`:
       return eventEdit(editEvent);

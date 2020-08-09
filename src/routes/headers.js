@@ -11,7 +11,7 @@ const headerRouter = (route) => {
       return headerTimeline();
     case '#/profile':
       return headerTimeline();
-    case '#/event':
+    case '#/createEvent':
       return headerTimeline();
     default:
       return header();
