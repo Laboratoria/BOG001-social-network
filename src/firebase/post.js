@@ -5,10 +5,12 @@ export const saveEvent = (hour, date, sport, place, description) => {
   const convetInfoJson = JSON.parse(infLocalStorage);
   const IdUser = convetInfoJson.user.uid;
   const nameUser = convetInfoJson.user.displayName;
+  const photoURL = convetInfoJson.user.photoURL;
   console.log(IdUser);
   database.collection('events').add({
     id: IdUser,
     nombre: nameUser,
+    photo: photoURL,
     hora: hour,
     fechaEvento: date,
     deporte: sport,
