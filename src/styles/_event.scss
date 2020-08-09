@@ -8,8 +8,7 @@
   }
 }
 .event_form{
-  display: flex;
-  align-items: center;
+  @extend .horizontalCentering;
   input{
     @extend .borderStyles;
     font-family: $font-family;

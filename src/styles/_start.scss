@@ -9,7 +9,7 @@
   &__container{
     height: 100%;
     background-color: transparent;
-    @extend .display;
+    @extend .center;
   }
   &__logo {
     width: 60%;

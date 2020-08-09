@@ -11,9 +11,8 @@ $media-tablet: 768px;
 $media-notebook: 1024px;
 $media-desktop: 1600px;
 
-.center{
+.horizontalCentering {
     display: flex;
-    flex-direction: column;
     align-items: center;
 }
 
@@ -23,7 +22,7 @@ $media-desktop: 1600px;
     border-radius: 50px;
 }
 
-.display {
+.center {
   display: flex;
 	align-items: center;
   justify-content: center;

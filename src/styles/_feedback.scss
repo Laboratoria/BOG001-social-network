@@ -1,4 +1,5 @@
 .feedback-container{
+    @extend .horizontalCentering;
     height: 40px;
     padding: 5px;
     position: fixed;
@@ -6,8 +7,6 @@
     left: -100vw;
     width: 92vw;
     border-radius: 4px;
-    display: flex;
-    align-items: center;
     transition: 0.5s;
     p{
         color: $white_color;

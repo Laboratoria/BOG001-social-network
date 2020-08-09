@@ -1,5 +1,5 @@
 .form__box{
-    @extend .display;
+    @extend .center;
     .login__title{
     color: $secondary_color;
     margin-bottom: 1.5em;
@@ -67,9 +67,7 @@
     margin-top: 35px;
     width: 250px;
     height: 40px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    @include flex;
     h3{
         color: $gray_color;
         font-size: 1em;
@@ -95,9 +93,7 @@
 }
 
 .password--container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @extend .horizontalCentering;
     position: relative;
     .eye__icon{
         background-image: url('../assets/eye-close-up.png');
