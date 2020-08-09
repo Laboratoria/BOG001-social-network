@@ -4,13 +4,13 @@ import signUp from '../pages/signUp';
 import timeline from '../pages/timeline';
 import event from '../pages/createEvent';
 import error404 from '../pages/error404';
-import eventEdit from '../pages/eventEdit';
+import editEventComponent from '../pages/editEvent';
 import profile from '../pages/profile';
 
 const router = async (route) => {
-  let editEvent = '';
-  if (route.includes('#/eventEdit?editEvent=', 0)) {
-    editEvent = route.substr(25);
+  let eventId = '';
+  if (route.includes('#/editEvent?eventId=', 0)) {
+    eventId = route.substr(20);
   }
   switch (route) {
     case '#/':
@@ -25,8 +25,8 @@ const router = async (route) => {
       return profile();
     case '#/createEvent':
       return event();
-    case `#/eventEdit?editEvent=${editEvent}`:
-      return eventEdit(editEvent);
+    case `#/editEvent?eventId=${eventId}`:
+      return editEventComponent(eventId);
     default:
       return error404();
   }
