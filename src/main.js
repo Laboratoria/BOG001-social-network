@@ -1,5 +1,14 @@
 // Este es el punto de entrada de tu aplicacion
 
-import { myFunction } from './lib/index.js';
+/*import { myFuntion } from './lib/index.js';
 
-myFunction();
+myfuntion();
+
+import './styles.css'
+console.log("Hola mundo");*/
+
+import {router} from './src/router/index.routes'
+
+window.addEventListener('hashchange', () => {
+    router(window.location.hash)
+})
