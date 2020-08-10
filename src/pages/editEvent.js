@@ -12,11 +12,11 @@ const editEventComponent = async (eventId) => {
     <form class="event_form form" id="event-form">
       <div class="form-group">
       <label for="date">Fecha</label>
-      <input type="date" id="date" required autocomplete = "off" >
+      <input type="date" id="date" required autocomplete = "off" value ="${event.fechaEvento}">
       </div>
       <div class="form-group">
         <label for="time" class="">Hora</label>
-        <input type="time" id="time" required autocomplete = "off" >
+        <input type="time" id="time" required autocomplete = "off" value ="${event.hora}" >
       </div>      
       <div class="form-group">
         <label for="sport">Deporte</label>

@@ -1,5 +1,4 @@
 .event{
-  margin: 0 0 1em 0;
   @extend .center;
   .container__form--title{
   text-align: center;
@@ -20,10 +19,31 @@ input, select, textarea {
 
   &::-webkit-input-placeholder {
       @include input
+  /* display: flex;
+  align-items: center;
+  input{
+    border-radius: 0.5em;
+    font-family: $font-family;
+    background-color: $white_color;
+    width: 272px;
+    height: 2.6em;
+    margin-bottom: 1em;
+    padding: 0 1.5em;
+    &::-moz-placeholder {
+      @include input
+    }
+  }
+  
+  select{
+    border-radius: 0.5em;
+    width: 312px;
+    height: 2.6em;
+    margin-bottom: 1em;
+    padding: 0 1.5em;
   }
 
   &::-moz-placeholder {
-      @include input
+      @include input */
   }
 }
 
@@ -53,6 +73,7 @@ label {
   text-align: end;
   width: 100%;
 }
+
 @media (min-width: $media-tablet){
   .event{
     padding-top: 100px;

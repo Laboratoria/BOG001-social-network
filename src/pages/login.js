@@ -32,6 +32,8 @@ const login = () => {
     </div>
   `;
 
+  window.history.forward(1);
+
   const container = document.createElement('section');
   container.setAttribute('class', 'container__form');
   container.innerHTML = view;
