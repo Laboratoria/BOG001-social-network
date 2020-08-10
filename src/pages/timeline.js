@@ -1,5 +1,6 @@
 import { getEvents } from '../firebase/post';
 import eventComponent from './event';
+// import footerTemplate from '../templates/footer';
 
 /*
 import {
@@ -183,7 +184,7 @@ const createEventLink = `
 const timeline = async () => {
   const container = document.createElement('section');
   container.setAttribute('class', 'timeline-container');
-  container.innerHTML = createEventLink;
+  container.innerHTML += createEventLink;
 
   const showEvent = async () => {
     const querySnapshot = await getEvents();
@@ -193,7 +194,7 @@ const timeline = async () => {
   };
 
   showEvent();
-
+  // container.innerHTML = footerTemplate();
   return container;
 };
 
