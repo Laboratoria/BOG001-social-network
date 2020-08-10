@@ -1,6 +1,6 @@
 const printComment = (event) => {
   const commentContainer = document.createElement('article');
-  const comments = event.comment || [];
+  const comments = event.commentList || [];
 
   comments.forEach((com) => {
     const commentTemplate = document.createElement('p');

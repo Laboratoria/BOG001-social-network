@@ -9,9 +9,6 @@
 }
 .event_form{
   @extend .horizontalCentering;
-  // .form-group {
-  //   position: relative;
-  // }
 input, select, textarea {
   border-radius: 0.5em;
   font-family: $font-family;

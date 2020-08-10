@@ -25,6 +25,12 @@
   width: 100px;
 }
 
+.profile__edit--btn {
+  @extend .button;
+  display: block;
+  margin: 0 auto;
+}
+
 @media (min-width: $media-notebook){
   .profile__imageBackground {
     display: block;

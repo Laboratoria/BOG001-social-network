@@ -30,9 +30,9 @@ const event = () => {
       <div class="form-group">
       <label for="description">Descripcion</label>
         <textarea name="description" id="description" cols="35" rows="8" maxlength="150" placeholder="Descripcion maximo 150 caracteres. Jugaremos futbol en la cancha a las 6:00pm, nos faltan 3 jugadores. Traer agua y mucho animo." required></textarea>        
-      </div>      
+      </div>
         <button type="submit" class="button" id="publicar">Publicar</button>
-    </form>  
+    </form>
   `;
   const container = document.createElement('section');
   container.setAttribute('class', 'event');
