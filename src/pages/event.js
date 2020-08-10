@@ -8,7 +8,7 @@ const event = () => {
     <form class="event_form form" id="event-form" action = "" method = "">    
       <div class="">
         <label for = "fname" class="">Fecha</label>
-        <input  type="date" id="fecha" name="Fecha" required autocomplete = "off" >
+        <input  type="date" id="fecha" name="Fecha" required autocomplete = "off">
       </div>
       <div class="">
         <label for = "Hora" class="">Hora</label>    

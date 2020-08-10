@@ -15,8 +15,7 @@ const event = (evento) => {
         </div>
         <div class="sport">
           <img class="sport__icon" src="../assets/balon.png">
-          <span>${evento.hora}</span>
-          <span>${evento.fechaEvento}</span>
+          <span>${evento.fechaEvento} <br/>${evento.hora}</span>
         </div>
       </div>
       <p><span class="event__subtitle">Lugar: </span>${evento.lugar}</p>
