@@ -3,8 +3,9 @@
 @import './_formStyles.scss';
 @import './_timeline.scss';
 @import './_event.scss';
-@import './_header';
+@import './_header.scss';
 @import './_feedback.scss';
+@import './footer.scss';
 
 li {
     list-style: none;
@@ -15,3 +16,4 @@ body {
     font-family: $font-family;
     margin: 0;
 }
+
