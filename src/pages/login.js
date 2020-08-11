@@ -34,6 +34,8 @@ const login = () => {
     </section>
   `;
 
+  window.history.forward(1);
+
   const container = document.createElement('div');
   container.innerHTML = view;
   const botonRegistro = container.querySelector('#loginForm');

@@ -1,6 +1,6 @@
 export const credentials = {
-  email: 'prueba@prueba.com',
-  password: '123456789',
+  email: 'dulcemercado.1993@gmail.com',
+  password: '123456',
 };
 
 export const passwordError = {
@@ -18,4 +18,4 @@ export const registrationError = {
   message: 'The email address is badly formatted.',
 };
 
-export const successUid = 'kaQft18nVwgZiMhsT4aIlIr6I7M2';
+export const successUid = 'nr7blpv9wZOpUj5zlX4a7rNYnBD3';
