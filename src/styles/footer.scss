@@ -1,0 +1,11 @@
+.footer {
+  height: 100px;
+  color: $white-color;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.footerInfo {
+  @extend .center;
+  height: 100px;
+}

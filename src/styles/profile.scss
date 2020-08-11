@@ -1,0 +1,58 @@
+.profile {
+  background-color: rgba(229, 232, 236, 0.2);
+  padding-bottom: 20px;
+}
+
+.profile__imageBackground {
+  width: 100vw;
+  height: 300px;
+}
+
+.profile__imageUser {
+  border-radius: 50%;
+  display: block;
+  margin: -100px auto 0;
+  width: 150px;
+}
+
+.profile__info {
+  color: $white_color;
+  padding: 20px;
+}
+
+.profile__sportsUser {
+  @include flex;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.profile__sport {
+  width: 70px;
+}
+
+.profile__edit--btn {
+  @extend .button;
+  display: block;
+  margin: 20px auto;
+  padding: 10px 15px;
+}
+
+@media (min-width: $media-notebook){
+  .profile {
+    padding-top: 100px;
+  }
+  .profile__imageBackground {
+    display: block;
+    height: 400px;
+    margin: 0 auto;
+  }
+  .profile__imageUser {
+    margin: -150px auto 0;
+    width: 200px;
+  }
+  .profile__info,
+  .profile__sportsUser {
+    margin: 0 auto;
+    width: 80%;
+  }
+}
