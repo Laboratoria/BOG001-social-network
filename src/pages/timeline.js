@@ -1,8 +1,4 @@
-import { getEvents } from '../firebase/post';
-import eventComponent from './event';
-// import footerTemplate from '../templates/footer';
-
-/*
+import swal from 'sweetalert';
 import {
   getEvents, editEvent, deletePost, getEventById,
 } from '../firebase/post';
@@ -38,8 +34,7 @@ const event = (evento) => {
         </div>
         <div class="sport">
           <img class="sport__icon" src="${getSportIcon(evento.deporte)}">
-          <span>${evento.hora}</span>
-          <span>${evento.fechaEvento}</span>
+          <span>${evento.fechaEvento} <br/>${evento.hora}</span>
         </div>
       </div>
       <p><span class="event__subtitle">Lugar: </span>${evento.lugar}</p>
@@ -138,29 +133,47 @@ const event = (evento) => {
   });
 
 
-  eventContainer.querySelector('.flaticon-menu').addEventListener('click', () => eventContainer.querySelector('ul').classList.toggle('hide'));
+  eventContainer
+    .querySelector('.flaticon-menu')
+    .addEventListener('click', () => eventContainer.querySelector('ul').classList.toggle('hide'));
   // funcion asistire
-  eventContainer.querySelector('.flaticon-strong').addEventListener('click', () => {
-    let likes = evento.likes || [];
-    if (likes.includes(user)) {
-      likes = likes.filter(like => like !== user);
-    } else {
-      likes.push(user);
-    }
-    editEvent(evento.eventId, { likes });
-    evento.likes = likes;
-    eventContainer.querySelector('.interaction__text').innerHTML = `${likes.length} Asistiré`;
-  });
+  eventContainer
+    .querySelector('.flaticon-strong')
+    .addEventListener('click', () => {
+      let likes = evento.likes || [];
+      if (likes.includes(user)) {
+        likes = likes.filter(like => like !== user);
+      } else {
+        likes.push(user);
+      }
+      editEvent(evento.eventId, { likes });
+      evento.likes = likes;
+      eventContainer.querySelector('.interaction__text').innerHTML = `${likes.length} Asistiré`;
+    });
   // funcion eliminar evento
-  eventContainer.querySelector('.delete').addEventListener('click', async () => {
-    if (user === evento.id) {
-      await deletePost(evento.eventId);
-      // console.log(evento.eventId);
-      eventContainer.innerHTML = '';
-    } else {
-      console.log('No puedes eliminar este evento');
-    }
-  });
+  eventContainer
+    .querySelector('.delete')
+    .addEventListener('click', async () => {
+      if (user === evento.id) {
+        swal({
+          title: '¿Estas seguro?',
+          text: 'Una vez eliminado, no podras recuperar este Evento',
+          icon: 'warning',
+          buttons: true,
+          dangerMode: true,
+        }).then((willDelete) => {
+          if (willDelete) {
+            deletePost(evento.eventId);
+            swal('Tu Evento ha sido eliminado', {
+              icon: 'success',
+            });
+            eventContainer.innerHTML = '';
+          }
+        });
+      } else {
+        swal('No puedes eliminar este evento');
+      }
+    });
   // funcion editar evento
   eventContainer.querySelector('.edit').addEventListener('click', async () => {
     if (user === evento.id) {
@@ -172,10 +185,9 @@ const event = (evento) => {
 
   return eventContainer;
 };
-*/
 
 const createEventLink = `
-  <a href="#/createEvent">
+  <a href="#/event">
     <span id="newEvent" class="flaticon-plus icons postIcon">
     </span>
   </a>
@@ -184,17 +196,17 @@ const createEventLink = `
 const timeline = async () => {
   const container = document.createElement('section');
   container.setAttribute('class', 'timeline-container');
-  container.innerHTML += createEventLink;
+  container.innerHTML = createEventLink;
 
-  const showEvent = async () => {
+  const exportData = async () => {
     const querySnapshot = await getEvents();
     querySnapshot.forEach((doc) => {
-      container.insertAdjacentElement('beforeend', eventComponent({ ...doc.data(), eventId: doc.id }));
+      container.insertAdjacentElement('beforeend', event({ ...doc.data(), eventId: doc.id }));
     });
   };
 
-  showEvent();
-  // container.innerHTML = footerTemplate();
+  exportData();
+
   return container;
 };
 
