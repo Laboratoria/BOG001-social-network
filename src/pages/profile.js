@@ -1,5 +1,5 @@
 import { getUserProfile } from '../firebase/database';
-import { profileDefault, sportIcons } from '../utils/imagesDefault';
+import { profileDefault } from '../utils/imagesDefault';
 
 const profile = async () => {
   let user;
@@ -15,19 +15,19 @@ const profile = async () => {
   });
 
   const userProfile = (userInfo) => {
-    if (userInfo.photo !== null) {
+    if (userInfo.photo !== undefined) {
       return userInfo.photo;
     }
     return profileDefault[userInfo];
   };
 
-  const getSportIcon = (sport) => {
-    const icon = sportIcons[sport];
-    if (icon) {
-      return icon;
-    }
-    return '../assets/thinking.png';
-  };
+  // const getSportIcon = (sport) => {
+  //   const icon = sportIcons[sport];
+  //   if (icon) {
+  //     return icon;
+  //   }
+  //   return '../assets/thinking.png';
+  // };
 
   const view = `
     <img class="profile__imageBackground" src="../assets/user.jpg">
@@ -37,11 +37,11 @@ const profile = async () => {
     <p>${user.ciudad}</p>
     </div>
     <div class="profile__sportsUser">
-    <img class="profile__sport" src="${getSportIcon(user.sportUser)}">
-    <img class="profile__sport" src="${getSportIcon(user.sportUser)}">
-    <img class="profile__sport" src="${getSportIcon(user.sportUser)}">
+      <img class="profile__sport" src="../assets/perfil.png">
+      <img class="profile__sport" src="../assets/perfil.png">
+      <img class="profile__sport" src="../assets/perfil.png">
     </div>
-    <button class="profile__edit--btn" id="edit">Editar perfil</button>
+    <button class="profile__edit--btn" id="edit">Editar perfil<button>
   `;
 
 

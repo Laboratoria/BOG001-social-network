@@ -13,7 +13,7 @@ const error404 = () => {
       <div class="error404-img">
         <img src="../assets/soccer.png" alt="">
       </div>
-      </section>  
+      </section>
     <h1 class="error404-title">Opss! Error 404</h1>      
     `;
   const container = document.createElement('div');
@@ -22,5 +22,3 @@ const error404 = () => {
 };
 
 export default error404;
-
-

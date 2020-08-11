@@ -2,7 +2,7 @@ import { saveEvent } from '../firebase/post';
 
 const event = () => {
   const view = `
-  <a href="#/timeline"><span class="flaticon-remove postIcon"></span></a>
+  <a href="#/timeline" title="Volver al Timeline"><span class="flaticon-remove postIcon"></span></a>
     <h1 class="login__title container__form--title">Crea tu evento</h1>
     <form class="event_form form" id="event-form">
       <div class="form-group">

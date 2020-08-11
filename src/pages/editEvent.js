@@ -5,9 +5,8 @@ const editEventComponent = async (eventId) => {
   container.setAttribute('class', 'event');
   const doc = await getEvent(eventId);
   const event = doc.data();
-  console.log(doc);
   const view = `
-  <a href="#/timeline"><span class="flaticon-remove postIcon"></span></a>
+  <a href="#/timeline" title="Descartar los cambios"><span class="flaticon-remove postIcon"></span></a>
     <h1 class="login__title container__form--title">Edita tu evento</h1>
     <form class="event_form form" id="event-form">
       <div class="form-group">
@@ -39,7 +38,7 @@ const editEventComponent = async (eventId) => {
   container.innerHTML = view;
   const eventForm = container.querySelector('#event-form');
 
-  const updateEvents = () => {
+  const updateEvents = async () => {
     const hour = document.getElementById('time').value;
     const date = document.getElementById('date').value;
     const sport = document.getElementById('sport').value;
