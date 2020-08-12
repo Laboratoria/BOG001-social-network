@@ -31,17 +31,12 @@ const editUser = async () => {
           <label for="username">Nombre de Usuario</label>
         </div>
         <div class="form-group">
-          <input id="email" type="email" placeholder="Correo" required value="${user.email}">
+          <input id="email" type="email" placeholder="Correo" required value="${user.correo}">
           <label for="email">Correo</label>
         </div>
         <div class="form-group">
           <input id="city" type="text" placeholder="Ciudad" required value="${user.ciudad}">
           <label for="city">Ciudad</label>
-        </div>
-        <div class="form-group password--container">
-          <input type="password" id="password" placeholder="Contraseña" required>
-          <label for="password">Contraseña</label>
-          <span class="eye__icon" id="eyeIcon"></span>
         </div>
         <div class="form-group password--container">
         <input type="file" id="image" placeholder="Imagen" required>

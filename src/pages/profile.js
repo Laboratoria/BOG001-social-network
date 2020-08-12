@@ -41,7 +41,7 @@ const profile = async () => {
       <img class="profile__sport" src="../assets/perfil.png">
       <img class="profile__sport" src="../assets/perfil.png">
     </div>
-    <button class="profile__edit--btn" id="edit">Editar perfil<button>
+    <button class="profile__edit--btn" id="edit">Editar perfil</button>
   `;
 
 

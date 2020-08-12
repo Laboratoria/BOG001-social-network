@@ -4,13 +4,11 @@ import feedback from './templates/feedback';
 import start from './pages/start';
 import { validateSession } from './firebase/auth';
 import { setFeedbackHidingHandler } from './utils/feedback-handler';
-import footerTemplate from './templates/footer';
 
 import './firebase/init';
 import './styles/styles.scss';
 
 const root = document.getElementById('root');
-const footer = document.getElementById('footer');
 
 window.addEventListener('load', () => {
   window.location.hash = '/';
@@ -28,10 +26,6 @@ window.addEventListener('hashchange', async () => {
   }
   root.insertAdjacentElement('beforeend', await router(window.location.hash));
   validateSession();
-
-  if (window.location.hash === '#/timeline') {
-    footer.innerHTML = footerTemplate();
-  }
 });
 
 feedback();
