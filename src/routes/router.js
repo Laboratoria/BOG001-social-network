@@ -2,7 +2,7 @@ import start from '../pages/start';
 import login from '../pages/login';
 import signUp from '../pages/signUp';
 import timeline from '../pages/timeline';
-import event from '../pages/createEvent';
+import event from '../pages/event';
 import error404 from '../pages/error404';
 import editEventComponent from '../pages/editEvent';
 import profile from '../pages/profile';
