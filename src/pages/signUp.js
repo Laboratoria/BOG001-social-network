@@ -36,7 +36,7 @@ const signUp = () => {
       </form>
       <div class="signUp__google">
         <h3>o registrate con</h3>
-        <button id="buttonGmail" type="button"><img class="google-icon" src="../assets/seo-and-web.png" alt=""></button>
+        <button id="buttonGmail" type="button"><img class="google-icon" src="assets/seo-and-web.png" alt=""></button>
       </div>
       <div class = "signUp__google">
       <h3> ¿Ya tienes cuenta?</h3>
