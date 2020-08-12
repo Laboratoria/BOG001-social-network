@@ -132,7 +132,7 @@ const event = (evento) => {
   });
 
   eventContainer.querySelector('.flaticon-menu').addEventListener('click', () => {
-    if (user === event.id) {
+    if (user === evento.id) {
       eventContainer.querySelector('#myEvent').classList.toggle('hide');
     } else {
       eventContainer.querySelector('#eventFriend').classList.toggle('hide');
@@ -145,8 +145,10 @@ const event = (evento) => {
       let likes = evento.likes || [];
       if (likes.includes(user)) {
         likes = likes.filter(like => like !== user);
+        eventContainer.querySelector('.flaticon-strong').classList.remove('like');
       } else {
         likes.push(user);
+        eventContainer.querySelector('.flaticon-strong').classList.add('like');
       }
       editEvent(evento.eventId, { likes });
       evento.likes = likes;
@@ -179,7 +181,7 @@ const event = (evento) => {
   // funcion editar evento
   eventContainer.querySelector('.edit').addEventListener('click', async () => {
     if (user === evento.id) {
-      window.location.href = `#/editarEvento?editEvent=${evento.eventId}`;
+      window.location.href = `#/editEvent?eventId=${evento.eventId}`;
     } else {
       console.log('No puedes editar este evento');
     }

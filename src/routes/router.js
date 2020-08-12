@@ -33,7 +33,7 @@ const router = async (route) => {
       return profile();
     case `#/editUser?userId=${userID}`:
       return editUser(userID);
-    case '#/createEvent':
+    case '#/event':
       return event();
     case `#/editEvent?eventId=${eventId}`:
       return editEventComponent(eventId);
