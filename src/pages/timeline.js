@@ -23,7 +23,7 @@ const event = (evento) => {
     <div class="event__info">
       <div class="event__upper--container">
         <div class="user">
-          <img src="../assets/perfil.png">
+          <img src="assets/perfil.png">
           <h2>${evento.nombre}</h2>
         </div>
         <div class="sport">
