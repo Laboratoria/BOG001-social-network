@@ -30,7 +30,7 @@ const event = () => {
       <div class="">
         <textarea name="description" id="description" cols="35" rows="8" maxlength="150" placeholder="Descripcion maximo 150 caracteres" required></textarea>        
       </div>      
-      <div class="">
+      <div class="">  
         <button type="submit" class="button" id = "publicar">Publicar</button>
       </div>
     </form>  

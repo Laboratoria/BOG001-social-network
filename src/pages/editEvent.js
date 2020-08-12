@@ -27,9 +27,11 @@ const editEventComponent = async (eventId) => {
         </select>
       </div>
       <div class="form-group">
+        <label for="place">Lugar</label>
         <textarea name="place" id="place" cols="35" rows="3" maxlength="80" placeholder="Lugar, maximo 80 caracteres" required>${event.lugar}</textarea>
       </div>
       <div class="form-group">
+        <label for="description">Descripcion</label>
         <textarea name="description" id="description" cols="35" rows="8" maxlength="150" placeholder="Descripcion maximo 150 caracteres" required>${event.descripcion}</textarea>        
       </div>
         <button type="submit" class="button" id="actualizar">Actualizar</button>

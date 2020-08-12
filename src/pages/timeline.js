@@ -108,15 +108,26 @@ const event = (evento) => {
         if (userIsCreator) {
           closeIcon.addEventListener('click', () => {
             const filteredComments = comment.filter(item => item.comment !== com.comment);
-            editEvent(evento.eventId, { comment: filteredComments })
-              .then(() => {
+            editEvent(evento.eventId, { comment: filteredComments });
+            swal({
+              title: '¿Estas seguro?',
+              text: 'Una vez eliminado, no podras recuperar este comentario',
+              icon: 'warning',
+              buttons: true,
+              dangerMode: true,
+            }).then((willDelete) => {
+              if (willDelete) {
                 evento.comment = filteredComments;
                 commentContainer.removeChild(commentTemplate);
                 eventContainer.querySelector('#form__comment').classList.remove('hide');
                 eventContainer.querySelector('.commentQuantity').innerHTML = `${filteredComments.length} comentarios`;
+                swal('Tu comentario ha sido eliminado', {
+                  icon: 'success',
+                });
                 commentContainer.innerHTML = '';
                 evento.open = false;
-              });
+              }
+            });
           });
         }
       });
@@ -125,7 +136,6 @@ const event = (evento) => {
     if (evento.open) {
       commentContainer.innerHTML = '';
     }
-
     evento.open = !evento.open;
   };
 
