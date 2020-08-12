@@ -30,16 +30,16 @@ const profile = async () => {
   // };
 
   const view = `
-    <img class="profile__imageBackground" src="../assets/user.jpg">
+    <img class="profile__imageBackground" src="assets/user.jpg">
     <img class="profile__imageUser" src="${userProfile(user)}">
     <div class="profile__info">
     <h2>${user.usuario}</h2>
     <p>${user.ciudad}</p>
     </div>
     <div class="profile__sportsUser">
-      <img class="profile__sport" src="../assets/perfil.png">
-      <img class="profile__sport" src="../assets/perfil.png">
-      <img class="profile__sport" src="../assets/perfil.png">
+      <img class="profile__sport" src="assets/perfil.png">
+      <img class="profile__sport" src="assets/perfil.png">
+      <img class="profile__sport" src="assets/perfil.png">
     </div>
     <button class="profile__edit--btn" id="edit">Editar perfil</button>
   `;
