@@ -1,8 +1,8 @@
 import { saveEvent } from '../firebase/post';
+import { fileRegister } from '../firebase/storage';
 
 const event = () => {
   const view = `
-  <section class = "event">
   <a href="#/timeline"><span class="flaticon-remove postIcon"></span></a>
     <h1 class="login__title container__form--title">Crea tu evento</h1>
     <form class="event_form form" id="event-form" action = "" method = "">    
@@ -24,19 +24,19 @@ const event = () => {
           <option class="" value="Ciclismo">Ciclismo</option>
         </select>
       </div>      
-      <div class="">
-        <textarea name="place" id="place" cols="35" rows="3" maxlength="80" placeholder="Lugar, maximo 80 caracteres" required></textarea>        
+      <div class="form-group">
+        <label for="place">Lugar</label>
+        <textarea name="place" id="place" cols="35" rows="3" maxlength="80" placeholder="Maximo 80 caracteres. Kr 28c, Calle 20, Cancha de Futbol Es un Ejemplo, Localidad elEjemplo." required></textarea>        
       </div>
-      <div class="">
-        <textarea name="description" id="description" cols="35" rows="8" maxlength="150" placeholder="Descripcion maximo 150 caracteres" required></textarea>        
-      </div>      
-      <div class="">
-        <button type="submit" class="button" id = "publicar">Publicar</button>
+      <div class="form-group">
+        <label for="description">Descripcion</label>
+        <textarea name="description" id="description" cols="35" rows="8" maxlength="150" placeholder="Descripcion maximo 150 caracteres. Jugaremos futbol en la cancha a las 6:00pm, nos faltan 3 jugadores. Traer agua y mucho animo." required></textarea>        
       </div>
-    </form>  
-  </section>
+      <button type="submit" class="button" id="publicar">Publicar</button>
+    </form>
   `;
-  const container = document.createElement('div');
+  const container = document.createElement('section');
+  container.setAttribute('class', 'event');
   container.innerHTML = view;
   const eventForm = container.querySelector('#event-form');
 
