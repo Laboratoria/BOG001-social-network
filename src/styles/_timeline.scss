@@ -11,6 +11,8 @@
 
 .timeline-container {
   @extend .center;
+  padding-bottom: 100px;
+  position: relative;
 }
 
 .eventTimeline {
