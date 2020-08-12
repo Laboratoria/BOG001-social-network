@@ -44,6 +44,9 @@ const signUp = () => {
       </div>
     </div>
 `;
+
+  window.history.forward(1);
+
   const container = document.createElement('div');
   container.setAttribute('class', 'container__form');
   container.innerHTML = view;

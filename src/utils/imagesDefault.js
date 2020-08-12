@@ -7,5 +7,5 @@ export const sportIcons = {
 };
 
 export const profileDefault = {
-  profileUser: '../assets/perfil.png',
+  profileUser: 'assets/perfil.png',
 };

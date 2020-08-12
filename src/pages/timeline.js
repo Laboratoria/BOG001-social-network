@@ -10,7 +10,7 @@ const getSportIcon = (sport) => {
   if (icon) {
     return icon;
   }
-  return '../assets/thinking.png';
+  return 'assets/thinking.png';
 };
 
 const event = (evento) => {
