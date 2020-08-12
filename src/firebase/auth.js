@@ -23,6 +23,9 @@ export const createUserByEmailAndPass = (email, password, city, username) => {
   auth
     .createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
+      userCredential.user.updateProfile({
+        displayName: username,
+      });
       userCredential.user.sendEmailVerification(config)
         .then(() => {
           const user = {
