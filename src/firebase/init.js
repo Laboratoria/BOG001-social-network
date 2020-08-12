@@ -5,6 +5,7 @@ import * as firebase from 'firebase/app';
 // Add the Firebase services that you want to use
 import 'firebase/auth';
 import 'firebase/firestore';
+import 'firebase/storage';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -24,6 +25,6 @@ export const auth = firebase.auth();
 export const database = firebase.firestore();
 export const provider = new firebase.auth.GoogleAuthProvider();
 export const timeStamp = firebase.firestore.FieldValue.serverTimestamp();
-// export const storage = firebase.storage();
+export const storage = firebase.storage();
 // export const getData = database.collection('events').doc();
 // export const userCurrent = firebase.auth().currentUser;
