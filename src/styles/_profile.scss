@@ -1,5 +1,6 @@
 .profile {
-  padding-top: 100px;
+  background-color: rgba(229, 232, 236, 0.2);
+  padding-bottom: 20px;
 }
 
 .profile__imageBackground {
@@ -8,6 +9,7 @@
 }
 
 .profile__imageUser {
+  border-radius: 50%;
   display: block;
   margin: -100px auto 0;
   width: 150px;
@@ -15,26 +17,33 @@
 
 .profile__info {
   color: $white_color;
+  padding: 20px;
 }
 
 .profile__sportsUser {
   @include flex;
+  margin: 0 auto;
+  width: 80%;
 }
 
 .profile__sport {
-  width: 100px;
+  width: 70px;
 }
 
 .profile__edit--btn {
   @extend .button;
   display: block;
-  margin: 0 auto;
+  margin: 20px auto;
+  padding: 10px 15px;
 }
 
 @media (min-width: $media-notebook){
+  .profile {
+    padding-top: 100px;
+  }
   .profile__imageBackground {
     display: block;
-    width: 80vw;
+    height: 400px;
     margin: 0 auto;
   }
   .profile__imageUser {

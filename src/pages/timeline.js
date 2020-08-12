@@ -1,15 +1,8 @@
 import swal from 'sweetalert';
+import { sportIcons } from '../utils/imagesDefault';
 import {
   getEvents, editEvent, deletePost, getEventById,
 } from '../firebase/post';
-
-const sportIcons = {
-  Futbol: '../assets/balon.png',
-  Baloncesto: '../assets/001-basketball.png',
-  Senderismo: '../assets/trekking.png',
-  Béisbol: '../assets/002-baseball.png',
-  Ciclismo: '../assets/bycicle.png',
-};
 
 const getSportIcon = (sport) => {
   const icon = sportIcons[sport];
@@ -59,14 +52,19 @@ const event = (evento) => {
         <div class="event__interaction--position">
           <span class="flaticon-menu icons__timeline">
           </span>
-          <ul class="eventOptions">
-            <li>
-              <button class="eventOptions__btn edit">Editar Evento</button>
-            </li>
-            <li>
-              <button class="eventOptions__btn delete" data-id="${evento.id}">Eliminar Evento</button>
-            </li>
-          </ul>
+          <ul class="eventOptions" id="eventFriend">
+          <li>
+            <button class="eventOptions__btn">Reportar</button>
+          </li>
+        </ul>
+        <ul class="eventOptions" id="myEvent">
+          <li>
+            <button class="eventOptions__btn edit">Editar Evento</button>
+          </li>
+          <li>
+            <button class="eventOptions__btn delete" data-id="${event.id}">Eliminar Evento</button>
+          </li>
+        </ul>
         </div>
       </div>
       <div class="comment__container">
@@ -132,10 +130,13 @@ const event = (evento) => {
     eventContainer.querySelector('.input__comment').value = '';
   });
 
-
-  eventContainer
-    .querySelector('.flaticon-menu')
-    .addEventListener('click', () => eventContainer.querySelector('ul').classList.toggle('hide'));
+  eventContainer.querySelector('.flaticon-menu').addEventListener('click', () => {
+    if (user === event.id) {
+      eventContainer.querySelector('#myEvent').classList.toggle('hide');
+    } else {
+      eventContainer.querySelector('#eventFriend').classList.toggle('hide');
+    }
+  });
   // funcion asistire
   eventContainer
     .querySelector('.flaticon-strong')

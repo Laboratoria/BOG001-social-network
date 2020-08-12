@@ -4,7 +4,6 @@ import feedback from './templates/feedback';
 import start from './pages/start';
 import { validateSession } from './firebase/auth';
 import { setFeedbackHidingHandler } from './utils/feedback-handler';
-import feedback from './templates/feedback';
 import footerTemplate from './templates/footer';
 
 import './firebase/init';

@@ -1,11 +1,11 @@
-.footer {   
-  height: 100px;  
+.footer {
+  height: 100px;
   color: $white-color;
   font-size: 0.9em;
-  text-align: center;  
+  text-align: center;
 }
 
 .footerInfo {
-  @extend .display;  
-  height: 100px;  
+  @extend .center;
+  height: 100px;
 }

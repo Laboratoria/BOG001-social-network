@@ -6,6 +6,14 @@ import event from '../pages/createEvent';
 import error404 from '../pages/error404';
 import editEventComponent from '../pages/editEvent';
 import profile from '../pages/profile';
+import editUser from '../pages/editUser';
+
+let userID;
+if (localStorage.getItem('session')) {
+  const infLocalStorage = localStorage.getItem('session');
+  const convetInfoJson = JSON.parse(infLocalStorage);
+  userID = convetInfoJson.user.uid;
+}
 
 const router = async (route) => {
   let eventId = '';
@@ -23,6 +31,8 @@ const router = async (route) => {
       return timeline();
     case '#/profile':
       return profile();
+    case `#/editUser?userId=${userID}`:
+      return editUser(userID);
     case '#/createEvent':
       return event();
     case `#/editEvent?eventId=${eventId}`:
