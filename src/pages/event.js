@@ -28,17 +28,11 @@ const event = () => {
         <label for="place">Lugar</label>
         <textarea name="place" id="place" cols="35" rows="3" maxlength="80" placeholder="Maximo 80 caracteres. Kr 28c, Calle 20, Cancha de Futbol Es un Ejemplo, Localidad elEjemplo." required></textarea>        
       </div>
-<<<<<<< HEAD
       <div class="">
         <textarea name="description" id="description" cols="35" rows="8" maxlength="150" placeholder="Descripcion maximo 150 caracteres" required></textarea>        
       </div>      
       <div class="">  
         <button type="submit" class="button" id = "publicar">Publicar</button>
-=======
-      <div class="form-group">
-        <label for="description">Descripcion</label>
-        <textarea name="description" id="description" cols="35" rows="8" maxlength="150" placeholder="Descripcion maximo 150 caracteres. Jugaremos futbol en la cancha a las 6:00pm, nos faltan 3 jugadores. Traer agua y mucho animo." required></textarea>        
->>>>>>> b5be764be72fdf217ade0f175e0c318796ca07eb
       </div>
       <button type="submit" class="button" id="publicar">Publicar</button>
     </form>
