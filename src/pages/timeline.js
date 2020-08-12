@@ -1,5 +1,6 @@
 import swal from 'sweetalert';
 import { sportIcons } from '../utils/imagesDefault';
+import footerTemplate from '../templates/footer';
 import {
   getEvents, editEvent, deletePost, getEventById,
 } from '../firebase/post';
@@ -207,6 +208,8 @@ const timeline = async () => {
   };
 
   exportData();
+
+  container.insertAdjacentElement('beforeend', footerTemplate());
 
   return container;
 };
