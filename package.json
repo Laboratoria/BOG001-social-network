@@ -16,7 +16,8 @@
     "pretest": "npm run htmlhint && npm run eslint && npm run stylelint",
     "test": "jest --coverage",
     "start": "npx webpack-dev-server",
-    "deploy": "gh-pages -d src"
+    "build": "webpack --mode production",
+    "deploy": "rm -rf dist && npm run build && gh-pages -d dist"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
