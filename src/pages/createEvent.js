@@ -1,4 +1,5 @@
 import { saveEvent } from '../firebase/post';
+import { fileRegister } from '../firebase/storage';
 
 const event = () => {
   const view = `
@@ -28,8 +29,12 @@ const event = () => {
         <textarea name="place" id="place" cols="35" rows="3" maxlength="80" placeholder="Maximo 80 caracteres. Kr 28c, Calle 20, Cancha de Futbol Es un Ejemplo, Localidad elEjemplo." required></textarea>        
       </div>
       <div class="form-group">
-      <label for="description">Descripcion</label>
+        <label for="description">Descripcion</label>
         <textarea name="description" id="description" cols="35" rows="8" maxlength="150" placeholder="Descripcion maximo 150 caracteres. Jugaremos futbol en la cancha a las 6:00pm, nos faltan 3 jugadores. Traer agua y mucho animo." required></textarea>        
+      </div>
+      <div class="form-group">
+        <input type="file" id="eventImage" placeholder="Imagen">
+        <label for="image">Imagen</label>
       </div>
         <button type="submit" class="button" id="publicar">Publicar</button>
     </form>
@@ -38,6 +43,12 @@ const event = () => {
   container.setAttribute('class', 'event');
   container.innerHTML = view;
   const eventForm = container.querySelector('#event-form');
+
+  container.querySelector('#eventImage').addEventListener('change', (e) => {
+    e.preventDefault();
+    const file = e.target.files[0];
+    fileRegister(file);
+  });
 
   const createEvent = () => {
     const hour = document.getElementById('time').value;
