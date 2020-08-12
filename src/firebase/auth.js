@@ -11,14 +11,14 @@ export const validateSession = () => {
   }
   const session = localStorage.getItem('session');
   if (!session || !JSON.parse(session).user) {
-    window.location.href = 'http://localhost:8080/#/login';
+    window.location.href = '#/login';
   }
 };
 
 // Registro con correo y contraseña
 export const createUserByEmailAndPass = (email, password, city, username) => {
   const config = {
-    url: 'http://localhost:8080/#/login',
+    url: '#/login',
   };
   auth
     .createUserWithEmailAndPassword(email, password)
@@ -54,7 +54,7 @@ export const loginUser = (email, password) => auth
   .then((userCredential) => {
     if (userCredential.user.emailVerified) {
       localStorage.setItem('session', JSON.stringify(userCredential));
-      window.location.href = 'http://localhost:8080/#/timeline';
+      window.location.href = '#/timeline';
     } else {
       showErrorMessage('auth/email-not-verified');
     }
@@ -88,7 +88,7 @@ export const loginUserGoogle = () => {
       console.error(err);
     });
     localStorage.setItem('session', JSON.stringify(userCredential));
-    window.location.href = 'http://localhost:8080/#/timeline';
+    window.location.href = '#/timeline';
   }).catch((error) => {
     showErrorMessage(error.code);
     throw error;
