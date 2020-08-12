@@ -11,9 +11,9 @@ const headerTimeline = () => {
       <a href="#/timeline"><img class="header__logo" src="../assets/logoWhite.png" alt="phySport logo"></a>
       <div class="flaticon-user icons" id="menu">
         <ul class="list hide" id="menuList">
-        <li class="header__menu__item" >${getNameUser()}</li>
-        <li class="header__menu__item" ><a href="#/profile"> Perfil</li>
-        <li class="header__menu__item" id="exit">Cerrar Sesion</li>
+          <li class="header__menu__item" >${getNameUser()}</li>
+          <li class="header__menu__item" ><a href="#/profile"> Perfil</li>
+          <li class="header__menu__item logout" id="exit">Cerrar Sesion</li>
         </ul>
       </div>
     `;

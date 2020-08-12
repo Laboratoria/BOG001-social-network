@@ -4,6 +4,7 @@
     justify-content: center;
     height: 100px;
     width: 100%;
+    z-index: 100;
     &__logo{
         width: 50%;
         min-width: 200px;
@@ -21,21 +22,22 @@
 
     .header__menu__item {
         color: $secondary_color;
-        font-size: 20px;
-        a:hover {
+        font-size: 18px;
+        a:hover{
             color: $primary_color;
         }
     }
 
     .list {
-        height: 50px;
+        height: 70px;
         background-color: $white_color;
-        padding: 20px;
+        padding: 10px;
         margin: 10px 0;
         position: absolute;
         right: 0;
         top: 50px;
         transition: .5s;
+        border-radius: 4px;
     }
     .hide {
         top: -500%;

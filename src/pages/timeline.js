@@ -90,14 +90,35 @@ const event = (evento) => {
     const commentContainer = eventContainer.querySelector('.comment__container');
     const querySnapshot = await getEventById(evento.eventId);
     const comment = querySnapshot.data().comment;
+    const uid = JSON.parse(localStorage.getItem('session')).user.uid;
+
 
     if (comment && !evento.open) {
       comment.forEach((com) => {
+        const userIsCreator = com.useId === uid;
         const commentTemplate = document.createElement('p');
-        commentTemplate.setAttribute('class', 'flaticon-remove delete__comment');
+        const closeIcon = document.createElement('span');
+        const classes = userIsCreator ? 'flaticon-remove delete__comment' : null;
+        closeIcon.setAttribute('class', classes);
         commentTemplate.innerText = `${com.username}: 
         ${com.comment}`;
+        commentTemplate.insertAdjacentElement('afterbegin', closeIcon);
         commentContainer.insertAdjacentElement('beforeend', commentTemplate);
+
+        if (userIsCreator) {
+          closeIcon.addEventListener('click', () => {
+            const filteredComments = comment.filter(item => item.comment !== com.comment);
+            editEvent(evento.eventId, { comment: filteredComments })
+              .then(() => {
+                evento.comment = filteredComments;
+                commentContainer.removeChild(commentTemplate);
+                eventContainer.querySelector('#form__comment').classList.remove('hide');
+                eventContainer.querySelector('.commentQuantity').innerHTML = `${filteredComments.length} comentarios`;
+                commentContainer.innerHTML = '';
+                evento.open = false;
+              });
+          });
+        }
       });
     }
 
@@ -106,10 +127,6 @@ const event = (evento) => {
     }
 
     evento.open = !evento.open;
-
-    document.querySelector('.delete__comment').addEventListener('click', () => {
-      console.log('aqui deberia eliminar pero nos e me ocurre como');
-    });
   };
 
   eventContainer.querySelector('.flaticon-chat').addEventListener('click', () => {
