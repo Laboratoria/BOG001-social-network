@@ -80,8 +80,12 @@ label {
   }
 
   .event_form{
-    input, select, textarea {
+    input, textarea {
       width: 30em;
+    }
+    select{
+      width: 31em;
+      height: 3.6em;
     }
   }
 }
