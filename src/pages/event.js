@@ -1,22 +1,22 @@
 import { saveEvent } from '../firebase/post';
-import { fileRegister } from '../firebase/storage';
+// import { fileRegister } from '../firebase/storage';
 
 const event = () => {
   const view = `
   <a href="#/timeline"><span class="flaticon-remove postIcon"></span></a>
     <h1 class="login__title container__form--title">Crea tu evento</h1>
     <form class="event_form form" id="event-form" action = "" method = "">    
-      <div class="">
-        <label for = "fname" class="">Fecha</label>
-        <input class="event__input"  type="date" id="fecha" name="Fecha" required autocomplete="off" >
+      <div class="form-group">
+        <label for="date">Fecha</label>
+        <input class="event__input"  type="date" id="date" name="Fecha" required autocomplete="off" >
       </div>
-      <div class="">
-        <label for = "Hora" class="">Hora</label>    
-        <input class="event__input" type="time" id="hora" name ="hora" required autocomplete = "off" >
+      <div class="form-group">
+      <label for="time" class="">Hora</label>    
+        <input class="event__input" type="time" id="time" name ="hora" required autocomplete = "off" >
       </div>      
-      <div>
-        <label class="" for = "fname">Deporte</label>
-        <select class="event__input" type="text" id="deporte" name="Deporte" required autocomplete="off" >
+      <div class="form-group">
+        <label for="sport">Deportes</label>
+        <select class="event__input" type="text" id="sport" name="Deporte" required autocomplete="off" >
           <option class="" value="Futbol">Fútbol</option>
           <option class="" value="Baloncesto">Baloncesto</option>
           <option class="" value="Senderismo">Senderismo</option>
@@ -28,13 +28,13 @@ const event = () => {
         <label for="place">Lugar</label>
         <textarea name="place" id="place" cols="35" rows="3" maxlength="80" placeholder="Maximo 80 caracteres. Kr 28c, Calle 20, Cancha de Futbol Es un Ejemplo, Localidad elEjemplo." required></textarea>        
       </div>
-      <div class="">
+      <div class="form-group">
+        <label for="description">Descripcion</label>
         <textarea name="description" id="description" cols="35" rows="8" maxlength="150" placeholder="Descripcion maximo 150 caracteres" required></textarea>        
       </div>      
       <div class="">  
         <button type="submit" class="button" id = "publicar">Publicar</button>
-      </div>
-      <button type="submit" class="button" id="publicar">Publicar</button>
+      </div>     
     </form>
   `;
   const container = document.createElement('section');
@@ -43,9 +43,9 @@ const event = () => {
   const eventForm = container.querySelector('#event-form');
 
   const createEvent = () => {
-    const hour = document.getElementById('hora').value;
-    const date = document.getElementById('fecha').value;
-    const sport = document.getElementById('deporte').value;
+    const hour = document.getElementById('time').value;
+    const date = document.getElementById('data').value;
+    const sport = document.getElementById('sport').value;
     const place = document.getElementById('place').value;
     const description = document.getElementById('description').value;
 
