@@ -26,7 +26,7 @@ const profile = async () => {
     if (icon) {
       return icon;
     }
-    return '../assets/thinking.png';
+    return 'assets/thinking.png';
   };
 
   const view = `
