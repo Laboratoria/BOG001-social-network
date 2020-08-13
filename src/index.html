@@ -4,23 +4,98 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="media.css" media="screen and (min-width: 320px) and (max-width:1440px)"/>
   <title>Red social-SPA</title>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li>
-        <a href="#/Home">Inicio</a>
-      </li>
-      <li>
-        <a href="#/publicaciones">Publicaciones</a>
-      </li>
-      <li>
-        <a href="#/perfil">Perfil</a>
-      </li>
-    </ul>
-  </nav>
+  <!--<div class="topNav" id="inicio">
+    <a class="active" href="#/">INICIO</a>
+    <a href="#/publicaciones">PUBLICACIONES</a>
+    <a href="#/perfil">PERFIL</a>
+    <div class="form-popup" id="myForm">
+      <form class="form-container">
+        <label for="email"><b>Email :</b></label>
+        <input type="text" placeholder="abc@gmail.com" size="11" name="email" required>
+    
+        <label for="psw"><b>Password :</b></label>
+        <input type="password" placeholder="*******" size="11" name="psw" required>
+    
+        <button type="submit" class="btn">Login</button>
+      </form>
+    </div>
+  </div>-->
+  
+  <div class="container">
+    <br>
+    <form class="registro">
+      <h2>Usuarios Registrados</h2>
+      <br>
+      <button id="btninicio-sesion">Iniciar Sesión</button>
+      <br>
+      <hr>
+      <br>
+      <h2><strong>Registrese</strong></h2>
+      <br>
+      <p>Complete este formulario para crear una cuenta</p>
+      <br>
+      <label for="email"><b>Correo Electronico :</b></label><br>
+      <input type="text" placeholder="ingresa correo" size="20" required>
+      <br>
+      <label for="psw"><b>Contraseña : </b></label><br>
+      <input type="password" placeholder="***********" size="20" required>
+      <br>
+      <label for="psw-repeat"><b>Repite la Contraseña :</b></label><br>
+      <input type="password" placeholder="***********" size="20" required>
+      <p>Al crear una cuenta, acepta nuestros <a href="#" style="color:dodgerblue">Terminos y condiciones de privacidad</a>.</p>
+      <br>
+      <div class="btnRegistro">
+        <button type="button" class="cancelarbtn">Cancelar</button>
+        <button type="submit" class="registrarse">Registrate</button>
+      </div>
+    </form>
+  </div>
+
+  <!---->
+  <div class="modal" id="myModal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <form>
+        <div class="inicio-sesion">
+          <label for="email"><b>Correo Electronico :</b></label><br>
+          <input type="text" name="username" placeholder="Correo Electronico" required><br>
+          <label for="psw"><b>Contraseña : </b></label><br>
+          <input type="password" name="password" placeholder="Contraseña" required>
+          <br>
+          <input type="submit" class="login" value="Iniciar Sesión"><br><br>
+          <button class="google-btn"><a href="#">Iniciar sesión con Google+</a></button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  
+  
   <section id="container"></section>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDoCAXFSiT3L1tYbifdpUebEu2m2vpYpgs",
+    authDomain: "sn-angelicas-proyect.firebaseapp.com",
+    databaseURL: "https://sn-angelicas-proyect.firebaseio.com",
+    projectId: "sn-angelicas-proyect",
+    storageBucket: "sn-angelicas-proyect.appspot.com",
+    messagingSenderId: "433005938412",
+    appId: "1:433005938412:web:2dbb8979c13d2cc62cc7c9"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
   <script type="module" src="main.js"></script>
 </body>
 </html>

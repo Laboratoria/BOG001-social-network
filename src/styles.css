@@ -1,4 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
 body {
-    background: yellow;
-    color: red;
+    display: block;
+    margin: 8px;
+    background-image: url(img/faro.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+}
+
+h2 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+.topNav {
+    margin: 0;
+    border: 3px solid;
+    background: #197163;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.topNav a {
+    float: none;
+    display: inline;
+    color:  white;
+    text-align: center;
+    padding: 2px 17px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.topNav a:hover {
+    background-color: black;
+    color: yellow;
+}
+
+.container {
+    padding: 16px;
+}
+
+.registro {
+    border: 2px solid;
+    color: black;
+    background-color: #27496ddd;
+    width: 40%;
+    padding: 3%;
+    border-radius: 10px;
+}
+
+input[type=text], input[type=password] {
+    width: 70%;
+    padding: 5px;
+    margin: 4px 0 10px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    border: 1px solid;
+    color: black;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: rgb(182, 177, 177);
+    outline: none;
+}
+
+.cancelarbtn, .registrarse {
+    padding: 4px 10px;
+    background-color: lightblue;
+    border-radius: 6px;
+    margin: 4px;
+}
+
+div.btnRegistro {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+}
+
+.modal-content {
+    border: 2px solid;
+    color: black;
+    background-color: #77797cdd;
+    width: 40%;
+    padding: 3%;
+    border-radius: 10px; 
+}
+
+#btninicio-sesion {
+    display: block;
+    padding: 10px;
+    margin: auto;
+    font-size: 14px;
+    color: negro;
+    background-color: #10a567;
+    border-radius: 8px;
+}
+
+.close {
+    color: black;
+    font-weight: bold;
+    margin-left: 95%;
+    font-size: 160%;
+}
+
+.login {
+    margin-left: 75%;
+    font-size: 100%;
+    border: 1px solid;
+    color: black;
+}
+
+button.google-btn {
+    border: 1px solid;
+    font-size: 16px;
+    align-items: center;
+    margin-left: 4em;
+    background-color: coral;
 }
