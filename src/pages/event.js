@@ -32,9 +32,7 @@ const event = () => {
         <label for="description">Descripcion</label>
         <textarea name="description" id="description" cols="35" rows="8" maxlength="150" placeholder="Descripcion maximo 150 caracteres" required></textarea>        
       </div>      
-      <div class="">  
-        <button type="submit" class="button" id = "publicar">Publicar</button>
-      </div>     
+        <button type="submit" class="button" id="publicar">Publicar</button>          
     </form>
   `;
   const container = document.createElement('section');
@@ -44,7 +42,7 @@ const event = () => {
 
   const createEvent = () => {
     const hour = document.getElementById('time').value;
-    const date = document.getElementById('data').value;
+    const date = document.getElementById('date').value;
     const sport = document.getElementById('sport').value;
     const place = document.getElementById('place').value;
     const description = document.getElementById('description').value;
