@@ -1,0 +1,91 @@
+.event{
+  @extend .center;
+  .container__form--title{
+  text-align: center;
+  color: $secondary_color;
+  margin-bottom: 42px;
+  }
+}
+.event_form{
+  @extend .horizontalCentering;
+input, select, textarea {
+  border-radius: 0.5em;
+  font-family: $font-family;
+  background-color: $white_color;
+  height: 2.6em;
+  width: 20em;
+  padding: 0.5em;
+  margin-bottom: 2em;
+
+  &::-webkit-input-placeholder {
+      @include input
+  /* display: flex;
+  align-items: center;
+  input{
+    border-radius: 0.5em;
+    font-family: $font-family;
+    background-color: $white_color;
+    width: 272px;
+    height: 2.6em;
+    margin-bottom: 1em;
+    padding: 0 1.5em;
+    &::-moz-placeholder {
+      @include input
+    }
+  }
+  
+  select{
+    border-radius: 0.5em;
+    width: 312px;
+    height: 2.6em;
+    margin-bottom: 1em;
+    padding: 0 1.5em;
+  }
+
+  &::-moz-placeholder {
+      @include input */
+  }
+}
+
+textarea {
+  height: 10em;
+}
+
+label {
+  color: #eee;
+  font-size: 0.9em;
+  letter-spacing: 1px;
+}
+
+  button{
+    @extend .borderStyles;
+    @extend .button;
+    @extend .center;
+    font-size: 1em;
+  }
+}
+
+.icon--close{
+  color: $secondary_color;
+  margin: 10px;
+}
+.event--link {
+  text-align: end;
+  width: 100%;
+}
+
+@media (min-width: $media-tablet){
+  .event{
+    padding-top: 100px;
+  }
+
+  .event_form{
+    input, textarea {
+      width: 30em;
+    }
+    select{
+      width: 31em;
+      height: 3.6em;
+    }
+  }
+}

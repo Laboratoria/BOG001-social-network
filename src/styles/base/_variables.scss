@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap');
+$primary_color: #021945;
+$secondary_color: #FA4D00;
+$white_color: #E5E8EC;
+$gray_color: #9DA3AE;
+
+$font-family: 'Roboto', sans-serif;
+
+$media-mobile: 320px;
+$media-tablet: 768px;
+$media-notebook: 1024px;
+$media-desktop: 1600px;
+
+.horizontalCentering {
+    display: flex;
+    align-items: center;
+}
+
+.borderStyles{
+    border: none;
+    outline: none;
+    border-radius: 50px;
+}
+
+.center {
+  display: flex;
+	align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.button {
+	background-color: $secondary_color;
+	border: none;
+	border-radius: 25px;
+	color: $white_color;
+	font-size: 1em;
+	font-weight: bold;
+  height: 30px;
+  width: 30%;	
+	margin: 10px 0px;
+	outline: none;
+}
+
+@mixin input {
+  color: $gray_color;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+@mixin flex {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}

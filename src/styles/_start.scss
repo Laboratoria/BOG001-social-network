@@ -1,0 +1,37 @@
+.start {
+  background-image: linear-gradient(
+      rgba(250, 77, 0, 0.7), 
+      rgba(31, 31, 34, 0.6)
+  ), url(../assets/inicio.png);
+  background-size: cover;  
+  height: 100vh;
+  background-position: center;
+  &__container{
+    height: 100%;
+    background-color: transparent;
+    @extend .center;
+  }
+  &__logo {
+    width: 60%;
+    max-width: 600px;
+    background-color: transparent;
+  }
+  &__slogan {
+    font-size: 1em;
+    letter-spacing: 1px;
+    color: $white_color;
+    background-color: transparent;
+  } 
+}
+
+@media (min-width: $media-tablet){
+  .start {
+    background-image: linear-gradient(
+      rgba(250, 77, 0, 0.7), 
+      rgba(31, 31, 34, 0.6)
+    ), url(../assets/fotopexel.jpg);
+    &__slogan {
+      font-size: 1.5em;
+    } 
+  }
+}

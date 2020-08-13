@@ -1,0 +1,26 @@
+@import './base/_variables.scss';
+@import './_start.scss';
+@import './_formStyles.scss';
+@import './_timeline.scss';
+@import './_event.scss';
+@import './_header.scss';
+@import './_feedback.scss';
+@import './_profile.scss';
+@import './error404';
+@import './footer.scss';
+
+a {
+    color: $secondary_color;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    background-color: $primary_color;
+    font-family: $font-family;
+    margin: 0;
+}
+

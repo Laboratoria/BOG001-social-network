@@ -1,0 +1,28 @@
+.error404 {
+  display: grid;
+  padding: 10% 18%;
+  grid-template-columns: repeat(2, minmax(80px, 180px));
+  justify-content: center;
+  gap: 15px;
+}
+
+.error404-img img {
+  width: 100%;
+}
+
+.error404-title {
+  color: $secondary-color;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.8em;
+}
+
+@media (min-width: $media-tablet) {
+  .error404 {    
+    padding: 10% 18% 5% 18%;    
+  }
+
+  .error404-title {
+    font-size: 2.5em;
+  }
+}

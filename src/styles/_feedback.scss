@@ -1,0 +1,46 @@
+.feedback-container{
+    @extend .horizontalCentering;
+    height: 40px;
+    padding: 5px;
+    position: fixed;
+    bottom: 28px;
+    left: -100vw;
+    width: 92vw;
+    border-radius: 4px;
+    transition: 0.5s;
+    p{
+        color: $white_color;
+        font-size: 18px;
+        font-weight: bold;
+        flex: 0.8;
+    }
+    button {
+        color: $white_color;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        flex: 0.2;
+    }
+    .flaticon-close:before {
+        font-size: 20px;
+    }
+}
+
+.feedback-container-shown {
+    left: 4.5vw;
+    transition: 0.5s;
+}
+
+.feedback-container-error{
+    background-color: #db3300;
+}
+
+.feedback-container-success{
+    background-color: #28895e;
+}
+
+@media (min-width: $media-tablet){
+    .feedback-container{
+        width: 30vw;
+    }
+}

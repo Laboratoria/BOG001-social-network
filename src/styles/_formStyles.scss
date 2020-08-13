@@ -1,0 +1,139 @@
+.form__box{
+    @extend .center;
+    .login__title{
+    color: $secondary_color;
+    margin-bottom: 1.5em;
+    }
+}
+
+.form{
+    @extend .center;
+    .form-group {
+        position: relative;
+      }
+    input,select{
+        @extend .borderStyles;
+        background-color: $white_color;
+        height: 2.6em;
+        width: 16em;
+        padding-left: 10px;
+        margin-bottom: 2em;
+
+        &::-webkit-input-placeholder {
+            @include input
+        }
+
+        &::-moz-placeholder {
+            @include input
+        }
+    }
+    label {
+        color: #eee;
+        font-size: 0.9em;
+        position: absolute;
+        top: -1.5em;
+        left: 0;
+        transition: all 0.3s;
+        opacity: 1;
+        letter-spacing: 1px;
+    }
+    input:placeholder-shown + label {
+        top: 12px;
+        left:  12px;
+        opacity: 0;
+    }
+    button{
+        @extend .borderStyles;
+        background-color: $secondary_color;
+        border: none;
+        width: 222px;
+        height: 2.2em;
+        padding: 0.4em;
+        color: $white_color;
+        font-size: 1em;
+        font-weight: bold;
+        text-decoration: none;
+        letter-spacing: 1px;
+        cursor: pointer;
+        @extend .center;
+    }
+    a{
+        border-radius: 50px;
+        padding: 20px 30px;
+    }
+}
+
+.signUp__google{
+    margin-top: 35px;
+    width: 250px;
+    height: 40px;
+    @include flex;
+    h3{
+        color: $gray_color;
+        font-size: 1em;
+    }
+    a{
+        color: $secondary_color;
+        text-decoration: none;
+        font-size: 1.1em;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+    }
+}
+
+.google-icon{
+    background-color: transparent;
+    width: 40px;
+    cursor: pointer;
+}
+
+.password--container{
+    @extend .horizontalCentering;
+    position: relative;
+    .eye__icon{
+        background-image: url('../assets/eye-close-up.png');
+        background-size: contain;
+        width: 1.5em;
+        height: 1.5em;
+        position: absolute;
+        top: 7px;
+        right: 12px;
+        cursor: pointer;
+    }
+    .eyeblock__icon{
+        background-image: url('../assets/invisible.png');
+        background-size: contain;
+        width: 1.5em;
+        height: 1.5em;
+        position: absolute;
+        right: 12px;
+        top: 7px;
+        cursor: pointer;
+    }
+}
+
+@media (min-width: $media-tablet){
+    .container__form{
+        background-image: linear-gradient(
+            rgba(250, 77, 0, 0.7), 
+            rgba(31, 31, 34, 0.6)
+        ), url(../assets/man-dunking-the-ball-163452.jpg);
+        background-size: cover;  
+        height: 80vh;
+        width: 100vw;
+        padding-top: 20vh;
+    }
+    .form__box{
+        width: 50%;
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: rgba(2, 25, 69,.8);
+        padding: 20px 0;
+        border-radius: 10px;
+    }
+}
