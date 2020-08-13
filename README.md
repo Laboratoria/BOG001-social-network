@@ -1,6 +1,6 @@
-# Red Social phySport
+# Red Social phySport 💙🧡💙🧡
 
-## Índice
+## Índice 💨
 
 * [1. Resumen del proyecto](#1-resumen-del-proyecto)
 * [2. Objetivo de la página](#2-objetivo-de-la-página)
@@ -11,15 +11,15 @@
 * [7. Objetivos de aprendizaje](#7-objetivos-de-aprendizaje)
 
 
-## 1. Resumen del proyecto
+## 1. Resumen del proyecto 💪
 
 **phySport** es un proyecto para amantes del deporte, podrás encontrar eventos de tu interes, conocer otros deportistas, interactuar con otros usuarios y más. En la red social **phySport** podrás registrate para crear eventos, editarlos, borrarlos y asistir. **"Find a game, win friends"**.
 
-## 2. Objetivo de la página
+## 2. Objetivo de la página 🚴‍♀️🤾‍♂️
 
 Es una red social enfocada en personas amantes del deporte o deportistas que quieran interactuar con personas que tengan intereses comunes en algún deporte. Podrás crear eventos en los que pueden participar personas que esten interesadas o se encuentren cerca a tu ubicación, Es una red social fácil de usar, intuitiva y entendible para el usuario.
 
-## 3. Historias de usuario
+## 3. Historias de usuario ⚡
 
 * H1 - Yo como usuario, quiero poder registrarme con mi correo,
 para poder publicar eventos y mirar los eventos cerca de mi ciudad.
@@ -32,17 +32,17 @@ para completar mi equipo de futbol.
 * H6 - Yo como usuario de la aplicacion PhySport, quiero poder editar el evento que cree, para que las personas interesadas tengan la informacion actualizada.
 * H7 - Yo como usuario, quiero poder eliminar el evento que cree, porque ya no se realizará.
 
-## 4. Prototipo de baja fidelidad
+## 4. Prototipo de baja fidelidad 👇
 
-## 5. Prototipo de alta fidelidad
+## 5. Prototipo de alta fidelidad 👌
 
 El prototipo de alta fidelidad se realizo en Adobe XD
 
-## 6. Feedback
+## 6. Feedback 👩🧑
 
 Entre las mejoras recibidas en el feedback se pedia ajustar el tamaño de los botones en los formularios, colocar ejemplos en los placeholder de los inputs del formulario "evento" asignados a lugar y descripción, ajustar contenido del timeline para cada evento publicado, estandarizar bordes de los inputs y agregar labels.
 
-## 7. Objetivos de aprendizaje
+## 7. Objetivos de aprendizaje 🚩
 
 ### HTML y CSS
 
