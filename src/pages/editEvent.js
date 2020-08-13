@@ -49,9 +49,8 @@ const editEventComponent = async (eventId) => {
 
   const saveImg = async (file) => {
     const fileType = file.name.split('.').reverse()[0];
-    const time = Date.now();
-    const fileName = time.concat('.', fileType);
-    if ((fileType === 'jpg') || (fileType === 'png') || (fileType === 'jpeg')) {
+    const fileName = `${event.image} + '.' + ${fileType}`;
+    if ((fileType === 'jpg') || (fileType === 'png') || (fileType === 'jpeg') || (fileType === 'svg') || (fileType === 'gif')) {
       const promise = new Promise((resolver) => {
         const success = async (url) => {
           resolver(url);
@@ -60,7 +59,7 @@ const editEventComponent = async (eventId) => {
       });
       return promise;
     }
-    return Promise.reject(new Error(''));
+    return Promise.reject();
   };
 
   const updateEvents = async () => {

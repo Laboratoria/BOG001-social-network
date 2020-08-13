@@ -12,17 +12,27 @@
   border-radius: 50%;
   display: block;
   margin: -100px auto 0;
-  width: 150px;
+  height: 200px;
+  width: 200px;
 }
 
 .profile__info {
   color: $white_color;
   padding: 20px;
+  text-align: center;
+  h2 {
+    font-size: 20px;
+  }
+  span {
+    color: $secondary_color;
+    font-size: 25px;
+  }
 }
 
 .profile__sportsUser {
-  margin: 0 auto;
-  width: 80%;
+  display: block;
+  text-align: center;
+  margin: 20px 0;
 }
 
 .profile__sport {
@@ -42,12 +52,13 @@
   }
   .profile__imageBackground {
     display: block;
-    height: 400px;
+    height: 500px;
     margin: 0 auto;
   }
   .profile__imageUser {
-    margin: -150px auto 0;
-    width: 200px;
+    margin: -200px auto 0;
+    height: 300px;
+    width: 300px;
   }
   .profile__info,
   .profile__sportsUser {
