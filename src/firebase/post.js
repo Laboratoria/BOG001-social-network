@@ -1,23 +1,19 @@
 import { database, timeStamp } from './init';
 
-export const saveEvent = (hour, date, sport, place, description) => {
+export const saveEvent = (eventToCreate) => {
   const infLocalStorage = localStorage.getItem('session');
   const convetInfoJson = JSON.parse(infLocalStorage);
   const IdUser = convetInfoJson.user.uid;
   const nameUser = convetInfoJson.user.displayName;
   const photoURL = convetInfoJson.user.photoURL;
-  console.log(IdUser);
-  database.collection('events').add({
+  const eventInfo = {
+    eventToCreate,
     id: IdUser,
     nombre: nameUser,
     photo: photoURL,
-    hora: hour,
-    fechaEvento: date,
-    deporte: sport,
-    lugar: place,
-    descripcion: description,
     fechaPublicacion: timeStamp,
-  }).then((respuesta) => {
+  };
+  database.collection('events').add(eventInfo).then((respuesta) => {
     console.log(respuesta);
     window.location.href = '#/timeline';
   });

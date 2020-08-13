@@ -33,6 +33,7 @@ const event = (evento) => {
       </div>
       <p><span class="event__subtitle">Lugar: </span>${evento.lugar}</p>
       <p>${evento.descripcion}</p>
+      <img src="${evento.image}">
       <div class="event__interaction">
         <div>
           <span class="flaticon-strong icons__timeline"></span>

@@ -1,4 +1,5 @@
 import { getEvent, editEvent } from '../firebase/post';
+import { fileRegister } from '../firebase/storage';
 
 const editEventComponent = async (eventId) => {
   const container = document.createElement('section');
@@ -34,11 +35,31 @@ const editEventComponent = async (eventId) => {
         <label for="description">Descripcion</label>
         <textarea name="description" id="description" cols="35" rows="8" maxlength="150" placeholder="Descripcion maximo 150 caracteres" required>${event.descripcion}</textarea>        
       </div>
+      <div class="form-group">
+        <input type="file" id="image" placeholder="Imagen" accept="image/*">
+        <label for="password">Imagen</label>
+      </div>
         <button type="submit" class="button" id="actualizar">Actualizar</button>
     </form>
   `;
   container.innerHTML = view;
   const eventForm = container.querySelector('#event-form');
+
+  const saveImg = async (file) => {
+    const fileType = file.name.split('.').reverse()[0];
+    const time = Date.now();
+    const fileName = time.concat('.', fileType);
+    if ((fileType === 'jpg') || (fileType === 'png') || (fileType === 'jpeg')) {
+      const promise = new Promise((resolver) => {
+        const success = async (url) => {
+          resolver(url);
+        };
+        fileRegister(file, fileName, success);
+      });
+      return promise;
+    }
+    return Promise.reject(new Error(''));
+  };
 
   const updateEvents = async () => {
     const hour = document.getElementById('time').value;
@@ -47,13 +68,25 @@ const editEventComponent = async (eventId) => {
     const place = document.getElementById('place').value;
     const description = document.getElementById('description').value;
 
-    editEvent(eventId, {
+    const file = container.querySelector('#image').files;
+    let imgURL = '';
+    if (file.length) {
+      imgURL = await saveImg(file[0]);
+    }
+
+    const eventToEdit = {
       hora: hour,
       fechaEvento: date,
       deporte: sport,
       lugar: place,
       descripcion: description,
-    });
+    };
+
+    if (imgURL) {
+      eventToEdit.image = imgURL;
+    }
+
+    editEvent(eventId, eventToEdit);
     window.location.href = '#/timeline';
   };
 
