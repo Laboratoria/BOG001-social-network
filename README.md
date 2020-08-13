@@ -1,6 +1,6 @@
 # Red Social phySport 💙🧡💙🧡
 
-<img src="readme/Artboard 1.png">
+<img src="readme/Artboard 1.png" width = 300px>
 
 ## Índice 💨
 
