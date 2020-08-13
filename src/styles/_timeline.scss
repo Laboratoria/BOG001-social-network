@@ -158,6 +158,16 @@ h3{
   transition: all .2s ease;
 }
 
+.eventImg{
+  overflow: hidden;
+  margin: 0 auto;
+  width: 80%;
+  img {
+    max-width: 100%;
+  }
+}
+
+
 @media (min-width: $media-tablet) {
   .timeline-container {
     padding-top: 100px;

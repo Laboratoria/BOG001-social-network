@@ -1,19 +1,20 @@
 import { saveEvent } from '../firebase/post';
 import { fileRegister } from '../firebase/storage';
+import { timeStamp } from '../firebase/init';
 
 const event = () => {
   const view = `
   <a href="#/timeline"><span class="flaticon-remove postIcon"></span></a>
     <h1 class="login__title container__form--title">Crea tu evento</h1>
-    <form class="event_form form" id="event-form" action = "" method = "">    
+    <form class="event_form form" id="event-form">
       <div class="form-group">
         <label for="date" class="">Fecha</label>
         <input class="event__input"  type="date" id="date" name="Fecha" required autocomplete="off" >
       </div>
       <div class="form-group">
-        <label for="time" class="">Hora</label>    
+        <label for="time" class="">Hora</label>
         <input class="event__input" type="time" id="time" name ="hora" required autocomplete = "off" >
-      </div>      
+      </div>
       <div class="form-group">
         <label for="sport">Deporte</label>
         <select class="event__input" type="text" id="sport" name="Deporte" required autocomplete="off" >
@@ -23,7 +24,7 @@ const event = () => {
           <option value="Beisbol">Béisbol</option>
           <option value="Ciclismo">Ciclismo</option>
         </select>
-      </div>      
+      </div>
       <div class="form-group">
         <label for="place">Lugar</label>
         <textarea name="place" id="place" cols="35" rows="3" maxlength="80" placeholder="Maximo 80 caracteres. Kr 28c, Calle 20, Cancha de Futbol Es un Ejemplo, Localidad elEjemplo." required></textarea>        
@@ -47,7 +48,7 @@ const event = () => {
   const saveImg = async (file) => {
     const fileType = file.name.split('.').reverse()[0];
     const fileName = `${Date.now()} + '.' + ${fileType}`;
-    if ((fileType === 'jpg') || (fileType === 'png') || (fileType === 'jpeg')) {
+    if ((fileType === 'jpg') || (fileType === 'png') || (fileType === 'jpeg') || (fileType === 'svg') || (fileType === 'gif')) {
       const promise = new Promise((resolver) => {
         const success = async (url) => {
           resolver(url);
@@ -60,6 +61,11 @@ const event = () => {
   };
 
   const createEvent = async () => {
+    const infLocalStorage = localStorage.getItem('session');
+    const convetInfoJson = JSON.parse(infLocalStorage);
+    const IdUser = convetInfoJson.user.uid;
+    const nameUser = convetInfoJson.user.displayName;
+    const photoURL = convetInfoJson.user.photoURL;
     const hour = document.getElementById('time').value;
     const date = document.getElementById('date').value;
     const sport = document.getElementById('sport').value;
@@ -73,6 +79,10 @@ const event = () => {
     }
 
     const eventToCreate = {
+      id: IdUser,
+      nombre: nameUser,
+      photo: photoURL,
+      fechaPublicacion: timeStamp,
       hora: hour,
       fechaEvento: date,
       deporte: sport,

@@ -20,17 +20,14 @@ const getSportIcon = (sport) => {
   return 'assets/thinking.png';
 };
 
-const image = () => {
-  
-};
-
 const event = (evento) => {
   const user = JSON.parse(localStorage.getItem('session')).user.uid;
-  const eventContainer = document.createElement('article');
-  eventContainer.setAttribute('class', 'eventTimeline');
   const likesQuantity = evento.likes ? evento.likes.length : 0;
   const commentQuantity = evento.comment ? evento.comment.length : 0;
-  eventContainer.innerHTML = `
+  const eventContainer = document.createElement('article');
+  eventContainer.setAttribute('class', 'eventTimeline');
+
+  const view = `
     <div class="event__info">
       <div class="event__upper--container">
         <div class="user">
@@ -44,7 +41,8 @@ const event = (evento) => {
       </div>
       <p><span class="event__subtitle">Lugar: </span>${evento.lugar}</p>
       <p>${evento.descripcion}</p>
-      <img src="${evento.image}">
+      <div class="eventImg">
+      </div>
       <div class="event__interaction">
         <div>
           <span class="flaticon-strong icons__timeline"></span>
@@ -84,6 +82,18 @@ const event = (evento) => {
       </div>
     </div>
   `;
+
+  eventContainer.innerHTML = view;
+
+  const image = () => {
+    if (evento.image) {
+      const imgContainer = eventContainer.querySelector('.eventImg');
+      const img = document.createElement('img');
+      img.src = evento.image;
+      imgContainer.appendChild(img);
+    }
+  };
+  image();
 
   const createComment = () => {
     const comment = evento.comment || [];

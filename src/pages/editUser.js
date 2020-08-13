@@ -40,8 +40,8 @@ const editUser = async () => {
           <select class="event__input" type="text" id="sport" name="Deporte11" required autocomplete="off" >
             <option value="Futbol">Fútbol</option>
             <option value="Baloncesto">Baloncesto</option>
-            <option value="senderismo">Senderismo</option>
-            <option value="beisbol">Béisbol</option>
+            <option value="Senderismo">Senderismo</option>
+            <option value="Beisbol">Béisbol</option>
             <option value="Ciclismo">Ciclismo</option>
           </select>
         </div>
@@ -60,7 +60,7 @@ const editUser = async () => {
   const saveImg = async (file) => {
     const fileType = file.name.split('.').reverse()[0];
     const fileName = user.id.concat('.', fileType);
-    if ((fileType === 'jpg') || (fileType === 'png') || (fileType === 'jpeg')) {
+    if ((fileType === 'jpg') || (fileType === 'png') || (fileType === 'jpeg') || (fileType === 'svg')) {
       const promise = new Promise((resolver) => {
         const success = async (url) => {
           resolver(url);

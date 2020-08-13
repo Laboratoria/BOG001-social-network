@@ -33,8 +33,8 @@ const profile = async () => {
     <img class="profile__imageBackground" src="assets/user.jpg">
     <img class="profile__imageUser" src="${userProfile(user.photo)}">
     <div class="profile__info">
-    <h2>${user.usuario}</h2>
-    <p>${user.ciudad}</p>
+    <h2><span>Usuario: </span> ${user.usuario}</h2>
+    <h2><span>Ciudad: </span> ${user.ciudad}</h2>
     </div>
     <div class="profile__sportsUser">
       <img class="profile__sport" src="${getSportIcon(user.deporte)}">
