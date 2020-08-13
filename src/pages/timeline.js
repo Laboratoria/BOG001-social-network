@@ -1,9 +1,16 @@
 import swal from 'sweetalert';
-import { sportIcons } from '../utils/imagesDefault';
+import { profileDefault, sportIcons } from '../utils/imagesDefault';
 import footerTemplate from '../templates/footer';
 import {
   getEvents, editEvent, deletePost, getEventById,
 } from '../firebase/post';
+
+const userProfile = (photo) => {
+  if (photo) {
+    return photo;
+  }
+  return profileDefault.profileUser;
+};
 
 const getSportIcon = (sport) => {
   const icon = sportIcons[sport];
@@ -11,6 +18,10 @@ const getSportIcon = (sport) => {
     return icon;
   }
   return 'assets/thinking.png';
+};
+
+const image = () => {
+  
 };
 
 const event = (evento) => {
@@ -23,7 +34,7 @@ const event = (evento) => {
     <div class="event__info">
       <div class="event__upper--container">
         <div class="user">
-          <img src="assets/perfil.png">
+          <img src="${userProfile(user.photo)}">
           <h2>${evento.nombre}</h2>
         </div>
         <div class="sport">
@@ -73,7 +84,7 @@ const event = (evento) => {
       </div>
     </div>
   `;
-  // mil funciones para comentar
+
   const createComment = () => {
     const comment = evento.comment || [];
     const commentValue = eventContainer.querySelector('.input__comment').value;

@@ -19,7 +19,6 @@ const editUser = async () => {
 
   const view = `
   <a href="#/profile"><span class="flaticon-remove postIcon"></span></a>
-    <div class="form__box">
       <h1 class="login__title container__form--title">
           Edita tu usuario
       </h1>
@@ -39,11 +38,11 @@ const editUser = async () => {
         <div class="form-group">
           <label for="sport">Deporte</label>
           <select class="event__input" type="text" id="sport" name="Deporte11" required autocomplete="off" >
-            <option value="futbol">Fútbol</option>
-            <option value="baloncesto">Baloncesto</option>
+            <option value="Futbol">Fútbol</option>
+            <option value="Baloncesto">Baloncesto</option>
             <option value="senderismo">Senderismo</option>
             <option value="beisbol">Béisbol</option>
-            <option value="ciclismo">Ciclismo</option>
+            <option value="Ciclismo">Ciclismo</option>
           </select>
         </div>
         <div class="form-group">
@@ -52,11 +51,10 @@ const editUser = async () => {
         </div>
        <button id="button" type="submit">Actualizar</button>
       </form>
-    </div>
 `;
 
-  const container = document.createElement('div');
-  container.setAttribute('class', 'container__form');
+  const container = document.createElement('section');
+  container.setAttribute('class', 'event');
   container.innerHTML = view;
 
   const saveImg = async (file) => {

@@ -22,9 +22,11 @@ const editEventComponent = async (eventId) => {
         <label for="sport">Deporte</label>
         <select type="text" id="sport" required autocomplete = "off" >
           <option value="${event.deporte}">${event.deporte}</option>
-          <option value="Futbol">Futbol</option>
+          <option value="Futbol">Fútbol</option>
           <option value="Baloncesto">Baloncesto</option>
           <option value="Senderismo">Senderismo</option>
+          <option value="Beisbol">Béisbol</option>
+          <option value="Ciclismo">Ciclismo</option>
         </select>
       </div>
       <div class="form-group">

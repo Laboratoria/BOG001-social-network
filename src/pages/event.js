@@ -6,22 +6,22 @@ const event = () => {
   <a href="#/timeline"><span class="flaticon-remove postIcon"></span></a>
     <h1 class="login__title container__form--title">Crea tu evento</h1>
     <form class="event_form form" id="event-form" action = "" method = "">    
-      <div class="">
-        <label for = "fname" class="">Fecha</label>
-        <input class="event__input"  type="date" id="fecha" name="Fecha" required autocomplete="off" >
+      <div class="form-group">
+        <label for="date" class="">Fecha</label>
+        <input class="event__input"  type="date" id="date" name="Fecha" required autocomplete="off" >
       </div>
-      <div class="">
-        <label for = "Hora" class="">Hora</label>    
-        <input class="event__input" type="time" id="hora" name ="hora" required autocomplete = "off" >
+      <div class="form-group">
+        <label for="time" class="">Hora</label>    
+        <input class="event__input" type="time" id="time" name ="hora" required autocomplete = "off" >
       </div>      
-      <div>
-        <label class="" for = "fname">Deporte</label>
-        <select class="event__input" type="text" id="deporte" name="Deporte" required autocomplete="off" >
-          <option value="futbol">Fútbol</option>
-          <option value="baloncesto">Baloncesto</option>
-          <option value="senderismo">Senderismo</option>
-          <option value="beisbol">Béisbol</option>
-          <option value="ciclismo">Ciclismo</option>
+      <div class="form-group">
+        <label for="sport">Deporte</label>
+        <select class="event__input" type="text" id="sport" name="Deporte" required autocomplete="off" >
+          <option value="Futbol">Fútbol</option>
+          <option value="Baloncesto">Baloncesto</option>
+          <option value="Senderismo">Senderismo</option>
+          <option value="Beisbol">Béisbol</option>
+          <option value="Ciclismo">Ciclismo</option>
         </select>
       </div>      
       <div class="form-group">
@@ -34,7 +34,7 @@ const event = () => {
       </div>
       <div class="form-group">
         <input type="file" id="image" placeholder="Imagen" accept="image/*">
-        <label for="password">Imagen</label>
+        <label for="image">Imagen</label>
       </div>
       <button type="submit" class="button" id="publicar">Publicar</button>
     </form>
@@ -60,9 +60,9 @@ const event = () => {
   };
 
   const createEvent = async () => {
-    const hour = document.getElementById('hora').value;
-    const date = document.getElementById('fecha').value;
-    const sport = document.getElementById('deporte').value;
+    const hour = document.getElementById('time').value;
+    const date = document.getElementById('date').value;
+    const sport = document.getElementById('sport').value;
     const place = document.getElementById('place').value;
     const description = document.getElementById('description').value;
 

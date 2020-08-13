@@ -1,9 +1,9 @@
 export const sportIcons = {
-  futbol: 'assets/balon.png',
-  baloncesto: 'assets/001-basketball.png',
-  senderismo: 'assets/trekking.png',
-  beisbol: 'assets/002-baseball.png',
-  ciclismo: 'assets/bycicle.png',
+  Futbol: 'assets/balon.png',
+  Baloncesto: 'assets/001-basketball.png',
+  Senderismo: 'assets/trekking.png',
+  Beisbol: 'assets/002-baseball.png',
+  Ciclismo: 'assets/bycicle.png',
 };
 
 export const profileDefault = {
