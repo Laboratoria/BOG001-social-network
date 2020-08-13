@@ -17,6 +17,8 @@
 
 **phySport** es un proyecto para amantes del deporte, podrás encontrar eventos de tu interes, conocer otros deportistas, interactuar con otros usuarios y más. En la red social **phySport** podrás registrate para crear eventos, editarlos, borrarlos y asistir. **"Find a game, win friends"**.
 
+ **Ver demo:** https://oriananohemi.github.io/BOG001-social-network/#/timeline
+
 ## 2. Objetivo de la página 🚴‍♀️🤾‍♂️
 
 Es una red social enfocada en personas amantes del deporte o deportistas que quieran interactuar con personas que tengan intereses comunes en algún deporte. Podrás crear eventos en los que pueden participar personas que esten interesadas o se encuentren cerca a tu ubicación, Es una red social fácil de usar, intuitiva y entendible para el usuario.
@@ -76,8 +78,8 @@ Entre las mejoras recibidas en el feedback se pedia ajustar el tamaño de los bo
 | [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export))
 * [x] Diferenciar entre expression y statements.
 * [x] Diferenciar entre tipos de datos atómicos y estructurados.
-* [ ] [Uso de callbacks.](https://developer.mozilla.org/es/docs/Glossary/Callback_function)
-* [x] [Consumo de Promesas.](https://scotch.io/tutorials/javascript-promises-for-dummies#toc-consuming-promises)
+* [x] [Uso de callbacks.](https://developer.mozilla.org/es/docs/Glossary/Callback_function)
+* [ ] [Consumo de Promesas.](https://scotch.io/tutorials/javascript-promises-for-dummies#toc-consuming-promises)
 
 ### Testing
 
@@ -87,7 +89,7 @@ Entre las mejoras recibidas en el feedback se pedia ajustar el tamaño de los bo
 
 ### Estructura del código y guía de estilo
 
-* [x] Organizar y dividir el código en módulos (Modularización)
+* [ ] Organizar y dividir el código en módulos (Modularización)
 * [x] Uso de identificadores descriptivos (Nomenclatura | Semántica)
 * [x] Uso de linter (ESLINT)
 
@@ -103,7 +105,7 @@ Entre las mejoras recibidas en el feedback se pedia ajustar el tamaño de los bo
 * [x] [Firestore.](https://firebase.google.com/docs/firestore)
 * [x] [Firebase Auth.](https://firebase.google.com/docs/auth/web/start)
 * [ ] [Firebase security rules.](https://firebase.google.com/docs/rules)
-* [x] Observadores. ([onAuthStateChanged](https://firebase.google.com/docs/auth/web/manage-users?hl=es#get_the_currently_signed-in_user)
+* [ ] Observadores. ([onAuthStateChanged](https://firebase.google.com/docs/auth/web/manage-users?hl=es#get_the_currently_signed-in_user)
  | [onSnapshot](https://firebase.google.com/docs/firestore/query-data/listen#listen_to_multiple_documents_in_a_collection))
 
 ### UX
