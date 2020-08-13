@@ -1,5 +1,7 @@
 # Red Social phySport 💙🧡💙🧡
 
+<img src="readme/Artboard 1.png">
+
 ## Índice 💨
 
 * [1. Resumen del proyecto](#1-resumen-del-proyecto)
@@ -34,9 +36,13 @@ para completar mi equipo de futbol.
 
 ## 4. Prototipo de baja fidelidad 👇
 
+<img src="readme/protoBaja1.jpg" width = 150px> <img src="readme/protoBaja2.png" width = 150px> <img src="readme/protoBaja3.png" width = 150px> <img src="readme/protoBaja4.png" width = 150px> <img src="readme/protoBaja5.jpg" width = 150px>  
+
 ## 5. Prototipo de alta fidelidad 👌
 
 El prototipo de alta fidelidad se realizo en Adobe XD
+
+<img src="readme/protoAlta1.png" width = 150px> <img src="readme/protoAlta2.png" width = 150px> <img src="readme/protoAlta3.png" width = 150px> <img src="readme/protoAlta4.png" width = 150px> <img src="readme/protoAlta5.png" width = 150px> 
 
 ## 6. Feedback 👩🧑
 
@@ -75,7 +81,7 @@ Entre las mejoras recibidas en el feedback se pedia ajustar el tamaño de los bo
 
 ### Testing
 
-* [ ] [Testeo unitario.](https://jestjs.io/docs/es-ES/getting-started)
+* [x] [Testeo unitario.](https://jestjs.io/docs/es-ES/getting-started)
 * [ ] [Testeo asíncrono.](https://jestjs.io/docs/es-ES/asynchronous)
 * [ ] [Uso de librerias de Mock.](https://jestjs.io/docs/es-ES/manual-mocks)
 
