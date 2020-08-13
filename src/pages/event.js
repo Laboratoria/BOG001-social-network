@@ -1,5 +1,5 @@
 import { saveEvent } from '../firebase/post';
-// import { fileRegister } from '../firebase/storage';
+import { fileRegister } from '../firebase/storage';
 
 const event = () => {
   const view = `
@@ -7,21 +7,21 @@ const event = () => {
     <h1 class="login__title container__form--title">Crea tu evento</h1>
     <form class="event_form form" id="event-form" action = "" method = "">    
       <div class="form-group">
-        <label for="date">Fecha</label>
+        <label for="date" class="">Fecha</label>
         <input class="event__input"  type="date" id="date" name="Fecha" required autocomplete="off" >
       </div>
       <div class="form-group">
-      <label for="time" class="">Hora</label>    
+        <label for="time" class="">Hora</label>    
         <input class="event__input" type="time" id="time" name ="hora" required autocomplete = "off" >
       </div>      
       <div class="form-group">
-        <label for="sport">Deportes</label>
+        <label for="sport">Deporte</label>
         <select class="event__input" type="text" id="sport" name="Deporte" required autocomplete="off" >
-          <option class="" value="Futbol">Fútbol</option>
-          <option class="" value="Baloncesto">Baloncesto</option>
-          <option class="" value="Senderismo">Senderismo</option>
-          <option class="" value="Béisbol">Béisbol</option>
-          <option class="" value="Ciclismo">Ciclismo</option>
+          <option value="Futbol">Fútbol</option>
+          <option value="Baloncesto">Baloncesto</option>
+          <option value="Senderismo">Senderismo</option>
+          <option value="Beisbol">Béisbol</option>
+          <option value="Ciclismo">Ciclismo</option>
         </select>
       </div>      
       <div class="form-group">
@@ -32,6 +32,10 @@ const event = () => {
         <label for="description">Descripcion</label>
         <textarea name="description" id="description" cols="35" rows="8" maxlength="150" placeholder="Descripcion maximo 150 caracteres" required></textarea>        
       </div>
+      <div class="form-group">
+        <input type="file" id="image" placeholder="Imagen" accept="image/*">
+        <label for="image">Imagen</label>
+      </div>
       <button type="submit" class="button" id="publicar">Publicar</button>
       </div>
     </form>
@@ -41,14 +45,47 @@ const event = () => {
   container.innerHTML = view;
   const eventForm = container.querySelector('#event-form');
 
-  const createEvent = () => {
+  const saveImg = async (file) => {
+    const fileType = file.name.split('.').reverse()[0];
+    const fileName = `${Date.now()} + '.' + ${fileType}`;
+    if ((fileType === 'jpg') || (fileType === 'png') || (fileType === 'jpeg')) {
+      const promise = new Promise((resolver) => {
+        const success = async (url) => {
+          resolver(url);
+        };
+        fileRegister(file, fileName, success);
+      });
+      return promise;
+    }
+    return Promise.reject(new Error(''));
+  };
+
+  const createEvent = async () => {
     const hour = document.getElementById('time').value;
     const date = document.getElementById('date').value;
     const sport = document.getElementById('sport').value;
     const place = document.getElementById('place').value;
     const description = document.getElementById('description').value;
 
-    saveEvent(hour, date, sport, place, description);
+    const file = container.querySelector('#image').files;
+    let imgURL = '';
+    if (file.length) {
+      imgURL = await saveImg(file[0]);
+    }
+
+    const eventToCreate = {
+      hora: hour,
+      fechaEvento: date,
+      deporte: sport,
+      lugar: place,
+      descripcion: description,
+    };
+
+    if (imgURL) {
+      eventToCreate.image = imgURL;
+    }
+
+    saveEvent(eventToCreate);
   };
 
   eventForm.addEventListener('submit', (e) => { e.preventDefault(); createEvent(); });
