@@ -1,5 +1,5 @@
 import { getUserProfile } from '../firebase/database';
-import { profileDefault } from '../utils/imagesDefault';
+import { profileDefault, sportIcons } from '../utils/imagesDefault';
 
 const profile = async () => {
   let user;
@@ -14,32 +14,31 @@ const profile = async () => {
     console.log('Error getting documents', err);
   });
 
-  const userProfile = (userInfo) => {
-    if (userInfo.photo !== undefined) {
-      return userInfo.photo;
+  const userProfile = (photo) => {
+    if (photo) {
+      return photo;
     }
-    return profileDefault[userInfo];
+    return profileDefault.profileUser;
   };
 
-  // const getSportIcon = (sport) => {
-  //   const icon = sportIcons[sport];
-  //   if (icon) {
-  //     return icon;
-  //   }
-  //   return '../assets/thinking.png';
-  // };
+  const getSportIcon = (sport) => {
+    const icon = sportIcons[sport];
+    if (icon) {
+      return icon;
+    }
+    return '../assets/thinking.png';
+  };
 
   const view = `
     <img class="profile__imageBackground" src="assets/user.jpg">
-    <img class="profile__imageUser" src="${userProfile(user)}">
+    <img class="profile__imageUser" src="${userProfile(user.photo)}">
     <div class="profile__info">
     <h2>${user.usuario}</h2>
     <p>${user.ciudad}</p>
     </div>
     <div class="profile__sportsUser">
-      <img class="profile__sport" src="assets/perfil.png">
-      <img class="profile__sport" src="assets/perfil.png">
-      <img class="profile__sport" src="assets/perfil.png">
+      <img class="profile__sport" src="${getSportIcon(user.deporte)}">
+      <h3>${user.deporte}</h3>
     </div>
     <button class="profile__edit--btn" id="edit">Editar perfil</button>
   `;

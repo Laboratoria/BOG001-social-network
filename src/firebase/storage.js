@@ -1,15 +1,16 @@
 import { storage } from './init';
 
-export const fileRegister = (file, fileName) => {
+export const fileRegister = (file, fileName, successCallback) => {
   const refStorage = storage.ref('images').child(fileName);
   const uploadTask = refStorage.put(file);
 
   uploadTask.on('state_changed', null,
     (error) => {
-      console.log('Error al subir el archivo', error)
+      console.log('Error al subir el archivo', error);
     },
-    () => {
-      console.log('subida')
+    async () => {
+      const downloadURL = await uploadTask.snapshot.ref.getDownloadURL();
+      successCallback(downloadURL);
     });
 };
 
