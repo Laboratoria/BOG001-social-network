@@ -26,62 +26,16 @@
     </div>
   </div>-->
   
-  <div class="container">
-    <br>
-    <form class="registro">
-      <h2>Usuarios Registrados</h2>
-      <br>
-      <button id="btninicio-sesion">Iniciar Sesión</button>
-      <br>
-      <hr>
-      <br>
-      <h2><strong>Registrese</strong></h2>
-      <br>
-      <p>Complete este formulario para crear una cuenta</p>
-      <br>
-      <label for="email"><b>Correo Electronico :</b></label><br>
-      <input type="text" placeholder="ingresa correo" size="20" required>
-      <br>
-      <label for="psw"><b>Contraseña : </b></label><br>
-      <input type="password" placeholder="***********" size="20" required>
-      <br>
-      <label for="psw-repeat"><b>Repite la Contraseña :</b></label><br>
-      <input type="password" placeholder="***********" size="20" required>
-      <p>Al crear una cuenta, acepta nuestros <a href="#" style="color:dodgerblue">Terminos y condiciones de privacidad</a>.</p>
-      <br>
-      <div class="btnRegistro">
-        <button type="button" class="cancelarbtn">Cancelar</button>
-        <button type="submit" class="registrarse">Registrate</button>
-      </div>
-    </form>
-  </div>
 
   <!---->
-  <div class="modal" id="myModal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <form>
-        <div class="inicio-sesion">
-          <label for="email"><b>Correo Electronico :</b></label><br>
-          <input type="text" name="username" placeholder="Correo Electronico" required><br>
-          <label for="psw"><b>Contraseña : </b></label><br>
-          <input type="password" name="password" placeholder="Contraseña" required>
-          <br>
-          <input type="submit" class="login" value="Iniciar Sesión"><br><br>
-          <button class="google-btn"><a href="#">Iniciar sesión con Google+</a></button>
-        </div>
-      </form>
-    </div>
-  </div>
 
-  
-  
   <section id="container"></section>
   <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
-
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
 <script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
@@ -95,6 +49,8 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+  const auth= firebase.auth();
+  const fs = firebase.firestore();
 </script>
   <script type="module" src="main.js"></script>
 </body>
