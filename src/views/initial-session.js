@@ -1,5 +1,25 @@
+ const initialsession =()=>{
+
+    const view =` 
+    
+    <div class= "initialsession">
+ }
  
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  const loginButton=document.createElement('button')
  loginButton.type ='button';
  loginButton.innerText='LOGIN';
@@ -11,4 +31,4 @@
  registerButton.innerText= 'Register';
  registerButton.classList.add('registerButton');
  document.body.appendChild(registerButton);
- 
+//  
