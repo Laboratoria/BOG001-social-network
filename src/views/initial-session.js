@@ -27,5 +27,4 @@
  registerButton.type ='button';
  registerButton.innerText= 'Register';
  registerButton.classList.add('registerButton');
- document.body.appendChild(registerButton);
- 
+ document.body.appendChild(registerButton); */

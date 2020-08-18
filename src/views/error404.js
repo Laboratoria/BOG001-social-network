@@ -1,5 +1,5 @@
-const error404 = ()=>{
-    const view =`
+const error404 = () => {
+  const view = `
     <div class="server-error">
         <img src="./src/images/image-error" alt="error404" class="image-error">
         <h1 class="error404">
@@ -7,7 +7,6 @@ const error404 = ()=>{
         </h1>
     </div>
     `;
-    return error404();
-    
-}
+  return error404();
+};
 export default error404;

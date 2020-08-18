@@ -1,7 +1,7 @@
 const { default: postAdoption } = require("./post-adoption");
 
 const adopt = () => {
-    const view =`
+  const view = `
     <div class="adopt">
         <img src="./src/images/logo.png" alt="logo" class="logo-adopt">
                 <img src=".src/images/logo.png" alt="home-adopt" class="home-adopt">
