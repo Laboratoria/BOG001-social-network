@@ -1,5 +1,3 @@
-const { default: postAdoption } = require("./post-adoption");
-
 const adopt = () => {
   const view = `
     <div class="adopt">
@@ -10,5 +8,5 @@ const adopt = () => {
         <img src="./src/images/cat-adopt.png" alt="adopt-cat" class="cat-adopt">
     </div>
     `;
-}
-
+};
+export default adopt;
