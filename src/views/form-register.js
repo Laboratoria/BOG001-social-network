@@ -1,3 +1,4 @@
+
 const register = () => {
   const view = `
     <div class= "register">
