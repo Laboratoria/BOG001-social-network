@@ -18,10 +18,9 @@ twoView();
 
 
 function locationHashChanged() {
-  const location = document.getElementById('login');
   if (location.hash === '#postadoption') {
     postAdoption();
   }
 }
 
-document.getElementById('login').addEventListener('hashchange', locationHashChanged);
+window.addEventListener('hashchange', locationHashChanged);
