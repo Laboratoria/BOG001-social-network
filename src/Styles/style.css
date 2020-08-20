@@ -1,0 +1,100 @@
+*{  
+    margin: 0;
+    padding: 0;  
+}
+
+section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-size: 100%;
+    font-size: 16px;
+}
+
+#containerImage{
+    
+    position: relative;  
+}
+
+#containerImage > img {
+    margin-top: 0;
+    width: 1000px;
+    height: 583px;
+    
+}
+
+#textKallpa{
+    position: absolute;
+    top: 85px;
+    left: 150px;
+    width: 740px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+}
+
+.containerLogIn{
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    width: 350px;
+    height: 510px;
+    margin-top: 25px;
+    margin-right: 40px ;
+    background: #79CDB2;
+    box-shadow: 10px 10px 4px rgba(64, 107, 94, 0.87);
+}
+
+.containerLogIn div{
+    font-family: 'Raleway', sans-serif;
+    margin: auto;   
+}
+
+.containerLogIn div span{
+    font-size: 20px;  
+    font-weight: bold; 
+    
+}
+
+input{
+    width: 280px;
+    height: 38px;
+    margin-top: 40px;
+}
+
+.containerLogUp{
+    display: none;
+}
+
+footer{
+    height: 70px;
+    width: 100%;
+    background-size: 100%;
+}
+
+.contentFooter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    height: 70px;
+    width: 100%;
+    background-size: 100%;
+    margin-bottom: 0;
+}
+
+.logoFooter{
+    width: 35px;
+    height: 30px;
+    margin-right: 20px;
+}
+
+.logoFooter >img {
+    width: 35px;
+    height: 30px;
+}
+
+.copyright{
+    color: blanchedalmond;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+}

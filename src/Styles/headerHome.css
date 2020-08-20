@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.headerHome{
+    display: flex;
+    flex-direction: column;
+    align-items: space-evenly;
+    width: 100%;
+    height: 160px;
+    background-color: white;
+    background-size: cover;
+    background-repeat:no-repeat;  
+}
+
+.containerLogo{
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;    
+}
+
+.logo{
+    height: 50px;
+    width: 290px;
+}
+
+.navHome{
+    margin-top: 45px;
+    width: 100%;
+    background-size: 100%;
+    height: 30px;
+    background-color: black;
+}
+
+

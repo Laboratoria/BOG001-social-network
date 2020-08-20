@@ -5,21 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Social Network</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="stylesheet" href="headerHome.css"/>
-  <link rel="stylesheet" href="headerWellcome.css"/>
+  <link rel="stylesheet" href="../Styles/style.css"/>
+  <link rel="stylesheet" href="../Styles/headerHome.css"/>
+  <link rel="stylesheet" href="../Styles/headerWellcome.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <nav>
-      <ul class= "ulHome">
-        <li><a href="#/home"></a></li>
-      </ul>
-    </nav>
-  </header>
-  <section>
-    <div id= "root"></div>
-  </section>
-  <script type="module" src="main.js"></script>
+  <main>
+    <div id="root"></div>
+  </main>
+  
+  <script type="module" src="./FunctionRouter/main.js"></script>
+  <!-- FIREBASE SCRIPTS-->
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+     <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAUiUROysOh-iWBhnvYjFJn6qI422YXBVk",
+    authDomain: "social-network-11.firebaseapp.com",
+    databaseURL: "https://social-network-11.firebaseio.com",
+    projectId: "social-network-11",
+    storageBucket: "social-network-11.appspot.com",
+    messagingSenderId: "154111845943",
+    appId: "1:154111845943:web:738e8a1901d3d971f141b2",
+    measurementId: "G-4WGVYGSJG8"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+</script>
 </body>
 </html>
