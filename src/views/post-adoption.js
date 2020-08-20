@@ -1,5 +1,5 @@
-const postAdoption = () => {
-  const view = `    
+export default () => {
+    const view = `    
     <div class="main-container">
         <img src="images/logo.png" alt="logo" class="logo-adopt">
         <img src="images/home.png" alt="home-adopt" class="home-adopt">
@@ -20,6 +20,9 @@ const postAdoption = () => {
         <h2>Welcome to the biggest pet adoption community</h2>
     </div>  
     `;
+    const divElement = document.createElement('div');
+    divElement.innerHTML = view;
+    return divElement;
 };
 
-export default postAdoption;
+
