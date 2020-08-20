@@ -1,5 +1,5 @@
 const adopt = () => {
-  const view = `
+    const view = `
     <div class="adopt">
         <img src="./src/images/logo.png" alt="logo" class="logo-adopt">
                 <img src=".src/images/logo.png" alt="home-adopt" class="home-adopt">
@@ -8,5 +8,6 @@ const adopt = () => {
         <img src="./src/images/cat-adopt.png" alt="adopt-cat" class="cat-adopt">
     </div>
     `;
+
 };
 export default adopt;
