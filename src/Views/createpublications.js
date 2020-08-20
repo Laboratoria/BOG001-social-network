@@ -9,7 +9,7 @@ export const createPublicationsPage = () =>{
                 <li><a href="#/publicaciones">Publicaciones</a></li>
                 <li><a href="#/mispublicaciones">Mis Publicaciones</a></li>
                 <li><a href="#/crearpublicacion">Crear Publicación</a></li>
-                <li><a href="#/cerrarSesion">Cerrar Sesión</a></li>
+                <li><a class = "close-sesion" href="#/cerrarSesion">Cerrar Sesión</a></li>
             </ul>
             </nav>
         </header>
@@ -35,5 +35,15 @@ export const createPublicationsPage = () =>{
     `;
     const newDivFour = document.createElement("div");
     newDivFour.innerHTML = viewCreatePlublications;
+
+    const closeSesion = newDivFour.querySelector(".close-sesion");
+    closeSesion.addEventListener("click", (e) => {e.preventDefault();
+
+    auth.signOut()
+    .then( () => { 
+        console.log("sesión cerrada");
+        window.location.href="#/home"
+    })
+});
     return newDivFour;
 }

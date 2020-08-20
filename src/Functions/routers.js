@@ -1,7 +1,7 @@
-import { createWellcomePage } from './home.js';
-import { publicationsPage } from './publications.js';
-import { myPublicationsPage } from './mypublications.js';
-import { createPublicationsPage } from './createpublications.js';
+import { createWellcomePage } from '../Views/home.js';
+import { publicationsPage } from '../../Views/publications.js';
+import { myPublicationsPage } from '../../Views/mypublications.js';
+import { createPublicationsPage } from '../../Views/createpublications.js';
 // aqui exportaras las funciones que necesites
 let root = document.querySelector("#root");
 
