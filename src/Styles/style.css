@@ -8,26 +8,28 @@ section{
     flex-direction: row;
     justify-content: space-between;
     background-size: 100%;
-    font-size: 21px;
+    font-size: 16px;
 }
 
 #containerImage{
+    
     position: relative;  
 }
 
 #containerImage > img {
     margin-top: 0;
     width: 1000px;
+    height: 583px;
     
 }
 
 #textKallpa{
     position: absolute;
-    top: 110px;
-    left: 250px;
-    width: 745px;
+    top: 85px;
+    left: 150px;
+    width: 740px;
     font-family: 'Raleway', sans-serif;
-    font-size: 21px;
+    font-size: 20px;
 }
 
 .containerLogIn{
@@ -48,7 +50,9 @@ section{
 }
 
 .containerLogIn div span{
-    font-size: 25px;   
+    font-size: 20px;  
+    font-weight: bold; 
+    
 }
 
 input{
@@ -56,8 +60,6 @@ input{
     height: 38px;
     margin-top: 40px;
 }
-
-
 
 .containerLogUp{
     display: none;

@@ -1,4 +1,4 @@
-import { router } from '../Functions/routers.js';
+import { router } from '../FunctionRouter/routers.js';
 
 export const createWellcomePage = () =>{
     const wellcome = 
