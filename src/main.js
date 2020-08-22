@@ -1,5 +1,6 @@
 import showFirst from './vistas/inicio.js'
 import showLogin from './vistas/registro.js'
+import publications from './vistas/publicaciones.js'
 
 window.addEventListener('hashchange', () => {
     router(window.location.hash)
@@ -19,18 +20,19 @@ const router = (route) => {
     content.innerHTML = '';
     switch(route) {
         case '#/': 
-        showLogin();
-        registry();
-        modalInicio();
-        observer();
+            showLogin();
+            registry();
+            modalInicio();
+            observer();
         break;
         case '#/Home': {
-        showFirst();
-        closeSession();
+            showFirst();
+            closeSession();
         break;
         }
-        case '#/publicaciones':
-            return console.log('Publicaciones');
+        case '#/publicaciones': 
+            publications();
+        break;   
         case '#/perfil':
             return console.log('Perfil');
         default:
@@ -48,8 +50,7 @@ registro.addEventListener ('submit', (e) =>{
     const pws1= document.querySelector('#input-psw1').value;
     const pws2= document.querySelector('#input-psw2').value;
     const message= document.querySelector('#errorMessage');
-    auth
-    .createUserWithEmailAndPassword(email, pws1)
+    firebase.auth().createUserWithEmailAndPassword(email, pws1)
     .then (()=> {
         verify();
     })
@@ -87,6 +88,8 @@ firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
     console.log('existe usuario');
       // User is signed in.
+    console.log(user.emailVerified);
+    
         let displayName = user.displayName;
         let email = user.email;
         let emailVerified = user.emailVerified;
@@ -134,14 +137,14 @@ const closeSession = () => {
     
 const verify = () => {
 let user = firebase.auth().currentUser;
-
 user.sendEmailVerification().then(function() {
+    console.log('enviando correo...');
   // Email sent.
 }).catch(function(error) {
   // An error happened.
+    console.log(error);
 });
 } 
-
 /*travel experiences
 live traveling
 time to travel*/
