@@ -12,15 +12,11 @@ section{
 }
 
 #containerImage{
-    
-    position: relative;  
-}
-
-#containerImage > img {
-    margin-top: 0;
-    width: 1000px;
-    height: 583px;
-    
+    position: relative; 
+    background: url(../imagenes/glampingFondoDesktop.png);
+    background-size: cover;
+    width: 80%;
+    height: 525px;
 }
 
 #textKallpa{
@@ -34,12 +30,13 @@ section{
 
 .containerLogIn{
     display: flex;
+    /*display: none;*/
     text-align: center;
     flex-wrap: wrap;
-    width: 350px;
-    height: 510px;
-    margin-top: 25px;
-    margin-right: 40px ;
+    width: 18%;
+    height: 500px;
+    margin-top: 12px;
+    margin-right: 12px ;
     background: #79CDB2;
     box-shadow: 10px 10px 4px rgba(64, 107, 94, 0.87);
 }
@@ -52,17 +49,32 @@ section{
 .containerLogIn div span{
     font-size: 20px;  
     font-weight: bold; 
-    
 }
 
 input{
-    width: 280px;
-    height: 38px;
+    width: 80%;
+    height: 30px;
     margin-top: 40px;
 }
 
 .containerLogUp{
-    display: none;
+    display: flex;
+    display: /*block;*/ none;
+    text-align: center;
+    flex-wrap: wrap;
+    width: 18%;
+    height: 500px;
+    margin-top: 12px;
+    margin-right: 12px ;
+    background: #79CDB2;
+    box-shadow: 10px 10px 4px rgba(64, 107, 94, 0.87);
+}
+
+.mainBaground{
+    background: url(../imagenes/fondoMontaña.svg);
+    background-size: cover;
+    width: 900px;
+    height: 600px;
 }
 
 footer{

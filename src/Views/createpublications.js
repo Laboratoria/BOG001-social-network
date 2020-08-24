@@ -1,10 +1,10 @@
 export const createPublicationsPage = () =>{
     const viewCreatePlublications = `
         <header class="headerWellcome">
-            <div>
-            <img src="./imagenes/kallpaLogo.svg">
+            <div class="containerLogo">
+                <img src="./imagenes/kallpaLogo.svg" class="logo">
             </div>
-            <nav>
+            <nav class= "navWellcome">
             <ul>
                 <li><a href="#/publicaciones">Publicaciones</a></li>
                 <li><a href="#/mispublicaciones">Mis Publicaciones</a></li>
@@ -20,16 +20,12 @@ export const createPublicationsPage = () =>{
         </main>
         <footer>
             <div class="contentFooter">
-            <div><img src="./imagenes/logo-solo.png" alt=""></div>
-            <div class="copyright">
-                <p>Contáctenos: e-mail:  usuarios@kallpa.com</p>
-                <p>© 2020 - kallpa.com</p> 
-            </div>
-            <div>
-                <img src="./imagenes/facebook.png" alt="">
-                <img src="./imagenes/instagram.png" alt="">
-                <img src="./imagenes/twitter.png" alt="">
-            </div>
+                <div><img src="./imagenes/logo-solo.png" alt="">
+                </div>
+                <div class="copyright">
+                    <p>Contáctenos: e-mail:  usuarios@kallpa.com</p>
+                    <p>© 2020 - kallpa.com</p> 
+                </div>
             </div>
         </footer>
     `;
