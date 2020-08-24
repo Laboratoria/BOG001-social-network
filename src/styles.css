@@ -1,12 +1,8 @@
 body {
     display: flex;
     margin: 8px;
-    background-image: url(https://images5.alphacoders.com/468/468561.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
 }
+
 header {
     width:100%;  
 }
@@ -40,6 +36,13 @@ header nav ul li a:hover {
 	background:#037E8C;
 }
 
+header .btnCloseSession {
+    display: flex;
+    position: absolute; 
+    top: 3%;
+    left: 75%;
+}
+
 #container {
     display: flex;
     flex-flow: row wrap;
@@ -49,19 +52,16 @@ header nav ul li a:hover {
     justify-content: space-around;
 }
 
-
 .registro {
     color: black;
     background-color: #27496ddd;
-    width: 35%;
+    width: 45%;
     padding: 2%;
     border-radius: 15px;
     display: flex;
     flex-flow: column wrap; 
     align-items: center;
 }
-
-
 
 input[type=text], input[type=password] {
     width: 70%;
@@ -99,7 +99,6 @@ input[type=text]:focus, input[type=password]:focus {
     justify-content: center;
     position: absolute;
     top: 35%; 
-
 }
 
 .modal-content {
@@ -115,6 +114,29 @@ input[type=text]:focus, input[type=password]:focus {
     flex-flow: row wrap;
     justify-content:center;
 }
+
+div.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    padding: 4%;
+}
+
+div.container-inicio {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    padding: 12px;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+}
+#texto-inicio {
+    font-size: 20px;
+    text-align: justify;
+}
+
 .close {
     color: white;
     font-weight: bold;
@@ -154,7 +176,7 @@ button.google-btn {
     padding: 3px;
     font-family: 'arial';
 }
-.messageSing {
+.messageSign {
     color:black;
     font-size: 17px;
     background-color: #f17565dd;

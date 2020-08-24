@@ -33,7 +33,7 @@ body {
     <div class="modal-content">
         <span class="close">&times;</span>
         <form id="Login" class= "inicio-sesion">
-            <p class="messageSing"></p>
+            <p class="messageSign"></p>
             <input type="text" name="username" id="login-email" placeholder="Correo Electronico" required>
             <input type="password" id= "login-psw"name="password" placeholder="Contraseña" required>
             <input type="submit" class="login" value="Iniciar Sesión">
@@ -41,7 +41,6 @@ body {
         </form>
     </div>
 </div>`
-
 };
 
 export default showLogin;
