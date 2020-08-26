@@ -24,17 +24,18 @@ const router = (route) => {
             modalInicio();
             observer();
         break;
-
+        
         case '#/Home': 
             showFirst();
         break;
         
         case '#/Publicaciones': 
             publications();
+            createPost();
         break;
-        
         case '#/Perfil':
             return console.log('Perfil');
+        break;
 
         default:
             return console.log('No encontrado');
@@ -155,3 +156,35 @@ user.sendEmailVerification().then(() => {
 });
 }
 
+/*const createPost = () => {
+const post = document.querySelector('#form-post');
+post.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+const title = document.getElementById('title-post');
+const description = document.getElementById('description');
+console.log(title.value, description.value);
+})
+}*/
+
+const createPost = () => {
+    let publicar = document.querySelector(".publicar");
+    publicar.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        let title = document.getElementById('title-post').value;
+        let description = document.getElementById('description').value;
+
+        //Inicialize Cloud Firestore throught Firebase
+        firebase.firestore().collection("publications").add({
+            Titulo: title,
+            descripcion: description
+        })
+
+        .then(function(docRef) {
+            console.log("Document written with ID: ", docRef.id);
+        })
+        .catch(function(error) {console.error("Error adding document: ", error);
+        });
+    })
+};

@@ -29,9 +29,7 @@ const publications = () => {
     <textarea id="description" cols="40" rows="14" class="form-control" placeholder="Escribe aquí..."></textarea>
     <br>
     <input type="file" name="subirArchivo">
-    <button class="" id="">
-    Guardar
-    </button>
+    <button type="submit" class="publicar">Guardar</button>
     </div>`
 };
 
