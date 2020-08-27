@@ -12,5 +12,7 @@ window.addEventListener('hashchange', () => {
 
 });
 
+//Funcione en el navegador
+createuserwithEmailAndPassword(email, password);
 
 
