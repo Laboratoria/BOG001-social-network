@@ -1,8 +1,8 @@
 import showFirst from './vistas/inicio.js'
 import showLogin from './vistas/registro.js'
 import publications from './vistas/publicaciones.js'
-import {registry, observer, closeSession} from './firebase/firebaseAuth.js'
-import createPost from './firebase/firestore.js'
+import { registry, observer, closeSession } from './firebase/firebaseAuth.js'
+import { createPost } from './firebase/firestore.js'
 
 
 window.addEventListener('hashchange', () => {
@@ -59,3 +59,10 @@ const modalInicio = () => {
         registro.style.visibility= "visible";
     }
     }
+
+    /*let provider = new firebase.auth.GoogleAuthProvider();
+    const signWithGoogle = document.querySelector ('.google-btn');
+    signWithGoogle.addEventListener('click', (e) => {
+    firebase.auth().signInWithPopup(provider).then((result) => {
+    console.log(result.user);
+    })*/

@@ -1,4 +1,4 @@
-import {router} from '../main.js'
+import { router } from '../main.js'
 
 export const registry= () => {
     // Firebase de registro 
@@ -27,7 +27,7 @@ export const registry= () => {
         e.preventDefault();
         const loginEmail = document.querySelector('#login-email').value;
         const loginPws= document.querySelector('#login-psw').value;
-        console.log(loginEmail,loginPws);
+        //console.log(loginEmail,loginPws);
         firebase.auth().signInWithEmailAndPassword(loginEmail, loginPws)
         .then ((result) => {
             let emailVerified = result.user.emailVerified;
@@ -44,49 +44,57 @@ export const registry= () => {
         console.log(errorMessageSign);
         })
     });
-    }
     
-    export const observer = () => {
-    firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-            console.log('Existe Usuario Activo');
-            // User is signed in.
+    let provider = new firebase.auth.GoogleAuthProvider();
+    const signWithGoogle = document.querySelector ('.google-btn');
+    signWithGoogle.addEventListener('click', (e) => {
+    firebase.auth().signInWithPopup(provider).then((result) => {
+    console.log(result.user);
+    })
+});
+}
+
+export const observer = () => {
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        console.log('Existe Usuario Activo');
+        // User is signed in.
         
-        let displayName = user.displayName;
-        let email = user.email;
+    let displayName = user.displayName;
+    let email = user.email;
         
-        console.log('########');
-        console.log(user.emailVerified);
-        console.log('########');
+    console.log('########');
+    console.log(user.emailVerified);
+    console.log('########');
     
-        let emailVerified = user.emailVerified;
-        let photoURL = user.photoURL;
-        let isAnonymous = user.isAnonymous;
-        let uid = user.uid;
-        let providerData = user.providerData;
-        // ...
-        } 
-        else {
-          // User is signed out.
-            console.log('vuelva a iniciar sesión');
-        }
-    });
+    let emailVerified = user.emailVerified;
+    let photoURL = user.photoURL;
+    let isAnonymous = user.isAnonymous;
+    let uid = user.uid;
+    let providerData = user.providerData;
+    // ...
+    } 
+    else {
+        // User is signed out.
+        console.log('vuelva a iniciar sesión');
     }
-    
-    
-    //Cerrar Sesión
-    export const closeSession = () => {
-        firebase.auth().signOut()
-        .then(() => {
-            console.log('Saliendo...');
-        }) 
-        .catch((error) => {
-            console.log(error);
-        })
-    }
-    
-    //Verificación de usuario
-    export const verify = () => {
+});
+}
+
+
+//Cerrar Sesión
+export const closeSession = () => {
+    firebase.auth().signOut()
+    .then(() => {
+        console.log('Saliendo...');
+    }) 
+    .catch((error) => {
+        console.log(error);
+    })
+}
+
+//Verificación de usuario
+export const verify = () => {
     let user = firebase.auth().currentUser;
     user.sendEmailVerification().then(() => {
         console.log('Enviando correo...');
@@ -95,5 +103,5 @@ export const registry= () => {
         // An error happened.
         console.log(error);
     });
-    }
+}
 
