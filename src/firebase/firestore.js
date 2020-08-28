@@ -7,11 +7,14 @@ export const createPost = () => {
         
         let title = document.getElementById('title-post').value;
         let description = document.getElementById('description').value;
+        const urlFood = localStorage.getItem("imgNewPost");
+        //console.log(urlFood);
 
         //Inicialize Cloud Firestore throught Firebase
         firebase.firestore().collection("publications").add({
             title: title,
             description: description,
+            url: urlFood,
         })
 
         .then(function(docRef) {
@@ -32,7 +35,15 @@ export const createPost = () => {
             `<div class = "cardPost">
             <h1>${doc.data().title}</h1>
             <p>${doc.data().description}</p>
+            <img src="${doc.data().url}">
             </div>`
     });
 });
 };
+
+
+
+
+
+
+

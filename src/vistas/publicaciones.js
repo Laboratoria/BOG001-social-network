@@ -1,3 +1,5 @@
+import { uploadImgFood } from '../firebase/firestorage.js' 
+
 const publications = () => {
     let elementContainer= document.getElementById('container');
     elementContainer.innerHTML = 
@@ -28,11 +30,20 @@ const publications = () => {
     <input type="text" id="title-post" placeholder="Lugar recomendado..." autocomplete="off" autofocus>
     <textarea id="description" cols="40" rows="14" class="form-control" placeholder="Escribe aquí..." autocomplete="off"></textarea>
     <br>
-    <input type="file" accept=".png, .jpg, .jpeg" name="subirArchivo" id="archivo">
+    <input type="file" accept=".png, .jpg, .jpeg" name="subirArchivo" id="file">
     <button type="submit" class="publicar">Guardar</button>
     </div>
     <div id="containerPost">
-    </div>`   
+    </div>`
+
+    const btnUploadFile = document.querySelector("#file");
+    
+    btnUploadFile.addEventListener("change", (e) => {
+    const file = e.target.files[0];
+    const user = firebase.auth().currentUser;
+    uploadImg(file, user.uid);
+    });
 };
+
 
 export default publications;

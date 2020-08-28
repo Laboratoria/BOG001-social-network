@@ -59,3 +59,10 @@ const modalInicio = () => {
         registro.style.visibility= "visible";
     }
     }
+
+    /*let provider = new firebase.auth.GoogleAuthProvider();
+    const signWithGoogle = document.querySelector ('.google-btn');
+    signWithGoogle.addEventListener('click', (e) => {
+    firebase.auth().signInWithPopup(provider).then((result) => {
+    console.log(result.user);
+    })*/
