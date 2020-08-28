@@ -23,7 +23,7 @@ const showFirst = () => {
         </nav>
     </header>
     <div class="container-inicio">
-    <main>
+    <main id="principal">
     <section>
         <h1>¿Cómo podrías sacarle provecho a esta red social?</h1>
         <p id="texto-inicio">Por medio de <strong>“InstaTravel”</strong> podrás hacer parte de una comunidad compuesta por amantes de la aventura que aman viajar, hacer turismo y lo mejor: Compartir sus experiencias y recomendaciones, lo que le permitirá elegir la mejor opción para sus próximas vacaciones, basadas en sugerencias de hoteles, actividades, gastronomía, y sitios mas representativos del lugar con su respectivo precio.</p>
