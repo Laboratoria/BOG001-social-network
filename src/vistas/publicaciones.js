@@ -41,7 +41,7 @@ const publications = () => {
     btnUploadFile.addEventListener("change", (e) => {
     const file = e.target.files[0];
     const user = firebase.auth().currentUser;
-    uploadImg(file, user.uid);
+    uploadImgFood(file, user.uid);
     });
 };
 

@@ -1,9 +1,9 @@
 //Function de firestorage
-export const uploadImg = (file, uid) => {
+export const uploadImgFood = (file, uid) => {
     const refStorage = firebase.storage().ref(`imgsPosts/${uid}/${file.name}`)
     const task = refStorage.put(file)
 
-/*task.on(
+task.on(
     'state_changed',
     snapshot => {
       const porcentaje = snapshot.bytesTransferred / snapshot.totalBytes * 100
@@ -11,7 +11,7 @@ export const uploadImg = (file, uid) => {
     },
     err => {
     console.log(err)
-    },*/
+    },
 
     () => {
     task.snapshot.ref
