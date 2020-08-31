@@ -19,7 +19,7 @@ const publications = () => {
             <li><a href="#/Perfil"><span class="far fa-user-circle"></span>Perfil</a></li>
         </ul>
         <ul class="btnCloseSession">
-            <li><a href="" onclick="closeSession()"><span class="far fa-times-circle"></span>Cerrar sesión</a></li></li>
+            <li><span class="far fa-times-circle"></span>Cerrar sesión</li>
         </ul>   
     </nav>
     </header>

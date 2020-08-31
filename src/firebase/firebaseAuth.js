@@ -81,7 +81,6 @@ firebase.auth().onAuthStateChanged((user) => {
 });
 }
 
-
 //Cerrar Sesión
 export const closeSession = () => {
     firebase.auth().signOut()

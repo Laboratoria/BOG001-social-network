@@ -10,11 +10,24 @@ export const createPost = () => {
         const urlFood = localStorage.getItem("imgNewPost");
         //console.log(urlFood);
 
+        const firestore = firebase.firestore(); 
+        const ref = firestore.collection("fechaYhora").doc(); 
+        ref.set ({ 
+            createdAt: firebase.firestore.FieldValue.serverTimestamp() 
+        }). 
+        then (() => { 
+        console.log ('Listo') 
+        }) 
+        .catch (error => { 
+        console.error (error) 
+        })
+
         //Inicialize Cloud Firestore throught Firebase
         firebase.firestore().collection("publications").add({
             title: title,
             description: description,
             url: urlFood,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp ()
         })
 
         .then(function(docRef) {
@@ -36,6 +49,7 @@ export const createPost = () => {
             <h1>${doc.data().title}</h1>
             <p>${doc.data().description}</p>
             <img src="${doc.data().url}">
+            <p>${doc.data().createdAt.toDate()}</p>
             </div>`
     });
 });
