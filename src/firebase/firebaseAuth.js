@@ -50,6 +50,15 @@ export const registry= () => {
     signWithGoogle.addEventListener('click', (e) => {
     firebase.auth().signInWithPopup(provider).then((result) => {
     console.log(result.user);
+    
+    let emailVerified = result.user.emailVerified;
+    localStorage.setItem('activeUser', emailVerified);
+    if(emailVerified){
+        router('#/Home');
+    }
+    else{
+        console.log('Debes verificar tu correo');
+    }
     })
 });
 }
@@ -58,11 +67,10 @@ export const observer = () => {
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         console.log('Existe Usuario Activo');
-        // User is signed in.
-        
+        // User is signed in.    
     let displayName = user.displayName;
     let email = user.email;
-        
+
     console.log('########');
     console.log(user.emailVerified);
     console.log('########');
@@ -103,4 +111,15 @@ export const verify = () => {
         console.log(error);
     });
 }
+
+export const changeStatus = () =>  {
+firebase.auth().onAuthStateChanged( firebaseUser => {
+    if(firebaseUser) {
+        console.log(firebaseUser);
+    } 
+    else {
+        console.log('no logueado');
+    }
+})
+};
 

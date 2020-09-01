@@ -1,4 +1,4 @@
-import { uploadImgFood } from '../firebase/firestorage.js' 
+import { uploadImgPost } from '../firebase/firestorage.js' 
 
 const publications = () => {
     let elementContainer= document.getElementById('container');
@@ -41,9 +41,8 @@ const publications = () => {
     btnUploadFile.addEventListener("change", (e) => {
     const file = e.target.files[0];
     const user = firebase.auth().currentUser;
-    uploadImgFood(file, user.uid);
+    uploadImgPost(file, user.uid);
     });
 };
-
 
 export default publications;

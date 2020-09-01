@@ -1,5 +1,5 @@
 //Function de firestorage
-export const uploadImgFood = (file, uid) => {
+export const uploadImgPost = (file, uid) => {
     const refStorage = firebase.storage().ref(`imgsPosts/${uid}/${file.name}`)
     const task = refStorage.put(file)
 

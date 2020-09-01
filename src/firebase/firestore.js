@@ -7,15 +7,15 @@ export const createPost = () => {
         
         let title = document.getElementById('title-post').value;
         let description = document.getElementById('description').value;
-        const urlFood = localStorage.getItem("imgNewPost");
-        //console.log(urlFood);
+        const urlPost = localStorage.getItem("imgNewPost");
+        //console.log(urlPost);
 
         const firestore = firebase.firestore(); 
         const ref = firestore.collection("fechaYhora").doc(); 
         ref.set ({ 
             createdAt: firebase.firestore.FieldValue.serverTimestamp() 
-        }). 
-        then (() => { 
+        })
+        .then (() => { 
         console.log ('Listo') 
         }) 
         .catch (error => { 
@@ -26,10 +26,9 @@ export const createPost = () => {
         firebase.firestore().collection("publications").add({
             title: title,
             description: description,
-            url: urlFood,
+            url: urlPost,
             createdAt: firebase.firestore.FieldValue.serverTimestamp ()
         })
-
         .then(function(docRef) {
             console.log("Document written with ID: ", docRef.id);
         })
