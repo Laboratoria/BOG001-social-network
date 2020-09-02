@@ -32,7 +32,7 @@ const publications = () => {
     <br>
     <input type="file" accept=".png, .jpg, .jpeg" name="subirArchivo" id="file">
     <button type="submit" class="publicar">Guardar</button>
-    </div>
+    </div></form>
     <div id="containerPost">
     </div>`
 
