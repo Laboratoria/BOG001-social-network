@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
 }
+
 body {
     display: flex;
     margin: 8px;
@@ -95,6 +96,13 @@ input[type=text]:focus, input[type=password]:focus {
     border-radius: 8px;
     width: 30%;
     cursor: pointer;
+}
+
+.btnCloseSession > li:nth-child(1) > a:nth-child(1) {
+    margin: 16px;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 20px;
 }
 
 .modal {

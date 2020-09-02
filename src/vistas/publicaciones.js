@@ -28,7 +28,7 @@ const publications = () => {
     <form id="form-post">
     <h1>Crear una publicación</h1>
     <input type="text" id="title-post" placeholder="Lugar recomendado..." autocomplete="off" autofocus>
-    <textarea id="description" cols="40" rows="14" class="form-control" placeholder="Escribe aquí..." autocomplete="off"></textarea>
+    <textarea id="description" cols="36" rows="14" class="form-control" placeholder="Escribe aquí..." autocomplete="off"></textarea>
     <br>
     <input type="file" accept=".png, .jpg, .jpeg" name="subirArchivo" id="file">
     <button type="submit" class="publicar">Guardar</button>

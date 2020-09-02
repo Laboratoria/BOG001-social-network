@@ -8,9 +8,10 @@ export const createPost = () => {
         let title = document.getElementById('title-post').value;
         let description = document.getElementById('description').value;
         const urlPost = localStorage.getItem("imgNewPost");
-        //console.log(urlPost);
+        const createdAt = firebase.firestore.FieldValue.serverTimestamp();
+        console.log(createdAt);
 
-        const firestore = firebase.firestore(); 
+        /*const firestore = firebase.firestore(); 
         const ref = firestore.collection("fechaYhora").doc(); 
         ref.set ({ 
             createdAt: firebase.firestore.FieldValue.serverTimestamp() 
@@ -20,14 +21,14 @@ export const createPost = () => {
         }) 
         .catch (error => { 
         console.error (error) 
-        })
+        })*/
 
         //Inicialize Cloud Firestore throught Firebase
         firebase.firestore().collection("publications").add({
             title: title,
             description: description,
             url: urlPost,
-            createdAt: firebase.firestore.FieldValue.serverTimestamp ()
+            createdAt: createdAt,
         })
         .then(function(docRef) {
             console.log("Document written with ID: ", docRef.id);
@@ -38,18 +39,29 @@ export const createPost = () => {
     
     let contenedor = document.getElementById('containerPost');
     firebase.firestore().collection("publications").onSnapshot((querySnapshot) => {
-        let data = [];
         contenedor.innerHTML = '';
         querySnapshot.forEach((doc) => {
-            data.push(doc.data());
-            //console.log(data);
+            const id = doc.id;
+            
+            //console.log(id);
+            //console.log(typeof doc.data().createdAt);
             contenedor.innerHTML += 
             `<div class = "cardPost">
             <h1>${doc.data().title}</h1>
             <p>${doc.data().description}</p>
             <img src="${doc.data().url}">
-            <p>${doc.data().createdAt.toDate()}</p>
+            <p>${doc.data().createdAt}</p>
+            <button class="btn-edition">Editar</button>
+            <button class="btn-delete" data-id="${doc.id}">Eliminar</button>
             </div>`
+            const deletePost = id => firebase.firestore().collection("publications").doc(id).delete();
+            const btnsDelete = document.querySelectorAll('.btn-delete');
+            btnsDelete.forEach(btn => {
+                btn.addEventListener('click', async (e) => {
+                    //console.log(e.target.dataset.id);
+                    await deletePost(e.target.dataset.id);
+                })
+            })    
     });
 });
 };
