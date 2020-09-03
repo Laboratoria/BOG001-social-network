@@ -34,6 +34,7 @@ const publications = () => {
     <button type="submit" class="publicar">Guardar</button>
     </div></form>
     <div id="containerPost">
+    
     </div>`
 
     const btnUploadFile = document.querySelector("#file");

@@ -194,8 +194,16 @@ img {
 
 .cardPost {
     margin: 2%;
-    background-color: lawngreen;
+    background-color: transparent;
 }
+
+i#btn-like {
+    position: sticky;
+    color: tomato;
+    font-size: 35px;
+    left: 50px;
+}
+
 /*.errorMessage {
     color:black;
     font-size: 17px;

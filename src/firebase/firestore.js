@@ -12,21 +12,18 @@ export const createPost = () => {
         const createdAt = firebase.firestore.FieldValue.serverTimestamp();
         console.log(createdAt);
         
-        let editStatus = false;
-        if(!editStatus) {
-            //Inicialize Cloud Firestore throught Firebase
-            firebase.firestore().collection("publications").add({
-                title: title,
-                description: description,
-                url: urlPost,
-                createdAt: createdAt,
-            })
-            .then(function(docRef) {
+        //Inicialize Cloud Firestore throught Firebase
+        firebase.firestore().collection("publications").add({
+            title: title,
+            description: description,
+            url: urlPost,
+            createdAt: createdAt,
+        })
+        .then(function(docRef) {
             console.log("Document written with ID: ", docRef.id);
-            })
-            .catch(function(error) {console.error("Error adding document: ", error);
-            });
-        }
+        })
+        .catch(function(error) {console.error("Error adding document: ", error);
+        });
     })
         
     firebase.firestore().collection("publications").onSnapshot((querySnapshot) => {
@@ -41,11 +38,26 @@ export const createPost = () => {
         <h1>${doc.data().title}</h1>
         <p>${doc.data().description}</p>
         <img src="${doc.data().url}">
-        <p>${doc.data().createdAt}</p>
+        <br>
+        <i class="fas fa-heart" id="btn-like"></i>
+        <p><span id="mostrar"></span> me gusta</p>
         <button class="btn-edition" data-id="${id}">Editar</button>
         <button class="btn-delete" data-id="${id}">Eliminar</button>
+        <p>${doc.data().createdAt.toDate()}</p>
         </div>`
 
+        //Likes publicación
+        const likes = () => {
+            let contador = 0;
+            const btnLike = document.querySelector('#btn-like');
+            btnLike.addEventListener('click', () => {
+            console.log(btnLike);
+            contador ++;
+            document.getElementById('mostrar').innerHTML = contador;
+        })
+        }
+
+likes();
         const deletePost = id => firebase.firestore().collection("publications").doc(id).delete();
         const btnsDelete = document.querySelectorAll('.btn-delete');
         btnsDelete.forEach(btn => {
@@ -65,13 +77,11 @@ export const createPost = () => {
                 const hola = await getPost(e.target.dataset.id);
                 const formPost = document.getElementById('form-post');
                 const dataPost = doc.data();
-                editStatus = true;
                 publicar.innerText = 'Actualizar';
 
                 console.log(hola.data());
                 formPost['title-post'].value = dataPost.title;
                 formPost['description'].value = dataPost.description;
-                formPost['file'].value = dataPost.url;
             })
         })    
     });
