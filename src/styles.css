@@ -7,45 +7,48 @@ body {
     margin: 8px;
 }
 
+/*Header y topNav vistas*/
+
 header {
     width:100%;  
 }
-header nav {
-	width:100%;
+
+#inicio.topNav {
+    width:100%;
     background:#024959;
     border-radius: 5px;
+    border: 8px;
 }
 
-header nav ul {
-	overflow:hidden;
+#inicio.topNav > ul {
+    overflow:hidden;
 	list-style:none;
 }
 
-header nav ul li {
-	float:left;
+#inicio.topNav > ul > li {
+    float:left;
 }
 
-header nav ul li a {
-	color:#fff;
+#inicio.topNav > ul > li > a {
+    color: white;
     padding:20px;
     display: flex;
     text-decoration:none;
 }
 
-header nav ul li span {
-	margin-right:10px;
+#inicio.topNav > ul > li > a:hover {
+    background:#037E8C;
 }
 
-header nav ul li a:hover {
-	background:#037E8C;
+#inicio.topNav > ul > li#cerrar {
+    float: right;
 }
 
-header .btnCloseSession {
-    display: flex;
-    position: absolute; 
-    top: 3%;
-    left: 75%;
+span {
+    margin-right:10px;
 }
+
+/*Contendor Vista Principal - Registro e inicio de sesion*/
 
 #container {
     display: flex;
@@ -53,13 +56,18 @@ header .btnCloseSession {
     margin: 8px;
     width: 100%;
     height: 100%;
-    justify-content: space-around;
+    justify-content: center;
 }
 
-.registro {
+div#registro {
+    display: flex;
+    
+}
+
+form#registro.registro {
     color: black;
     background-color: #27496ddd;
-    width: 45%;
+    top: auto;
     padding: 2%;
     border-radius: 15px;
     display: flex;
@@ -67,20 +75,27 @@ header .btnCloseSession {
     align-items: center;
 }
 
-input[type=text], input[type=password] {
-    width: 70%;
-    padding: 5px;
-    margin: 3%;
-    border: none;
+input.registro-input {
+    width: 55%;
+    padding: 3px;
+    margin: 2%;
     border: 1px solid;
     color: black; 
     border-radius: 8px;
 }
 
-input[type=text]:focus, input[type=password]:focus {
+input.registro-input:focus {
     background-color: rgba(245, 238, 135, 0.164);
 }
 
+button#btninicio-sesion {
+    padding: 4px;
+    font-size: 0.8em;
+    color: negro;
+    background-color: #10a567;
+    border-radius: 8px;
+    cursor: pointer;
+}
 .cancelarbtn, .registrarse {
     padding: 4px 10px;
     background-color: lightblue;
@@ -88,22 +103,7 @@ input[type=text]:focus, input[type=password]:focus {
     cursor: pointer;
 }
 
-#btninicio-sesion {
-    padding: 8px;
-    font-size: 14px;
-    color: negro;
-    background-color: #10a567;
-    border-radius: 8px;
-    width: 30%;
-    cursor: pointer;
-}
-
-.btnCloseSession > li:nth-child(1) > a:nth-child(1) {
-    margin: 16px;
-    padding-right: 0px;
-    padding-left: 0px;
-    padding-top: 20px;
-}
+/*Sin modificar hacia abajo*/
 
 .modal {
     display: -webkit-flex;
