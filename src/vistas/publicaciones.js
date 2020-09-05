@@ -32,7 +32,7 @@ const publications = () => {
             <textarea id="description" cols="36" rows="14" class="form-control" placeholder="Escribe aquí..." autocomplete="off"></textarea>
             <br>
             <input type="file" accept=".png, .jpg, .jpeg" name="subirArchivo" id="file"><br>   
-            <meter min="10" max="100" low="30" high="75" value="75"></meter>
+            <meter min="10" max="100" low="30" high="75" value=""></meter>
             <br>
         <button type="submit" class="publicar">Publicar</button>
         </form>
@@ -40,6 +40,7 @@ const publications = () => {
     <div id="containerPost">
     
     </div>`
+
     const btnUploadFile = document.querySelector("#file");
     
     btnUploadFile.addEventListener("change", (e) => {

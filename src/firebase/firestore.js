@@ -1,5 +1,3 @@
-import { router } from '../main.js'
-
 export const createPost = () => {
     let publicar = document.querySelector(".publicar");
     publicar.addEventListener('click', (e) => {
@@ -22,7 +20,8 @@ export const createPost = () => {
         .then(function(docRef) {
             console.log("Document written with ID: ", docRef.id);
         })
-        .catch(function(error) {console.error("Error adding document: ", error);
+        .catch(function(error) {
+            console.error("Error adding document: ", error);
         });
     })
     
@@ -41,10 +40,11 @@ export const createPost = () => {
     <br>
     <i class="fas fa-heart" id="btn-like"></i>
     <p><span id="mostrar"></span> me gusta</p>
-    <button class="btn-edition" data-id="${id}">Editar</button>
+    <button class="btn-edition" onclick="edition("${id}", "${doc.data().title}", "${doc.data().description}")">Editar</button>
     <button class="btn-delete" data-id="${id}">Eliminar</button>
-    <p>${doc.data().createdAt.toDate()}</p>
+    <p>${doc.data().createdAt}</p>
     </div>`
+    
     //Likes publicación
     const likes = () => {
         let contador = 0;
@@ -65,23 +65,69 @@ export const createPost = () => {
             await deletePost(e.target.dataset.id);
         })
     });
-
+    
     //Funcion editar
-        const getPost = (id) => firebase.firestore().collection("publications").doc(id).get();
-        const btnsEditions = document.querySelectorAll('.btn-edition');
-        btnsEditions.forEach(btn => {
-            btn.addEventListener('click', async (e) => {
-                //console.log(e.target.dataset.id);
-                const hola = await getPost(e.target.dataset.id);
-                const formPost = document.getElementById('form-post');
-                const dataPost = doc.data();
-                publicar.innerText = 'Actualizar';
 
-                console.log(hola.data());
-                formPost['title-post'].value = dataPost.title;
-                formPost['description'].value = dataPost.description;
+    const edition = (id, title, description) => {
+        document.getElementById('title-post').value = title;
+        document.getElementById('description').value = description;
+        publicar.innerHTML = 'Actualizar';
+
+        publicar.onclick = () => {
+            let getPost = firebase.firestore().collection("publications").doc(id);
+            
+            let title = document.getElementById('title-post').value;
+            let description = document.getElementById('description').value;
+
+            return getPost.update({
+                title: title,
+                description: description,
             })
-        })    
+            .then(function() {
+                console.log("Document successfully updated!");
+                publicar.innerHTML = 'Publicar';
+            })
+            .catch(function(error) {
+                // The document probably doesn't exist.
+                console.error("Error updating document: ", error);
+            });
+        }
+    }
+    edition();
+
+
+    /*const getPost = (id) => firebase.firestore().collection("publications").doc(id).get();
+    const btnsEditions = document.querySelectorAll('.btn-edition');
+    console.log(btnsEditions);
+    btnsEditions.forEach(btn => {
+        btn.addEventListener('click', async (e) => {
+            const formPost = document.getElementById('form-post');
+            const getPostId = await getPost(e.target.dataset.id);   //console.log(e.target.dataset.id);
+            const dataPost = getPostId.data();  //console.log(getPostId.data());
+            publicar.innerText = 'Actualizar';
+            formPost['title-post'].value = dataPost.title;
+            formPost['description'].value = dataPost.description;
+
+            publicar.addEventListener('click', (e) => {
+                let updatePost = firebase.firestore().collection("publications").doc(id);
+                let title = document.getElementById('title-post').value;
+                let description = document.getElementById('description').value;
+                
+                return updatePost.update({
+                    title: title,
+                    description: description,
+                })
+                .then(() => {
+                    console.log("Documento Actualizado correctamente");
+                    publicar.innerText = 'Publicar';
+                })
+                .catch((error) => {
+                    console.log("Error en la actualización de documento: ", error);
+                })
+            })
+            })
+        })*/
     });
-});
-};
+    })
+}
+

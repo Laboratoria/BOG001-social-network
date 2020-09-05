@@ -9,7 +9,7 @@ window.addEventListener('hashchange', () => {
     router(window.location.hash);
 });
 
-window.addEventListener('load', () => {
+window.addEventListener('DOMContentLoaded', () => {
     router('#/')
     document.querySelector(".modal").style.visibility ="hidden";
 });

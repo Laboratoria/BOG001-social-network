@@ -68,7 +68,7 @@ form#registro.registro {
     color: black;
     background-color: #27496ddd;
     top: auto;
-    padding: 2%;
+    padding: 8%;
     border-radius: 15px;
     display: flex;
     flex-flow: column wrap; 
@@ -76,7 +76,7 @@ form#registro.registro {
 }
 
 input.registro-input {
-    width: 55%;
+    width: 75%;
     padding: 3px;
     margin: 2%;
     border: 1px solid;
@@ -89,17 +89,24 @@ input.registro-input:focus {
 }
 
 button#btninicio-sesion {
-    padding: 4px;
+    padding: 7px;
     font-size: 0.8em;
-    color: negro;
-    background-color: #10a567;
+    background-image: linear-gradient(-225deg, #DFFFCD 0%, #90F9C4 48%, #39F3BB 100%);
     border-radius: 8px;
     cursor: pointer;
 }
-.cancelarbtn, .registrarse {
-    padding: 4px 10px;
-    background-color: lightblue;
-    border-radius: 6px;
+
+p#text1, p#text2 {
+    margin: 0%;
+}
+
+button.registrarse {
+    width: 100%;
+    margin-top: 8%;
+    padding: 7px;
+    font-size: 0.8em;
+    background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
+    border-radius: 8px;
     cursor: pointer;
 }
 

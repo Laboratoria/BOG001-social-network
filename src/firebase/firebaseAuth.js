@@ -15,8 +15,9 @@ export const registry= () => {
         })
         .catch((error) => {
         let errorCode = error.code;
+        alert(errorCode);
         let errorMessage = error.message;
-        console.log(errorMessage);
+        alert(errorMessage);
         })
     });
     
@@ -35,11 +36,12 @@ export const registry= () => {
                 router('#/Home');
             }
             else{
-                console.log('Debes verificar tu correo');
+                alert('Debes verificar tu correo');
             }
         })
         .catch((error) => {
         let errorCode = error.code;
+        alert(errorCode);
         let errorMessageSign = error.message;
         console.log(errorMessageSign);
         })
@@ -57,7 +59,7 @@ export const registry= () => {
         router('#/Home');
     }
     else{
-        console.log('Debes verificar tu correo');
+        alert('Debes verificar tu correo');
     }
     })
 });

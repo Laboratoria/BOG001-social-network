@@ -16,7 +16,7 @@ body {
         <h2>Usuarios Registrados</h2>
         <button id="btninicio-sesion">Iniciar Sesión</button>
         <h2><strong>Registrese</strong></h2>
-        <p>Complete este formulario para crear una cuenta</p>
+        <p id="text1">Complete este formulario para crear una cuenta.</p>
         <label for="email"><b>Correo Electronico :</b></label>
         <br>
         <input type="text" id="input-correo" class="registro-input" placeholder="ingresa correo" size="20" required>
@@ -28,11 +28,8 @@ body {
         <label for="psw-repeat"><b>Repite la Contraseña :</b></label>
         <br>
         <input type="password" id="input-psw2" class="registro-input" placeholder="***********" size="20" required>
-        <p>Al crear una cuenta, acepta nuestros <a href="#" style="color:dodgerblue"><br>Terminos y condiciones de privacidad</a>.</p>
-        <div class="btnRegistro">
-            <button type="button" class="cancelarbtn">Cancelar</button>
-            <button type="submit" class="registrarse">Registrate</button>
-        </div>    
+        <p id="text2">Al crear una cuenta, acepta nuestros <a href="#" style="color:dodgerblue"><br>Terminos y condiciones de privacidad.</a></p>
+        <button type="submit" class="registrarse">Registrate</button>    
     </form>
 </div>
 
