@@ -1,47 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     display: flex;
     margin: 8px;
 }
 
+/*Header y topNav vistas*/
+
 header {
     width:100%;  
 }
-header nav {
-	width:100%;
+
+#inicio.topNav {
+    width:100%;
     background:#024959;
     border-radius: 5px;
+    border: 8px;
 }
 
-header nav ul {
-	overflow:hidden;
+#inicio.topNav > ul {
+    overflow:hidden;
 	list-style:none;
 }
 
-header nav ul li {
-	float:left;
+#inicio.topNav > ul > li {
+    float:left;
 }
 
-header nav ul li a {
-	color:#fff;
+#inicio.topNav > ul > li > a {
+    color: white;
     padding:20px;
     display: flex;
     text-decoration:none;
 }
 
-header nav ul li span {
-	margin-right:10px;
+#inicio.topNav > ul > li > a:hover {
+    background:#037E8C;
 }
 
-header nav ul li a:hover {
-	background:#037E8C;
+#inicio.topNav > ul > li#cerrar {
+    float: right;
 }
 
-header .btnCloseSession {
-    display: flex;
-    position: absolute; 
-    top: 3%;
-    left: 75%;
+span {
+    margin-right:10px;
 }
+
+/*Contendor Vista Principal - Registro e inicio de sesion*/
 
 #container {
     display: flex;
@@ -49,50 +56,61 @@ header .btnCloseSession {
     margin: 8px;
     width: 100%;
     height: 100%;
-    justify-content: space-around;
+    justify-content: center;
 }
 
-.registro {
+div#registro {
+    display: flex;
+    
+}
+
+form#registro.registro {
     color: black;
     background-color: #27496ddd;
-    width: 45%;
-    padding: 2%;
+    top: auto;
+    padding: 8%;
     border-radius: 15px;
     display: flex;
     flex-flow: column wrap; 
     align-items: center;
 }
 
-input[type=text], input[type=password] {
-    width: 70%;
-    padding: 5px;
-    margin: 3%;
-    border: none;
+input.registro-input {
+    width: 75%;
+    padding: 3px;
+    margin: 2%;
     border: 1px solid;
     color: black; 
     border-radius: 8px;
 }
 
-input[type=text]:focus, input[type=password]:focus {
+input.registro-input:focus {
     background-color: rgba(245, 238, 135, 0.164);
 }
 
-.cancelarbtn, .registrarse {
-    padding: 4px 10px;
-    background-color: lightblue;
-    border-radius: 6px;
+button#btninicio-sesion {
+    padding: 7px;
+    font-size: 0.8em;
+    background-image: linear-gradient(-225deg, #DFFFCD 0%, #90F9C4 48%, #39F3BB 100%);
+    border-radius: 8px;
     cursor: pointer;
 }
 
-#btninicio-sesion {
-    padding: 8px;
-    font-size: 14px;
-    color: negro;
-    background-color: #10a567;
+p#text1, p#text2 {
+    margin: 0%;
+}
+
+button.registrarse {
+    width: 100%;
+    margin-top: 8%;
+    padding: 7px;
+    font-size: 0.8em;
+    background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
     border-radius: 8px;
-    width: 30%;
     cursor: pointer;
 }
+
+/*Sin modificar hacia abajo*/
 
 .modal {
     display: -webkit-flex;
@@ -183,8 +201,16 @@ img {
 
 .cardPost {
     margin: 2%;
-    background-color: lawngreen;
+    background-color: transparent;
 }
+
+i#btn-like {
+    position: sticky;
+    color: tomato;
+    font-size: 35px;
+    left: 50px;
+}
+
 /*.errorMessage {
     color:black;
     font-size: 17px;

@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+    
+}
+
+#inicio.topNav {
+    width:100%;
+    background:#024959;
+    border-radius: 5px;
+    border: 8px;
+}
+
+#inicio.topNav > ul {
+    overflow:hidden;
+	list-style:none;
+}
+
+#inicio.topNav > ul > li {
+    float:left;
+}
+
+#inicio.topNav > ul > li > a {
+    color: white;
+    padding:20px;
+    display: flex;
+    text-decoration:none;
+}
+
+#inicio.topNav > ul > li > a:hover {
+    background:#037E8C;
+}
+
+#inicio.topNav > ul > li#cerrar {
+    float: right;
+}
+
+span {
+    margin-right:10px;
+}
+

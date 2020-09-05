@@ -10,11 +10,7 @@
   <title>Red social-SPA</title>
 </head>
 <body>
-<!--  -->
 <section id="container">
-  <picture>
-    <img src="img/colombiaturismo.jpg" alt="collage Turismo">
-  </picture>
 </section>
   <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
@@ -24,6 +20,7 @@
 <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-storage.js"></script>
 <script>
+
   // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyDoCAXFSiT3L1tYbifdpUebEu2m2vpYpgs",
@@ -34,11 +31,9 @@
     messagingSenderId: "433005938412",
     appId: "1:433005938412:web:2dbb8979c13d2cc62cc7c9"
   };
-  
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  const auth= firebase.auth();
-  const fs = firebase.firestore();
+
 </script>
   <script type="module" src="main.js"></script>
 </body>

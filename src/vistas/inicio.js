@@ -11,16 +11,14 @@ const showFirst = () => {
     }    
     </style> 
     <header>
-        <nav class="topNav" id="inicio">
+        <div class="topNav" id="inicio">
             <ul>
-                <li><a href="#/Home"><span class="fas fa-home"></span>Inicio</a></li>
+                <li><a href="#/Home"><span class="fas fa-home"></span> Inicio</a></li>
                 <li><a href="#/Publicaciones"><span class="far fa-images"></span>Publicaciones</a></li>
                 <li><a href="#/Perfil"><span class="far fa-user-circle"></span>Perfil</a></li>
-            </ul>
-            <ul class="btnCloseSession">
-                <li><a href="#/"><span class="far fa-times-circle"></span>Cerrar sesión</a></li>
+                <li id="cerrar"><a href="#/Cerrar"><span class="far fa-times-circle"></span>Cerrar sesión</a></li>
             </ul>   
-        </nav>
+        </div>
     </header>
     <div class="container-inicio">
     <main id="principal">

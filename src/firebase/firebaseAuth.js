@@ -15,8 +15,9 @@ export const registry= () => {
         })
         .catch((error) => {
         let errorCode = error.code;
+        alert(errorCode);
         let errorMessage = error.message;
-        console.log(errorMessage);
+        alert(errorMessage);
         })
     });
     
@@ -35,11 +36,12 @@ export const registry= () => {
                 router('#/Home');
             }
             else{
-                console.log('Debes verificar tu correo');
+                alert('Debes verificar tu correo');
             }
         })
         .catch((error) => {
         let errorCode = error.code;
+        alert(errorCode);
         let errorMessageSign = error.message;
         console.log(errorMessageSign);
         })
@@ -50,6 +52,15 @@ export const registry= () => {
     signWithGoogle.addEventListener('click', (e) => {
     firebase.auth().signInWithPopup(provider).then((result) => {
     console.log(result.user);
+    
+    let emailVerified = result.user.emailVerified;
+    localStorage.setItem('activeUser', emailVerified);
+    if(emailVerified){
+        router('#/Home');
+    }
+    else{
+        alert('Debes verificar tu correo');
+    }
     })
 });
 }
@@ -58,11 +69,10 @@ export const observer = () => {
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         console.log('Existe Usuario Activo');
-        // User is signed in.
-        
+        // User is signed in.    
     let displayName = user.displayName;
     let email = user.email;
-        
+
     console.log('########');
     console.log(user.emailVerified);
     console.log('########');
@@ -80,7 +90,6 @@ firebase.auth().onAuthStateChanged((user) => {
     }
 });
 }
-
 
 //Cerrar Sesión
 export const closeSession = () => {
@@ -104,4 +113,15 @@ export const verify = () => {
         console.log(error);
     });
 }
+
+export const changeStatus = () =>  {
+firebase.auth().onAuthStateChanged( firebaseUser => {
+    if(firebaseUser) {
+        console.log(firebaseUser);
+    } 
+    else {
+        console.log('no logueado');
+    }
+})
+};
 

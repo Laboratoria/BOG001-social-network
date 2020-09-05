@@ -1,4 +1,7 @@
-import { uploadImgFood } from '../firebase/firestorage.js' 
+import { uploadImgPost } from '../firebase/firestorage.js'
+import {  } from '../firebase/firestorage.js'
+
+//topnav <iframe src="/src/topNav/topNav.html"></iframe>
 
 const publications = () => {
     let elementContainer= document.getElementById('container');
@@ -12,28 +15,30 @@ const publications = () => {
         background-position: center;
     </style>
     <header>
-    <nav class="topNav" id="inicio">
-        <ul>
-            <li><a href="#/Home"><span class="fas fa-home"></span>Inicio</a></li>
-            <li><a href="#/Publicaciones"><span class="far fa-images"></span>Publicaciones</a></li>
-            <li><a href="#/Perfil"><span class="far fa-user-circle"></span>Perfil</a></li>
-        </ul>
-        <ul class="btnCloseSession">
-            <li><a href="" onclick="closeSession()"><span class="far fa-times-circle"></span>Cerrar sesión</a></li></li>
-        </ul>   
-    </nav>
+        <div class="topNav" id="inicio">
+            <ul>
+                <li><a href="#/Home"><span class="fas fa-home"></span> Inicio</a></li>
+                <li><a href="#/Publicaciones"><span class="far fa-images"></span>Publicaciones</a></li>
+                <li><a href="#/Perfil"><span class="far fa-user-circle"></span>Perfil</a></li>
+                <li id="cerrar"><a href="#/Cerrar"><span class="far fa-times-circle"></span>Cerrar sesión</a></li>
+            </ul>   
+        </div>
     </header>
     
-    <div class="container">
-    <form id="form-post">
-    <h1>Crear una publicación</h1>
-    <input type="text" id="title-post" placeholder="Lugar recomendado..." autocomplete="off" autofocus>
-    <textarea id="description" cols="40" rows="14" class="form-control" placeholder="Escribe aquí..." autocomplete="off"></textarea>
-    <br>
-    <input type="file" accept=".png, .jpg, .jpeg" name="subirArchivo" id="file">
-    <button type="submit" class="publicar">Guardar</button>
+    <div class="container-form">
+        <form id="form-post">
+            <h1>Crear una publicación</h1>
+            <input type="text" id="title-post" placeholder="Lugar recomendado..." autocomplete="off" autofocus>
+            <textarea id="description" cols="36" rows="14" class="form-control" placeholder="Escribe aquí..." autocomplete="off"></textarea>
+            <br>
+            <input type="file" accept=".png, .jpg, .jpeg" name="subirArchivo" id="file"><br>   
+            <meter min="10" max="100" low="30" high="75" value=""></meter>
+            <br>
+        <button type="submit" class="publicar">Publicar</button>
+        </form>
     </div>
     <div id="containerPost">
+    
     </div>`
 
     const btnUploadFile = document.querySelector("#file");
@@ -41,9 +46,8 @@ const publications = () => {
     btnUploadFile.addEventListener("change", (e) => {
     const file = e.target.files[0];
     const user = firebase.auth().currentUser;
-    uploadImgFood(file, user.uid);
+    uploadImgPost(file, user.uid);
     });
 };
-
 
 export default publications;
