@@ -1,5 +1,4 @@
 import { uploadImgPost } from '../firebase/firestorage.js'
-import {  } from '../firebase/firestorage.js'
 
 //topnav <iframe src="/src/topNav/topNav.html"></iframe>
 
