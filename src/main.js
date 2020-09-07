@@ -11,7 +11,7 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('DOMContentLoaded', () => {
     router('#/')
-    document.querySelector(".modal").style.visibility ="hidden";
+    document.querySelector("#contenedor-registro").style.visibility ="hidden";
 });
 
 let content = document.getElementById("container"); 
@@ -46,23 +46,18 @@ export const router = (route) => {
 
 const modalInicio = () => {
 
-    let modal = document.querySelector(".modal");
-    let btn = document.getElementById("btninicio-sesion");
-    let span = document.getElementsByClassName("close")[0];
+    let modal = document.querySelector("#contenedor-registro");
+    let btn = document.getElementById("registry");
+    let span = document.getElementsByClassName("startSession")[0];
+    let inicio = document.querySelector('.inicioSession');
     
     btn.onclick =  () => {
         modal.style.visibility= "visible";
-        registro.style.visibility= "hidden";
+        inicio.style.visibility= "hidden";
     }
     span.onclick =  () => {
         modal.style.visibility = "hidden";
-        registro.style.visibility= "visible";
+        inicio.style.visibility= "visible";
     }
     }
 
-    /*let provider = new firebase.auth.GoogleAuthProvider();
-    const signWithGoogle = document.querySelector ('.google-btn');
-    signWithGoogle.addEventListener('click', (e) => {
-    firebase.auth().signInWithPopup(provider).then((result) => {
-    console.log(result.user);
-    })*/
