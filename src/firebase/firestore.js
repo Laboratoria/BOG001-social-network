@@ -29,7 +29,7 @@ onGetPost ((querySnapshot)=>{
         contenedor.innerHTML +=  `<div class = "cardPost">
             <h1>${doc.data().title}</h1>
             <p>${doc.data().description}</p>
-            <img src="${doc.data().urlPost}"> 
+            <img src="${doc.data().urlPost}" style="max-width:100%"> 
             <br>
             <i class="fas fa-heart" id="btn-like"></i>
             <p><span id="mostrar"></span> me gusta</p>
@@ -62,6 +62,18 @@ onGetPost ((querySnapshot)=>{
             
             })
         });
+        //Likes publicación
+    const likes = () => {
+        let contador = 0;
+        const btnLike = document.querySelector('#btn-like');
+        btnLike.addEventListener('click', () => {
+        console.log(btnLike);
+        contador ++;
+        document.getElementById('mostrar').innerHTML = contador;
+    })
+    }
+    likes();
+
     })
 })
 
@@ -87,16 +99,5 @@ onGetPost ((querySnapshot)=>{
         title.focus();
         
     })
-    //Likes publicación
-    const likes = () => {
-        let contador = 0;
-        const btnLike = document.querySelector('#btn-like');
-        btnLike.addEventListener('click', () => {
-        console.log(btnLike);
-        contador ++;
-        document.getElementById('mostrar').innerHTML = contador;
-    })
-    }
-    likes();
 }
 
