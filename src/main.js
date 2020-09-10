@@ -1,8 +1,11 @@
 import showFirst from './vistas/inicio.js'
 import showLogin from './vistas/registro.js'
 import publications from './vistas/publicaciones.js'
-import { registry, observer, closeSession, changeStatus } from './firebase/firebaseAuth.js'
+import { registry, observer, closeSession} from './firebase/firebaseAuth.js'
 import { createPost } from './firebase/firestore.js'
+import profile from './vistas/perfil.js'
+import { userProfile } from './firebase/firebaseAuth.js'
+
 
 
 window.addEventListener('hashchange', () => {
@@ -36,6 +39,8 @@ export const router = (route) => {
             createPost();
         break;
         case '#/Perfil':
+            profile();
+            userProfile();
             return console.log('Perfil');
         break;
 
@@ -60,4 +65,3 @@ const modalInicio = () => {
         inicio.style.visibility= "visible";
     }
     }
-

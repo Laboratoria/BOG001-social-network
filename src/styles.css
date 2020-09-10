@@ -89,8 +89,8 @@ img#logoMarca {
     align-items: center;
     align-content: center;
     margin: 8px;
-    margin-left: 28%;
-    width: 40%;
+    margin-left: 38%;
+    width: 30%;
 }
 
 div.inicioSession {
@@ -321,7 +321,7 @@ div.cardPost {
     border: 0.5px solid black;
     margin-top: 10%;
     padding: 2%;
-    border-radius: 8px;
+    border-radius: 16px;
 }
 
 /* -----Likes----- */
@@ -341,7 +341,8 @@ i#btn-like {
 }
 
 .progress {
-    background-color: royalblue;
+    display: block;
+    background-color: rgb(73, 233, 73);
     height: 10px;
     width: 0;
 }
