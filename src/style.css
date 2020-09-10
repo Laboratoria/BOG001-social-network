@@ -5,37 +5,30 @@
 }
 
 
-  body {
-    display: flex;
-    background-color: #DADADA;
-  }
+body {
+  background-color: #DADADA;
+}
+
+.cajaPrincipal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 
-  .cajaSecundaria {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-items: center;
-  }
+.logo {
+  width: 60%;
+  padding: 5%;
+}
 
-  .boxLogo{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-  }
+.mainPhoto {
+  width: 50%;
+  padding-bottom: 5%;
+}
 
-  .logo {
-    width: 50%;       
-    background-color: aqua;
-   }
-
-  .mainPhoto {
-    width: 40%
-  }
-
-
-  .slogan {
-    text-align: center;
-    color: rgb(184, 5, 103);
-  }
+.slogan {
+  font-size: 25px;
+  text-align: center;
+  color: rgb(184, 5, 103);
+}
