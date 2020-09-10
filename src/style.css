@@ -1,0 +1,41 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  font-family: 'Gayathri', sans-serif;
+}
+
+
+  body {
+    display: flex;
+    background-color: #DADADA;
+  }
+
+
+  .cajaSecundaria {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+  }
+
+  .boxLogo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .logo {
+    width: 50%;       
+    background-color: aqua;
+   }
+
+  .mainPhoto {
+    width: 40%
+  }
+
+
+  .slogan {
+    text-align: center;
+    color: rgb(184, 5, 103);
+  }
