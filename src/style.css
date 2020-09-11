@@ -28,7 +28,19 @@ body {
 }
 
 .slogan {
-  font-size: 25px;
+  font-size: 15px;
   text-align: center;
-  color: rgb(184, 5, 103);
+  color: #951B81;
+}
+
+.linkIngresar{
+  margin: 5%;
+  width: 100px;
+  height: 40px;
+  background-color: #951B81;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+
 }
