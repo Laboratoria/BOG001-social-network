@@ -30,12 +30,13 @@ const publications = () => {
             <textarea id="description" class="form-control" placeholder="Escribe aquí..." autocomplete="off"></textarea>
             <br>
             <input type="file" accept=".png, .jpg, .jpeg" name="subirArchivo" id="file"><br>
-            <meter min="10" max="100" low="30" high="75"></meter>
+            <div id="load-bar" class="load-bar">
+                <span id="progress" class="progress"></span>
+            </div>
             <br>
             <button type="submit" class="publicar">Publicar</button>
         </form>
     </div>
-
     <div id="containerPost">
     
     </div>`
@@ -46,16 +47,17 @@ const publications = () => {
         const file = e.target.files[0];
         const user = firebase.auth().currentUser;
         uploadImgPost(file, user.uid);
+        
         const fileReader= new FileReader();
         fileReader.readAsDataURL(file);
-
-    fileReader.addEventListener('progress', (e) => {
-        //console.log(e.loaded * 100 / e.total);
-    progress.style.width = Number.parseInt(e.loaded * 100 / e.total) + '%'
-    })
-    fileReader.addEventListener('loadend', () =>{
-    progress.style.width = '100%'
-    })
+        
+        fileReader.addEventListener('progress', (e) => {
+            //console.log(e.loaded * 100 / e.total);
+            progress.style.width = Number.parseInt(e.loaded * 100 / e.total) + '%'
+        })
+        fileReader.addEventListener('loadend', () =>{
+            progress.style.width = '100%'
+        })
     });  
 };
 

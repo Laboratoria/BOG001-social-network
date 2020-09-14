@@ -81,7 +81,8 @@ button.startSession {
     cursor: pointer;
 } 
 
-/* -------------------Imagen Logo y Formulario Inicio Sesión----------------- */ 
+/* -------------------Imagen Logo y Formulario Inicio Sesión----------------- */
+
 img#logoMarca {
     display: flex;
     flex-flow: row wrap;
@@ -242,7 +243,6 @@ img#inicio {
 /* ------------------------------ vista PUBLICACIONES------------------------------ */
 
 /* ------Formulario Creacion de publicaciones------ */
-
 div.container-form {
     display: flex;
     flex-wrap: wrap;
@@ -281,14 +281,19 @@ form#form-post {
     margin-top: 4%;
 }
 
-meter {
-    display: flex;
-    justify-content: left;
-    align-items: left;
-    align-content: left;
-    width: 40%;
-    margin-top: 1%;
-    margin-right: 35%;
+.load-bar {
+    width:41%;
+    margin-right: 34%;
+    margin-top: 2%;
+    background-color: wheat;
+    height: 10px;
+}
+
+.progress {
+    display: block;
+    background-color: rgb(73, 233, 73);
+    height: 10px;
+    width: 0;
 }
 
 button.publicar {
@@ -298,12 +303,38 @@ button.publicar {
     padding: 4px;
     font-size: 0.8em;
     font-weight: bold;
-    background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
+    background-image: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);
     border-radius: 8px;
     cursor: pointer;
 }
 
 /* --------------Publicaciones-------------- */
+
+h1#nombreP {
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    align-content: flex-start;
+    font-size: 100%;
+    font-weight: normal;
+}
+
+img#fotoP {
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+}
+
+h1#titleP {
+    font-family: ;
+    font-size: 30px;
+}
+
+p#descriptionP {
+    font-family: ;
+    font-size: 20px;
+}
+
 
 div.containerPost {
     display: flex;
@@ -317,9 +348,12 @@ div.containerPost {
 }
 
 div.cardPost {
+    margin-top: 3%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 3%;
     background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
     border: 0.5px solid black;
-    margin-top: 10%;
     padding: 2%;
     border-radius: 16px;
 }
@@ -333,19 +367,10 @@ i#btn-like {
     left: 50px;
 }
 
-/* -----  Sin modificar hacia abajo  -----*/
-.load-bar {
-    width:50%;
-    background-color: wheat;
-    height: 10px;
-}
 
-.progress {
-    display: block;
-    background-color: rgb(73, 233, 73);
-    height: 10px;
-    width: 0;
-}
+
+/* -----  Sin modificar hacia abajo  -----*/
+
 
 
 /* #principal {

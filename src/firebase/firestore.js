@@ -22,11 +22,12 @@ onGetPost((querySnapshot) => {
     querySnapshot.forEach(doc => {
         const postId = doc.data();
         postId.id = doc.id;
-        contenedor.innerHTML += `<div class = "cardPost">
-        <h1> ${localStorage.getItem('activeUserName')}</h1>
-        <img src="${localStorage.getItem('activeUserPhoto')}">
-        <h1>${doc.data().title}</h1>
-        <p>${doc.data().description}</p>
+        contenedor.innerHTML += 
+        `<div class = "cardPost">
+        <img src="${localStorage.getItem('activeUserPhoto')}" id="fotoP" style="max-width: 100%;">
+        <h1 id="nombreP"> ${localStorage.getItem('activeUserName')}</h1>
+        <h1 id="titleP">${doc.data().title}</h1>
+        <p id="descriptionP">${doc.data().description}</p>
         <img src="${doc.data().urlPost}" style="max-width: 100%;"> 
         <br>
         <i class="fas fa-heart" id="btn-like"></i>
@@ -57,7 +58,6 @@ onGetPost((querySnapshot) => {
 
                 editStatus = true;
                 id = doc.id;
-
             })
         });
 
@@ -97,9 +97,8 @@ formPost.addEventListener('submit', async (e) => {
         const toPost = document.querySelector('.publicar');
         toPost.innerText = 'Publicar';
     }
-
+    
     formPost.reset();
     title.focus();
-
 })
 }

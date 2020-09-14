@@ -23,6 +23,7 @@ const profile = () => {
     </header>
     
     <div id="containerProfile">
+    
     </div>`
 }
 

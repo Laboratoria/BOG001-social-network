@@ -14,10 +14,10 @@ export const registry= () => {
             verify();
         })
         .catch((error) => {
-        let errorCode = error.code;
-        alert(errorCode);
-        let errorMessage = error.message;
-        alert(errorMessage);
+            let errorCode = error.code;
+            alert(errorCode);
+            let errorMessage = error.message;
+            alert(errorMessage);
         })
     });
     
@@ -46,10 +46,10 @@ export const registry= () => {
             }
         })
         .catch((error) => {
-        let errorCode = error.code;
-        alert(errorCode);
-        let errorMessageSign = error.message;
-        console.log(errorMessageSign);
+            let errorCode = error.code;
+            alert(errorCode);
+            let errorMessageSign = error.message;
+            console.log(errorMessageSign);
         })
     });
     
@@ -90,13 +90,13 @@ export const observer = () => {
 }
 
 export const userProfile = () => {
-    var user = firebase.auth().currentUser;
+    let user = firebase.auth().currentUser;
     if (user != null) {
         const contentProfile= document.getElementById('containerProfile');
         contentProfile.innerHTML = '';
         user.providerData.forEach(function (profile) {
-            contentProfile.innerHTML += `
-            <p>Name: ${profile.displayName}</p>
+            contentProfile.innerHTML += 
+            `<p>Name: ${profile.displayName}</p>
             <p>Email: ${profile.email}</p>
             <img src= "${profile.photoURL}" style="max-width: 100%;">`
         });
