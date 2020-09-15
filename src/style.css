@@ -1,3 +1,5 @@
+
+/*********************Primera Vista****************************/
 * {
   padding: 0%;
   margin: 0%;
@@ -7,6 +9,9 @@
 
 body {
   background-color: #DADADA;
+  -webkit-background-size:cover;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .cajaPrincipal {
@@ -28,19 +33,69 @@ body {
 }
 
 .slogan {
-  font-size: 15px;
+  font-size: 30px;
   text-align: center;
   color: #951B81;
 }
 
 .linkIngresar{
   margin: 5%;
-  width: 100px;
-  height: 40px;
+  padding-top: 1%;
+  width: 120px;
+  height: 30px;
   background-color: #951B81;
   border-radius: 5px;
   text-align: center;
   text-decoration: none;
   color: #ffffff;
+   
+}
+
+.linkIngresar:hover{
+background-color: #bd23a3;
+cursor: pointer;
+transition: all 5.s ease;
+}
+
+
+/*********************Segunda Vista*********************************/
+.formulario{
+  display: flex;
+  flex-direction: column;
+  padding-top: 5%;
+   
+}
+
+.contenedor-form{
+  background: #DADADA;
+  width: 100%;
+  max-width: 500px;
+  /*margin: 48px  auto;*/
+  color:  #951B81;
+  box-shadow: 0px 0px 10px 0px #333 inset;
+  border-radius: 5px;
+  padding-bottom: 3%;
+  margin-top: 5%;
+  padding: 5%;
+  color: #951B81;
+  border-radius: 5px;
+}
+
+.contenedor-form input[type="email"],
+.contenedor-form input[type="password"]{
+padding: 10px 15px;
+margin: 0 0 20px 0;
+outline:none;
+background: rgba(248, 245, 245, 0.993);
+border:none;
+border-bottom: 4px solid #951B81;
+cursor: pointer;
+transition: all .5s ease;
 
 }
+
+.contenedor-form input[type="email"]:focus,
+.contenedor-form input[type="password"]:focus{
+border-bottom: solid 4px #bd23a3;
+}
+
