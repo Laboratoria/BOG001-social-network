@@ -303,7 +303,7 @@ button.publicar {
     padding: 4px;
     font-size: 0.8em;
     font-weight: bold;
-    background-image: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);
+    background: #29788add;
     border-radius: 8px;
     cursor: pointer;
 }
@@ -317,11 +317,13 @@ h1#nombreP {
     align-content: flex-start;
     font-size: 100%;
     font-weight: normal;
+    margin-left: 10%;
 }
 
 img#fotoP {
-    width: 10%;
-    height: 10%;
+    float: inline-start;
+    width: 7%;
+    height: 7%;
     border-radius: 50%;
 }
 
@@ -333,6 +335,7 @@ h1#titleP {
 p#descriptionP {
     font-family: ;
     font-size: 20px;
+    text-align: justify;
 }
 
 
@@ -361,12 +364,43 @@ div.cardPost {
 /* -----Likes----- */
 
 i#btn-like {
+    float: left;
     position: sticky;
     color: tomato;
-    font-size: 35px;
-    left: 50px;
+    font-size: 1.5em;
 }
 
+#pLike {
+    display: flex;
+    float: left;
+    margin-top: 1%;
+    margin-left: 2%;
+}
+
+/* -----Botones editar y eliminar----- */
+
+.btn-edition {
+    background: #29788add;
+    width: 16%;
+    margin-top: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding: 1%;
+    border-radius: 6px;
+    font-weight: bold;
+
+}
+
+.btn-delete {
+    background: #29788add;
+    width: 16%;
+    margin-top: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding: 1%;
+    border-radius: 6px;
+    font-weight: bold;
+}
 
 
 /* -----  Sin modificar hacia abajo  -----*/

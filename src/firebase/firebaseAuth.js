@@ -57,7 +57,7 @@ export const registry= () => {
     const signWithGoogle = document.querySelector ('.google-btn');
     signWithGoogle.addEventListener('click', (e) => {
         firebase.auth().signInWithPopup(provider).then((result) => {
-            console.log(result.user);
+            /* console.log(result.user); */
             
             let emailVerified = result.user.emailVerified;
             let user = result.user;

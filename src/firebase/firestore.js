@@ -31,7 +31,8 @@ onGetPost((querySnapshot) => {
         <img src="${doc.data().urlPost}" style="max-width: 100%;"> 
         <br>
         <i class="fas fa-heart" id="btn-like"></i>
-        <p><span id="mostrar"></span> me gusta</p>
+        <p id="pLike"><span id="mostrar"></span> me gusta</p>
+        <br>
         <button class="btn-edition" data-id="${postId.id}">Editar</button>
         <button class="btn-delete" data-id="${postId.id}">Eliminar</button>
         <p>${doc.data().createdAt}</p>
