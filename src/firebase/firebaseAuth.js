@@ -14,10 +14,10 @@ export const registry= () => {
             verify();
         })
         .catch((error) => {
-        let errorCode = error.code;
-        alert(errorCode);
-        let errorMessage = error.message;
-        alert(errorMessage);
+            let errorCode = error.code;
+            alert(errorCode);
+            let errorMessage = error.message;
+            alert(errorMessage);
         })
     });
     
@@ -32,7 +32,13 @@ export const registry= () => {
         firebase.auth().signInWithEmailAndPassword(loginEmail, loginPws)
         .then ((result) => {
             let emailVerified = result.user.emailVerified;
+            //const user = JSON.parse(result.user);
+            let user = result.user;
             if(emailVerified){
+                localStorage.setItem('activeUserName', user.displayName);
+                localStorage.setItem('activeUserEmail', user.email);
+                localStorage.setItem('activeUserPhoto', user.photoURL);
+                console.log(result.user);
                 router('#/Home');
             }
             else{
@@ -40,56 +46,62 @@ export const registry= () => {
             }
         })
         .catch((error) => {
-        let errorCode = error.code;
-        alert(errorCode);
-        let errorMessageSign = error.message;
-        console.log(errorMessageSign);
+            let errorCode = error.code;
+            alert(errorCode);
+            let errorMessageSign = error.message;
+            console.log(errorMessageSign);
         })
     });
     
     let provider = new firebase.auth.GoogleAuthProvider();
     const signWithGoogle = document.querySelector ('.google-btn');
     signWithGoogle.addEventListener('click', (e) => {
-    firebase.auth().signInWithPopup(provider).then((result) => {
-    console.log(result.user);
-    
-    let emailVerified = result.user.emailVerified;
-    localStorage.setItem('activeUser', emailVerified);
-    if(emailVerified){
-        router('#/Home');
-    }
-    else{
-        alert('Debes verificar tu correo');
-    }
-    })
-});
+        firebase.auth().signInWithPopup(provider).then((result) => {
+            /* console.log(result.user); */
+            
+            let emailVerified = result.user.emailVerified;
+            let user = result.user;
+            if(emailVerified){
+                localStorage.setItem('activeUserName', user.displayName);
+                localStorage.setItem('activeUserEmail', user.emailVerified);
+                localStorage.setItem('activeUserPhoto', user.photoURL);
+                router('#/Home');
+            }
+            else{
+                alert('Debes verificar tu correo');
+            }
+        })
+    });
 }
 
 export const observer = () => {
-firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-        console.log('Existe Usuario Activo');
-        // User is signed in.    
-    let displayName = user.displayName;
-    let email = user.email;
-
-    console.log('########');
-    console.log(user.emailVerified);
-    console.log('########');
-    
-    let emailVerified = user.emailVerified;
-    let photoURL = user.photoURL;
-    let isAnonymous = user.isAnonymous;
-    let uid = user.uid;
-    let providerData = user.providerData;
-    // ...
-    } 
-    else {
-        // User is signed out.
-        console.log('vuelva a iniciar sesión');
-    }
-});
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            console.log('Existe Usuario Activo');
+            // User is signed in.    
+            //console.log(user.emailVerified);
+            let emailVerified = user.emailVerified;
+        } 
+        else {
+            // User is signed out.
+            console.log('vuelva a iniciar sesión');
+        }
+    });
 }
+
+export const userProfile = () => {
+    let user = firebase.auth().currentUser;
+    if (user != null) {
+        const contentProfile= document.getElementById('containerProfile');
+        contentProfile.innerHTML = '';
+        user.providerData.forEach(function (profile) {
+            contentProfile.innerHTML += 
+            `<p>Name: ${profile.displayName}</p>
+            <p>Email: ${profile.email}</p>
+            <img src= "${profile.photoURL}" style="max-width: 100%;">`
+        });
+    }
+} 
 
 //Cerrar Sesión
 export const closeSession = () => {
@@ -105,25 +117,14 @@ export const closeSession = () => {
 //Verificación de usuario
 export const verify = () => {
     let user = firebase.auth().currentUser;
-    user.sendEmailVerification().then(() => {
+    user.sendEmailVerification()
+    
+    .then(() => {
         console.log('Enviando correo...');
         // Email sent.
-    }).catch((error) => {
+    })
+    .catch((error) => {
         // An error happened.
         console.log(error);
     });
 }
-
-export const changeStatus = () =>  {
-firebase.auth().onAuthStateChanged( firebaseUser => {
-    if(firebaseUser) {
-        console.log(firebaseUser);
-    } 
-    else {
-        console.log('no logueado');
-    }
-})
-};
-
-
-

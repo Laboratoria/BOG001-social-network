@@ -1,9 +1,9 @@
 import showFirst from './vistas/inicio.js'
 import showLogin from './vistas/registro.js'
 import publications from './vistas/publicaciones.js'
-import { registry, observer, closeSession, changeStatus } from './firebase/firebaseAuth.js'
+import { registry, observer, closeSession, userProfile } from './firebase/firebaseAuth.js'
 import { createPost } from './firebase/firestore.js'
-
+import profile from './vistas/perfil.js'
 
 window.addEventListener('hashchange', () => {
     router(window.location.hash);
@@ -36,6 +36,8 @@ export const router = (route) => {
             createPost();
         break;
         case '#/Perfil':
+            profile();
+            userProfile();
             return console.log('Perfil');
         break;
 
@@ -45,7 +47,6 @@ export const router = (route) => {
 }
 
 const modalInicio = () => {
-
     let modal = document.querySelector("#contenedor-registro");
     let btn = document.getElementById("registry");
     let span = document.getElementsByClassName("startSession")[0];
@@ -59,5 +60,4 @@ const modalInicio = () => {
         modal.style.visibility = "hidden";
         inicio.style.visibility= "visible";
     }
-    }
-
+}

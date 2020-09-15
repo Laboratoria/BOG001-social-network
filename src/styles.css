@@ -7,7 +7,159 @@ body {
     margin: 8px;
 }
 
-/*Header y topNav vistas*/
+/* ----------- Vista REGISTRO - Registro e inicio de sesion ------------*/
+
+#container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 8px;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* --------------------------Formulario Registro ------------------*/
+div#registro {
+    display: flex;
+}
+
+form#registro.registro {
+    color: white;
+    background-color: #27496ddd;
+    top: auto;
+    padding: 8%;
+    border-radius: 15px;
+    display: flex;
+    flex-flow: column; 
+    align-items: center;
+}
+
+/* Input form registro */
+
+input.registro-input {
+    width: 90%;
+    padding: 3px;
+    margin: 3%;
+    border: 1px solid;
+    color: black; 
+    border-radius: 5px;
+}
+
+input.registro-input:focus {
+    background-color: rgba(245, 238, 135, 0.164);
+}
+
+/* Texto Formulario */
+
+p#text1, p#text2 {
+    margin: 0%;
+    font-size: 105%;
+}
+
+button.registrarse {
+    width: 100%;
+    margin-top: 8%;
+    padding: 7px;
+    font-size: 0.8em;
+    font-weight: bold;
+    background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button.startSession {
+    width: 100%;
+    margin-top: 8%;
+    padding: 7px;
+    font-size: 0.8em;
+    font-weight: bold;
+    background: #10a567;
+    border-radius: 8px;
+    cursor: pointer;
+} 
+
+/* -------------------Imagen Logo y Formulario Inicio Sesión----------------- */
+
+img#logoMarca {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 8px;
+    margin-left: 38%;
+    width: 30%;
+}
+
+div.inicioSession {
+    display: block;
+    position: fixed;
+}
+
+form.inicio-sesion {
+    display: flex;
+    position: static;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    color: black;
+    background-color: #27496ddd;
+    padding: 4%;
+    border-radius: 14px;
+    width: 80%;
+    height: 80%;
+    margin-left: 10%;
+    border: 0.5px solid #b1f4cf;
+}
+
+input.inputI {
+    border-radius: 3px;
+    width: 90%;
+    height: 10%;
+    padding: 2%;
+    border: 1px solid black;
+    margin-top: 4%;
+}
+
+input.login {
+    font-size: 14px;
+    border: 1px solid black;
+    margin-top: 4%;
+    padding: 2%;
+    width: 90%;
+    background-color: #10a567;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button.google-btn {
+    font-size: 14px;
+    border: 1px solid black;
+    margin-top: 4%;
+    padding: 2%;
+    width: 90%;
+    background-color: coral;
+    border-radius: 3px;
+}
+
+i#emoji {
+    font-size: 215%;
+    padding-top: 13%;
+}
+
+a#registry {
+    margin-top: 7%;
+    cursor: pointer;
+    font-size: 110%;
+    color: white;
+    text-decoration-line: underline;
+}
+
+/* --------------------VISTA INICIO - TopNav---------------------------- */
 
 header {
     width:100%;  
@@ -48,145 +200,214 @@ span {
     margin-right:10px;
 }
 
-/*Contendor Vista Principal - Registro e inicio de sesion*/
+img#header {
+    display: fixed;
+    width: 30%;
+    margin-left: 10%;
+}
 
-#container {
+div.container-VInicio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+section#info {
     display: flex;
     flex-flow: row wrap;
-    margin: 8px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+h1#tituloI {
+    font-size: 170%;
+}
+
+p#texto-inicio {
+    font-size: 120%;
+    text-align: justify;
+}
+
+img#inicio {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ------------------------------ vista PUBLICACIONES------------------------------ */
+
+/* ------Formulario Creacion de publicaciones------ */
+div.container-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 2%;
     width: 100%;
     height: 100%;
+}
+
+form#form-post {
+    display: flex;
+    flex-flow: column;
     justify-content: center;
-}
-
-div#registro {
-    display: flex;
-    
-}
-
-form#registro.registro {
-    color: black;
-    background-color: #27496ddd;
-    top: auto;
-    padding: 8%;
-    border-radius: 15px;
-    display: flex;
-    flex-flow: column wrap; 
     align-items: center;
+    align-content: center;
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    border: 0.5px solid #b1f4cf;
+    border-radius: 14px;
+    width: 50%;
+    height: 30%;
 }
 
-input.registro-input {
+.form-control {
     width: 75%;
-    padding: 3px;
-    margin: 2%;
+    padding: 1.5%;
     border: 1px solid;
     color: black; 
-    border-radius: 8px;
+    border-radius: 5px;
+    margin-top: 2%;
 }
 
-input.registro-input:focus {
-    background-color: rgba(245, 238, 135, 0.164);
+#file {
+    width: 75%;
+    margin-top: 4%;
 }
 
-button#btninicio-sesion {
-    padding: 7px;
+.load-bar {
+    width:41%;
+    margin-right: 34%;
+    margin-top: 2%;
+    background-color: wheat;
+    height: 10px;
+}
+
+.progress {
+    display: block;
+    background-color: rgb(73, 233, 73);
+    height: 10px;
+    width: 0;
+}
+
+button.publicar {
+    width: 40%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 4px;
     font-size: 0.8em;
-    background-image: linear-gradient(-225deg, #DFFFCD 0%, #90F9C4 48%, #39F3BB 100%);
+    font-weight: bold;
+    background: #29788add;
     border-radius: 8px;
     cursor: pointer;
 }
 
-p#text1, p#text2 {
-    margin: 0%;
-}
+/* --------------Publicaciones-------------- */
 
-button.registrarse {
-    width: 100%;
-    margin-top: 8%;
-    padding: 7px;
-    font-size: 0.8em;
-    background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-/*Sin modificar hacia abajo*/
-
-.modal {
-    display: -webkit-flex;
-    justify-content: center;
-    position: absolute;
-    top: 35%; 
-}
-
-.modal-content {
+h1#nombreP {
     display: flex;
-    background-color: #77797cdd;
-    padding: 2%;
-    border-radius: 15px; 
-    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    align-content: flex-start;
+    font-size: 100%;
+    font-weight: normal;
+    margin-left: 10%;
 }
 
-.inicio-sesion {
-    display: flex; 
-    flex-flow: row wrap;
-    justify-content:center;
+img#fotoP {
+    float: inline-start;
+    width: 7%;
+    height: 7%;
+    border-radius: 50%;
 }
 
-div.container {
-    display: flex;
-    flex-wrap: wrap;
-    margin: auto;
-    padding: 1%;
+h1#titleP {
+    font-family: ;
+    font-size: 30px;
 }
 
-div.container-inicio {
-    display: flex;
-    flex-wrap: wrap;
-    margin: auto;
-    padding: 12px;
-    justify-content: center;
-    justify-items: center;
-    align-content: center;
-    align-items: center;
-}
-#texto-inicio {
+p#descriptionP {
+    font-family: ;
     font-size: 20px;
     text-align: justify;
 }
 
-.close {
-    color: white;
+
+div.containerPost {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 2%;
+    width: 100%;
+    height: 100%;
+}
+
+div.cardPost {
+    margin-top: 3%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 3%;
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    border: 0.5px solid black;
+    padding: 2%;
+    border-radius: 16px;
+}
+
+/* -----Likes----- */
+
+i#btn-like {
+    float: left;
+    position: sticky;
+    color: tomato;
+    font-size: 1.5em;
+}
+
+#pLike {
+    display: flex;
+    float: left;
+    margin-top: 1%;
+    margin-left: 2%;
+}
+
+/* -----Botones editar y eliminar----- */
+
+.btn-edition {
+    background: #29788add;
+    width: 16%;
+    margin-top: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding: 1%;
+    border-radius: 6px;
     font-weight: bold;
-    margin-left: 95%;
-    font-size: 35px;
-    background-color: rgb(224, 69, 69);
-    width: 25px;
-    height: 25px;
-    line-height: 25px;
-    cursor: pointer;
-    border-radius: 50%;
+
 }
 
-.login {
-    font-size: 14px;
-    border: 1px solid;
-    color: black;
-    width: 30%;
-    background-color: #10a567;
-    border-radius: 8px;
-    cursor: pointer;
+.btn-delete {
+    background: #29788add;
+    width: 16%;
+    margin-top: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding: 1%;
+    border-radius: 6px;
+    font-weight: bold;
 }
 
-button.google-btn {
-    border: 1px solid;
-    font-size: 16px;
-    background-color: coral;
-    padding: 2%; 
-    border-radius: 8px;
-}
 
-#principal {
+/* -----  Sin modificar hacia abajo  -----*/
+
+
+
+/* #principal {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -209,21 +430,4 @@ i#btn-like {
     color: tomato;
     font-size: 35px;
     left: 50px;
-}
-
-/*.errorMessage {
-    color:black;
-    font-size: 17px;
-    background-color: #f17565dd;
-    border-radius: 10px;
-    padding: 3px;
-    font-family: 'arial';
-}
-.messageSign {
-    color:black;
-    font-size: 17px;
-    background-color: #f17565dd;
-    border-radius: 10px;
-    padding: 3px;
-    font-family: 'arial'; 
-}*/
+} */

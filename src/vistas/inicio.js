@@ -20,15 +20,16 @@ const showFirst = () => {
             </ul>   
         </div>
     </header>
-    <div class="container-inicio">
-    <main id="principal">
-    <section>
-        <h1>¿Cómo podrías sacarle provecho a esta red social?</h1>
-        <p id="texto-inicio">Por medio de <strong>“InstaTravel”</strong> podrás hacer parte de una comunidad compuesta por amantes de la aventura que aman viajar, hacer turismo y lo mejor: Compartir sus experiencias y recomendaciones, lo que le permitirá elegir la mejor opción para sus próximas vacaciones, basadas en sugerencias de hoteles, actividades, gastronomía, y sitios mas representativos del lugar con su respectivo precio.</p>
-        <img src="img/colombiaturismo.jpg">
-    </section>
-    </main>
-    </div>`;
+
+    <div class="container-VInicio">
+    <img src="img/logoHeader.png" id="header">
+        <section id="info">
+            <h1 id="tituloI">¿Cómo podrías sacarle provecho a esta red social?</h1>
+            <p id="texto-inicio">Por medio de <strong>“InstaTravel”</strong> podrás hacer parte de una comunidad compuesta por amantes de la aventura que aman viajar, hacer turismo y lo mejor: Compartir sus experiencias y recomendaciones, lo que le permitirá elegir la mejor opción para sus próximas vacaciones, basadas en sugerencias de hoteles, actividades, gastronomía, y sitios mas representativos del lugar incluyendo costos si es posible, como hospedaje, precios de las diferentes actividades, restaurantes recomendados, etc.
+            </p>
+        </section>
+        <img src="img/colombiaturismo.jpg" id="inicio">
+    </div>`
 };
 
 export default showFirst;

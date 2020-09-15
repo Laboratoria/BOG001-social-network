@@ -1,7 +1,5 @@
 import { uploadImgPost } from '../firebase/firestorage.js'
 
-//topnav <iframe src="/src/topNav/topNav.html"></iframe>
-
 const publications = () => {
     let elementContainer= document.getElementById('container');
     elementContainer.innerHTML = 
@@ -12,6 +10,7 @@ const publications = () => {
         background-attachment: fixed;
         background-size: cover;
         background-position: center;
+    }
     </style>
     <header>
         <div class="topNav" id="inicio">
@@ -27,26 +26,39 @@ const publications = () => {
     <div class="container-form">
         <form id="form-post">
             <h1>Crear una publicación</h1>
-            <input type="text" id="title-post" placeholder="Lugar recomendado..." autocomplete="off" autofocus>
-            <textarea id="description" cols="36" rows="14" class="form-control" placeholder="Escribe aquí..." autocomplete="off"></textarea>
+            <input type="text" id="title-post" class="form-control" placeholder="Lugar recomendado..." autocomplete="off" autofocus>
+            <textarea id="description" class="form-control" placeholder="Escribe aquí..." autocomplete="off"></textarea>
             <br>
-            <input type="file" accept=".png, .jpg, .jpeg" name="subirArchivo" id="file"><br>   
-            <meter min="10" max="100" low="30" high="75" value=""></meter>
+            <input type="file" accept=".png, .jpg, .jpeg" name="subirArchivo" id="file"><br>
+            <div id="load-bar" class="load-bar">
+                <span id="progress" class="progress"></span>
+            </div>
             <br>
-        <button type="submit" class="publicar">Publicar</button>
+            <button type="submit" class="publicar">Publicar</button>
         </form>
     </div>
     <div id="containerPost">
     
     </div>`
 
+    const progress = document.getElementById('progress');
     const btnUploadFile = document.querySelector("#file");
-    
     btnUploadFile.addEventListener("change", (e) => {
-    const file = e.target.files[0];
-    const user = firebase.auth().currentUser;
-    uploadImgPost(file, user.uid);
-    });
+        const file = e.target.files[0];
+        const user = firebase.auth().currentUser;
+        uploadImgPost(file, user.uid);
+        
+        const fileReader= new FileReader();
+        fileReader.readAsDataURL(file);
+        
+        fileReader.addEventListener('progress', (e) => {
+            //console.log(e.loaded * 100 / e.total);
+            progress.style.width = Number.parseInt(e.loaded * 100 / e.total) + '%'
+        })
+        fileReader.addEventListener('loadend', () =>{
+            progress.style.width = '100%'
+        })
+    });  
 };
 
 export default publications;
