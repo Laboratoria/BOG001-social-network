@@ -99,3 +99,24 @@ transition: all .5s ease;
 border-bottom: solid 4px #bd23a3;
 }
 
+/*****************************pagina error*******************************/
+.espacioError404{   /*contenedor donde esta la foto*/
+  height: 1700px;
+  background-repeat: none;
+  display: flex;
+  flex-direction: column;
+  background-image: url("img/error404.png");
+}
+
+.photo404{
+  width: 1700px;
+
+}
+
+.textError{
+  height: 100%;
+  font-size: 5em;
+  color: #951B81;
+  
+
+}
