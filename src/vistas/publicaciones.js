@@ -1,6 +1,6 @@
 import { uploadImgPost } from '../firebase/firestorage.js'
 
-const publications = async () => {
+const publications =  () => {
     let elementContainer= document.getElementById('container');
     elementContainer.innerHTML = 
     `<style>
