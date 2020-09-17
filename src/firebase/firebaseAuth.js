@@ -32,13 +32,13 @@ export const registry= () => {
         firebase.auth().signInWithEmailAndPassword(loginEmail, loginPws)
         .then ((result) => {
             let emailVerified = result.user.emailVerified;
-            //const user = JSON.parse(result.user);
+            
             let user = result.user;
             if(emailVerified){
                 localStorage.setItem('activeUserName', user.displayName);
                 localStorage.setItem('activeUserEmail', user.email);
                 localStorage.setItem('activeUserPhoto', user.photoURL);
-                console.log(result.user);
+                //console.log(result.user);
                 router('#/Home');
             }
             else{

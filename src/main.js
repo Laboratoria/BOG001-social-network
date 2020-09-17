@@ -2,7 +2,7 @@ import showFirst from './vistas/inicio.js'
 import showLogin from './vistas/registro.js'
 import publications from './vistas/publicaciones.js'
 import { registry, observer, closeSession, userProfile } from './firebase/firebaseAuth.js'
-import { createPost } from './firebase/firestore.js'
+import { onGetPost, savePublications, like, edit } from './firebase/firestore.js'
 import profile from './vistas/perfil.js'
 
 window.addEventListener('hashchange', () => {
@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 let content = document.getElementById("container"); 
 
-export const router = (route) => {
+export const router = async (route) => {
     content.innerHTML = '';
     switch(route) {
         case '#/':
@@ -32,8 +32,11 @@ export const router = (route) => {
         break;
         
         case '#/Publicaciones': 
-            publications();
-            createPost();
+        await publications();
+        await onGetPost();
+        savePublications();
+        await like();
+        edit();
         break;
         case '#/Perfil':
             profile();
