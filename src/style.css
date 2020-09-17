@@ -72,28 +72,7 @@ body {
   padding-bottom: 3%;
 }
  
-/*.contenedor-form .toggle{
-  position: absolute;
-  top: 7px;
-  right: 7px;
-  width: 100px;
-  height: 30px;
-  font-size: 13px;
-  line-height: center;
-  border-top: 2px solid  #951B81;
-  border-bottom: 2px solid  #951B81;
-  transition: all  .5s ease;
-  cursor:pointer;
-  padding-top: 2%;
 
-}
-.contenedor-form .toggle{
-  letter-spacing: 2px;
-}
-.contenedor-form .toggle:hover{
-  border-top: 2px solid  #e40d78;
-  border-bottom: 2px solid  #e40d78;
-}*/
 .contenedor-form h2{
   margin: 0 0 28px 0;
   font-size: 20px;
@@ -108,10 +87,8 @@ body {
 .contenedor-form input[type="date"]{
   outline: none;
   background:white;
-  display:block;
   width:100%;
   padding: 10px 15px;
-  color:  #951B81;
   border: none;
   border-radius: 2px;
   border-bottom: 4px solid #951B81;
@@ -127,7 +104,7 @@ body {
 .contenedor-form input[type="name"]:focus,
 .contenedor-form input[type="lastName"]:focus,
 .contenedor-form input[type="date"]:focus{
-  border-bottom: 4px solid #e40d78;
+  border-bottom: 4px solid  #bd23a3;
 }
 
 .contenedor-form input[type="submit"]{
@@ -143,7 +120,7 @@ body {
   transition: all .5s ease;
 }
 .contenedor-form input[type="submit"]:hover{
-  background: #e40d78; 
+  background:#bd23a3; 
 }
 
 .contenedor-form .reset-password{
@@ -158,5 +135,5 @@ body {
 }
 .contenedor-form .formulario{
   padding: 40px;
-}||
+}
 
