@@ -1,26 +1,16 @@
 export const createPost = () => {
     const formPost = document.querySelector("#form-post");
-    const contenedor = document.getElementById('containerPost');
+    
     let editStatus = false;
     let id = '';
-    
-    const savePublications = (title, description, urlPost, createdAt, userPhoto, userName) =>
-        firebase.firestore().collection("publications").doc().set({
-            title,
-            description,
-            urlPost,
-            createdAt,
-            userPhoto,
-            userName,
-        })
 
-const onGetPost = (callback) => firebase.firestore().collection('publications').onSnapshot(callback);
 const deletePost = id => firebase.firestore().collection("publications").doc(id).delete();
 const getPublications = (id) => firebase.firestore().collection("publications").doc(id).get();
 const updatePost = (id, updatePost) => firebase.firestore().collection("publications").doc(id).update(updatePost);
 
 
 onGetPost((querySnapshot) => {
+    const contenedor = document.getElementById('containerPost');
     contenedor.innerHTML = '';
     querySnapshot.forEach(doc => {
         const postId = doc.data();
@@ -65,7 +55,7 @@ onGetPost((querySnapshot) => {
                 id = doc.id;
             })
         });
-
+        like();
 
         /*  const likes = () => {
             let contador = 0;
@@ -76,7 +66,7 @@ onGetPost((querySnapshot) => {
                 document.getElementById('mostrar').innerHTML = contador;
             })
         }
-        likes();  */
+        likes();*/
     })
 })
 
@@ -109,4 +99,46 @@ formPost.addEventListener('submit', async (e) => {
     formPost.reset();
     title.focus();
 })
+}
+
+const savePublications = (title, description, urlPost, createdAt, userPhoto, userName) =>
+        firebase.firestore().collection("publications").doc().set({
+            title,
+            description,
+            urlPost,
+            createdAt,
+            userPhoto,
+            userName,
+        })
+const onGetPost = (callback) => firebase.firestore().collection('publications').onSnapshot(callback);
+
+export const like =  (id) => {
+    
+    let userId = firebase.auth().currentUser.uid;
+    const btnLike = document.querySelectorAll('.btn-like');
+    console.log(btnLike);
+    btnLike.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            console.log(e);
+            
+            firebase.database().ref('posts/' + id).once('value', (postRef) => {
+                    const postLike = postRef.val();
+
+                    const objRefLike = postLike.postWithLikes || [];
+
+                    if (objRefLike.indexOf(userId) === -1) {
+                        objRefLike.push(userId);
+                        postLike.likeCount = objRefLike.length;
+                    } else if (objRefLike.indexOf(userId) === 0) {
+                        likeButton.disabled = false;
+                    }
+
+                    postLike.postWithLikes = objRefLike;
+                    let updates = {};
+                    updates['/posts/' + id] = postLike;
+                    updates['/user-posts/' + userId + '/' + id] = postLike;
+                    return firebase.database().ref().update(updates);
+                }) 
+        })
+    }) 
 }

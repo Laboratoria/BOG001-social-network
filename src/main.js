@@ -35,8 +35,8 @@ export const router = async (route) => {
         case '#/Publicaciones': 
         publications();
         createPost();
-        /*   await like();
-        edit();   */
+        
+        //edit();   
         break;
         case '#/Perfil':
             profile();
