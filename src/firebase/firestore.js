@@ -81,6 +81,8 @@ formPost.addEventListener('submit', async (e) => {
     let createdAt = firebase.firestore.FieldValue.serverTimestamp();
     let userPhoto = localStorage.getItem('activeUserPhoto');
     let userName =  localStorage.getItem('activeUserName');
+    const userId = auth.currentUser.uid;
+    const data = doc.data();
     console.log(createdAt);
 
     if (!editStatus) {
