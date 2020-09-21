@@ -82,6 +82,10 @@ formPost.addEventListener('submit', async (e) => {
     let description = document.getElementById('description');
     let urlPost = localStorage.getItem('imgNewPost');
     let createdAt = firebase.firestore.FieldValue.serverTimestamp();
+    const userId = auth.currentUser.uid;
+    const data = doc.data();
+
+    
     console.log(createdAt);
 
     if (!editStatus) {
