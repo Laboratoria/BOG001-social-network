@@ -32,7 +32,23 @@ onGetPost((querySnapshot) => {
         <p id="toDate">${doc.data().createdAt}</p>
         </div>`;
         
-        const btnsDelete = document.querySelectorAll('.btn-delete');
+       
+        like();
+
+        /*  const likes = () => {
+            let contador = 0;
+            let btnLike = document.querySelector('#btn-like');
+            btnLike.addEventListener('click', () => {
+                console.log(btnLike);
+                contador++;
+                document.getElementById('mostrar').innerHTML = contador;
+            })
+        }
+        likes();*/
+    })
+})
+
+const btnsDelete = document.querySelectorAll('.btn-delete');
         btnsDelete.forEach(btn => {
             btn.addEventListener('click', async (e) => {
                 //console.log(e.target.dataset.id);
@@ -55,20 +71,6 @@ onGetPost((querySnapshot) => {
                 id = doc.id;
             })
         });
-        like();
-
-        /*  const likes = () => {
-            let contador = 0;
-            let btnLike = document.querySelector('#btn-like');
-            btnLike.addEventListener('click', () => {
-                console.log(btnLike);
-                contador++;
-                document.getElementById('mostrar').innerHTML = contador;
-            })
-        }
-        likes();*/
-    })
-})
 
 formPost.addEventListener('submit', async (e) => {
     e.preventDefault();

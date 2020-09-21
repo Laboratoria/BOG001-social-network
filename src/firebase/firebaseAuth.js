@@ -61,6 +61,7 @@ export const registry= () => {
             
             let emailVerified = result.user.emailVerified;
             let user = result.user;
+            
             if(emailVerified){
                 localStorage.setItem('activeUserName', user.displayName);
                 localStorage.setItem('activeUserEmail', user.emailVerified);
@@ -96,9 +97,13 @@ export const userProfile = () => {
         contentProfile.innerHTML = '';
         user.providerData.forEach(function (profile) {
             contentProfile.innerHTML += 
-            `<p>Name: ${profile.displayName}</p>
-            <p>Email: ${profile.email}</p>
-            <img src= "${profile.photoURL}" style="max-width: 100%;">`
+            `<div id="containerProfile">
+            <img src= "${profile.photoURL}" id="pProfile" style="max-width: 100%;">
+            <p class="nameP">Name: ${profile.displayName}</p>
+            <p class="emailP">Email: ${profile.email}</p>
+            <div>
+            `
+
         });
     }
 } 
