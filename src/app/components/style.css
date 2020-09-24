@@ -94,8 +94,6 @@ transition: all 5.s ease;
 }
 
 
-
-
 .contenedor-form{
   position: relative;
   background: #DADADA;
@@ -182,12 +180,12 @@ transition: all 5.s ease;
   background: #e40d78; 
 }
 
-.contenedor-form .reset-password{
+.contenedor-form .othersAccounts{ /*cambie nombre de reset password*/
   width: 100%;
   text-align: center;
  
 }
-.contenedor-form .reset-password a{
+.contenedor-form .othersAccounts a{ /*cambie nombre de reset password*/
   color: #951B81;
   text-decoration: none;
   font-size: 16px;

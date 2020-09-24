@@ -19,13 +19,20 @@
             </div>
             <div class="formulario">
                 <h2>Iniciar Sesion</h2>
-                <form action="#">
-                    <input type ="text"placeholder="Usuario" required>
-                    <input type ="pasword" placeholder ="Contraseña" required>
-                    <input type ="submit" value="Iniciar Sesión">
+                <form action="#" method="POST">
+
+                    <label for="usuario"></label>
+                    <input type ="text"placeholder="Usuario" id = "usuario" required>
+
+                    <label for="contrasena"></label>
+                    <input type ="password" placeholder ="Contraseña" id = "contrasena" required>
+
+                    <label for="in-sesion"></label>
+                    <input type ="submit" id = "in-sesion" value="Iniciar Sesión">
                 </form>
             </div>
-            <div class="reset-password">
+            
+            <div class="othersAccounts">
 
                 <a href="#/crearcuenta">Crear Cuenta</a> <br>
                 <a href="#/facebook">Ingresar con Facebook</a><br>
