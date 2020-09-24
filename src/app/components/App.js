@@ -5,7 +5,7 @@ export function App(){
     const d = document,
     $root = d.getElementById("root"),
     $sectionAll = d.createElement("section");
-    $sectionAll.classList.add = "cajaPrincipal";
+    $root.classList.add("cajaPrincipal");
     $sectionAll.id = "mainBox";
 
 
@@ -22,6 +22,10 @@ export function App(){
 }
 
 export function Form(){
+    const d = document,
+    $root = d.getElementById("root");
+
+
     $root.appendChild(form ());
     
 }
