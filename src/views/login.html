@@ -18,20 +18,25 @@
             <div class="toggle">
             </div>
             <div class="formulario">
-                <h2>Iniciar Sesión</h2>
-                <form action="#">
-                    <label>Usuario*</label>
-                    <input type ="text"placeholder="Usuario" required>
-                    <label>Contraseña*</label>
-                    <input type ="pasword" placeholder ="*********" required>
-                    <input type ="submit" value="Iniciar Sesión">
+                <h2>Iniciar Sesion</h2>
+                <form action="#" method="POST">
+
+                    <label for="usuario"></label>
+                    <input type ="text"placeholder="Usuario" id = "usuario" required>
+
+                    <label for="contrasena"></label>
+                    <input type ="password" placeholder ="Contraseña" id = "contrasena" required>
+
+                    <label for="in-sesion"></label>
+                    <input type ="submit" id = "in-sesion" value="Iniciar Sesión">
                 </form>
             </div>
-            <div class="reset-password">
+            
+            <div class="othersAccounts">
 
-                <a href="#">Olvide mi contraseña</a> <br>
-                <a href="#">Ingresar con Facebook</a>  <br>
-                <a href="#">Ingresar con Google</a> <br>
+                <a href="#/crearcuenta">Crear Cuenta</a> <br>
+                <a href="#/facebook">Ingresar con Facebook</a><br>
+                <a href="#/google">Ingresar con Google</a><br>
 
 
             </div>

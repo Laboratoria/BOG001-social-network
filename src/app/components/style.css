@@ -51,10 +51,10 @@ body {
 }
 
 .linkIngresar{
-  margin: 5%;
+  margin: 3%;
   padding-top: 1%;
   width: 120px;
-  height: 30px;
+  height: 40px;
   background-color: #951B81;
   border-radius: 5px;
   text-align: center;
@@ -92,8 +92,6 @@ transition: all 5.s ease;
   color: #951B81;
   border-radius: 5px;
 }
-
-
 
 
 .contenedor-form{
@@ -159,12 +157,12 @@ transition: all 5.s ease;
   background:#bd23a3; 
 }
 
-.contenedor-form .reset-password{
+.contenedor-form .othersAccounts{ /*cambie nombre de reset password*/
   width: 100%;
   text-align: center;
  
 }
-.contenedor-form .reset-password a{
+.contenedor-form .othersAccounts a{ /*cambie nombre de reset password*/
   color: #951B81;
   text-decoration: none;
   font-size: 16px;
@@ -194,14 +192,14 @@ border-bottom: solid 4px #bd23a3;
 /*****************************pagina error*******************************/
 .espacioError404{   /*contenedor donde esta la foto*/
   height: 1700px;
-  background-repeat: none;
-  display: flex;
-  flex-direction: column;
+  background-repeat: no-repeat;
+  /*display: flex;
+  flex-direction: column;*/
   background-image: url("img/error404.png");
 }
 
 .photo404{
-  width: 1700px;
+  width: 1500px;
 
 }
 
