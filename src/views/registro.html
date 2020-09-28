@@ -12,15 +12,17 @@
 </head>
 <body>
     <section class="cajaPrincipal" id="mainBox">
+        <div class="headRegistro">
         <img class="foto" src="img/PELO.JPG" alt="pelo" >
         <img class="logo" src="img/logo-newStyle.png" alt="logo-newStyle">
+    </div>
 
         <h2 class="slogan">Un espacio para consentirte,<br>cuidarte y ser mas bella.</h2>
         <div class="contenedor-form">
-            <div class="toggle">
-            </div>
+            <!--<div class="toggle"></div>-->
             <div class="formulario">
                 <h2>Registro</h2>
+<<<<<<< HEAD
                 <form action="#">
                     <label>Usuario*</label>
                     <input type ="text"placeholder="Marilu" required>
@@ -33,8 +35,22 @@
                     <label>Fecha de nacimiento*</label>
                     <input type ="date" placeholder ="Fecha de nacimiento" required>
                     <li>Acepto términos y condiciones.*</li> 
+=======
+                <form method="POST" action="#" class="formulario">
+                    <label for="userRegistration">Usuario * </label>
+                    <input type ="text" id="userRegistration" placeholder="Usuario" required>
+                    <label for="email">Correo Electrónico *</label>
+                    <input type ="email" id="email" placeholder ="Email" required>
+                    <label for="nameRegistration">Nombre *</label>
+                    <input type ="name" id="nameRegistration" placeholder ="Nombre" required>
+                    <label for="lastnameRegistratio">Apellidos *</label>
+                    <input type ="lastName" id="lastnameRegistratio" placeholder ="Apellidos" required>
+                    <label for="birthDate">Fecha de nacimiento *</label>
+                    <input type ="date" id="birthDate" placeholder ="Fecha de nacimiento" required>
+                    <li>Acepto términos y condiciones.</li> 
+>>>>>>> 64041576eda71c2e2cc05068f944400cbf78e205
                     <br>
-                    <input type ="submit" value="Aceptar">
+                    <input type ="submit" id="btonRegistro" value="Aceptar">
                 </form>
             </div>
                 
