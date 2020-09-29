@@ -1,4 +1,4 @@
-import { App,Form, crearCuenta } from "../app/components/App.js";
+import { App,Form, crearCuenta,registro } from "../app/components/App.js";
 
 
 // Your web app's Firebase configuration
@@ -45,6 +45,10 @@ const Router = () => {
 
     case '#/crearcuenta':  
     return crearCuenta()
+    break;
+
+    case '#/registro': 
+    return registro()
     break;
       
 

@@ -1,31 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Gayathri&display=swap" rel="stylesheet">
+export function register() {
+    const $register = document.createElement("div");
+    $register.classList.add("contenedor-form");
+    $register.id = ("formRegistro");
+    $register.innerHTML = `
 
-</head>
-
-<body>
-
-    <section class="cajaPrincipal" id="mainBox">
-        <div class="headRegistro">
-            <img class="foto" src="img/PELO.JPG" alt="pelo">
-            <img class="logo" src="img/logo-newStyle.png" alt="logo-newStyle">
-            <h2 class="slogan">Un espacio para consentirte,<br>cuidarte y ser mas bella.</h2>
-
-        </div>
-
-
-        <div class="contenedor-form">
-
+    
             <div class="formulario">
                 <h2>Registro</h2>
-                <form method="POST" action="#" class="formulario-registro">
+                <form method="POST" action="#" class="formulario">
                     <label for="userRegistration">Usuario * </label>
                     <input type="text" id="userRegistration" placeholder="Usuario" required>
                     <label for="email">Correo Electrónico *</label>
@@ -41,11 +24,9 @@
                     <input type="submit" id="btonRegistro" value="Aceptar">
                 </form>
             </div>
+    `;
+    console.log("paciencia");
+    return $register;
 
 
-        </div>
-    </section>
-
-</body>
-
-</html>
+} 
