@@ -17,7 +17,7 @@
 
 **phySport** es un proyecto para amantes del deporte, podrás encontrar eventos de tu interes, conocer otros deportistas, interactuar con otros usuarios y más. En la red social **phySport** podrás registrate para crear eventos, editarlos, borrarlos y asistir. **"Find a game, win friends"**.
 
- **Demo del Proyecto:** https://oriananohemi.github.io/BOG001-social-network/#/timeline
+ [Demo del Proyecto](https://oriananohemi.github.io/BOG001-social-network/#/timeline)
 
 ## 2. Objetivo de la página 🚴‍♀️🤾‍♂️
 
