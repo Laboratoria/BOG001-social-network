@@ -1,10 +1,10 @@
 //esta pagina es la tercera vista, crear cuenta
 
-export function createAccount(){
- const $creatAccount = document.createElement("div");
- $creatAccount.classList.add("contenedor-form");
- $creatAccount.id = ("formcrearCta");
- $creatAccount.innerHTML = `
+export function createAccount() {
+    const $creatAccount = document.createElement("div");
+    $creatAccount.classList.add("contenedor-form");
+    $creatAccount.id = ("formcrearCta");
+    $creatAccount.innerHTML = `
  
 
             <form method="POST" action="#" class="formulario">
@@ -20,11 +20,22 @@ export function createAccount(){
             </form>
         
 
-        <a class="linkIngresar" href="#/crearcuenta">Crear Cuenta</a> 
+        <a class="linkIngresar" href="#/crearcuenta" type = "submit" >Crear Cuenta</a> 
  `;
+ console.log("creandocuenta 😛");
 
-    console.log("creandocuenta 😛");
-  
+    $creatAccount.addEventListener("submit",setUpAccount);
+
+    function setUpAccount(e) {
+        e.preventDefault();
+        let email = document.getElementById("correoelec").value;
+        let contrasena = document.getElementById("contrasena").value;
+
+    }
+
+    
+    
+
     return $creatAccount;
 
 }

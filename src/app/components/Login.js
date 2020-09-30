@@ -45,12 +45,7 @@ export function form (){
       
    }
 
-   
-
-   /*$form.addEventListener("click", function(){
-       document.getElementById("createAccLink")
-   });*/ 
-   
+       
     return $form;
     
 }
