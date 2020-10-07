@@ -1,7 +1,8 @@
 import {Logo, photosIndex,slogan, login} from "./Logo.js"
 import {form} from "./Login.js";
 import {createAccountView, } from "../components/crearCuenta.js"
-import {register} from "../components/registro.js"
+//import {register} from "../components/registro.js"
+import {error} from "./error.js"
 
 export function App(){
     const d = document,
@@ -40,7 +41,7 @@ export function crearCuenta(){
     $root.appendChild(createAccountView()); 
     
 }
-export function registro(){
+/*export function registro(){
     const d = document,
     $root = d.getElementById("root");
     $root.innerHTML = "";
@@ -49,4 +50,11 @@ export function registro(){
     $root.appendChild(slogan());
     $root.appendChild(register()); 
     
+}*/
+
+export function pag404(){
+    const d= document,
+    $root = d.getElementById("root");
+    $root.innerHTML = "";
+    $root.appendChild(error());
 }

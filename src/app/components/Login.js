@@ -42,7 +42,7 @@ export function form (){
 
        console.log(mail, contrasena);        
        
-       autenticar(mail, contrasena);//cambiar a crear cuenta
+       autenticar(mail, contrasena);
        return autenticar;
        window.href=formulario;
    }

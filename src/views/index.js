@@ -1,6 +1,6 @@
 import "../app/components/firebase.js"
-import { App,Form, crearCuenta,registro } from "../app/components/App.js";
-
+import { App,Form, crearCuenta,/*registro*/ } from "../app/components/App.js";
+import {error} from "../app/components/error.js"
 
 
 
@@ -28,11 +28,14 @@ const Router = () => {
     return crearCuenta();
     break;
 
-    case '#/registro': 
+    /*case '#/registro': 
     return registro()
+    break;*/
+      
+    case '#/error': 
+    return error()
     break;
       
-
   }
 
 }
