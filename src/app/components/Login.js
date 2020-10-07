@@ -1,5 +1,5 @@
 // esta pagina es la segunda vista, formulario html
-import {createUser} from "./firebase.js"
+import {autenticar} from "./firebase.js"
 
 export function form (){
    const $form = document.createElement("div");
@@ -42,11 +42,12 @@ export function form (){
 
        console.log(mail, contrasena);        
        
-       createUser(mail, contrasena);
-       return createUser;
+       autenticar(mail, contrasena);//cambiar a crear cuenta
+       return autenticar;
+       window.href=formulario;
    }
 
-       
+       //en este tengo que autenticar el usuario
     return $form;
     
 }

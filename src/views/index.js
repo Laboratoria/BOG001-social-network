@@ -25,7 +25,7 @@ const Router = () => {
     break;
 
     case '#/crearcuenta':  
-    return crearCuenta()
+    return crearCuenta();
     break;
 
     case '#/registro': 

@@ -1,6 +1,6 @@
 import {Logo, photosIndex,slogan, login} from "./Logo.js"
 import {form} from "./Login.js";
-import {createAccount} from "../components/crearCuenta.js"
+import {createAccountView, } from "../components/crearCuenta.js"
 import {register} from "../components/registro.js"
 
 export function App(){
@@ -37,7 +37,7 @@ export function crearCuenta(){
 
     $root.appendChild(Logo());
     $root.appendChild(slogan());
-    $root.appendChild(createAccount()); 
+    $root.appendChild(createAccountView()); 
     
 }
 export function registro(){
