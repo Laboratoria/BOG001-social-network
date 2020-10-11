@@ -24,7 +24,7 @@ export function autenticar(email, password){
             })
             .catch(() => {
                 console.log('Hay un error')
-                window.location.hash = '#/';
+                window.location.hash = '#/error';
             })
 
   console.log("crear la cuenta")

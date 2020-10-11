@@ -33,7 +33,7 @@ const Router = () => {
     break;*/
       
     case '#/error': 
-    return error()
+    return error();
     break;
       
   }
