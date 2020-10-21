@@ -57,6 +57,7 @@ body {
   height: 40px;
   background-color: #951B81;
   border-radius: 5px;
+  outline: none;
   text-align: center;
   text-decoration: none;
   color: #ffffff;
@@ -79,6 +80,7 @@ transition: all 5.s ease;
 }
 
 .contenedor-form{
+  position: relative;
   background: #DADADA;
   width: 100%;
   max-width: 500px;
@@ -89,23 +91,8 @@ transition: all 5.s ease;
   padding-bottom: 3%;
   margin-top: 5%;
   padding: 5%;
-  color: #951B81;
   border-radius: 5px;
 }
-
-
-.contenedor-form{
-  position: relative;
-  background: #DADADA;
-  width: 100%;
-  max-width: 500px;
-  margin: 48px  auto;
-  color:  #951B81;
-  box-shadow: 0px 0px 10px 0px #333 inset;
-  border-radius: 5px;
-  padding-bottom: 3%;
-}
- 
 
 .contenedor-form h2{
   margin: 0 0 28px 0;

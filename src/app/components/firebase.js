@@ -20,7 +20,7 @@ export function autenticar(email, password){
             .then(userCredentials => {
                 
                 console.log('check!')
-                window.location.hash = '#/home'
+                window.location.hash = '#/createPost';
             })
             .catch((e) => {
                 console.log(e)

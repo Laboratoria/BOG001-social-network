@@ -3,6 +3,7 @@ import {form} from "./Login.js";
 import {createAccountView, } from "../components/crearCuenta.js"
 //import {register} from "../components/registro.js"
 import {error} from "./error.js"
+import {createPost} from "./createPost.js"
 
 export function App(){
     const d = document,
@@ -27,8 +28,7 @@ export function Form(){
     $root.appendChild(Logo());
     $root.appendChild(slogan());
     $root.appendChild(form ());    
-    
-    
+       
 }
 
 export function crearCuenta(){
@@ -57,4 +57,11 @@ export function pag404(){
     $root = d.getElementById("root");
     $root.innerHTML = "";
     $root.appendChild(error());
+}
+
+export function creatingPost(){
+    const d = document,
+    $root = d.getElementById ("root");
+    $root.innerHTML = " ";
+    $root.appendChild(createPost());
 }

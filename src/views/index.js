@@ -1,5 +1,5 @@
 import "../app/components/firebase.js"
-import { App,Form, crearCuenta,/*registro*/ } from "../app/components/App.js";
+import { App,Form, crearCuenta,/*registro*/ creatingPost} from "../app/components/App.js";
 import {error} from "../app/components/error.js"
 
 
@@ -32,10 +32,14 @@ const Router = () => {
     return registro()
     break;*/
       
+    case '#/createPost': 
+    return creatingPost();
+    break;
+
     case '#/error': 
     return error();
     break;
-      
+
   }
 
 }
