@@ -42,7 +42,7 @@ export function form (){
 
        console.log(mail, contrasena);        
        
-       autenticar(mail, contrasena);
+      console.log( autenticar(mail, contrasena))
        return autenticar;
        window.href=formulario;
    }

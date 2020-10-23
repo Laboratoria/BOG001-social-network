@@ -1,6 +1,7 @@
 import "../app/components/firebase.js"
 import { App,Form, crearCuenta,/*registro*/ creatingPost} from "../app/components/App.js";
 import {error} from "../app/components/error.js"
+import {printName} from "../app/components/createPost.js"
 
 
 
@@ -13,7 +14,7 @@ const d = document,
 
 
 
-const Router = () => {
+const Router = async() => {
   console.log(window.location.hash)
   switch (window.location.hash) {
     case '#/':    
@@ -33,7 +34,8 @@ const Router = () => {
     break;*/
       
     case '#/createPost': 
-    return creatingPost();
+    await creatingPost();
+    printName();
     break;
 
     case '#/error': 

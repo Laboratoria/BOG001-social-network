@@ -7,13 +7,9 @@ export function createPost() {
     $createPost.innerHTML = `
             <form>
                 <div class="writePost">            
-                <label for="nameTitle"></label>
-                <input
-                 type="text"
-                 id="nameTitle"
-                 class="writingPost"
-                 placeholder="Nombre" 
-                 autofocus> <!--esto es para que cuando el usuario visite la pg el cursor este posicionado en el input-->
+                 <H2
+                 id="userName"
+                 class="writingPost"> </H2>
                 </div>
 
             <div class="writePost"> 
@@ -37,14 +33,13 @@ export function createPost() {
             postDescription
         })
 
-
-
-    $createPost.addEventListener("submit", async (e) => {
+            $createPost.addEventListener("submit", async (e) => {
         e.preventDefault();
-        const nameTitle = document.getElementById("nameTitle").value;
+        
+              
         const postDescription = document.getElementById("postDescription").value
 
-        await saveStorePost(nameTitle, postDescription);
+        await saveStorePost(userName, postDescription);
 
         //postForm.reset(); 
 
@@ -52,8 +47,12 @@ export function createPost() {
     })
 
 
-
-
-
     return $createPost;
+}
+
+export const printName = () => {
+ const userName = localStorage.getItem("userName");
+console.log(userName)
+          
+document.getElementById("userName").innerHTML = userName;
 }

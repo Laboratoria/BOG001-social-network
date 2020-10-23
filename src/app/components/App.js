@@ -59,9 +59,10 @@ export function pag404(){
     $root.appendChild(error());
 }
 
-export function creatingPost(){
+export async function creatingPost(){
     const d = document,
     $root = d.getElementById ("root");
     $root.innerHTML = " ";
     $root.appendChild(createPost());
+    
 }

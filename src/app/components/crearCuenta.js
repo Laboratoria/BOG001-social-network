@@ -37,19 +37,23 @@ export function createAccountView() {
 
     $creatAccount.addEventListener("submit", crearCuentaFirebase);
 
+
     function crearCuentaFirebase(e) {
         e.preventDefault(); // esto me cancela el reinicio del formulario
-        let userRegistration = document.getElementById("userRegistration").value;
-        let mail = document.getElementById("correoelec2").value;
-        let contrasena = document.getElementById("contrasena").value;
-        let nameRegistration = document.getElementById("nameRegistration").value;
-        let lastnameRegistration = document.getElementById("lastnameRegistration").value;
+        const userRegistration = document.getElementById("userRegistration").value;
+        const mail = document.getElementById("correoelec2").value;
+        const contrasena = document.getElementById("contrasena").value;
+        const nameRegistration = document.getElementById("nameRegistration").value;
+        const lastnameRegistration = document.getElementById("lastnameRegistration").value;
+
+        localStorage.setItem("userName", userRegistration);        
 
         console.log(userRegistration)
         console.log(mail)
         console.log(contrasena)
         console.log(nameRegistration)
         console.log(lastnameRegistration)
+        //console.log(userName)
 
       
             createUser(mail, contrasena); 
@@ -57,7 +61,6 @@ export function createAccountView() {
       
             //window.reload //aca se debe refrescar la pagina
         
-      
 
 
     }
