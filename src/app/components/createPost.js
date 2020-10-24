@@ -43,7 +43,7 @@ export function createPost() {
 
         //postForm.reset(); 
 
-        console.log("un logro mas")
+        //console.log("un logro mas")
     })
 
 
