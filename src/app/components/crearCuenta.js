@@ -70,3 +70,13 @@ export function createAccountView() {
     return $creatAccount;
 
 }
+
+export const alertCreateAccount = () => {
+const botonCrearUsuario = document.getElementById("botonCrearUsuario");
+
+botonCrearUsuario.addEventListener("click", () => {
+    
+    alert("Se ha registrado con éxito")
+    window.location.href = '#/login'
+})
+}

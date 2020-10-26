@@ -30,3 +30,24 @@ export function autenticar(email, password){
 
   console.log("autenticando")
 };
+
+
+// con este metodo permitimos a los usuarios registrados ingresar sin volver hacer login
+function signedIn  (email, password) {
+firebase.auth().onAuthStateChanged(function(email, password) {
+  if (user) {
+    // User is signed in.
+    var displayName = user.displayName;
+    var email = user.email;
+    var emailVerified = user.emailVerified;
+    var photoURL = user.photoURL;
+    var isAnonymous = user.isAnonymous;
+    var uid = user.uid;
+    var providerData = user.providerData;
+    // ...
+  } else {
+    // User is signed out.
+    // ...
+  }
+});
+}

@@ -42,7 +42,8 @@ export function form (){
 
        console.log(mail, contrasena);        
        
-      console.log( autenticar(mail, contrasena))
+      console.log( autenticar(mail, contrasena))      
+      
        return autenticar;
        window.href=formulario;
    }
@@ -53,7 +54,17 @@ export function form (){
 }
 
   
-  
+/*mail.addEventListener("input", () => {
+    localStorage.setItem("correoelec", mail)});
+
+    contrasena.addEventListener("input", () => {
+      localStorage.setItem("contrasena", contrasena)});
+
+      function recuperarvalores(){
+          mailValue = localStorage.getItem("correoelec");
+          contrasenaValue = localStorage.getItem("correoelec")
+      }
    
+      document.addEventListener("DOMContentLoaded", recuperarvalores())*/ //revisar///
    
 

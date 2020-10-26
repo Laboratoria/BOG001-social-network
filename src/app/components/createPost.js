@@ -27,9 +27,9 @@ export function createPost() {
     const postForm = $createPost.id;
         
     
-    const saveStorePost = (nameTitle, postDescription) =>
+    const saveStorePost = (/*nameTitle,*/ postDescription) =>
         db.collection("posts").doc().set({ //en plural posts por que es una coleccion de posts
-            nameTitle,
+            //nameTitle,
             postDescription
         })
 
@@ -39,11 +39,11 @@ export function createPost() {
               
         const postDescription = document.getElementById("postDescription").value
 
-        await saveStorePost(userName, postDescription);
+        await saveStorePost(/*userName,*/ postDescription);
 
         //postForm.reset(); 
 
-        //console.log("un logro mas")
+        console.log(postDescription)
     })
 
 
@@ -52,7 +52,7 @@ export function createPost() {
 
 export const printName = () => {
  const userName = localStorage.getItem("userName");
-console.log(userName)
+ console.log("😁")
           
 document.getElementById("userName").innerHTML = userName;
 }

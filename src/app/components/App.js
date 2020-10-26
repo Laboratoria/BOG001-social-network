@@ -31,7 +31,7 @@ export function Form(){
        
 }
 
-export function crearCuenta(){
+export async function crearCuenta(){
     const d = document,
     $root = d.getElementById("root");
     $root.innerHTML = "";
