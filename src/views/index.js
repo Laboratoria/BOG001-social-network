@@ -3,6 +3,9 @@ import { App,Form, crearCuenta,/*registro*/ creatingPost} from "../app/component
 import {error} from "../app/components/error.js"
 import {printName} from "../app/components/createPost.js"
 import {alertCreateAccount} from "../app/components/crearCuenta.js"
+import {loginListener} from "../app/components/firebase.js"
+import {guardarFormulario} from "../app/components/Login.js"
+import {cerrar} from "../app/components/createPost.js"
 
 
 
@@ -16,14 +19,16 @@ const d = document,
 
 
 const Router = async() => {
-  console.log(window.location.hash)
+  //console.log(window.location.hash)
   switch (window.location.hash) {
     case '':    
     case '#/':    
     return App();
        
     case '#/login':       
-    return Form();
+    await Form();
+    guardarFormulario();
+    break;
     
     case '#/crearcuenta':  
     await crearCuenta();
@@ -37,6 +42,7 @@ const Router = async() => {
     case '#/createPost': 
     await creatingPost();
     printName();
+    cerrar()
     break;
 
     case '#/error': 
@@ -49,3 +55,4 @@ const Router = async() => {
 
 w.addEventListener("hashchange", Router);
 d.addEventListener("DOMContentLoaded", Router);
+loginListener();

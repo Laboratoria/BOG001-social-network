@@ -20,7 +20,7 @@ export function App(){
   
 }
 
-export function Form(){
+export async function Form(){
     const d = document,
     $root = d.getElementById("root");
     $root.innerHTML = "";
@@ -64,5 +64,7 @@ export async function creatingPost(){
     $root = d.getElementById ("root");
     $root.innerHTML = " ";
     $root.appendChild(createPost());
+    
+
     
 }

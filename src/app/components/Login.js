@@ -9,7 +9,7 @@ export function form (){
    
             <div class="formulario">
                 <h2>Iniciar Sesion</h2>
-                <form action="#" method="POST">
+                <form action="#" method="POST" id = "fomrlogin">
 
                     <label for="correoelec">Correo Electrónico *</label>
                     <input type="email" id="correoelec" placeholder="correo@ejemplo.com" required>    
@@ -32,39 +32,37 @@ export function form (){
             </div>
    `;
      
+ 
 
-   $form.addEventListener("submit", guardarFormulario);
 
-  function guardarFormulario(e){
-       e.preventDefault();// esto me cancela el reinicio del formulario
-       let mail = document.getElementById("correoelec").value;
-       let contrasena = document.getElementById("contrasena").value;
-
-       console.log(mail, contrasena);        
-       
-      console.log( autenticar(mail, contrasena))      
-      
-       return autenticar;
-       window.href=formulario;
-   }
-
-       //en este tengo que autenticar el usuario
+     
     return $form;
     
 }
+    
+export function guardarFormulario(){
+    const formularioLogin = document.getElementById("fomrlogin")
+    console.log(formularioLogin)
+    formularioLogin.addEventListener("submit", function(e){
+       // debugger;
+        console.log(e)
+    e.preventDefault();// esto me cancela el reinicio del formulario
+    let mail = document.getElementById("correoelec").value;
+    let contrasena = document.getElementById("contrasena").value;
 
+    console.log(guardarFormulario);        
+    
+
+    autenticar(mail, contrasena)
+     
+    })
+         
+   
   
-/*mail.addEventListener("input", () => {
-    localStorage.setItem("correoelec", mail)});
+ }
+      
 
-    contrasena.addEventListener("input", () => {
-      localStorage.setItem("contrasena", contrasena)});
 
-      function recuperarvalores(){
-          mailValue = localStorage.getItem("correoelec");
-          contrasenaValue = localStorage.getItem("correoelec")
-      }
    
-      document.addEventListener("DOMContentLoaded", recuperarvalores())*/ //revisar///
-   
+
 

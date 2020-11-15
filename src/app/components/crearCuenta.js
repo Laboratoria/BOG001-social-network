@@ -47,13 +47,13 @@ export function createAccountView() {
         const lastnameRegistration = document.getElementById("lastnameRegistration").value;
 
         localStorage.setItem("userName", userRegistration);        
-
+        
         console.log(userRegistration)
         console.log(mail)
         console.log(contrasena)
         console.log(nameRegistration)
         console.log(lastnameRegistration)
-        //console.log(userName)
+        
 
       
             createUser(mail, contrasena); 
@@ -64,7 +64,7 @@ export function createAccountView() {
 
 
     }
-    //console.log("creandocuenta 😛");
+    
       
     //window.location.hash = "#/post"
     return $creatAccount;

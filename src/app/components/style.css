@@ -7,6 +7,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  
 
 }
 
@@ -71,6 +72,7 @@ transition: all 5.s ease;
 }
 
 
+
 /*********************Segunda Vista*********************************/
 .formulario{
   display: flex;
@@ -83,8 +85,6 @@ transition: all 5.s ease;
   position: relative;
   background: #DADADA;
   width: 100%;
-  max-width: 500px;
-  /*margin: 48px  auto;*/
   color:  #951B81;
   box-shadow: 0px 0px 10px 0px #333 inset;
   border-radius: 5px;
@@ -92,6 +92,8 @@ transition: all 5.s ease;
   margin-top: 5%;
   padding: 5%;
   border-radius: 5px;
+  
+  
 }
 
 .contenedor-form h2{
@@ -176,6 +178,33 @@ transition: all .5s ease;
 border-bottom: solid 4px #bd23a3;
 }
 
+.signOff{
+  margin: 3%;
+  padding-top: 1%;
+  color: #951B81;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  /*display: flexbox;
+  justify-content: flex-end;*/
+   
+}
+
+.signOff:hover{
+color: #610b53;
+cursor: pointer;
+transition: all 5.s ease;
+}
+
+.writingPost{
+  width: 100%;
+  height: 60%;
+}
+
+.cotenSignOff{
+  display: flex;
+  justify-content: flex-end;
+}
 /*****************************pagina error*******************************/
 .espacioError404{   /*contenedor donde esta la foto*/
   height: 1700px;
