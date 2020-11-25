@@ -1,12 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>New Style</title>
+  <link rel="stylesheet" href="./app/components/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Gayathri&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
-  <script type="module" src="main.js"></script>
+
+
+  <main id="root">
+
+
+  </main>
+
+
+
+<!--Firebase Scripts-->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script> <!--scrip principal para poder conectarme, es la base de firebase-->
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+     <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-auth.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+   
+   <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyDmzAmJMq1YRvEJGVZ43qWHmqezpOnt-B0",
+      authDomain: "new-style-a6dc8.firebaseapp.com",
+      databaseURL: "https://new-style-a6dc8.firebaseio.com",
+      projectId: "new-style-a6dc8",
+      storageBucket: "new-style-a6dc8.appspot.com",
+      messagingSenderId: "760891391735",
+      appId: "1:760891391735:web:e4045de7247eaa3cd41df2"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+    
+    
+  <script src="views/index.js" type="module"></script>
 </body>
+
 </html>

@@ -1,0 +1,260 @@
+
+/*********************Primera Vista****************************/
+* {
+  padding: 0%;
+  margin: 0%;
+  font-family: 'Gayathri', sans-serif;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  
+
+}
+
+body {
+  background-color: #DADADA;
+  -webkit-background-size:cover;
+  background-size: cover;
+  background-attachment: fixed;
+
+}
+.cajaPrincipal{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.logo {
+  width: 60%;
+  padding: 5%;
+  
+}
+.foto{
+  width:150px;
+  height:150px;
+  border-radius:150px;
+  border:10px solid #951B81 ;
+  display:flex;
+  flex-direction: column-reverse;
+}
+
+.mainPhoto {
+  width: 50%;
+  padding-bottom: 5%;
+}
+
+.slogan {
+  font-size: 30px;
+  text-align: center;
+  color: #951B81;
+}
+
+.linkIngresar{
+ /* margin: 3%;*/
+  padding-top: 1%;
+  width: 120px;
+  height: 40px;
+  background-color: #951B81;
+  border-radius: 5px;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+   
+}
+
+.linkIngresar:hover{
+background-color: #bd23a3;
+cursor: pointer;
+transition: all 5.s ease;
+}
+
+.paintPosts{
+  
+}
+
+.btnModificar{
+  margin: 2%;
+  padding-top: 1%;
+  width: 20%;
+  height: 10%;
+  background-color: #951B81;
+  border-radius: 5px;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  
+   
+}
+
+.btnModificar:hover{
+background-color: #bd23a3;
+cursor: pointer;
+transition: all 5.s ease;
+}
+
+
+
+/*********************Segunda Vista*********************************/
+.formulario{
+  display: flex;
+  flex-direction: column;
+  padding-top: 5%;
+   
+}
+
+.contenedor-form{
+  position: relative;
+  background: #DADADA;
+  width: 100%;
+  color:  #951B81;
+  box-shadow: 0px 0px 10px 0px #333 inset;
+  border-radius: 5px;
+  padding-bottom: 3%;
+  margin-top: 5%;
+  padding: 5%;
+  border-radius: 5px;
+  
+  
+}
+
+.contenedor-form h2{
+  margin: 0 0 28px 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+}
+.contenedor-form input[type="text"],
+.contenedor-form input[type="pasword"],
+.contenedor-form input[type="email"],
+.contenedor-form input[type="name"],
+.contenedor-form input[type="lastName"],
+.contenedor-form input[type="date"]{
+  outline: none;
+  background:white;
+  width:100%;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 2px;
+  border-bottom: 4px solid #951B81;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0 0 20px 0;
+  transition: all .5s ease;
+
+}
+.contenedor-form input[type="text"]:focus,
+.contenedor-form input[type="pasword"]:focus,
+.contenedor-form input[type="email"]:focus,
+.contenedor-form input[type="name"]:focus,
+.contenedor-form input[type="lastName"]:focus,
+.contenedor-form input[type="date"]:focus{
+  border-bottom: 4px solid  #bd23a3;
+}
+
+.contenedor-form input[type="submit"]{
+  background:  #951B81;
+  color:white;
+  border:none;
+  width: 100%;
+  padding: 10px 0;
+  font-weight: normal;
+  letter-spacing: 1px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all .5s ease;
+}
+.contenedor-form input[type="submit"]:hover{
+  background:#bd23a3; 
+}
+
+.contenedor-form .othersAccounts{ /*cambie nombre de reset password*/
+  width: 100%;
+  text-align: center;
+ 
+}
+.contenedor-form .othersAccounts a{ /*cambie nombre de reset password*/
+  color: #951B81;
+  text-decoration: none;
+  font-size: 16px;
+}
+.contenedor-form .formulario{
+  padding: 40px;
+}
+
+.contenedor-form input[type="email"],
+.contenedor-form input[type="password"]{
+padding: 10px 15px;
+margin: 0 0 20px 0;
+outline:none;
+background: rgba(248, 245, 245, 0.993);
+border:none;
+border-bottom: 4px solid #951B81;
+cursor: pointer;
+transition: all .5s ease;
+
+}
+
+.contenedor-form input[type="email"]:focus,
+.contenedor-form input[type="password"]:focus{
+border-bottom: solid 4px #bd23a3;
+}
+
+.signOff{
+  margin: 3%;
+  padding-top: 1%;
+  color: #951B81;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  /*display: flexbox;
+  justify-content: flex-end;*/
+   
+}
+
+.signOff:hover{
+color: #610b53;
+cursor: pointer;
+transition: all 5.s ease;
+}
+
+.writingPost{
+  width: 100%;
+  height: 60%;
+}
+
+.cotenSignOff{
+  display: flex;
+  justify-content: flex-end;
+}
+/*****************************pagina error*******************************/
+.espacioError404{   /*contenedor donde esta la foto*/
+  height: 1700px;
+  background-repeat: no-repeat;
+  /*display: flex;
+  flex-direction: column;*/
+  background-image: url("img/error404.png");
+}
+
+.photo404{
+  width: 1500px;
+
+}
+
+.textError{
+  height: 100%;
+  font-size: 5em;
+  color: #951B81;
+  
+
+}
+
+
+/************************cuarta vista**************/
+
+.headRegistro{
+  display: flex;
+}
