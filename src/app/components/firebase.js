@@ -52,6 +52,7 @@ export function signOffSesion() {
 
 export const getPost = () => db.collection("posts").get()
   .then(function (querySnapshot) {
+    console.log("jupi")
     return querySnapshot
     })
 

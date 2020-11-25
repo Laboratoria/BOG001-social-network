@@ -38,7 +38,7 @@ export function createPost() {
     //crear un id con lista de post dentro del html
 
     // const postForm = $createPost.id;
-    const paintpostDescription = document.getElementById("paintpostDescription");
+    
 
 
     const saveStorePost = (postDescription) =>
@@ -48,13 +48,34 @@ export function createPost() {
         })
 
 
-    const datosTraidos = getPost()
+    const datosTraidos =  function () { 
+        
+        getPost()
         .then(respuesta => respuesta.forEach(function (doc) {
             // doc.data() is never undefined for query doc snapshots
             console.log(JSON.stringify(doc.data().postDescription));
+          const paintpostDescription = document.getElementById("paintpostDescription");
+          //const savePost = document.getElementById("savePost");
+          //savePost.addEventListener("click", () =>{
+            paintpostDescription.innerHTML += `<div class = "contenedor-form">
+            ${printName()}
+            ${doc.data().postDescription}       
+            </div>`
+            deletePost()
+          })
+                             
+       // }))
+      
 
-        }))
+        )}
+    datosTraidos();
 
+    function deletePost(){
+        const postForm = document.getElementById("postForm");
+        //postForm.reset();
+    }
+
+    deletePost();
 
     $createPost.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -64,7 +85,7 @@ export function createPost() {
 
         await saveStorePost(postDescription);
 
-        //postForm.reset();         
+                 
 
     })
 
@@ -73,7 +94,7 @@ export function createPost() {
 
 export const printName = () => {
     const userName = localStorage.getItem("userName");
-    console.log("😁")
+    console.log(userName)
 
     document.getElementById("userName").innerHTML = userName;
 }
@@ -86,43 +107,4 @@ export function cerrar() {
     })
 }
 
-
-/*const bntsavePost = document.getElementById("savePost");
-bntsavePost.addEventListener("click", function() {
-    console.log("preparando para pintar")})
-
-        /*const $listarPost = document.createElement("div");
-        $listarPost.classList.add("contenedor-form");
-        $listarPost.id = ("postLista");
-        $listarPost.innerHTML = `
-            <div class="cotenSignOff">
-            <span class="signOff" id="cerrarSesion">
-            Cerrar Sesión
-            </span>
-            </div>
-            <form>
-                <div class="writePost">            
-                 <h2
-                 id="userName"
-                 class="writingPost"></h2>
-                </div>
-
-            <div class="writePost"> 
-                <textarea  id="postDescription"
-                class="writingPost">
-                </textarea>
-            </div>
-            <button class="linkIngresar" id="savePost">
-                Guardar
-            </button>
-            </form>
-            <div class="writePost" id="paintpostDescription"> 
-                
-            </div>`;
-
-        //crear un id con lista de post dentro del html
-}
-)
-    //const pintarListaPost = document.getElementById("postLista")
-    return listarPost();*/
 
