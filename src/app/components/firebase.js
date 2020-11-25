@@ -54,9 +54,20 @@ export const getPost = () => db.collection("posts").get()
   .then(function (querySnapshot) {
     console.log("jupi")
     return querySnapshot
-    })
+  })
 
   .catch(function (error) {
     console.log("Error getting documents: ", error);
   })
 
+
+export function toUpdate() {
+  db.collection("posts").orderBy("fecha")
+  .onSnapshot(function(querySnapshot) {
+      const postear = [];
+      querySnapshot.forEach(function(doc) {
+          postear.push(doc.data().posts);
+      });
+      console.log("Current cities in CA: ", postear.join(", "));
+  })
+}

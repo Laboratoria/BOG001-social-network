@@ -1,7 +1,5 @@
-import {
-    signOffSesion,
-    getPost
-} from "./firebase.js"
+import {signOffSesion,getPost, toUpdate} from "./firebase.js"
+
 
 const db = firebase.firestore();
 
@@ -58,10 +56,17 @@ export function createPost() {
           //const savePost = document.getElementById("savePost");
           //savePost.addEventListener("click", () =>{
             paintpostDescription.innerHTML += `<div class = "contenedor-form">
-            ${printName()}
-            ${doc.data().postDescription}       
+                <div class = "paintPosts">
+                <h3>${printName()}</h3>
+                ${doc.data().postDescription} 
+                </div>
+                     <div>
+                          <button class="btnModificar">Borrar</button>      
+                         <button class="btnModificar">Editar</button> 
+                    </div>      
             </div>`
-            deletePost()
+            
+            toUpdate()
           })
                              
        // }))
@@ -94,9 +99,8 @@ export function createPost() {
 
 export const printName = () => {
     const userName = localStorage.getItem("userName");
-    console.log(userName)
-
     document.getElementById("userName").innerHTML = userName;
+    return userName;
 }
 
 export function cerrar() {
